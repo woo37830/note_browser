@@ -29,13 +29,14 @@ $data = join('', $raw);
 
 // replace special characters with HTML entities
 // replace line breaks with <br />
-$html = nl2br(htmlspecialchars($data));
+$html = nl2br($data);
+//$html = nl2br(htmlspecialchars($data));
 
 // replace multiple spaces with single spaces
-$html = preg_replace('/\s\s+/', ' ', $html);
+//$html = preg_replace('/\s\s+/', ' ', $html);
 
 // replace URLs with <a href...> elements
-$html = preg_replace('/\s(\w+:\/\/)(\S+)/', ' <a href="\\1\\2" target="_blank">\\1\\2</a>', $html);
+//$html = preg_replace('/\s(\w+:\/\/)(\S+)/', ' <a href="\\1\\2" target="_blank">\\1\\2</a>', $html);
 
 // start building output page
 // add page header
@@ -58,7 +59,7 @@ $output .= "<p /><center>$prev_link <a href='./index.php'>Back</a> $next_link </
 
 $output .= "<div>$html</div>";
 // add return button
-$output .= "<p /><center><a href='./index.php'>Back</a></center><p />";
+$output .= "<p /><center>$prev_link <a href='./index.php'>Back</a> $next_link </center><p />";
 
 // add page footer
 $output .=<<< FOOTER
