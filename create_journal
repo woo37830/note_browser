@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# run perl scripts to create sorted.txt, then journal
+#
+/bin/rm -f tmp.txt sorted.txt Journal*.txt
+#
+perl note-reader.pl
+#
+perl diary-reader.pl
+#
+# output is now in tmp.txt
+#
+sort < tmp.txt > sorted.txt
+#
+perl journal_writer.pl
