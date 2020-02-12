@@ -226,7 +226,7 @@ function openCity(evt, cityName) {
   <form id="lfm" method="post" novalidate>
     <div class="fitem">
       <label>User:</label>
-      <input name="user" class="easyui-textbox" id="userid" required="true">
+      <input name="user" class="easyui-textbox" id="userid" required="true" autofocus>
     </div>
     <div class="fitem">
       <label>Password:</label>
