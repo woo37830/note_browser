@@ -9,14 +9,32 @@
 
 </head>
 <body>
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Years')">Years</button>
+    <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Latest')">Latest</button>
+    <button class="tablinks" onclick="openCity(event, 'To Do')">To Do</button>
+  </div>
+
+
+  <div class="wrapper" >
+
+  <header>
+
+  </header>
+  <div id="content">
+
   <div id="log_in">Login</div>
 <div class="title">
-    Journal Entries
+    Journal Explorer
   </div>
   <div id="no-access">
-    <h3>You must be logged in to Browse the Journal</h3>
+    <center><h3>You must be logged in to Browse the Journal</h3></center>
   </div>
  <div id="data">
+   <!-- Tab content -->
+   <div id="Years" class="tabcontent">
+     <center><h3>Journal Entries</h3></center>
 <ul>
 <?php
   $NOTE_DIR="/Users/woo/Dropbox/Personal/Documents/Notes/";
@@ -32,8 +50,13 @@ if ($handle = opendir($NOTE_DIR) ) {
 closedir($handle);
 }
 echo "</ul>";
+
+echo "</div>"; // end of journal entries
+
 echo "<p />";
-echo "<hr />";
+?>
+<div id="Latest" class="tabcontent" >
+<?php
 echo "<center><h2>Recent Notes</h2></center><br/>";
 $YYYY=date('Y');
 $source = "$NOTE_DIR"."Journal_$YYYY.txt";
@@ -49,6 +72,10 @@ $html = nl2br($raw);
 $output = "<div>$html</div>";
 echo "$output";
 echo "<p />";
+echo "</div>"; //end of recent notes
+?>
+<div id="To Do" class="tabcontent">
+<?php
 echo "<center><h2>ToDo List</h2></center><br/>";
 $source = "$NOTE_DIR".".todo";
 $raw = file_get_contents($source);
@@ -62,9 +89,8 @@ for( $i = $start; $i <= $num; $i++ ) {
 $html = nl2br($raw);
 $output = "<div>$html</div>";
 echo "$output";
-
+echo "</div>";
 ?>
-</div>
 <script type="text/javascript">
 $(document).on('click','#log_in', function() {
 $.getJSON( "./users.txt", function( json ) {
@@ -80,6 +106,29 @@ $.getJSON( "./users.txt", function( json ) {
 $(document).on('click','#log_out', function() {
     logout();
 });
+
+document.getElementById("defaultOpen").click();
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
         if( readCookie("logged_in") ) {
                         $("#log_in").text("Logout: "+readCookie('userid'));
@@ -168,6 +217,8 @@ $(document).on('click','#log_out', function() {
   <em><?php
   include 'git-info.php';
   ?></em>
+</div>
+</div>
 </div>
 <div id="lin" class="easyui-dialog" style="width:400px;height:380px;padding:10px 20px"
     closed="true" buttons="#lin-buttons">
