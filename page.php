@@ -40,16 +40,47 @@ $html = nl2br($data);
 
 // start building output page
 // add page header
-$output =<<< HEADER
+?>
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="_css/layout.css" id="styleid" type="text/css" />
+
 <style>
 .slug {font-size: 15pt; font-weight: bold}
 .byline { font-style: italic }
 </style>
 </head>
 <body>
-HEADER;
+<script type="text/javascript">
+if( readCookie("logged_in") ) {
+                  $("#data").attr('class', 'show');
+                  $("#no-access").attr('class','hide');
+                  alert("logged in");
+} else {
+              $("#data").attr('class', 'hide');
+              $("#no-access").attr('class','show');
+              alert("not logged in");
+}
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+</script>
+<div class="wrapper" >
+
+<div id="content">
+
+
+<?php
 
 // add page content
 $output .= "<center><div class='slug'>$slug</div>";
@@ -60,13 +91,23 @@ $output .= "<p /><center>$prev_link <a href='./index.php'>Back</a> $next_link </
 $output .= "<div>$html</div>";
 // add return button
 $output .= "<p /><center>$prev_link <a href='./index.php'>Back</a> $next_link </center><p />";
+?>
+  <div id="footer" >
+    <hr />
+    <em><?php
+    include 'git-info.php';
+    ?></em>
+  </div>
+  <div id="no-access">
+    <center><h3>You must be logged in to Browse the Journal</h3></center>
+  </div>
 
+<div id="data">
+<?php
 // add page footer
-$output .=<<< FOOTER
+echo "$output";
+?>
+</div>
+</div>
 </body>
 </html>
-FOOTER;
-
-// display in browser
-echo $output;
-?>
