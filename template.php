@@ -51,9 +51,9 @@
   $output .= "<p /><center>$prev_link <a href='./index.php'>Back</a> $next_link </center><p />";
 
   echo "$output";
-  echo "</div><br />";
   require 'login.php';
   echo "$scripts";
+  echo "</div><br />"; // end content
 ?>
 
 

@@ -258,6 +258,13 @@ footer {
     text-align: center;
     #border: 5px solid gray;
 }
+
+#lin {
+  text-align: center;
+  padding-bottom: -400px;
+  background : #0099CC;
+      /*border: 5px solid gray;*/
+}
 #login-div
 {
     width: 500px;
