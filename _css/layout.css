@@ -111,7 +111,7 @@ label
   #border: 3px solid orange;
 }
 
-#data {
+.data {
   vertical-align: top;
   padding-left: 5px;
   padding-right: 5px;
