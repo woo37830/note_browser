@@ -149,4 +149,3 @@ function openCity(evt, cityName) {
 </div>
 </body>
 </html>
-mv
