@@ -3,10 +3,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript" src="./_js/jquery.easyui.min.js"></script>
-  <script type="text/javascript" src="./_js/cookies.js"></script>
-  <script type="text/javascript" src="./_js/authorize.js"></script>
-  <link rel="stylesheet" href="_css/layout.css" id="styleid" type="text/css" />
-  <link rel="stylesheet" href="_css/dlg-form.css" id="formid" type="text/css" />
+  <script type="text/javascript" src="/frameworks/_js/cookies.js"></script>
+  <script type="text/javascript" src="/frameworks/_js/authorize.js"></script>
+  <link rel="stylesheet" href="/frameworks/_css/layout.css" id="styleid" type="text/css" />
+  <link rel="stylesheet" href="/frameworks/_css/dlg-form.css" id="formid" type="text/css" />
   <link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
 </head>
 <body>
@@ -149,3 +149,4 @@ function openCity(evt, cityName) {
 </div>
 </body>
 </html>
+mv
