@@ -13,9 +13,19 @@
   <!-- Tab links -->
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'Years')">Years</button>
-    <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Latest')">Latest</button>
+    <?php
+    if( empty( $_REQUEST['for']) ) { ?>
+      <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Latest')">Latest</button>
+    <?php } else { ?>
+      <button class="tablinks" onclick="openCity(event, 'Latest')">Latest</button>
+    <?php } ?>
     <button class="tablinks" onclick="openCity(event, 'To Do')">To Do</button>
-    <button class="tablinks" onclick="openCity(event, 'Search')">Search</button>
+    <?php
+    if( !empty( $_REQUEST['for']) ){ ?>
+      <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Search')">Search</button>
+    <?php } else { ?>
+      <button class="tablinks" onclick="openCity(event, 'Search')">Search</button>
+    <?php } ?>
   </div>
 
 
@@ -97,7 +107,14 @@ $tab4 = "<div id='Search' class='tabcontent'>";
 
 $data4 = "<div class='data'>";
 $data4 .= "<center><h2>Search</h2></center><br/>";
-$raw = "<form action='./search.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /></form>";
+if( empty( $_REQUEST['for'] ) ){
+$raw = "<form action='./index.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
+} else {
+  $raw = "Search for " . $_REQUEST['for'];
+  $raw .= "<br />";
+  $raw .= "Results of search here<br/>";
+  $raw .= "<form action='./index.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
+}
 $html = nl2br($raw);
 $data4 .= $html;
 $data4 .= "</div>";
