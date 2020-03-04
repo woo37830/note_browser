@@ -15,16 +15,16 @@
     <button class="tablinks" onclick="openCity(event, 'Years')">Years</button>
     <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Latest')">Latest</button>
     <button class="tablinks" onclick="openCity(event, 'To Do')">To Do</button>
+    <button class="tablinks" onclick="openCity(event, 'Search')">Search</button>
   </div>
 
 
   <div class="wrapper" >
 
-  <header>
+    <header>
 
-  </header>
+    </header>
   <div id="content">
-
   <div id="log_in">Login</div>
 <div class="title">
     Journal Explorer
@@ -36,6 +36,7 @@
  require 'login.php';
  echo "$scripts";
  $page = "<div id='page'>";
+
  $tab1 =   "<div id='Years' class='tabcontent'>";
  $data1 = "<div class='data'>";
  $data1 .= "<center><h3>Journal Entries</h3></center>";
@@ -60,6 +61,7 @@ $tab1 .= $data1 . "</div>";// end data
 $tab2 = "<div id='Latest' class='tabcontent' >";
 
 $data2 = "<div class='data'>";
+
 $data2 .= "<center><h2>Recent Notes</h2></center><br/>";
 $YYYY=date('Y');
 $source = "$NOTE_DIR"."Journal_$YYYY.txt";
@@ -91,10 +93,20 @@ $html = nl2br($raw);
 $data3 .= $html;
 $data3 .= "</div>";
 $tab3 .= $data3 . "</div>";
+$tab4 = "<div id='Search' class='tabcontent'>";
+
+$data4 = "<div class='data'>";
+$data4 .= "<center><h2>Search</h2></center><br/>";
+$raw = "<form action='./search.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /></form>";
+$html = nl2br($raw);
+$data4 .= $html;
+$data4 .= "</div>";
+$tab4 .= $data4 . "</div>";
 echo "$page";
 echo "$tab1";
 echo "$tab2";
 echo "$tab3";
+echo "$tab4";
 echo "</div>"; // end of page
 ?>
 <script type="text/javascript">
