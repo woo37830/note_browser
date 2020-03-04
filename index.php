@@ -112,7 +112,39 @@ $raw = "<form action='./index.php' ><input type='text' name='for' value='' width
 } else {
   $raw = "Search for " . $_REQUEST['for'];
   $raw .= "<br />";
-  $raw .= "Results of search here<br/>";
+  $sources = array(".todo", "Port_Starboard.txt", "Language.txt", "Restaurants.txt");
+  foreach( $sources as $source ) {
+  $raw .= "Searching: " . $source . "\n";
+  // | sed 's:~/Dropbox/Personal/Documents/Notes/::'
+  $cmd = "/usr/bin/grep -n -i " . $_REQUEST['for'] . " /Users/woo/Dropbox/Personal/Documents/Notes/$source ";
+  //$raw .= "cmd: " . $cmd . "<br />";
+  $output = "\n" . shell_exec($cmd);
+  $raw .= nl2br($output);
+}
+$search_file = "search.txt";
+if( file_exists($search_file)) {
+  unlink($search_file);
+}
+$handle = fopen($search_file,'a');
+fwrite($handle, "Searching Journal\n");
+$files = glob("/Users/woo/Dropbox/Personal/Documents/Notes/Journal_*.txt");
+foreach( $files as $file ) {
+  $matches = match($file, $_REQUEST['for']);
+  if( sizeof( $matches ) > 0 ) {
+    fwrite( $handle, "----------$file--------\n");
+    foreach( $matches as $match ) {
+      fwrite($handle, $match);
+    }
+  }
+}
+
+
+if( file_exists($search_file)) {
+  $output = file_get_contents($search_file);
+  $raw .= nl2br($output);
+  unlink($search_file);
+}
+
   $raw .= "<form action='./index.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
 }
 $html = nl2br($raw);
@@ -125,6 +157,29 @@ echo "$tab2";
 echo "$tab3";
 echo "$tab4";
 echo "</div>"; // end of page
+function match( $file, $pattern ) {
+  // get the file contents, assuming the file to be readable (and exist)
+  $matches = array();
+  $pat = strtolower($pattern);
+  $handle = @fopen($file, "r");
+  if ($handle)
+  {
+    $k = 0;
+      while (!feof($handle))
+      {
+        $k++;
+          $buffer = fgets($handle);
+          if(strpos(strtolower($buffer), $pat) !== FALSE) {
+              $matches[] = $k . ") " . $buffer;
+            }
+      }
+      fclose($handle);
+  }
+
+  //show results:
+  return $matches;
+}
+
 ?>
 <script type="text/javascript">
 
