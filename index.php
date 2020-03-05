@@ -47,6 +47,7 @@
  echo "$scripts";
  $page = "<div id='page' class='show'>";
 
+// Beginning of tab1 code
  $tab1 =   "<div id='Years' class='tabcontent'>";
  $data1 = "<div class='data'>";
  $data1 .= "<center><h3>Journal Entries</h3></center>";
@@ -67,7 +68,8 @@ closedir($handle);
 $data1 .= "</ul>";
 $data1 .= "</div>";
 $tab1 .= $data1 . "</div>";// end data
-
+//  End of tab1 code
+// Beginning of tab2 code
 $tab2 = "<div id='Latest' class='tabcontent' >";
 
 $data2 = "<div class='data'>";
@@ -102,6 +104,8 @@ $html = nl2br($raw);
 $data2 .= $html;
 $data2 .= "</div>"; // end data
 $tab2 .= $data2 . "</div>";
+// End of tab2 code
+// Beginning of tab3 code
 $tab3 = "<div id='To Do' class='tabcontent'>";
 $data3 = "<div class='data'>";
 $data3 .= "<center><h2>ToDo List</h2></center><br/>";
@@ -147,6 +151,8 @@ $html = nl2br($raw);
 $data3 .= $html;
 $data3 .= "</div>";
 $tab3 .= $data3 . "</div>";
+// End of tab3 code
+// Beginning of tab4 code
 $tab4 = "<div id='Search' class='tabcontent'>";
 
 $data4 = "<div class='data'>";
@@ -195,13 +201,16 @@ $html = nl2br($raw);
 $data4 .= $html;
 $data4 .= "</div>";
 $tab4 .= $data4 . "</div>";
-echo "$page";
+// End of tab4 code
+// Assemble the page of tab divs
+echo "$page"; // put in the page div
 echo "$tab1";
 echo "$tab2";
 echo "$tab3";
 echo "$tab4";
 echo "</div>"; // end of page
 
+// php Functions
 function match( $file, $pattern ) {
   // get the file contents, assuming the file to be readable (and exist)
   $matches = array();
@@ -224,8 +233,9 @@ function match( $file, $pattern ) {
   //show results:
   return $matches;
 }
-
+// end of php functions
 ?>
+// Start of javascript for tab switching and handling logged_in content hiding
 <script type="text/javascript">
 
 
@@ -271,14 +281,15 @@ function openCity(evt, cityName) {
 
 
 </script>
+// end of javascript
 
 <div id="footer" >
   <hr />
   <em><?php
   include 'git-info.php';
   ?></em>
-</div>
-</div>
-</div>
+</div> // end of footer div
+</div> // end of content div
+</div> // end of wrapper div
 </body>
 </html>
