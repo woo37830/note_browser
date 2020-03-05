@@ -15,12 +15,17 @@ $.getJSON( "./users.txt", function( json ) {
 $(document).on('click','#log_out', function() {
     logout();
 });
+//     Note:  # is used for ids, while . is used for classes
 
-
+      if( !readCookie('userid') )
+      {
+        eraseCookie('logged_in');
+      }
       if( readCookie("logged_in") ) {
                       $("#log_in").text("Logout: "+readCookie('userid'));
                       $("#log_in").attr('id', 'log_out');
                         $(".data").attr('class', 'show');
+                        $("#page").attr('class', 'show');
                         $("#no-access").attr('class','hide');
                         $("#lin").attr('class','hide');
                         $("#lin-buttons").attr('class','hide');
@@ -28,8 +33,10 @@ $(document).on('click','#log_out', function() {
                   $("#log_out").text("Login");
                   $("#log_out").attr('id', 'log_in');
                     $(".data").attr('class', 'hide');
+                    $("#page").attr('class', 'hide');
                     $("#no-access").attr('class','show');
     }
+
              var days = 1;
           function login() {
                       $('#lin').dialog('open').dialog('set Title', 'Login');

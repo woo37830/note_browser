@@ -45,7 +45,7 @@
  <?php
  require 'login.php';
  echo "$scripts";
- $page = "<div id='page'>";
+ $page = "<div id='page' class='show'>";
 
  $tab1 =   "<div id='Years' class='tabcontent'>";
  $data1 = "<div class='data'>";
@@ -84,8 +84,8 @@ if( !empty($_REQUEST['diary']) ) {
       fwrite($file, "\n" . $lines[$i] );
   }
   $datestr = date('Ymd h:m:s');
-  fwrite($file, "\n---$datestr");
-  fwrite($file, "\n" . $_REQUEST['diary']);
+  fwrite($file, "\n---$datestr\n");
+  fwrite($file, $_REQUEST['diary']);
   fclose($file);
 }
 $raw = file_get_contents($source);
@@ -226,6 +226,7 @@ function match( $file, $pattern ) {
 ?>
 <script type="text/javascript">
 
+
 document.getElementById("defaultOpen").click();
 
 function openCity(evt, cityName) {
@@ -243,6 +244,7 @@ function openCity(evt, cityName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
+
   if( readCookie("logged_in") ) {
                   $("#log_in").text("Logout: "+readCookie('userid'));
                   $("#log_in").attr('id', 'log_out');
@@ -255,6 +257,8 @@ function openCity(evt, cityName) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+
+
 } else {
             $("#log_out").text("Login");
             $("#log_out").attr('id', 'log_in');
