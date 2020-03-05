@@ -20,6 +20,7 @@
       <button class="tablinks" onclick="openCity(event, 'Latest')">Latest</button>
     <?php } ?>
     <button class="tablinks" onclick="openCity(event, 'To Do')">To Do</button>
+    <button class="tablinks" onclick="openCity(event, 'Billing')">Billing</button>
     <?php
     if( !empty( $_REQUEST['for']) ){ ?>
       <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Search')">Search</button>
@@ -201,13 +202,21 @@ $html = nl2br($raw);
 $data4 .= $html;
 $data4 .= "</div>";
 $tab4 .= $data4 . "</div>";
-// End of tab4 code
+// End of tab5 code
+// Beginning of tab5 code
+ $tab5 =   "<div id='Billing' class='tabcontent'>";
+ $data5 = "<div class='data'>";
+ $data5 .= "<center><h3>Manage Billing</h3></center>";
+ $html = nl2br("\nHello, World\n");
+ $data5 .= $html;
+ $tab5 .= $data5 . "</div>";
 // Assemble the page of tab divs
 echo "$page"; // put in the page div
 echo "$tab1";
 echo "$tab2";
 echo "$tab3";
 echo "$tab4";
+echo "$tab5";
 echo "</div>"; // end of page
 
 // php Functions
@@ -235,7 +244,6 @@ function match( $file, $pattern ) {
 }
 // end of php functions
 ?>
-// Start of javascript for tab switching and handling logged_in content hiding
 <script type="text/javascript">
 
 
@@ -281,15 +289,14 @@ function openCity(evt, cityName) {
 
 
 </script>
-// end of javascript
 
 <div id="footer" >
   <hr />
   <em><?php
   include 'git-info.php';
   ?></em>
-</div> // end of footer div
-</div> // end of content div
-</div> // end of wrapper div
+</div>
+</div>
+</div>
 </body>
 </html>
