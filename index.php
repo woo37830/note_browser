@@ -107,6 +107,7 @@ $data3 = "<div class='data'>";
 $data3 .= "<center><h2>ToDo List</h2></center><br/>";
 $source = "$NOTE_DIR".".todo";
 if( !empty($_REQUEST['delete']) ) {
+
   $raw = file_get_contents($source);
   $lines = preg_split("/\n/",$raw);
   $num = count($lines);
@@ -200,6 +201,7 @@ echo "$tab2";
 echo "$tab3";
 echo "$tab4";
 echo "</div>"; // end of page
+
 function match( $file, $pattern ) {
   // get the file contents, assuming the file to be readable (and exist)
   $matches = array();
