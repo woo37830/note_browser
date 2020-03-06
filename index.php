@@ -50,11 +50,11 @@
 
 echo "<div id='page' class='show'>"; // put in the page div
 //echo "$tab1";
-require 'tab1.php';
-require 'tab2.php';
-require 'tab3.php';
-require 'tab4.php';
-require 'tab5.php';
+require 'tab_journal.php';
+require 'tab_recent.php';
+require 'tab_todo.php';
+require 'tab_search.php';
+require 'tab_billing.php';
 
 echo "</div>"; // end of page
 
