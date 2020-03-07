@@ -15,7 +15,7 @@ if( !empty($_REQUEST['diary']) ) {
   for( $i = 0; $i <= $num; $i++ ) {
       fwrite($file, "\n" . $lines[$i] );
   }
-  $datestr = date('Ymd h:m:s');
+  $datestr = date('Ymd H:i:s');
   fwrite($file, "\n---$datestr\n");
   fwrite($file, $_REQUEST['diary']);
   fclose($file);

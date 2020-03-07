@@ -1,7 +1,7 @@
 <?php
 // Beginning of tab5 code
  $source = "$NOTE_DIR"."time_track.txt";
- $datestr = date('m/d/Y h:m');
+ $datestr = date('m/d/Y H:i');
  $tab5 =   "<div id='Billing' class='tabcontent'>";
  $data5 = "<div class='data'>";
  if (isset($_REQUEST["btnOn"])){
@@ -17,7 +17,7 @@
     }
   }
 } else if (isset($_REQUEST["btnOff"])){
-  $data5 .= turn_off($source, $datestr);
+  turn_off($source, $datestr);
 }
  $parsed = parse_last_line($source);
  $start = $parsed[0];
@@ -32,11 +32,9 @@
  } else {
    $billing .= $client . " for  '" . $task . "' since " . $start ;
  }
- // Get totals for today
- $today = get_todays_billed($lines);
 
  $raw = $billing;
- $raw .= "\n" . $today;
+ $raw .= "\n" . get_todays_billed($lines);
  $raw .= "\n" . get_recent_items($lines, $num);
 
  $raw .= "\n\n<form method='post' action='./index.php' ><input type='text' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
@@ -56,11 +54,31 @@
    }
    return $raw;
  }
- function turn_on($source, $data, $date_str) {
-    return "Turned on with $data at $date_str";
+ function turn_on($source, $data, $datestr) {
+   turn_off($source, $datestr);
+   $file = fopen($source, 'a');
+   $newline = "\n(" . $datestr . " - ) " . $data;
+   fwrite($file, $newline);
+   fclose($file);
  }
- function turn_off($source, $date_str) {
-    return "Turned off at: $date_str";
+ function turn_off($source, $datestr) {
+   $parsed = parse_last_line($source);
+   if( empty($parsed[1]) ) {
+     $lines = $parsed[5];
+     $num = $parsed[4];
+     //echo "<br />num: $num";
+     $newline = "(" . $parsed[0] . " - " . $datestr . ") " . $parsed[2] . " @" . $parsed[3];
+     $file = fopen($source, 'w');
+     $k = 0;
+     for( $i = 0; $i < $num-1; $i++ ) {
+       $k++;
+       fwrite($file, $lines[$i] . "\n");
+     }
+     //echo "<br />wrote: $k lines";
+     fwrite($file, $newline);
+     //echo "<br />wrote: $newline";
+     fclose($file);
+   }
  }
  function get_yearMonDayHourMin( $time_str ) {
    //echo "<br />time_str: $time_str";
@@ -105,7 +123,8 @@
       $mon = date('m');
       $day = date('d');
       //echo "<br/>year: $year, mon: $mon, day: $day";
-      $ret = "<br/><table><tr><th>Client</th><th>Billed</th></tr>";
+      $ret = "<h3>Today</h3>";
+      $ret .= "<br/><table><tr><th>Client</th><th>Billed</th></tr>";
       $billing = array();
       for( $i = $num-1; $i >= $num-3; $i-- ) {
         $dates = get_dates( $lines[$i] ); // return Y, m, d in array followed by start, end
@@ -125,9 +144,10 @@
       foreach( $billing as $aclient=>$value ) {
         if( $value < 3 ) {
           $value = "Not Much";
+        } else {
+          $total += $value;
         }
-        $total += $value;
-        $ret .= "<tr><td>" . $aclient . "</th><td>" . $value . " minutes</td></tr>";
+        $ret .= "<tr><td>" . $aclient . "</th><td>" . $value . "</td></tr>";
       }
       $ret .= "<tr><td>Total</td><td>$total</td></tr></table>";
       return $ret;
