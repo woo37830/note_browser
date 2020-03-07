@@ -7,7 +7,7 @@
  if (isset($_REQUEST["btnOn"])){
   if( empty($_REQUEST['on']) )
   {
-    $data5 .= "<h3>You must provide a task followed by @client-name</h3>";
+    $data5 .= "<h3>You must provide a task description followed by @client-name</h3>";
   } else {
     if( !strpos($_REQUEST['on'], '@') )
     {
@@ -25,20 +25,21 @@
  $task = $parsed[2];
  $client = $parsed[3];
  $num = $parsed[4];
- $total = $parsed[6];
- $last_line = "<h3>Billing</h3>";
+ $lines = $parsed[5];
+ $billing = "<h3>Billing</h3>";
  if( $end ) {
-   $last_line .= "No one.";
+   $billing .= "No one.";
  } else {
-   $last_line .= $client . " for  '" . $task . "' since " . $start ;
+   $billing .= $client . " for  '" . $task . "' since " . $start ;
  }
- if( $total ) {
-   $last_line .= "<br />$total";
- }
- $html = nl2br($last_line);
- $data5 .= $html;
- $raw = $parsed[5];
- $raw .= "<br /><hr /><br /><form method='post' action='./index.php' ><input type='text' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
+ // Get totals for today
+ $today = get_todays_billed($lines);
+
+ $raw = $billing;
+ $raw .= "\n" . $today;
+ $raw .= "\n" . get_recent_items($lines, $num);
+
+ $raw .= "\n\n<form method='post' action='./index.php' ><input type='text' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
 
  $html = nl2br($raw);
  $data5 .= $html;
@@ -46,6 +47,15 @@
  $tab5 .= $data5 . "</div>";
  // End of tab2 code
  echo $tab5;
+ function get_recent_items($lines, $num) {
+   //die("<br />$total<br />All Done");
+   $begin = $num -10;
+   $raw = "<h3>Recent Actions</h3><br />";
+   for( $i = $begin; $i <= $num; $i++ ) {
+       $raw .= $lines[$i] . "\n";
+   }
+   return $raw;
+ }
  function turn_on($source, $data, $date_str) {
     return "Turned on with $data at $date_str";
  }
@@ -134,14 +144,7 @@
    $end = $dates[1];
    $task = $dates[4];
    $client = $dates[5];
-   // Get totals for today
-   $total = get_todays_billed($lines);
-   //die("<br />$total<br />All Done");
-   $begin = $num -10;
-   $raw = "<h3>Recent Actions</h3><br />";
-   for( $i = $begin; $i <= $num; $i++ ) {
-       $raw .= $lines[$i] . "\n";
-   }
-   return array($start, $end, $task, $client, $num, $raw, $total);
+
+   return array($start, $end, $task, $client, $num, $lines);
  }
  ?>
