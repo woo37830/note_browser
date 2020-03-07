@@ -30,3 +30,8 @@ This might be revisited by explicitely adjusting for the years known
 to be missing.
 
 2020-02-09 10:17:00
+
+2020-03-07 17:05:00
+
+Added a section to view Billing customers and also turn it on and off.
+Still need to write the report from here.
