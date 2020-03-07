@@ -33,13 +33,12 @@
    $last_line .= $client . " for  '" . $task . "' since " . $start ;
  }
  if( $total ) {
-   $last_line .= "<br />Total Billed: $total";
+   $last_line .= "<br />$total";
  }
- $last_line .=
  $html = nl2br($last_line);
  $data5 .= $html;
  $raw = $parsed[5];
- $raw .= "<br /><hr /><br /><form action='./index.php' ><input type='text' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
+ $raw .= "<br /><hr /><br /><form method='post' action='./index.php' ><input type='text' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
 
  $html = nl2br($raw);
  $data5 .= $html;
@@ -118,7 +117,7 @@
           $value = "Not Much";
         }
         $total += $value;
-        $ret .= "<tr><td>" . $aclient . "</th><td>" . $value . "</td></tr>";
+        $ret .= "<tr><td>" . $aclient . "</th><td>" . $value . " minutes</td></tr>";
       }
       $ret .= "<tr><td>Total</td><td>$total</td></tr></table>";
       return $ret;
@@ -137,7 +136,7 @@
    $client = $dates[5];
    // Get totals for today
    $total = get_todays_billed($lines);
-   die("<br />$total<br />All Done");
+   //die("<br />$total<br />All Done");
    $begin = $num -10;
    $raw = "<h3>Recent Actions</h3><br />";
    for( $i = $begin; $i <= $num; $i++ ) {

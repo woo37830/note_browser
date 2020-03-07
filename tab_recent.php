@@ -28,7 +28,7 @@ $raw = "";
 for( $i = $start; $i <= $num; $i++ ) {
     $raw .= $lines[$i] . "\n";
 }
-$raw .= "<br /><hr /><br /><form action='./index.php' ><input type='textarea' name='diary' value='' cols='50' rows='10' /><input type='submit' value='Add' /><input type='submit' value='Cancel' /></form>";
+$raw .= "<br /><hr /><br /><form method='post' action='./index.php' ><input type='textarea' name='diary' value='' cols='50' rows='10' /><input type='submit' value='Add' /><input type='submit' value='Cancel' /></form>";
 
 $html = nl2br($raw);
 $data2 .= $html;

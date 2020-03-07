@@ -5,7 +5,7 @@ $tab4 = "<div id='Search' class='tabcontent'>";
 $data4 = "<div class='data'>";
 $data4 .= "<center><h2>Search</h2></center><br/>";
 if( empty( $_REQUEST['for'] ) ){
-$raw = "<form action='./index.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
+$raw = "<form action='./index.php' method='post'><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
 } else {
   $raw = "Search for " . $_REQUEST['for'];
   $raw .= "<br />";
@@ -42,7 +42,7 @@ if( file_exists($search_file)) {
   unlink($search_file);
 }
 
-  $raw .= "<form action='./index.php' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
+  $raw .= "<form action='./index.php' method='post' ><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
 }
 $html = nl2br($raw);
 $data4 .= $html;
