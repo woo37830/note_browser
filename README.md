@@ -5,7 +5,7 @@ different date formats even within them, and overlapped, some entries being
 in .diary, while for the same year others were in Notes_YYYY.txt for that
 year.
 
-A set of perl scripts were written to parse the Notes_YYYY.txt files and 
+A set of perl scripts were written to parse the Notes_YYYY.txt files and
 output with a standard date/time format to a temporary file.  Another
 perl script was written to parse the .diary file and append to the
 temporary file.  Each dated entry had all of the lines following the date
@@ -35,3 +35,10 @@ to be missing.
 
 Added a section to view Billing customers and also turn it on and off.
 Still need to write the report from here.
+
+2020-03-09 11:21:00
+
+Added Are you sure to todo delete.  TODO - Do I need to add a deleted todo to the recent diary?
+
+Still need to add producing report of billing and format the times as hours and minutes for display
+Watch the issue with the "not much" when formatting.
