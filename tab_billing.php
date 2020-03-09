@@ -132,7 +132,12 @@
         $start_month = $start_ymdhm[1];
         $start_day = $start_ymdhm[2];
         $start_year = $start_ymdhm[0];
-        if( $start_year == $year && $start_month == $mon && $start_day == $day ) {
+        $end_ymdhm = $dates[3];
+        $end_month = $end_ymdhm[1];
+        $end_day = $end_ymdhm[2];
+        $end_year = $end_ymdhm[0];
+        if( ($start_year == $year && $start_month == $mon && $start_day == $day)
+            || ($end_year == $year && $end_month == $mon && $end_day == $day) ) {
           $client = $dates[5];
           if( empty($billing[$client]) ) {
             $billing[$client] = 0;
@@ -147,10 +152,23 @@
         } else {
           $total += $value;
         }
-        $ret .= "<tr><td>" . $aclient . "</th><td>" . $value . "</td></tr>";
+        $ret .= "<tr><td>" . $aclient . "</th><td align='right'>" . format_time($value) . "</td></tr>";
       }
-      $ret .= "<tr><td>Total</td><td>$total</td></tr></table>";
+      $ret .= "<tr><td>Total</td><td align='right'>" . format_time($total) . "</td></tr></table>";
       return $ret;
+ }
+ function format_time($amount) {
+   $min_hr = 60;
+   $min_day = 24 * 60;
+   $days = "  ";
+   if( $amount > $min_day ) {
+      $days = ($amount - $amount % $min_day) / $min_day;
+      $amount = $amount % ($days * $min_day);
+      $days = $days . ":";
+   }
+   $mins = $amount % $min_hr;
+   $hrs = round(($amount - $mins)/$min_hr);
+   return $days . $hrs . ":" . $mins;
  }
  function parse_last_line($source) {
    $raw = file_get_contents($source);
