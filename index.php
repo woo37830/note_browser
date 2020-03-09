@@ -126,7 +126,12 @@ function openTab(evt, cityName) {
 }
 }
 
+const state = { 'page_id': 1, 'add': '', 'delete': '', 'diary': ''}
+const title = 'Browse'
+const url = 'index.php'
 
+history.pushState(state, title, url)
+//alert('Hello, World!')
 </script>
 
 <div id="footer" >

@@ -37,10 +37,10 @@ $start = 0;
 $raw = "";
 for( $i = $start; $i <= $num; $i++ ) {
     if( !empty($lines[$i]) ) {
-      $raw .= "<a href='index.php?delete=".$i."' >$i ) </a>" . $lines[$i] . "\n";
+      $raw .= "<a href='index.php?delete=".$i."' onclick=\"return confirm('Are you sure you want to delete this item?')\">$i ) </a>" . $lines[$i] . "\n";
     }
 }
-$raw .= "<br /><hr /><br /><form method='post' action='./index.php' ><input type='textarea' name='add' value='' cols='50' rows='10' /><input type='submit' value='Add' /><input type='submit' value='Cancel' /></form>";
+$raw .= "<br /><hr /><br /><form method='post' action='./index.php'  ><input type='textarea' name='add' value='' cols='50' rows='10' /><input type='submit' value='Add' /><input type='submit' value='Cancel' /></form>";
 $html = nl2br($raw);
 $data3 .= $html;
 $data3 .= "</div>";
