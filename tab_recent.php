@@ -25,7 +25,7 @@ $lines = preg_split("/\n/",$raw);
 $num = count($lines);
 $start = $num -20;
 $raw = "";
-for( $i = $start; $i <= $num; $i++ ) {
+for( $i = $start; $i < $num; $i++ ) {
     $raw .= $lines[$i] . "\n";
 }
 $raw .= "<br /><hr /><br /><form method='post' action='./index.php' ><input type='textarea' name='diary' value='' cols='50' rows='10' /><input type='submit' value='Add' /><input type='submit' value='Cancel' /></form>";

@@ -49,7 +49,7 @@
    //die("<br />$total<br />All Done");
    $begin = $num -10;
    $raw = "<h3>Recent Actions</h3><br />";
-   for( $i = $begin; $i <= $num; $i++ ) {
+   for( $i = $begin; $i < $num; $i++ ) {
        $raw .= $lines[$i] . "\n";
    }
    return $raw;
