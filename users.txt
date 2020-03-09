@@ -1,5 +1,5 @@
-{ "users" : [ 
-    { "user":"woo" , "passwd":"random1" },
-    { "user":"dianne" , "passwd":"dewdew" }
+{ "users" : [
+    { "user":"woo" , "passwd":"enaqbz1" },
+    { "user":"dianne" , "passwd":"qrjqrj" }
     ]
 }
