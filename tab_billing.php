@@ -5,18 +5,8 @@
  $tab5 =   "<div id='Billing' class='tabcontent'>";
  $data5 = "<div class='data'>";
  if (isset($_REQUEST["btnOn"])){
-  if( empty($_REQUEST['on']) )
-  {
-    $data5 .= "<h3>You must provide a task description followed by @client-name</h3>";
-  } else {
-    if( !strpos($_REQUEST['on'], '@') )
-    {
-      $data5 .= "<h3>You must provide a client after the task as @client-name</h3>";
-    } else {
       $data5 .= turn_on($source, $_REQUEST['on'], $datestr);
-    }
-  }
-} else if (isset($_REQUEST["btnOff"])){
+  } else if (isset($_REQUEST["btnOff"])){
   turn_off($source, $datestr);
 }
  $parsed = parse_last_line($source);
@@ -37,7 +27,7 @@
  $raw .= "\n" . get_todays_billed($lines);
  $raw .= "\n" . get_recent_items($lines, $num);
 
- $raw .= "\n\n<form method='post' action='./index.php' ><input type='text' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
+ $raw .= "\n\n<form method='post' action='./index.php' ><input type='text' id='onField' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
 
  $html = nl2br($raw);
  $data5 .= $html;
@@ -126,7 +116,7 @@
       $ret = "<h3>Today</h3>";
       $ret .= "<br/><table><tr><th>Client</th><th>Billed</th></tr>";
       $billing = array();
-      for( $i = $num-1; $i >= $num-3; $i-- ) {
+      for( $i = $num-1; $i >= 0; $i-- ) {
         $dates = get_dates( $lines[$i] ); // return Y, m, d in array followed by start, end
         $start_ymdhm = $dates[2];
         $start_month = $start_ymdhm[1];
@@ -144,14 +134,13 @@
           }
           $billing[$client] += get_billed($dates[0], $dates[1]);
           }
+          else {
+            break;
+          }
       }
       $total = 0;
       foreach( $billing as $aclient=>$value ) {
-        if( $value < 3 ) {
-          $value = "Not Much";
-        } else {
-          $total += $value;
-        }
+        $total += $value;
         $ret .= "<tr><td>" . $aclient . "</th><td align='right'>" . format_time($value) . "</td></tr>";
       }
       $ret .= "<tr><td>Total</td><td align='right'>" . format_time($total) . "</td></tr></table>";
@@ -186,3 +175,29 @@
    return array($start, $end, $task, $client, $num, $lines);
  }
  ?>
+ <script type='text/javascript'>
+ $("#btnOn").closest('form').on('submit', function(event) {
+   event.preventDefault();
+   $msg = "";
+   if( !$("#btnOff") ) {
+   if( $("#onField").val() == '' )
+   {
+     $msg = "You must provide a task description followed by @client-name";
+   } else {
+     var emailReg = /^.*@[a-z].$/;
+     var emil = $("#onField").val();
+     if( !emailReg.test( emil ) )
+     {
+       $msg = "You must provide a client after the task as @client-name";
+     }
+   }
+   if( $msg ) {
+     alert($msg);
+   } else {
+     this.submit();
+   }
+ } else {
+   this.submit();
+ }
+});
+  </script>
