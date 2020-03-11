@@ -12,21 +12,11 @@
 <body>
   <!-- Tab links -->
   <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Years')">Years</button>
-    <?php
-    if( empty( $_REQUEST['for']) ) { ?>
-      <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Latest')">Latest</button>
-    <?php } else { ?>
-      <button class="tablinks" onclick="openTab(event, 'Latest')">Latest</button>
-    <?php } ?>
-    <button class="tablinks" onclick="openTab(event, 'To Do')">To Do</button>
-    <button class="tablinks" onclick="openTab(event, 'Billing')">Billing</button>
-    <?php
-    if( !empty( $_REQUEST['for']) ){ ?>
-      <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Search')">Search</button>
-    <?php } else { ?>
-      <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
-    <?php } ?>
+    <button class="tablinks" id='Years' onclick="openTab(event, 'Years')">Years</button>
+    <button class="tablinks" id='Latest' onclick="openTab(event, 'Latest')">Latest</buton>
+    <button class="tablinks" id='To Do' onclick="openTab(event, 'To Do')">To Do</button>
+    <button class="tablinks" id='Billing' onclick="openTab(event, 'Billing')">Billing</button>
+    <button class="tablinks" id='Search' onclick="openTab(event, 'Search')">Search</button>
   </div>
 
 
@@ -85,17 +75,24 @@ function match( $file, $pattern ) {
 ?>
 <script type="text/javascript">
 
-
-document.getElementById("defaultOpen").click();
+if( readCookie("tab") ) {
+  document.getElementById( readCookie("tab")).click();
+} else {
+  document.getElementById('Latest').click();
+}
 
 function openTab(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
-
+  //alert('Clicked Tab ' + cityName);
   // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
+    if( tabcontent[i].id == cityName ) {
+      tabcontent[i].style.display = "block";
+      createCookie('tab', cityName);
+    }
   }
 
   // Get all elements with class="tablinks" and remove the class "active"
@@ -114,9 +111,8 @@ function openTab(evt, cityName) {
 
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
+  //document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
-
 
 } else {
             $("#log_out").text("Login");
