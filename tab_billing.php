@@ -5,7 +5,9 @@
  $tab5 =   "<div id='Billing' class='tabcontent'>";
  $data5 = "<div class='data'>";
  if (isset($_REQUEST["btnOn"])){
-      $data5 .= turn_on($source, $_REQUEST['on'], $datestr);
+   if( $_REQUEST['task'] != '' && $_REQUEST['client'] != '' ) {
+      $data5 .= turn_on($source, $_REQUEST['task'], $_REQUEST['client'], $datestr);
+    }
   } else if (isset($_REQUEST["btnOff"])){
   turn_off($source, $datestr);
 }
@@ -26,9 +28,17 @@
  $raw = $billing;
  $raw .= "\n" . get_todays_billed($lines);
  $raw .= "\n" . get_recent_items($lines, $num);
-
- $raw .= "\n\n<form method='post' action='./index.php' ><input type='text' id='onField' name='on' value='' width='30' /><input type='submit' id='btnOn' name='btnOn' value='On'/><input type='submit' id='btnOff' name='btnOff' value='Off'/><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></form>";
-
+ $form =<<<EOS
+ <form method='post' action='./index.php' >
+ <table><tr><th>Task</th><th>Client</th><th></th><th></th><th></th><th></th></tr>
+ <tr><td><input type='text' id='taskField' name='task' value='' width='50' /></td>
+ <td><input type='text' id='clientField' name='client' value='' width='30' /></td>
+ <td><input type='submit' id='btnOn' name='btnOn' value='On'/></td>
+ <td><input type='submit' id='btnOff' name='btnOff' value='Off'/></td>
+ <td><input type='submit' id='btnCancel' name='btnCancel' value='Cancel'/></td></tr>
+ </table></form>
+ EOS;
+ $raw .= $form;
  $html = nl2br($raw);
  $data5 .= $html;
  $data5 .= "</div>"; // end data
@@ -44,10 +54,10 @@
    }
    return $raw;
  }
- function turn_on($source, $data, $datestr) {
+ function turn_on($source, $task, $client, $datestr) {
    turn_off($source, $datestr);
    $file = fopen($source, 'a');
-   $newline = "\n(" . $datestr . " - ) " . $data;
+   $newline = "\n(" . $datestr . " - ) " . $task . ' @' . $client;
    fwrite($file, $newline);
    fclose($file);
  }
@@ -176,28 +186,20 @@
  }
  ?>
  <script type='text/javascript'>
- $("#btnOn").closest('form').on('submit', function(event) {
-   event.preventDefault();
-   $msg = "";
-   if( !$("#btnOff") ) {
-   if( $("#onField").val() == '' )
-   {
-     $msg = "You must provide a task description followed by @client-name";
-   } else {
-     var emailReg = /^.*@[a-z].$/;
-     var emil = $("#onField").val();
-     if( !emailReg.test( emil ) )
-     {
-       $msg = "You must provide a client after the task as @client-name";
-     }
-   }
-   if( $msg ) {
-     alert($msg);
-   } else {
-     this.submit();
-   }
- } else {
-   this.submit();
- }
+ $('input:text').bind('focus blur', function() {
+   this.setAttribute('style', 'background-color: white');
+});
+ $('form').submit(function(event)  {
+       var allIsOk = true;
+       if( !$("#btnOff") && !$("#btnCancel") ) {
+       // Check if empty of not
+       $(this).find( 'input[type!="hidden"]' ).each(function () {
+           if ( ! $(this).val() ) {
+             this.setAttribute('style', 'background-color: red !important');
+               allIsOk = false;
+           }
+       });
+    }
+       return allIsOk
 });
   </script>
