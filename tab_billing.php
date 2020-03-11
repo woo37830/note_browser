@@ -29,7 +29,7 @@
  $raw .= "\n" . get_todays_billed($lines);
  $raw .= "\n" . get_recent_items($lines, $num);
  $form =<<<EOS
- <form method='post' action='./index.php' >
+ <form method='post' action='./index.php' id='myform' >
  <table><tr><th>Task</th><th>Client</th><th></th><th></th><th></th><th></th></tr>
  <tr><td><input type='text' id='taskField' name='task' value='' width='50' /></td>
  <td><input type='text' id='clientField' name='client' value='' width='30' /></td>
@@ -186,20 +186,31 @@
  }
  ?>
  <script type='text/javascript'>
+ $(document).ready(function() {
+  var target = null;
+
+
  $('input:text').bind('focus blur', function() {
    this.setAttribute('style', 'background-color: white');
 });
+$("#myform input[type=submit]").click(function () {
+    $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
+    $(this).attr("clicked", "true");
+});
  $('form').submit(function(event)  {
        var allIsOk = true;
-       if( !$("#btnOff") && !$("#btnCancel") ) {
-       // Check if empty of not
+       var clickedSubmitValue = $("input[type=submit][clicked=true]").val();
+
+       if (clickedSubmitValue == "On") {
+                // Check if empty of not
        $(this).find( 'input[type!="hidden"]' ).each(function () {
            if ( ! $(this).val() ) {
-             this.setAttribute('style', 'background-color: red !important');
+               this.setAttribute('style', 'background-color: red !important');
                allIsOk = false;
            }
        });
     }
        return allIsOk
+});
 });
   </script>
