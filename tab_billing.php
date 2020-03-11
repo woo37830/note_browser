@@ -57,7 +57,10 @@
  function turn_on($source, $task, $client, $datestr) {
    turn_off($source, $datestr);
    $file = fopen($source, 'a');
-   $newline = "\n(" . $datestr . " - ) " . $task . ' @' . $client;
+   $task = trim($task);
+   $client = str_replace(' ', '', $client);
+   $client = str_replace('@','', $client);
+   $newline = "\n(" . $datestr . " - ) " . $task . '@' . $client;
    fwrite($file, $newline);
    fclose($file);
  }
@@ -154,9 +157,15 @@
         $ret .= "<tr><td>" . $aclient . "</th><td align='right'>" . format_time($value) . "</td></tr>";
       }
       $ret .= "<tr><td>Total</td><td align='right'>" . format_time($total) . "</td></tr></table>";
+      if( $total == 0 ) {
+        return "<br />";
+      }
       return $ret;
  }
  function format_time($amount) {
+   if( $amount < 3 ) {
+     return "Not Much";
+   }
    $min_hr = 60;
    $min_day = 24 * 60;
    $days = "  ";
