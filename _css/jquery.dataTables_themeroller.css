@@ -46,17 +46,17 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  */
 .dataTables_wrapper {
 	position: relative;
-	//border: 5px solid red;
+	/*border: 5px solid red; */
 	clear: both;
 	*zoom: 1;
 }
 .dataTables_wrapper .ui-widget-header {
 	font-weight: normal;
-	//border: 5px solid red;
+	/*border: 5px solid red; */
 }
 .dataTables_wrapper .ui-toolbar {
 	padding: 5px;
-	//border: 5px solid red;
+	/*border: 5px solid red; */
 }
 
 
