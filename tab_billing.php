@@ -19,7 +19,7 @@
  $num = $parsed[4];
  $lines = $parsed[5];
  $billing = "<h3>Billing</h3>";
- if( $end ) {
+ if( trim($end) == '' ) {
    $billing .= "No one.";
  } else {
    $billing .= $client . " for  '" . $task . "' since " . $start ;
