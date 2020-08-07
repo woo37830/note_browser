@@ -11,6 +11,7 @@
  <script type="text/javascript">
 
 function start() {
+
   var tabDiv = document.getElementsByClassName('tab');
 
 
@@ -26,14 +27,16 @@ function start() {
       }*/
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
-      if( tabcontent[i].id == evt.target.innerHTML ) {
+      var tab = document.getElementById(tabcontent[i].id);
+      tab.style.backgroundColor = "#f1f1f1";
+     if( tabcontent[i].id == evt.target.innerHTML ) {
+        tab.style.backgroundColor = "white";
         tabcontent[i].style.display = "block";
-        tabcontent[i].className += " active";
+        tabcontent[i].className += " active"; // Controls showing contents
         createCookie('tab', tabcontent[i].id);
       }
   }
  }
-
 
   function addTab(text) {
  //       alert('Add event listener for '+text);
