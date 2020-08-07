@@ -19,7 +19,7 @@ function start() {
     // Declare all variables
     var i, tabcontent;
     //alert('Clicked Tab ' + evt.target.innerHTML);
-    // Get all elements with class="tabcontent" and hide them
+    // Get all elements with class="tabcontent" and hide the contents
 
      tabcontent = document.getElementsByClassName("tabcontent");
   /*   for (i = 0; i < tabcontent.length; i++) {
@@ -55,7 +55,7 @@ addTab('To Do');
 addTab('Billing');
 addTab('Search');
 // Get all elements with class="tablinks" and remove the class "active"
-tablinks = document.getElementsByClassName("tablinks");
+tablinks = document.getElementsByClassName("tabcontents");
 for (i = 0; i < tablinks.length; i++) {
   tablinks[i].className = tablinks[i].className.replace(" active", "");
 }
