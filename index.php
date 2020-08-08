@@ -35,7 +35,7 @@ function start() {
         tabcontent[i].className += " active"; // Controls showing contents
         createCookie('tab', tabcontent[i].id);
       }
-  }
+    }
  }
 
   function addTab(text) {
@@ -57,7 +57,7 @@ addTab('Search');
 // Get all elements with class="tablinks" and remove the class "active"
 tablinks = document.getElementsByClassName("tabcontents");
 for (i = 0; i < tablinks.length; i++) {
-  tablinks[i].className = tablinks[i].className.replace(" active", "");
+  tablinks[i].className = tablinks[i].className.replace("active", "");
 }
 
 const state = { 'page_id': 1, 'add': '', 'delete': '', 'diary': ''}
@@ -90,10 +90,10 @@ if( readCookie("logged_in") && readCookie('userid') ) {
   
    //alert('Hello, World!')
   if( readCookie("tab") ) {
-  document.getElementById( readCookie("tab")).click();
-} else {
-  document.getElementById('Latest').click();
-}
+    document.getElementById( readCookie("tab")).click();
+  } else {
+    document.getElementById('Latest').click();
+  }
 }
  
 
@@ -129,8 +129,8 @@ echo "<div id='page' class='show'>"; // put in the page div
 require 'tab_journal.php';
 require 'tab_recent.php';
 require 'tab_todo.php';
-require 'tab_search.php';
 require 'tab_billing.php';
+require 'tab_search.php';
 
 
 

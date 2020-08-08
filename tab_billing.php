@@ -19,7 +19,7 @@
  $num = $parsed[4];
  $lines = $parsed[5];
  $billing = "<h3>Billing</h3>";
- if( trim($end) == '' ) {
+ if( trim($end) != "" ) {
    $billing .= "No one.";
  } else {
    $billing .= $client . " for  '" . $task . "' since " . $start ;
@@ -60,7 +60,7 @@
    $task = trim($task);
    $client = str_replace(' ', '', $client);
    $client = str_replace('@','', $client);
-   $newline = "\n(" . $datestr . " - ) " . $task . '@' . $client;
+   $newline = "\n(" . $datestr . " - ) " . $task . ' @' . $client;
    fwrite($file, $newline);
    fclose($file);
  }
@@ -69,17 +69,17 @@
    if( empty($parsed[1]) ) {
      $lines = $parsed[5];
      $num = $parsed[4];
-     //echo "<br />num: $num";
+     echo "<br />num: $num";
      $newline = "(" . $parsed[0] . " - " . $datestr . ") " . $parsed[2] . " @" . $parsed[3];
      $file = fopen($source, 'w');
      $k = 0;
      for( $i = 0; $i < $num-1; $i++ ) {
        $k++;
-       fwrite($file, $lines[$i] . "\n");
+       fwrite($file, $lines[$i]."\n");
      }
-     //echo "<br />wrote: $k lines";
-     fwrite($file, $newline);
-     //echo "<br />wrote: $newline";
+     echo "<br />wrote: $k lines";
+     fwrite($file, $newline."\n");
+     echo "<br />wrote: $newline";
      fclose($file);
    }
  }
@@ -97,15 +97,17 @@
    $time_str = $pieces[0]; // start : end
 
    $time_str = substr($time_str, 1); // strip off the leading ()
-   $times = explode(' - ', $time_str);
-   $start = $times[0];
-   $end = $times[1];
+   $times = explode('-', $time_str);
+   $start = trim($times[0]);
+   $end = trim($times[1]);
 
    $start_ymdhm = get_yearMonDayHourMin( $start );
    $end_ymdhm = get_yearMonDayHourMin( $end );
-   $task_client = explode('@', $pieces[1]); // task @ client
-   $task = $task_client[0];
-   $client = $task_client[1];
+   //echo "<br />pieces[1] = '".$pieces[1]."'<br />";
+   $pos = strpos($pieces[1],"@");
+   $task = substr($pieces[1],0,$pos);
+   $client = substr($pieces[1],$pos+1);
+   //echo "<br />pos = $pos, task = '".$task."', client = '".$client."'<br />";
    return array($start, $end, $start_ymdhm, $end_ymdhm, $task, $client );
  }
  function get_billed($start, $end) {
@@ -129,7 +131,7 @@
       $ret = "<h3>Today</h3>";
       $ret .= "<br/><table><tr><th>Client</th><th>Billed</th></tr>";
       $billing = array();
-      for( $i = $num-1; $i >= 0; $i-- ) {
+      for( $i = $num-2; $i >= 0; $i-- ) {
         $dates = get_dates( $lines[$i] ); // return Y, m, d in array followed by start, end
         $start_ymdhm = $dates[2];
         $start_month = $start_ymdhm[1];
@@ -183,14 +185,14 @@
    $lines = preg_split("/\n/",$raw);
    $num = count($lines);
    // Check if last line has no end time
-   $dates = get_dates( $lines[$num-1]);
+   echo "<br />Last Line - num: $num, last line: ".$lines[$num-2]."<br />";
+   $dates = get_dates( $lines[$num-2]);
    $start_ymdhm = $dates[2];
-   //echo "<br />get_dates: $dates[0], $dates[1], $start_ymdhm[0], $start_ymdhm[1], $start_ymdhm[2], $start_ymdhm[3] ";
+//   echo "<br />get_dates: $dates[0], $dates[1], $start_ymdhm[0], $start_ymdhm[1], $start_ymdhm[2], $start_ymdhm[3] ";
    $start = $dates[0];
    $end = $dates[1];
    $task = $dates[4];
    $client = $dates[5];
-
    return array($start, $end, $task, $client, $num, $lines);
  }
  ?>
