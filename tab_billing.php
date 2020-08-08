@@ -22,7 +22,7 @@
  if( trim($end) != "" ) {
    $billing .= "No one.";
  } else {
-   $billing .= $client . " for  '" . $task . "' since " . $start ;
+   $billing .= "<div class='blink-two'>".$client . "</div> for  '" . $task . "' since " . $start ;
  }
 
  $raw = $billing;
@@ -60,8 +60,8 @@
    $task = trim($task);
    $client = str_replace(' ', '', $client);
    $client = str_replace('@','', $client);
-   $newline = "\n(" . $datestr . " - ) " . $task . ' @' . $client;
-   fwrite($file, $newline);
+   $newline = "(" . $datestr . " - ) " . $task . ' @' . $client;
+   fwrite($file, $newline."\n");
    fclose($file);
  }
  function turn_off($source, $datestr) {
@@ -69,17 +69,17 @@
    if( empty($parsed[1]) ) {
      $lines = $parsed[5];
      $num = $parsed[4];
-     echo "<br />num: $num";
+    // echo "<br />num: $num";
      $newline = "(" . $parsed[0] . " - " . $datestr . ") " . $parsed[2] . " @" . $parsed[3];
      $file = fopen($source, 'w');
      $k = 0;
-     for( $i = 0; $i < $num-1; $i++ ) {
+     for( $i = 0; $i < $num-2; $i++ ) {
        $k++;
        fwrite($file, $lines[$i]."\n");
      }
-     echo "<br />wrote: $k lines";
+    // echo "<br />wrote: $k lines";
      fwrite($file, $newline."\n");
-     echo "<br />wrote: $newline";
+    // echo "<br />wrote: $newline";
      fclose($file);
    }
  }
@@ -185,7 +185,7 @@
    $lines = preg_split("/\n/",$raw);
    $num = count($lines);
    // Check if last line has no end time
-   echo "<br />Last Line - num: $num, last line: ".$lines[$num-2]."<br />";
+   //echo "<br />Last Line - num: $num, last line: ".$lines[$num-2]."<br />";
    $dates = get_dates( $lines[$num-2]);
    $start_ymdhm = $dates[2];
 //   echo "<br />get_dates: $dates[0], $dates[1], $start_ymdhm[0], $start_ymdhm[1], $start_ymdhm[2], $start_ymdhm[3] ";
