@@ -4,5 +4,5 @@
    $rev = exec('git rev-parse --short HEAD');
    $branch = exec('git rev-parse --abbrev-ref HEAD');
 
-   echo "<center>Last Update: $last &nbsp;&nbsp;Commit: $rev &nbsp;&nbsp;&nbsp;Branch: $branch </center>";
+   echo "<center>Current PHP Version: ".phpversion('tidy')."&nbsp;&nbsp;Last Update: $last &nbsp;&nbsp;Commit: $rev &nbsp;&nbsp;&nbsp;Branch: $branch </center>";
 ?>
