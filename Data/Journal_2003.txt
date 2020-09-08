@@ -1,0 +1,804 @@
+---20030110
+1)  Moved all codes from Wonderland to USB Drive
+2)  Cleaned up build.xml and run.bat for
+a) Development/Producer
+b) Development/ClassMetrics
+3)  TODO** reset the bat files for jakarta and test
+deployment of the Producer.
+4) Add RESULT_OBJ to QueueEntry
+5) add printout of resultObj in toString of QueueEntry
+6) Make the database the Access one for testing
+7) Change RESULT_OBJ to 255 for testing.
+8) Appears to enqueue and requeue with the addition of the new response.
+**TODO** not queueing to next user correctly.
+a)  Need to retain present state.
+b)  Need to get next user from next State
+c)  Need to provide a split function where queueEntry
+splits, marking original completed, new children as active.
+requeue works as normal UNTIL it hits a join.  It then
+looks at the join policy to see whether to advance or not.
+Design work here would be useful.
+Can I put the data on a file and refer to it?  Would be better
+perhaps.  Add functions to clean up entries and remove data if
+all job steps are completed and we are deleting.
+
+---20030120
+1)  d:\Development\Projects\Producer now runs as before using Tomcat.
+Login in "http://localhost:8080/producer_v5/login.htm"
+user: woo
+password: doofus
+2)  ***TODO***
+a)  Need to indicate which jsp's and classNames don't exist when
+viewing them in the Product_Maint
+e.g. in Looking at a process there are activities.
+one of the activities is Create_Activity
+It shows using a jsp of create_activity.jsp (it didn't exist).
+b)  Need to run a list of TODO from product maint at any level that
+shows what is referred to but not implemented or completed.
+c)  Finish the create process, create Activity, ... so I can
+add a new process, activity, outcome, etc.
+d)  Where do I stand on the data-containers.  Can I view them, edit them
+etc?
+e)  Show name of product on each screen.  i.e. if working in Test
+then Product: Test should showup on the screen
+f)  remove_user.jsp doesn't compile.
+
+---20030131
+1)  Added using hyper links to go to interesting pages rather than so many
+buttons.  Only on view_process page so far.
+2)  Added visible attribute to actions.  If not visible, don't show up
+on pages.
+3) *** TODO ***
+a) Clean up some pages to look like view process
+b) add additional links to jsp's, containers, etc.
+c) Be sure visible gets saved in BPWriter.
+
+---20030205
+1)  Added new Edit to allow looking at all processes, activities, etc.
+2)  Changed old Product Maint to Wizard which works as before.
+3)  list_of_products.jsp doesn't work yet. ** TODO **
+4)  Checked in the version.
+5)  Create v6 with new UserBroker that reads and writes from a file. ** TODO **
+6)  Make some of the pages use container to view attributes
+a)  Can I have a generic container that if one isn't supplied, but
+an object is, it creates and uses reflection to fill?
+7)  NEED to get ability to create product, create process, add activity, set
+container for activity, etc.  ** TODO **
+8)  Run tests of SC_Framework!!! ** TODO **
+
+---20030220
+1)  SC_Producer fails with null pointer getting instance when logging in.
+2)  How to build SC_Framework so it goes into repository? ** Done maven jar:install ***
+3)  How to build SC_Producer so it uses that. ** Done use the jar in the product.xml **
+4)  How to get ssh to work
+5)  Producer not working now with maven creation.
+6)  Spend weekend looking at gui for viewing workflow. ( depends on 5? ).
+7)  Get tags for tables, etc. and see how to adapt.
+
+---20030221
+1)  Working on:
+a)  Producer - moved into maven.  Testing
+b)  SC_Framework - moved into maven. Testing
+c)  SC_Producer - moved into maven.  Testing
+d)  WorkFlowEditor - moved into maven.  Changing to use Producer xml files
+2)  Plan
+a)  Spend 1 hour on Producer, tracking down why Containers aren't being
+filled from the route or the input data.
+b)  Write lots of tests for Containers, and other pieces so that I'm sure
+they work like they should.  Why don't tests run correctly?  Is it
+class path again?  Why doesn't maven handle this?
+c)  Write a Scheduler class that runs as an application and wakes up every
+15 minutes to handle Queues.
+d)  Should JobStepId be the name of a class that gets instantiated and has
+an interface QueueAction that has a method evaluate taking a QueueEntry?  At least allow by having an attribute on QueueEntry
+for JobStepIdIsExecutable?
+e)  Write test for Scheduler so that we put something in WAIT status, that 
+gets serviced and changed by Scheduler.  Also escalate?
+f)  Write a simple server that takes Tasks and queues them to users
+or roles.  Can I use this as something from maven?  
+g)  How to get my "maven" server and "tracking" server running?  Ask
+Brandon?  I love the Werks problem tracker, etc.
+
+---20030309
+1) Lost Jira database, had to reinstall.  Apparently Pcpi crashed and took down the database.  *** Get new key from Jira and then export after installing data again ***.
+2) Redid versions of sc_core (3.2), sc_expeditor (3.1), sc_regulator(3.1),
+sc_queueing(3.1), sc_workflow(3.1), workflowEditor(3.1),
+and sc_wfserver.  *** TODO actions and activities are not changing
+name!!!. screens don't redraw correctly. ***.
+
+---20030401
+1) Queue is now able to save formData and restore it using QueueData class.
+2) Data is passed from activity to activity by being mapped in the Action
+from one container to the next.  If there is no overlap of names
+then a mapping needs to be defined. *** TODO ***
+This should provide the oldname->newName mapping.
+Store in datacontainer file as mappings.
+read them in and store them.  Refer to them by name from actions.
+3) Create Container editor that allows browsing containers, and creating new ones plus mappings.  *** TODO ***
+4) Create the  bar chart view of the queue and use for customs.
+look in the hologix files (mba) for the plotter. *** TODO ***
+5) Think about persistence.  I.e. how to map containers to sql
+and how to read them in.
+
+---20030518
+1) sc_core-3.5.jar
+2) sc_expeditor-3.3.jar : sc_core-3.5.jar
+3) sc_regulator-3.3.jar : sc_core-3.5.jar
+4) sc_messaging-3.2.jar : sc_core-3.5.jar, sc_regulator-3.3.jar
+5) sc_queueing-3.4.jar : sc_core-3.5.jar, sc_messaging-3.2.jar
+6) sc_workflow-3.4.jar : sc_core-3.5.jar, sc_queueing-3.4.jar
+7) sc_wfserver-1.3.war : sc_core-3.5.jar, sc_queueing-3.4.jar,
+sc_workflow-3.4.jar, sc_expeditor-3.3.jar
+
+---20030520
+1) Massive revision to remove Hashtable args and replace with
+IRequest, ISession, and singleton IApplicationContext.
+2) All of Swing works except start new process doesn't find initial activity.  Check again for hash.
+
+---20030618
+1)  D:\jakarta\JBoss-2.4.1_Tomcat-3.2.3\tomcat\bin
+2)  dbl click on startup
+3)  Be sure the usb drive is mapped to E:
+4)  Seems to work.  Doesn't have new navigation
+5)  Need to recompile pcpi and move classfiles to new web location
+6)  Need to set it to run from D drive
+
+---20030628
+1)  Dependents needs "Done" leading to EndState.
+2)  Employee List frame needs to be slightly shorter so Filter will
+be exposed.
+3)  SalaryHistory doesn't work.
+4)  Why doesn't Deduction code show up in All Deductions or Deposits?  It shows up in goals.  Possibly a route in the xml?
+5)  Not adding state taxes.
+6)  Local not adding
+DIAGNOSTIC---Thread[Thread-9,5,main]---SuperUser---&PI--- Message: RuleUtils.getValFromObj() = First Attempt: Reflection failed for method getExtraTaxType on class com.Shoulders.taxes.TaxLocal
+WARNING---Thread[Thread-9,5,main]---SuperUser---&PI--- Message: RuleUtils.getValFromObj() = Second Attempt: Reflection failed for method extraTaxType on class com.Shoulders.taxes.TaxLocal
+7)  YTDController seems to be missing the xml or html YTDAccum
+8)  ManualCheckCreate workflow needs to be examined.  After selecting
+an employee, entering check number, then next gets no page.
+9)  AddUnscheduledPayroll failed to build screen.
+10) SelectPayrollSchedule not binding?
+11) View/Edit user not finding html and xml for ChangeUserPassword, BUT
+this should be a servlet for listing users, then selecting and 
+editing their passwords, profiles, etc.
+12) Under Utilities, edit user should have a Done to get rid of process.
+
+---20030914
+1)  Review Tomcat4.0 to try to move anything necessary to 4.1
+a)  newTabs - has lots of stuff on new tabs and jsps.
+seems to be mixed up with struts config
+doesn't work, but tabs are there and a GOOD FormCheck.js
+This is backed up on USB drive and on CD
+b)  pcpi - crashed server and browser
+c)  Producer - crashed server and browser
+2)  JBoss/Tomcat
+a)  pcpi - works except edit user fails.
+b)  pcpi-new is same as pcpi, do a diff sometime
+3)  Tomcat4.1
+a)  pcpi - seems to have problems with jsp locations or paths.
+** Fixed main.jsp
+** took j2ee and servlet out of lib.  Tomcat was complaining.
+** manualcheck, unscheduledpayroll servlets?
+** edit user - check screen
+** quickCalc has problem with qcwhatif.jsp
+** need to find and load a payroll schedule
+b)  sc_wfserver - tries to show 1.0.jsp - out of date statemachine?
+c)  ServletStateMachineContainer - out of date
+d)  jstatemachine-1.0 - nice demo of complex state machine and
+auto handling of states.
+4)  bat - can't unlock.  I like the screen layouts.  Will try to adapt
+Requirements traceability to it.
+5)  RequirementsTraceability - needs to be able to generate
+a) sc-workflow
+b) ace- workflow
+c) jstatemachine-1.0 workflow
+6)  I like datamanipulation and formproc.  How to adapt to shoulders?
+7)  ace statemachine has flaw in handling roles.  If user does not
+have destination role, what happens?
+8)  Clean up shoulders statemachine to look like ace, use loaders, actions,
+etc?  I really want to get the elements and datamanipulation in.
+9)  Best bet so far is to start working in 4.1 to make pcpi perfect.
+back feed changes in jsps, etc. to project
+look at how to integrate datamanipulation into sc
+Does jstatemachine-1.0 queue? could it?
+Do a review of all sc_code to see that wf_editor, wf_server, etc.
+all work consistently.
+
+---20030919
+1)  Got Manual Checks working, but there seems to be a TaxFrequency missing from
+several jsps or servlets that prevent using the taxes, deductions, etc.
+2)  Payroll schedule doesn't seem to be loading ,but gives no error.  When
+moving to schedule a payroll, it hangs.
+3)  Need to review the html.XXX servlets to see which ones need to be added
+to the web.xml
+
+---20030920
+1)  Train_6 is under Program Files/eclipse/workspaces/burrt_Train_6_laptop
+2)  Got part of new look by changing main.jsp to main_hsd.jsp and
+using main_tree.jsp as main.jsp.  Not getting nav tree up though
+error in navigationtree.jsp?  EmployeeList?
+3)  QuickCalc isn't showing up the quickCalc for some reason.  Trace this down.
+4)  Need to write a process(?) that 
+a)  select a pay batch
+b)  create the items that QuickCalc needs as input
+c)  run QuickCalc on those items
+d)  print out a summary page showing number of checks
+total wages, total taxes, etc.
+e)  print out each employees check and "stub" to an html file?
+f)  "print checks", "review"...
+Write this as a servlet?  keep giving control back to it for now with
+different actions?  I can write as a demo program in Eclipse and
+then feed data in servlet?
+a)  get paydatabatch, get linked list of employees
+for each employee, get their payroll agreement and the
+current amounts, etc.
+fill in QC info for that employee.  get the employees
+ytd from the payroll agreements ytd.
+b)  At end if we agree to print, etc. update the check history,
+update the ytd, etc.
+How do we launch a servlet as opposed to a jsp or html page?
+5)  In Tomcat 3.2 QC works, but doesn't calculate taxes ritht.  Does do something
+for married 1 exemption, but not federal
+6)  Check out listdetailsalaryhistory in both versions.
+
+---20030926
+1)  Downloaded hibernate and middlegen.
+a)  Tested middlegen with mySQL and got it to show tables for queuedb
+b)  Generatd ejbs for those tables!
+c)  ***TODO*** look at how to use these with mySQL
+2)  Looked at QuickCalc.  The test uses a "hand-wired" calling sequence, while
+the process collects the data, puts it into a QuickCalcInput, 
+calls some calculate, the reads from QuickCalcOutput.
+***TODO*** I need to create test case that does exactly what
+the process does, then modify it to read from a pay batch(possibly get clue here from createpayfile).
+
+---20031024
+1)  View/Edit User doesn't work.  Appears to be for changing password. 
+Just remove it since it can come from the Security tab anyway?
+
+---20031026
+1)  View/Edit - Learned that DefaultActivity.jsp causes the defaultActivity seervlet to be run.  IF you change this to runRalph, it will come up with error "pcpi/runralph" not found.
+2)  So, DefaultActivity causes defaultactivity servlet to run, using the next field which is "serverwindow" and should be the name of the HTML file.
+3)  Still can't get logging to work.  Somehow have to get this first.  Then might could track down the error.
+4)  Removed the ChangeUserPassword.html file, have a Copy of .  Still gives same error.  Might be standard error when either not found or error.
+****TODO**** Get logging working!!!!
+All this in tomcat 4.1.xx.
+5)  Can't log into sc-wfserver in tomcat 4.1.xx.  Says userId and password aren't correct, but anything should work.  Prints out null, null for them in message, but they are correct in request.  Need to recompile this project and check it out, perhaps from swing also.
+
+---20031209
+1)  Received call from Iyless Aircraft in Tulsa.  They will do
+engine rebuild for:
+$14562.47 which includes parts, materials, labor. plus
+$1500.00 pull and hang engine.
+That's a complete overhaul with guides replaced, new pistons, rings, hoses,
+camshaft, bearings, etc.  vacuum pump, prop governor, and prop not overhauled.
+Cylinders will be to spec, new intake and exhaust valves, etc.
+
+	-----------KWIC for /Users/woo/Dropbox/Personal/Documents/Notes/Notes_2003.txt------
+
+abil						74
+abl						125,217
+access						13
+ace						219,222,224
+action						57,119,126,131,224,260
+activ						20,39,40,41,45,46,66,74,75,119,126,153
+ad						55,57,66,171,172,240
+adapt						87,215,221
+addit						15,61
+addunscheduledpayrol						180
+advanc						22
+agre						267
+agreement						263,266
+aircraft						308
+allow						66,105,132
+amount						264
+ani						42
+anyth						190,303
+anyway						293
+appar						116
+appear						15,292
+applic						102
+arent						97,303
+arg						151
+ask						111
+attempt						174,175
+attribut						57,71,105
+auto						213
+back						194,228,259
+bar						133
+bat						6,9,215
+batch						251,288
+bear						313
+befor						32,67
+best						227
+bet						227
+better						26
+bin						157
+bind						181
+both						275
+bpwriter						62
+brandon						112
+brows						132
+browser						195,196
+build						6,82,83,180
+button						56
+calcul						272,286
+call						284,286,308
+camshaft						313
+cant						215,299,303
+case						287
+caus						297,298
+cd						194
+chang						14,67,95,108,119,228,246,292,297
+changeuserpassword						182,300
+chart						133
+check						69,153,179,207,236,254,256,257,267,275,303
+children						20
+class						101,102,104,125,174,175
+classfil						161
+classnam						37
+clean						6,27,60,224
+click						158
+clue						288
+code						5,170,231
+collect						285
+com						174,175
+come						293,297
+compil						51
+complain						205
+complet						20,28,43,312
+complex						212
+config						192
+consist						232
+contain						47,61,71,72,75,97,99,127,132,135
+control						259
+copi						300
+core						117,140,141,142,143,144,145,146
+correct						16,100,120,303
+crash						116,195,196
+creat						40,41,45,70,73,74,132,133,252,287
+createpayfil						288
+creation						85
+current						264
+custom						133
+cylind						314
+data						26,27,47,98,116,126,261,285
+databas						13,116
+datacontain						130
+datamanipul						221,225,229
+date						210,211
+dbl						158
+deduct						170,237
+defaultact						297,298
+defin						128
+delet						28
+demo						212,260
+depend						86,166
+deploy						10
+deposit						170
+design						24
+destin						223
+develop						32
+developmentclassmetr						8
+developmentproduc						7
+diagnost						174
+didnt						41
+diff						200
+differ						260
+doe						222,230,272,287,288
+doesnt						51,68,101,153,160,169,170,193,238,272,292
+done						82,83,166,185
+dont						37,57,100,120
+doofus						35
+down						97,116,249,299
+download						279
+drive						5,159,162,194
+each						49,256,263
+eclips						260
+edit						47,66,184,185,199,207
+editor						132,231
+ee						205
+either						300
+ejb						281
+element						225
+employe						167,179,256,262,263,265
+employeelist						248
+end						267
+endstat						166
+engin						309,311
+enqueu						15
+enter						179
+entri						27
+error						238,248,297,299,300
+escal						108
+evalu						105
+everi						102
+exact						287
+examin						178
+except						153,199
+exempt						273
+exhaust						314
+exist						37,41
+expeditor						117,141,147
+export						116
+expos						168
+extrataxtyp						175
+fail						81,174,175,180,199
+far						56,227
+feder						273
+feed						228,261
+field						298
+file						9,26,70,95,130,134,256,298,300
+fileseclipseworkspacesburrt						245
+fill						73,98,265
+filter						167
+find						153,182,209
+finish						45
+first						174,299
+fix						204
+flaw						222
+formcheck						193
+formdata						125
+formproc						221
+found						297,300
+frame						167
+framework						77,82,93
+function						19,27
+generat						217
+generatd						281
+generic						72
+getextrataxtyp						174
+getvalfromobj						174,175
+give						238,259,300
+goal						170
+goe						82
+good						193
+got						236,246,280
+governor						313
+gui						86
+guid						312
+hand						284
+handl						101,103,213,222
+hang						239,311
+happen						223
+hash						153
+hashtabl						151
+here						24,288
+hibern						279
+histori						267
+hit						21
+hologix						134
+hose						312
+hour						97
+hsd						246
+htm						33
+html						177,182,240,256,270,298,300
+http						33
+hyper						55
+iapplicationcontext						152
+im						99
+implement						43
+includ						310
+indic						37
+info						265
+initi						153
+input						98,252
+instal						82,116
+instanc						81
+instanti						104
+intak						314
+integr						229
+interest						55
+interfac						105
+irequest						152
+isess						152
+isnt						72,249
+item						252,253
+iyless						308
+jakarta						9,157
+jar						82,83,140,141,142,143,144,145,146,147
+jboss						157
+jbosstomcat						198
+jira						116
+job						28
+jobstepid						104
+jobstepidisexecut						106
+join						21,22
+js						193
+jsp						41,51,68,203,204,208,210,246,247,248,270,297
+jsps						37,61,191,228,237
+jstatemachin						212,220,230
+just						293
+keep						259
+key						116
+labor						310
+laptop						245
+launch						270
+layout						215
+lead						166
+learn						297
+least						105
+level						42
+lib						205
+like						60,100,215,221,224
+link						55,61,262
+list						42,68,167,183,262
+listdetailsalaryhistori						275
+load						209,238
+loader						224
+local						172
+localhost						33
+locat						161,203
+log						81,299,301,303
+login						33
+look						22,39,60,66,86,134,224,229,246,282,284
+lost						116
+lot						99,191
+love						112
+machin						212
+main						174,175,204,246,247
+maint						38,42,67
+make						13,71,227
+mani						55
+manual						236
+manualcheck						206
+manualcheckcr						178
+map						126,128,129,130,132,135,159
+mark						20
+marri						273
+massiv						151
+materi						310
+maven						82,85,92,93,94,95,101,110,111
+mba						134
+messag						143,144,174,175,303
+method						105,174,175
+middlegen						279,280
+might						299,300
+minut						103
+miss						177,236
+mix						192
+modifi						288
+move						5,92,93,94,95,161,190,239
+my						111
+mysql						280,282
+name						49,104,120,127,131,298
+nav						247
+navig						160
+navigationtre						248
+necessari						190
+need						17,18,19,37,42,74,128,161,162,166,167,178,209,217,240,250,252,287,303
+new						15,20,46,66,70,116,132,153,160,161,191,200,246,312,314
+newnam						129
+newtab						191
+next						16,18,127,179,298
+nice						212
+normal						21
+note						1
+null						81,303
+number						179,254
+obj						11,14
+object						73
+old						67
+oldnam						129
+onli						56
+oppos						270
+origin						20
+outcom						46
+overhaul						312,313
+overlap						127
+page						55,56,58,60,71,179,254,270
+part						246,310
+pass						126
+password						35,184,292,303
+path						101,203
+pay						251,288
+paydatabatch						262
+payrol						209,238,239,263,266
+pcpi						116,161,195,199,200,203,227
+pcpirunralph						297
+perfect						227
+perhap						27,303
+persist						135
+pi						174,175
+piec						99
+piston						312
+plan						96
+plotter						134
+plus						132,310
+pointer						81
+polici						22
+possibl						170,288
+present						17
+prevent						237
+print						254,256,257,267,303
+printout						12
+problem						112,203,208
+process						39,45,46,56,60,66,74,153,185,250,285,288
+produc						10,32,33,81,83,85,92,94,95,97,196
+product						38,42,49,50,67,68,74,83
+profil						184
+program						245,260
+project						32,228,303
+prop						313
+provid						19,129
+pull						311
+pump						313
+qc						265,272
+qcwhatif						208
+queue						16,103,109,118,125,133,144,145,146,230
+queueaction						105
+queuedata						125
+queuedb						280
+queueentri						11,12,19,105
+quickcalc						208,249,252,253,284
+quickcalcinput						285
+quickcalcoutput						286
+rather						55
+read						70,131,136,286,288
+realli						225
+reason						249
+rebuild						309
+receiv						308
+recompil						161,303
+redid						117
+redraw						120
+refer						26,43,131
+reflect						73,174,175
+regul						117,142,143
+reinstal						116
+remov						27,51,151,293,300
+replac						151,312
+repositori						82
+request						303
+requeu						15,21
+requir						216
+requirementstrac						217
+reset						9
+respons						15
+restor						125
+result						11,14
+resultobj						12
+retain						17
+review						190,231,240,257
+revis						151
+rid						185
+ring						312
+ritht						272
+role						110,222,223
+rout						98,170
+ruleutil						174,175
+run						6,32,42,77,100,102,111,162,253,297,298
+runralph						297
+salaryhistori						169
+same						200,300
+save						62,125
+say						303
+sc						77,81,82,83,93,94,117,118,119,140,141,142,143,144,145,146,147,210,218,229,231,303
+schedul						102,107,108,209,238,239
+screen						49,50,120,180,207,215
+second						175
+secur						293
+seem						160,177,192,203,236,238
+seervlet						297
+select						178,183,251
+selectpayrollschedul						181
+sequenc						284
+server						109,111,195,196,231
+serverwindow						298
+servic						108
+servlet						183,205,206,237,240,259,261,270,298
+servletstatemachinecontain						211
+set						74,162
+sever						237
+shorter						167
+should						50,100,104,129,183,185,298,303
+shoulder						174,175,221,224
+show						41,43,49,57,170,210,249,254,280
+showup						50
+simpl						109
+sinc						293
+singleton						152
+slight						167
+somehow						299
+someth						107,110,272
+sometim						200
+spec						314
+spend						86,97
+split						19,20
+sql						135
+ssh						84
+stand						47
+standard						300
+start						153,227
+startup						158
+state						17,18,171,212,213
+statemachin						210,222,224
+status						107
+step						28
+still						299,300
+store						130,131
+strut						192
+stub						256
+stuff						191
+summari						254
+superus						174,175
+suppli						72
+sure						62,99,159
+swing						153,303
+tab						191,193,293
+tabl						87,280,281
+tag						87
+take						105,109
+task						109
+tax						171,174,175,237,255,272
+taxfrequ						236
+taxloc						174,175
+test						9,13,14,49,50,77,92,93,94,99,100,107,280,284,287
+them						38,47,109,131,136,303
+then						21,50,116,128,179,183,261,288,299
+these						282
+think						135
+those						253,281
+though						247
+thread						174,175
+todo						9,16,36,42,59,68,70,75,77,119,128,132,134,282,287,301
+tomcat						32,157,190,202,205,272,302,303
+took						116,205
+tostr						12
+total						255
+trace						249
+traceabl						216
+track						97,111,299
+tracker						112
+train						245
+tree						247
+tri						190,210,215
+tulsa						308
+under						185,245
+unlock						215
+unscheduledpayrol						206
+until						21
+updat						267,268
+usb						5,159,194
+user						16,18,34,51,109,182,183,185,199,207,222,292
+userbrok						70
+userid						303
+util						185
+vacuum						313
+valv						314
+version						69,117,275
+view						38,47,56,60,71,86,133
+viewedit						182,292,297
+visibl						57,62
+wage						255
+wait						107
+wake						102
+want						225
+war						146
+warn						175
+web						161,241
+weekend						86
+werk						112
+wf						231
+wfserver						119,146,210,303
+what						43,223,287
+where						19,47
+whether						22
+whi						97,100,101,170
+wire						284
+wizard						67
+wonderland						5
+woo						34
+work						21,24,49,67,68,84,85,91,100,153,160,169,193,199,227,232,236,272,292,299,301,303
+workflow						86,118,145,147,178,218,219,220
+workfloweditor						95,118
+write						70,99,102,107,109,250,259,260
+xml						6,83,95,170,177,182,241
+xx						302,303
+xxx						240
+yet						68
+you						297
+ytd						266,268
+ytdaccum						177
+ytdcontrol						177
+

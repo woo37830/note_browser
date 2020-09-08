@@ -1,0 +1,273 @@
+Port/Starboard
+
+Contemplating the immortality of the crab. 
+
+xgrs-khjw-usoy-glkr
+
+
+3309.60
+144.60 Medicare
+316.50 irs
+2848.50 net
+
+1545.60
+144.60 Medicare
+140.10 irs
+1260.90 net
+
+
+73.121.27.131
+IamAn18Fan!
+
+Axiology - Charles degree
+Ez pass - g3*00501799620*
+     1-800-333-8655
+
+CRISPR - clustered regularly interspaced short palindromic repeats
+   Arthritis plaquinil ineffective, metheltrexate also
+   CRISPR
+    5 year expectancy 
+
+
+
+Dianne - 413-90-0089
+
+Generated public and private key for John Wooten
+using: TwasBrilligAndTheSlithyToves
+
+Seems to be stored in the gpg keyring list using:
+
+gpg —list-keys
+gpg —list-secret-keys
+
+Export public key using:
+gpg —export —armor youremail@example.com > mypubkey.asc
+
+Import using:
+
+gpg —import theirpubkey.asc
+
+Trust a public key
+
+gpg —edit-key glenn ( someone )
+
+trust ( invoke trust subcommand on the key
+5 (ultimate trust)
+y (if prompted)
+quit
+
+encrypt a file for an individual:
+
+gpg —encrypt —recipient glenn filename
+
+encrypt and sign a file for an individual using specified key:
+
+gpg --encrypt --sign -u john.wooten@quantellia.com --armor -r dj.molny@quantellia.com validate.cfg
+
+
+MacBook Pro (Retina, Mid 2012)
+Processor 2.7 GHz Intel Core i7
+Memory 16 GB 1600 MHz-DDR3
+Graphics NVIDIA GeForce GT 650 M 1024 MB
+		Intel HD Graphics 4000 1536 MB
+Serial Number C02JF16XDKQ5
+Processors 1
+Cores 4
+Built-in display 15.4-inch (2880 x 1800) NVIDIA GeForce GT 650M 1024 MB graphics
+Internal Drive
+ Available:	168.47 GB (168,471,232,512 bytes)
+  Capacity:	751.07 GB (751,068,229,632 bytes)
+  Mount Point:	/
+  File System:	APFS
+  Writable:	Yes
+  Ignore Ownership:	No
+  BSD Name:	disk1s1
+  Volume UUID:	E863025A-696B-39C0-8F4B-D66D4C45AA31
+  Physical Drive:
+  Device Name:	APPLE SSD SM768E
+  Media Name:	AppleAPFSMedia
+  Medium Type:	SSD
+  Protocol:	SATA
+  Internal:	Yes
+  Partition Map Type:	Unknown
+  S.M.A.R.T. Status:	Verified
+
+
+
+220500245
+JTMRJREV5JD189042 rav4 vin
+
+Medical Site:  covenant health.patientcompass.com
+Jwwooten, medical1942
+
+
+204235572 dad's service number
+116 Field Artillery, fla nat’l guard when mobilized. December 1941 
+
+va-laptop mysql password = rero3jrh,tBy
+
+Clean my Mac3 id249702955689odr
+                         X id166272810334odr
+
+To calculate BMI, multiply your weight (in pounds) by 703, and divide that number by the square of your height (in inches). The AHA recommends a BMI below 25.
+  I should be 136 - 179. 
+BMI = W * 703 / h ^ 2 
+
+Rachel's dissertation :
+   Numerical search for the 
+   Moore-Reed non-abelian 
+   State in the quantum hall system. 
+
+Ramsey Numbers - fight the aliens if they challenge earth to calculate R(6,6) in one year or die.
+
+Forth/oddball on iPad
+Linkage wvc80n
+$118.95
+
+X The eagle
+Source code
+X The adjusters
+X Thor
+
+Amphibious audio 8438152662
+8437574889
+
+Ken Pours Coffee On Fran's Good Shirt :
+Kingdom, Phylum, Class, Order, Family, Genus, Species
+
+10.0.1.26. #14971
+107ajdt.ibbdns.com
+dew/dw0714
+
+Cholesteroll -162.         2009
+Triglyceride 200
+Hdl - 35
+LDL -87
+
+Shia Ribowski - NY medical exam. 
+
+973-978-1369
+
+http://www.raunchygfs.com/mobile/index.php?aid=1&t=j5uicy48664
+
+
+Aaron bank info
+
+la will show locked files as uchg before name
+sudo chglags nouchg fileName will unlock the file.
+
+Ok bank is Wells Fargo. Routing number is 063107513 account number is 1010265582491
+
+A. Mac OS X uses the immutable bit to designate that a file is locked. To lock a file: 
+
+[localhost:~] you$ chflags uchg /path/to/file 
+
+And to unlock a file: 
+
+[localhost:~] you$ chflags nouchg /path/to/file 
+
+Parallels 7, MNNR0Y-YQPZ2N-G07B62-WPYJJT-751RBW
+
+Parallels 9, cleverbridge reference number: 51424048
+Product Key: NJSEAM-QQ1B74-SGHJAC-63PTA9-44D74M
+purchased: 10/30/2013 for Shoulders Corp.
+Henry McKenna 100 proof bonded bourbon
+Eric Bana- Troy
+.    Karl Urban - Reddick, Bones
+
+
+
+To find where article.cls and article.sty are type:
+
+kpsewhich article.sty
+ 
+in
+ 
+E
+
+Blue Bloods Joes shield number #46808
+
+A grain is a unit of measurement of mass equal to 64.79891 milligrams
+A grain is 1/7000th of a pound or 427.5 grains to the ounce.  This is how both powder and bullets are weighed. Usually, when you see a box of ammunition, it will state the weight of the bullets in grains. 
+
+
+
+
+find /full_path -path '*/.*' -prune -o -type f -print | zip ~/file.zip -@the
+
+DNS servers
+216.146.35.35
+216.146.36.36
+
+Search domains
+Hsd1.tn.comcast.net
+
+Jpmorgan # 015E9BE1AN
+
+
+Elizabeth Tian-Shi Chin 7 lb. 12 oz. 20.5 in. Aug 3rd. 
+
+For John,
+恬 is the middle word in Elsie's Chinese name, pronounce as "tian",  It means quiet, calm, peaceful.  The 3rd word (shi, sounds like see) 希 means hope.
+Mother of groom corrected me. 
+Mom, husband & Else at home now and resting.  Cesarean was had on daughter. 
+
+865-607-5355
+- [ ] 
+
+
+20.5 in
+8 6.7oz
+Austin Warren Jones
+
+1323 miles rd trip home/A
+
+
+
+
+
+CSS Code on HTML page
+<html>
+<head>
+    <style type="text/css">
+    .title {
+        color: blue;
+        text-decoration: bold;
+        text-size: 1em;
+    }
+
+    .author {
+        color: gray;
+    }
+    </style>
+</head>
+<body>
+    <p>
+    <span class="title">La super bonne</span>
+    <span class="author">proposée par Jérém</span>
+    </p>
+</body>
+</html>
+
+
+
+Discover
+
+Dianne Wooten
+6011 4994 1390 5041
+Exp 06/24 code 992
+
+https://www.tube8.com/gay/threesome/teen-threesome-bisex-fun-after-school/45668851/
+
+https://jvcb.myshopify.com/cart
+
+Mint case # 451384894
+
+To set up lp printing:
+
+2114  2019-09-23 11:54:50 ls /etc/cups/ppd
+ 2115  2019-09-23 11:55:15 lpoptions -p Brother_MFC_L2740DW_series -l
+ 2116  2019-09-23 11:55:25 vim .bashrc
+Edit export PRINTER=name of printer
+ 2117  2019-09-23 11:55:55 source .bashrc
+ 2118  2019-09-23 11:56:05 lp test.txt

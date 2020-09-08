@@ -1,0 +1,623 @@
+(09/26/2012 16:49 - 09/26/2012 16:50) hacking on sndplay
+(09/29/2012 08:30 - 09/29/2012 12:00) building excel map reader @freemind
+(09/29/2012 13:00 - 09/29/2012 16:14) working on login and logging @freemind
+(10/17/2012 10:27 - 10/17/2012 15:10) adding grouping nodes @ark
+(10/17/2012 15:10 - 10/17/2012 15:30) updating mantis @ark
+(10/17/2012 15:30 - 10/17/2012 17:05) working on grouping nodes @ark
+(05/17/2018 10:16 - 05/17/2018 11:11) start hacking on time_tracker @quantellia
+(05/17/2018 11:11 - 05/17/2018 12:26) start Review of Validation Code @quantellia
+(05/18/2018 08:00 - 05/18/2018 10:00) start installing svUnit @quantellia
+(05/22/2018 09:50 - 05/22/2018 10:36) Enumerate requirements from signed contract @quantellia
+(05/22/2018 10:36 - 05/22/2018 12:06) Examine how to test using test_that @quantellia
+(05/22/2018 14:30 - 05/22/2018 15:30) Review Using AWS Console @quantellia
+(05/22/2018 15:30 - 05/22/2018 17:04) WebEx on AWS @quantellia
+(05/23/2018 09:28 - 05/23/2018 14:15) Learning to run existing code @quantellia
+(05/23/2018 15:45 - 05/23/2018 18:13) Getting xeyes and vimrtmux working @quantellia
+(05/24/2018 09:13 - 05/24/2018 18:00) Studying histograms of sample data @quantellia
+(05/24/2018 18:00 - 05/24/2018 19:07) Working with Elizabeth on data for models @quantellia
+(05/25/2018 12:02 - 05/25/2018 18:20) Working with Elizabeth @quantellia
+(05/25/2018 20:23 - 05/25/2018 21:35) Reviewing code with James @quantellia
+(05/29/2018 09:09 - 05/29/2018 17:45) Working on Contract Revision 1, Task 1 @quantellia
+(05/30/2018 08:03 - 05/30/2018 10:24) Install Fuse, connect to OneNote @quantellia
+(05/30/2018 12:45 - 05/30/2018 21:09) Edit 01_, 02_, 03_, and run. @quantellia
+(05/31/2018 08:09 - 05/31/2018 10:44) Working with Nadine and Doug on Overall flow @quantellia
+(05/31/2018 10:44 - 05/31/2018 11:54) Running 01_ code, correcting keep_col @quantellia
+(05/31/2018 12:34 - 05/31/2018 17:48) Running 03_ code, saving data and small sample to S3 @quantellia
+(06/01/2018 08:44 - 06/01/2018 17:47) Run grid.R and then model_a.R @quantellia
+(06/02/2018 11:55 - 06/02/2018 12:10) Working on negative column detection @quantellia
+(06/02/2018 12:10 - 06/02/2018 17:50) Find negative values and reject @quantellia
+(06/04/2018 08:30 - 06/04/2018 12:00) Working on finding rows that contain < 0 in selected columns @quantellia
+(06/04/2018 12:00 - 06/04/2018 12:30) Standup with Nadine and Lorien @quantellia
+(06/04/2018 12:30 - 06/04/2018 19:22) Integrating neg row values into 01_csv_cleanup.r @quantellia
+(06/05/2018 09:23 - 06/05/2018 14:25) Implement Debtor_Seq and FCH_source @quantellia
+(06/05/2018 14:25 - 06/05/2018 16:00) Talk with Shane and Nadine @quantellia
+(06/05/2018 16:00 - 06/05/2018 17:30) Code review with Elizabeth and Nadine @quantellia
+(06/06/2018 09:32 - 06/06/2018 17:20) Updating perl scripts with usage and figure out histograms in 03 @quantellia
+(06/06/2018 17:20 - 06/06/2018 20:20) Got new master file, started to split, data out, asked Elizabeth to finish @quantellia
+(06/07/2018 09:09 - 06/07/2018 17:46) Review Elizabeths notes and results of 01 run last night @quantellia
+(06/08/2018 09:27 - 06/08/2018 18:14) Find embedded new lines in quotes and change to spaces @quantellia
+(06/11/2018 09:10 - 06/11/2018 13:16) Investigating script for embedded break in csv file @quantellia
+(06/11/2018 14:30 - 06/11/2018 17:15) factoring validation into function @quantellia
+(06/12/2018 09:00 - 06/12/2018 17:00) factoring validation into function @quantellia
+(06/12/2018 19:58 - 06/12/2018 21:00) finished refactoring functions and pushed to github @quantellia
+(06/13/2018 09:25 - 06/13/2018 17:06) factor functions into external library, create r code for analyzing keep_cols @quantellia
+(06/14/2018 08:59 - 06/14/2018 19:01) Factor out r functions into separate file @quantellia
+(06/15/2018 09:01 - 06/15/2018 12:24) Continue refactoring 01_csv_cleanup.r @quantellia
+(06/15/2018 19:25 - 06/15/2018 21:56) Fix regex for dob, ssn, etc. Start creating test file as per test plan @quantellia
+(06/18/2018 08:48 - 06/18/2018 09:50) Creating histograms of keep_cols @quantellia
+(06/18/2018 15:48 - 06/18/2018 19:50) Creating histograms of keep_cols @quantellia
+(06/19/2018 09:50 - 06/19/2018 17:30) Cleaning up histograms of keep_cols @quantellia
+(06/19/2018 09:30 - 06/20/2018 17:03) Refactor 01_csv_cleanup.r, 01_functions.r, and run column_analyze @quantellia
+(06/21/2018 11:20 - 06/21/2018 17:00) Refine test_data.csv for auto validation tests @quantellia
+(06/22/2018 09:28 - 06/22/2018 16:51) Refine validation_test.csv and create more invoved tests. @quantellia
+(06/25/2018 10:04 - 06/25/2018 11:01) Add documentation to validate and work on new contract @quantellia
+(06/25/2018 11:01 - 06/25/2018 11:36) Code review of decision model code /server.r, etc. in dm directory/ with Doug, DJ, Nadine, and Elizabeth @quantellia
+(06/25/2018 11:36 - 06/25/2018 17:19) Invoice quantellia for 500 progress and 32 bonus, per nadine @quantellia
+(06/26/2018 09:42 - 06/26/2018 16:52) Review Tasking and look up helpful articles @quantellia
+(06/27/2018 08:36 - 06/27/2018 16:16) Finding references and setting up R environment @quantellia
+(06/28/2018 09:07 - 06/28/2018 16:48) Continuing research and environment work @quantellia
+(06/29/2018 08:31 - 06/29/2018 17:13) Create environment on Azure @quantellia
+(07/02/2018 08:20 - 07/02/2018 16:43) Finish getting connection to Azure server @quantellia
+(07/02/2018 16:52 - 07/02/2018 17:08) Install Visual Studio for Mac @quantellia
+(07/03/2018 09:06 - 07/03/2018 17:17) Install FileZilla on Azure and Visual Studio on laptop @quantellia
+(07/09/2018 09:06 - 07/09/2018 17:17) Install MS SQL on Mac, SQL Op Studio, added BronwenZ to Azure @quantellia
+(07/10/2018 09:06 - 07/10/2018 17:17) Create validation code in C# @quantellia
+(07/11/2018 09:06 - 07/11/2018 17:17) Add Condition and Rule classes, initial parsing @quantellia
+(07/12/2018 09:06 - 07/12/2018 17:17) Create queries from Condition and Rule classes @quantellia
+(07/13/2018 09:06 - 07/13/2018 17:17) Handle customers and exc_customers to logic @quantellia
+(07/14/2018 09:06 - 07/14/2018 17:17) Plan testing and refactor for testing @quantellia
+(07/16/2018 09:17 - 07/16/2018 17:41) Development work on sub queries @quantellia
+(07/17/2018 08:49 - 07/17/2018 10:50) Refactor code for sub query @quantellia
+(07/17/2018 13:55 - 07/17/2018 17:50) Continue improving queries @quantellia
+(07/18/2018 09:46 - 07/18/2018 17:45) import clients, validate, handle dialerMode @quantellia
+(07/19/2018 09:45 - 07/19/2018 17:12) create QueryEngine and fix command line @quantellia
+(07/20/2018 09:09 - 07/20/2018 16:25) prepare for review @quantellia
+(07/22/2018 11:00 - 07/22/2018 14:50) Create DialerMode class and Disposition class @quantellia
+(07/22/2018 18:48 - 07/22/2018 22:49) Continue to integrate DataTable class @quantellia
+(07/23/2018 08:48 - 07/23/2018 17:39) Continue to integrate DataTable class @quantellia
+(07/24/2018 08:48 - 07/24/2018 16:35) Create DB and load using column types @quantellia
+(07/24/2018 16:35 - 07/24/2018 18:13) 10K loaded, starting to review queries @quantellia
+(07/25/2018 08:35 - 07/25/2018 17:13) Added test in validator for column names @quantellia
+(07/26/2018 09:16 - 07/26/2018 17:02) Step through rule processing, today and tomorrow @quantellia
+(07/27/2018 09:02 - 07/27/2018 11:35) Remove Mailer and local CsvReader @quantellia
+(07/27/2018 11:44 - 07/27/2018 16:23) Begin work on making queries use isPNC and writing results to proper files @quantellia
+(07/30/2018 14:50 - 07/30/2018 17:50) Continue work on preparing dialer files @quantellia
+(07/31/2018 09:07 - 07/31/2018 16:58) Write good results to temp database, filter by account @quantellia
+(07/31/2018 17:03 - 07/31/2018 17:04) test end of month @quantellia
+(08/01/2018 09:23 - 08/01/2018 16:42) Collect phone numbers and write to proper dialer files @quantellia
+(08/02/2018 09:23 - 08/02/2018 20:08) check ordering and refactor to new QueryResult, etc. classes @quantellia
+(08/04/2018 11:27 - 08/04/2018 15:30) Work on ordering queries by build number @quantellia
+(08/06/2018 10:08 - 08/06/2018 17:23) Comment and check refactoring @quantellia
+(08/07/2018 09:39 - 08/07/2018 16:06) Examine limit problem @quantellia
+(08/08/2018 08:57 - 08/08/2018 17:07) Create Accounts on Azure and Test @quantellia
+(08/09/2018 09:40 - 08/09/2018 16:24) Create Accounts table with new data @quantellia
+(08/10/2018 09:20 - 08/10/2018 16:37) Work on SFTP between AWS, EC2, Azure, and laptop for Account files @quantellia
+(08/13/2018 09:00 - 08/13/2018 17:47) Work on SFTP between AWS, EC2, Azure, and laptop for Account files @quantellia
+(08/14/2018 09:47 - 08/14/2018 16:55) Integrate pgp into QueryEngine @quantellia
+(08/15/2018 10:42 - 08/15/2018 16:50) Work on queries, expecially improving speed @quantellia
+(08/16/2018 10:43 - 08/16/2018 17:18) work on blocking queries and refactor encryption @quantellia
+(08/17/2018 10:34 - 08/18/2018 09:53) Continue debugging blocking tcp problem @quantellia
+(08/18/2018 09:53 - 08/18/2018 11:15) Index Accounts table and test queries @quantellia
+(08/19/2018 08:15 - 08/19/2018 17:00) Refine timing and investigate query failures @quantellia
+(08/19/2018 20:00 - 08/19/2018 21:30) Create Accounts table definition for Lorien @quantellia
+(08/20/2018 08:15 - 08/20/2018 17:47) Refine timing and investigate query failures @quantellia
+(08/21/2018 11:41 - 08/21/2018 17:24) Write MaestroLite and test @quantellia
+(08/22/2018 09:51 - 08/22/2018 17:29) Work on Maestro @quantellia
+(08/23/2018 10:29 - 08/23/2018 17:39) Create launch actions for MaestroLite @quantellia
+(08/24/2018 09:10 - 08/24/2018 17:31) Refactor and integrate pieces of Maestro @quantellia
+(08/25/2018 09:36 - 08/26/2018 10:51) Integrate Mark's DBLoader into Maestro @quantellia
+(08/26/2018 10:51 - 08/26/2018 17:14) Working on Loader and Maestro @quantellia
+(08/27/2018 10:13 - 08/28/2018 09:24) Work on data loading @quantellia
+(08/28/2018 09:24 - 08/29/2018 10:54) Finsh looping portion of Maestro and indexnig @quantellia
+(08/29/2018 10:54 - 08/29/2018 17:03) finish whatIf analysis and move codes to Azure to test @quantellia
+(08/30/2018 10:03 - 08/30/2018 21:25) Move code to Azure, text @quantellia
+(08/31/2018 10:06 - 08/31/2018 17:47) Continue with loading data on Azure @quantellia
+(09/01/2018 10:00 - 09/01/2018 16:30) Add WriteError to AccountsLoader @quantellia
+(09/04/2018 09:30 - 09/04/2018 17:30) Merge AccountsLoader and test more @quantellia
+(09/05/2018 10:13 - 09/05/2018 17:20) Merge WriteError into AccountsLoader from va-air @quantellia
+(09/06/2018 11:21 - 09/06/2018 17:10) Work on join and timing of Loader @quantellia
+(09/07/2018 10:03 - 09/07/2018 17:37) Fix problem with pii data, maybe quote handling @quantellia
+(09/08/2018 08:37 - 09/08/2018 17:32) Loading AllAccounts @quantellia
+(09/10/2018 08:37 - 09/10/2018 17:30) Loading AllAccounts @quantellia
+(09/11/2018 08:37 - 09/11/2018 17:22) Loading AllAccounts @quantellia
+(09/12/2018 08:37 - 09/12/2018 16:32) Loading AllAccounts @quantellia
+(09/13/2018 09:54 - 09/13/2018 19:10) Test queryEngine on Azure and refactor Loader @quantellia
+(09/14/2018 09:54 - 09/14/2018 17:10) Test queryEngine on Azure and refactor Loader @quantellia
+(09/15/2018 10:31 - 09/15/2018 17:30) Continue working on parallel for Loader @quantellia
+(09/16/2018 09:54 - 09/16/2018 17:10) Test queryEngine on Azure and refactor Loader @quantellia
+(09/17/2018 09:54 - 09/17/2018 17:10) Test queryEngine on Azure and refactor Loader @quantellia
+(09/18/2018 09:54 - 09/18/2018 17:10) Test queryEngine on Azure and refactor Loader @quantellia
+(09/19/2018 09:54 - 09/19/2018 17:10) Test queryEngine on Azure and refactor Loader @quantellia
+(09/20/2018 09:54 - 09/20/2018 22:13) Working on Ram disk and file locking @quantellia
+(09/21/2018 08:45 - 09/21/2018 18:15) Continue work on file locking @quantellia
+(09/22/2018 08:45 - 09/22/2018 18:15) Integrate log4net tcp server/client @quantellia
+(09/23/2018 08:45 - 09/23/2018 18:15) Work on log4net formatting @quantellia
+(09/24/2018 08:45 - 09/24/2018 18:15) Fix changing log file name @quantellia
+(09/25/2018 08:45 - 09/25/2018 18:15) Continue with log4net integration @quantellia
+(09/26/2018 08:45 - 09/26/2018 18:15) Careful eval of what specific files on local and Azure for testing @quantellia
+(09/27/2018 09:45 - 09/27/2018 18:15) Added to cleanup logic when error or end @quantellia
+(09/28/2018 08:45 - 09/28/2018 18:15) Replaced most console.out statements with log4net @quantellia
+(09/29/2018 07:45 - 09/29/2018 18:15) Submitted Invoices and worked on logging standardization @quantellia
+(09/30/2018 08:45 - 09/30/2018 18:15) Did trial run, got failure on mail and sftp @quantellia
+(10/01/2018 08:45 - 10/01/2018 18:15) Cleaned up Azure validate.cfg @quantellia
+(10/02/2018 08:45 - 10/02/2018 18:15) Tried to push with too large a file @quantellia
+(10/03/2018 10:45 - 10/03/2018 18:15) Straighten out divergent branches with Time Capsule @quantellia
+(10/04/2018 08:45 - 10/04/2018 18:15) Push to timing, do pull request for develop @quantellia
+(10/05/2018 08:45 - 10/05/2018 18:15) Work with Mark Z on Visual Studion behavior @quantellia
+(10/06/2018 09:45 - 10/06/2018 18:15) Make new 4096 bit keys, test @quantellia
+(10/07/2018 08:45 - 10/07/2018 18:15) Clean up code, push to timing @quantellia
+(10/08/2018 08:45 - 10/08/2018 18:15) Introduce Chainsaw and xml appender @quantellia
+(10/09/2018 10:45 - 10/09/2018 19:45) Trying full run with Scoring @quantellia
+(10/10/2018 10:45 - 10/10/2018 17:45) Restructuring some codes @quantellia
+(10/11/2018 10:45 - 10/11/2018 17:45) Creating testing framework @quantellia
+(10/12/2018 10:45 - 10/12/2018 16:45) Writing tests @quantellia
+(10/15/2018 10:45 - 10/15/2018 16:45) Writing tests @quantellia
+(10/16/2018 10:45 - 10/16/2018 16:45) Fixing validate columms @quantellia
+(10/17/2018 10:45 - 10/17/2018 15:45) fixing xml logging on Azure @quantellia
+(10/18/2018 10:45 - 10/18/2018 13:45) Metrics @quantellia
+(10/19/2018 09:59 - 10/19/2018 15:00) Work on config and testing keys @quantellia
+(10/21/2018 11:00 - 10/21/2018 13:30) Editing validate.cfg for Azure @quantellia
+(10/22/2018 18:00 - 10/22/2018 22:30) Trying to run MaestroLite on Azure @quantellia
+(10/23/2018 09:30 - 10/23/2018 17:45) Adding diagnostics for errors @quantellia
+(10/25/2018 10:42 - 10/25/2018 18:26) Fix Sweep problem and diff @quantellia
+(10/26/2018 08:26 - 10/26/2018 18:00) Write NEVLoader, test, deploy @quantellia
+(10/27/2018 09:30 - 10/27/2018 17:50) Test and fix threading problems of NEVLoader @quantellia
+(10/28/2018 09:00 - 10/28/2018 17:00) Continue separating app dlls for MaestroLite @quantellia
+(10/28/2018 18:30 - 10/28/2018 20:00) Examine URSA data and add max,min rows @ursa
+(10/29/2018 10:22 - 10/29/2018 11:20) Webcast with URSA @ursa
+(10/29/2018 11:20 - 10/29/2018 14:15) Fixing startup scripts for MaestroLite @quantellia
+(10/29/2018 14:15 - 10/29/2018 16:00) Set up tmux and get R working @ursa
+(10/30/2018 10:41 - 10/30/2018 11:49) Continue setting up tmux and R @ursa
+(10/30/2018 11:49 - 10/30/2018 17:32) clean up NEVLoader for merge re DJ @quantellia
+(10/31/2018 09:07 - 10/31/2018 12:46) Create R environment @ursa
+(10/31/2018 15:02 - 10/31/2018 17:25) Fixing substitutions for runType and configFile @quantellia
+(11/01/2018 12:27 - 11/02/2018 08:51) setting up ursa-aws @ursa
+(11/02/2018 08:51 - 11/02/2018 09:38) Continue setting up R environment on ursa-aws @ursa
+(11/02/2018 09:38 - 11/02/2018 17:40) Review contract and start on Maestro @quantellia
+(11/03/2018 09:38 - 11/03/2018 17:40) Get multiplot working and look at columns to relate @ursa
+(11/04/2018 13:37 - 11/06/2018 12:14) Work on column time folding @ursa
+(11/06/2018 09:14 - 11/06/2018 12:14) WebEx with ursa @ursa
+(11/06/2018 12:14 - 11/06/2018 17:31) Work on Maestro enhancements @quantellia
+(11/07/2018 14:00 - 11/07/2018 17:01) Get keys straightened out and run MaestroLite on Azure @quantellia
+(11/08/2018 11:14 - 11/08/2018 15:25) Running MaestroLite steps and starting to build Maestro @quantellia
+(11/09/2018 09:30 - 11/09/2018 21:30) Work on Maestro and fixing log viewer @quantellia
+(11/11/2018 10:41 - 11/11/2018 14:41) Work on DataTables @quantellia
+(11/11/2018 14:41 - 11/11/2018 20:10) Work on AccountsLoader @quantellia
+(11/12/2018 11:16 - 11/12/2018 13:18) continue tracking problems in AccountsLoader @quantellia
+(11/13/2018 10:49 - 11/13/2018 18:00) Run Full test with new model code @quantellia
+(11/14/2018 08:30 - 11/14/2018 20:21) Run tests with new queryEngine @quantellia
+(11/15/2018 10:51 - 11/16/2018 11:38) refactor MaestroLite to handle Maestro requirements @quantellia
+(11/16/2018 11:38 - 11/16/2018 20:13) Work on MaestroLite to fix dialer files @quantellia
+(11/20/2018 09:00 - 11/20/2018 22:42) Fix dialer file mistake @quantellia
+(11/21/2018 09:00 - 11/21/2018 22:42) Work on dialer file output @quantellia
+(11/22/2018 09:00 - 11/22/2018 22:42) Run MaestroLite and check.@quantellia
+(11/23/2018 09:00 - 11/23/2018 22:42) Fix error in worting@quantellia
+(11/24/2018 09:00 - 11/24/2018 22:42) Write tests for sorting @quantellia
+(11/25/2018 09:00 - 11/25/2018 22:42) Several runs for output file row order @quantellia
+(11/26/2018 09:00 - 11/26/2018 22:42) Design DialerModeWriter @quantellia
+(11/27/2018 09:34 - 11/27/2018 22:13) Created DialerModeWriter and testing. @quantellia
+(11/28/2018 09:34 - 11/28/2018 22:13) Fixed sorting of NEVs.  Wrong column was being used. @quantellia
+(11/29/2018 09:34 - 11/29/2018 22:13) Added pnc selection queries.Tested. @quantellia
+(11/30/2018 09:34 - 11/30/2018 22:13) Added pnc selection queries.Tested. @quantellia
+(12/01/2018 09:34 - 12/01/2018 22:13) Added pnc selection queries.Tested. @quantellia
+(12/02/2018 09:34 - 12/02/2018 22:13) Added pnc selection queries.Tested. @quantellia
+(12/03/2018 08:29 - 12/03/2018 17:30) Fixing NEVLoader @quantellia
+(12/04/2018 08:35 - 12/04/2018 23:55) Fixing dialer mode city,state @quantellia
+(12/05/2018 09:52 - 12/05/2018 21:40) Start MaestroLite on caml-prod and monitor @quantellia
+(12/06/2018 08:46 - 12/06/2018 21:24) Finish run and do full MaestroLite run @quantellia
+(12/17/2018 09:19 - 12/17/2018 23:18) Prepare Design Notes for Maestro @quantellia
+(12/18/2018 09:21 - 12/19/2018 21:38) Working on resolving bugs in fix-sftp @quantellia
+(12/20/2018 09:01 - 12/20/2018 22:04) Tracking down bug that may be data related in DialerModeHandler.cs @quantellia
+(12/21/2018 16:01 - 12/21/2018 18:01) Fix Sftp and zipCode @quantellia
+(12/27/2018 11:34 - 12/27/2018 17:33) Work on deployment script @quantellia
+(12/28/2018 09:34 - 12/28/2018 15:33) Work on refactoring and message queue @quantellia
+(01/02/2019 12:07 - 01/02/2019 17:36) Work on SignalR to get interprocess notifications @quantellia
+(01/03/2019 11:07 - 01/03/2019 15:29) Work on SignalR to get interprocess notifications @quantellia
+(01/04/2019 10:36 - 01/04/2019 20:23) Prepare roi-test @quantellia
+(01/05/2019 04:27 - 01/05/2019 07:59) Fix query error in MaestroLite re DJ @quantellia
+(01/05/2019 14:22 - 01/06/2019 02:27) Waiting on data from ERC@quantellia
+(01/06/2019 09:12 - 01/06/2019 15:23) Fixing bugs @quantellia
+(01/07/2019 10:22 - 01/07/2019 12:27) Working on Maestro @quantellia
+(01/07/2019 12:42 - 01/07/2019 14:12) Send sql and commented prod.cfg to DJ @quantellia
+(01/07/2019 10:15 - 01/08/2019 00:16) Debugging the lack of LiveVox files @quantellia
+(01/08/2019 08:45 - 01/08/2019 10:00) Working on Maestro. @quantellia
+(01/08/2019 12:48 - 01/09/2019 15:26) Commenting issues and On line meeting @quantellia
+(01/09/2019 15:26 - 01/09/2019 20:00) Working on Issues @quantellia
+(01/10/2019 09:46 - 01/10/2019 21:05) Worked on fix3Sftp @quantellia
+(01/11/2019 09:56 - 01/11/2019 16:51) Merging branches @quantellia
+(01/15/2019 10:50 - 01/15/2019 17:08) Fix TP-Link for internet connectivity @quantellia
+(01/16/2019 14:26 - 01/16/2019 17:30) add seq_num as primary key and test @quantellia
+(01/17/2019 10:30 - 01/17/2019 21:30) start timing tests for fix-115 @quantellia
+(01/18/2019 10:43 - 01/18/2019 17:05) Start fix-115 after timing run yesterday @quantellia
+(01/21/2019 09:43 - 01/21/2019 16:52) Add wait to QueryEngine.cs @quantellia
+(01/22/2019 09:52 - 01/22/2019 15:32) Run MaestroLite with fix_117 on caml-dev @quantellia
+(01/22/2019 15:32 - 01/22/2019 18:39) working on fix-109 latency @quantellia
+(01/23/2019 11:50 - 01/23/2019 17:28) work on issues @quantellia
+(01/25/2019 10:44 - 01/25/2019 17:55) TCP client/server for Maestro @quantellia
+(01/28/2019 11:56 - 01/28/2019 20:19) noon call and work on tcp client/server @quantellia
+(01/29/2019 10:52 - 01/29/2019 19:13) Continue work on TCP client/server @quantellia
+(01/30/2019 11:38 - 01/30/2019 17:28) Continue work on TCP C/S @quantellia
+(01/31/2019 10:48 - 01/31/2019 15:56) Fix TCP C/S @quantellia
+(02/12/2019 08:58 - 02/12/2019 16:38) Implement enhancement-142 @quantellia
+(02/14/2019 10:55 - 02/14/2019 12:56) Did research about queryEngine use of DOB_MonthsFromCall. @quantellia
+(06/10/2019 14:05 - 06/10/2019 16:00) Meeting with group, load customers into test account. @patti
+(06/14/2019 11:17 - 06/14/2019 11:17) Work on time tracking @patti
+(06/26/2019 14:03 - 06/26/2019 15:32) Getting Started @patti
+(06/27/2019 08:38 - 06/27/2019 09:43) learning about texting api for Trumpia @patti
+(06/27/2019 12:01 - 06/27/2019 14:36) Discussion with Trumpia @patti
+(07/01/2019 10:25 - 07/01/2019 13:32) Go over apis and copy layout @patti
+(07/05/2019 09:15 - 07/05/2019 11:46) Test sending text from php @patti
+(07/06/2019 13:05 - 07/06/2019 15:17) Fix php mail problem @patti
+(07/07/2019 17:07 - 07/07/2019 19:07) Sent text message from AllClients to myself and patti @patti
+(07/08/2019 09:51 - 07/08/2019 17:15) Fixing php mail and text from AllClients @patti
+(07/09/2019 10:33 - 07/09/2019 17:15) Understand use of WebHook @patti
+(07/10/2019 12:40 - 07/10/2019 16:40) Got mail working from new air and from barsoom. Working on text part @patti
+(07/11/2019 09:48 - 07/11/2019 12:22) Work with rest solution for textmagic @patti
+(07/11/2019 15:14 - 07/11/2019 17:59) Add html form to AllClients with action to php page @patti
+(07/12/2019 08:18 - 07/12/2019 11:57) Answer Jeffs question about 404 and work on text reply @patti
+(07/12/2019 13:00 - 07/12/2019 17:52) Work on parsing phone number and handling a response text @patti
+(07/14/2019 11:35 - 07/14/2019 13:31) Zoom with patti and work on response handling @patti
+(07/15/2019 09:42 - 07/15/2019 18:36) Working on action event and client event @patti
+(07/16/2019 09:48 - 07/16/2019 15:52) Created test for packaging and unpackaging JSON data for Credit card, etc. @patti
+(10/18/2019 13:07 - 10/18/2019 17:08) Created patti/webhook/thrivecart.php @patti
+(10/28/2019 09:53 - 10/28/2019 16:15) Test thrivecart webhook @patti
+(10/29/2019 12:20 - 10/29/2019 17:50) Got account added from thrivecart @patti
+(10/31/2019 12:54 - 10/31/2019 18:32) Change to append mode and log all calls @patti
+(11/01/2019 09:37 - 11/01/2019 12:32) Check for subscription and create account in proper group @patti
+(11/02/2019 08:59 - 11/02/2019 12:21) refactoring thrivecart.php @patti
+(11/02/2019 13:12 - 11/02/2019 13:35) Testing on thrivecart.php @patti
+(11/04/2019 09:49 - 11/04/2019 16:14) Fixing locating product id reliabily @patti
+(11/05/2019 09:42 - 11/05/2019 15:39) adding mysql logging and xref table @patti
+(11/06/2019 10:41 - 11/06/2019 12:11) expand log and xref tables, add method for duplicates @patti
+(11/08/2019 08:48 - 11/08/2019 11:13) refactor to track new products and events @patti
+(11/11/2019 11:46 - 11/11/2019 14:18) Work on cart abandonment @patti
+(11/12/2019 13:39 - 11/12/2019 17:00) create rails app to manage logs and user lists @patti
+(11/13/2019 08:51 - 11/13/2019 09:17) Look at account info received from AllClients @patti
+(11/13/2019 09:17 - 11/13/2019 09:45) Work on backups for the databases @patti
+(11/13/2019 09:45 - 11/13/2019 10:09) Test the lookup and SetStatus for deactivate account @patti
+(11/13/2019 10:39 - 11/13/2019 12:09) Reformatted rails app output @patti
+(11/13/2019 12:59 - 11/13/2019 14:59) Updates to rails/patti for managing users and viewing logs @patti
+(11/14/2019 09:33 - 11/14/2019 10:33) Add DataTables to patti-rails @patti
+(11/14/2019 10:33 - 11/14/2019 11:03) Continue work on cart abandonment @patti
+(11/14/2019 11:03 - 11/14/2019 12:03) Fixed problem in refactored webhook @patti
+(11/14/2019 12:23 - 11/14/2019 13:03) Fix engagemoreid in webhooks @patti
+(11/18/2019 12:03 - 11/14/2019 13:03) Phone- patti & Chris viz. cancel, abandon, upsell @patti
+(11/18/2019 16:38 - 11/18/2019 17:43) Fix layout, tables refresh, table swapping @patti
+(11/20/2019 15:14 - 11/20/2019 19:34) Fleshed out cancel_account and modified test_add to test the cancellation @patti
+(11/25/2019 14:00 - 11/25/2019 16:04) Communication with thrivecart re upgrade @patti
+(11/26/2019 10:11 - 11/26/2019 11:28) Talk with Patti and Chris @patti
+(11/30/2019 19:39 - 11/30/2019 21:37) factor thrivecart.php to handle all events and products @patti
+(12/01/2019 10:17 - 12/01/2019 12:37) Flesh out refactoring and testing of all event handling @patti
+(12/03/2019 09:56 - 12/03/2019 13:45) Update database to handle different products @patti
+(12/06/2019 10:18 - 12/06/2019 13:20) Finish integrating change, cancel into thrivecart.php @patti
+(12/09/2019 09:28 - 12/09/2019 12:38) Research into cart abandonment and collecting contacts via Zaps @patth
+(12/10/2019 09:28 - 12/10/2019 10:59) Setup Mailchimp and prepare test of abandonment @patti
+(12/10/2019 11:00 - 12/10/2019 11:19) Mop kitchen floor - dianne @personal
+(12/10/2019 11:19 - 12/10/2019 11:43) Look up Franklin planner @personal
+(12/10/2019 11:58 - 12/10/2019 12:38) Prepare lunch @personal
+(12/10/2019 13:50 - 12/10/2019 15:24) Test a abandon php script @patti
+(12/10/2019 13:55 - 12/10/2019 15:10) Zoom with Patti and Chris @patti
+(12/10/2019 15:10 - 12/10/2019 15:28) Look into Facebook Form lead ads @patti
+(12/10/2019 15:28 - 12/10/2019 16:01) Update financial spreadsheet @personal
+(12/10/2019 16:05 - 12/10/2019 16:10) Check out Planner stuff @personal
+(12/11/2019 10:20 - 12/11/2019 10:40) Mop kitchen floor @personal
+(12/11/2019 17:10 - 12/11/2019 18:23) Background research on Facebook Form ad leads @patti
+(12/12/2019 08:30 - 12/12/2019 08:56) Update financial spreadsheet @personal
+(12/12/2019 10:00 - 12/12/2019 10:20) Mop kitchen floor @personal
+(12/13/2019 10:52 - 12/13/2019 12:00) Work with Facebook Form ad lead generation @patti
+(12/16/2019 13:47 - 12/16/2019 15:49) on-line meeting with patti and christine @patti
+(12/17/2019 15:52 - 12/17/2019 17:04) Add css to in html for patti @patti
+(12/18/2019 11:04 - 12/18/2019 13:04) Testing cancel on Thrivecart @patti
+(12/19/2019 10:33 - 12/19/2019 12:14) Install table plugin for patti @patti
+(12/20/2019 10:28 - 12/20/2019 11:26) Continue installation of plugin @patti
+(12/20/2019 18:38 - 12/20/2019 18:49) Recover data in wordpress table @patti
+(12/23/2019 10:46 - 12/23/2019 12:30) Download and install Easy Pricing tables for engagemore @patti
+(12/24/2019 10:05 - 12/24/2019 10:42) Restore image at page top, resize table, and save @patti
+(12/26/2019 11:28 - 12/26/2019 12:03) Finish filling in pricing table @patti
+(12/26/2019 14:51 - 12/26/2019 16:09) Phone call re pricing table @patti
+(12/27/2019 11:45 - 12/27/2019 12:37) Review latest work with Pricing Tables @patti
+(12/29/2019 10:06 - 12/29/2019 12:26) add products and test @patti
+(12/31/2019 08:39 - 12/31/2019 12:39) Fix to use email @patti
+(01/02/2020 17:45 - 01/02/2020 18:22) check free month and fix @patti
+(01/06/2020 12:05 - 01/06/2020 13:35) view Patti webinar @patti
+(01/06/2020 13:35 - 01/06/2020 13:57) Meeting on-line with @patti
+(01/07/2020 10:17 - 01/07/2020 11:34) Add logging to webhook @patti
+(01/08/2020 11:00 - 01/08/2020 12:18) Fix product-15 issue @patti
+(01/08/2020 15:28 - 01/08/2020 16:23) Phone call with Patti and Chris @patti
+(01/09/2020 09:36 - 01/09/2020 11:06) Added products 16 and 17 and tested @patti
+(01/09/2020 16:29 - 01/09/2020 17:21) Prepare to get on Zoom @patti
+(01/10/2020 10:50 - 01/10/2020 12:43) Add adjusting email limits to webhook @patti
+(01/14/2020 12:01 - 01/14/2020 13:24) Phone call re hosting - cancel offer - texting @patti
+(01/14/2020 16:06 - 01/14/2020 17:06) adjust logging and remove email limits @patti
+(01/15/2020 11:25 - 01/15/2020 11:39) Work on HostMonster problem @patti
+(01/23/2020 10:52 - 01/23/2020 14:04) online meeting re hostmonster @patti
+(01/27/2020 11:50 - 01/27/2020 13:01) Talk about getting access to HostMonster @patti
+(01/29/2020 10:23 - 01/29/2020 15:04) Problem with affiliates add @patti
+(01/30/2020 10:03 - 01/30/2020 13:11) review logs, check out affiliate info @patti
+(01/31/2020 09:46 - 01/31/2020 11:17) Tested thrivecart.php @patti
+(02/10/2020 09:15 - 02/10/2020 12:15) Setup AWS and test browser access @patti
+(02/11/2020 10:33 - 02/11/2020 12:10) Revise how to get to documentation @patti
+(02/12/2020 10:22 - 02/12/2020 11:42) Move php code to AWS, work on php @patti
+(02/13/2020 10:03 - 02/13/2020 11:51) Reinstall LAMP on AWS to fix PHP issue @patti
+(02/13/2020 12:47 - 02/13/2020 13:52) Spin up AWS, make sure httpd and mysqld are running @patti
+(02/14/2020 14:12 - 02/14/2020 16:42) testing aws webhook from thrivecart @patti
+(02/14/2020 18:35 - 02/14/2020 20:52) updating documentation on aws @patti
+(02/15/2020 09:32 - 02/15/2020 14:02) Get thrivecart webhook working on AWS @patti
+(02/16/2020 12:12 - 02/16/2020 15:23) create backup script and add to crontab @patti
+(02/17/2020 10:08 - 02/17/2020 12:09) Check logs, users and backups on AWS @patti
+(02/17/2020 13:09 - 02/17/2020 14:47) Examine thrivecart re affiliate @patti
+(02/18/2020 10:13 - 02/18/2020 13:27) Working on affiliates and real geeks @patti
+(02/18/2020 17:00 - 02/18/2020 17:48) compose questions to Thrivecart @patti
+(02/21/2020 09:26 - 02/21/2020 11:14) Gather info on RealGeeks API and refactor thrivecart.php @patti
+(02/24/2020 10:47 - 02/24/2020 12:03) working on realgeek @patti
+(02/27/2020 14:27 - 02/27/2020 18:27) Fix invoice and order ids in users from logs @patti
+(02/28/2020 20:35 - 02/28/2020 22:24) work on report and affiliate-commission_earned email @patti
+(03/03/2020 10:05 - 03/03/2020 14:35) Wrote script to review logs and new adds  @patti
+(03/05/2020 09:15 - 03/03/2020 14:35) Revise and test script to review logs and new adds  @patti
+(03/07/2020 11:05 - 03/07/2020 14:35) More work on affiliate and reviewed logs and new adds  @patti
+(03/10/2020 20:25 - 03/10/2020 22:26) Reviewed and analyze logs and new adds  @patti
+(03/11/2020 10:27 - 03/11/2020 13:03) Update documentation @patti
+(03/11/2020 17:17 - 03/11/2020 20:17) Continue update documentation @patti
+(03/17/2020 11:45 - 03/17/2020 13:36) Discussion about domain connect and how to move domain name to point to new server @patti
+(03/25/2020 11:14 - 03/25/2020 13:42) Work on getting AWS account transferred @patti
+(03/26/2020 12:07 - 03/26/2020 13:23) Spoke with AWS support about add user @patti
+(03/26/2020 14:26 - 03/26/2020 14:48) Prepare for quantellia call with Jerry Ozanne @quantellia
+(03/26/2020 14:48 - 03/26/2020 16:13) add Patti to AWS @patti
+(03/27/2020 10:08 - 03/27/2020 13:26) More reading and experimenting with AWS documents @patti
+(03/28/2020 10:22 - 03/28/2020 16:13) Update patti information on AWS @patti
+(03/30/2020 11:30 - 03/30/2020 15:13) Add Patti to Mantis and start monitor script @patti
+(03/31/2020 09:55 - 03/31/2020 11:06) check in monitor_patti_users @patti
+(03/31/2020 14:40 - 03/31/2020 16:53) setting up email on AWS @patti
+(04/01/2020 10:58 - 04/01/2020 11:15) Changed settings and verified patti and chris full AWS access @patti
+(04/01/2020 11:15 - 04/01/2020 11:45) Got AWS smtp mail credentials, saved locally, tested from console @patti
+(04/01/2020 13:01 - 04/01/2020 15:10) Installed Composer as per AWS instructions to use phpmail @patti
+(04/01/2020 15:10 - 04/01/2020 15:46) Used Composer to install phpmail as per instructions @patti
+(04/01/2020 15:46 - 04/01/2020 16:32) Began debugging why installation of phpmail did not work @patti
+(04/02/2020 11:58 - 04/02/2020 13:08) Try a reinstall of composer on AWS @patti
+(04/02/2020 19:21 - 04/02/2020 21:56) Working to get phpmailer installed @patti
+(04/02/2020 18:24 - 04/02/2020 21:56) Serious editing of aws-ses sendmail to get it working @patti
+(04/03/2020 09:24 - 04/03/2020 11:03) AWS mail not getting sent although says it is @patti
+(04/03/2020 18:15 - 04/03/2020 21:42) Documenting how to set up SMTP mail on AWS @patti
+(04/04/2020 10:08 - 04/04/2020 11:58) Work on Architectural Diagram @patti
+(04/04/2020 12:51 - 04/04/2020 14:24) Add Architectural Diagram to technical.tex @patti
+(04/04/2020 17:45 - 04/04/2020 19:40) Check in technical.doc and .pdf and move to AWS @patti
+(04/05/2020 09:37 - 04/05/2020 11:14) Testing email from AWS @patti
+(04/06/2020 09:01 - 04/06/2020 10:32) Send email verification to Patti and check git-hub syncing @patti
+(04/06/2020 14:02 - 04/06/2020 15:55) alter test AWS mailer to send to patti @patti
+(04/07/2020 09:32 - 04/07/2020 11:12) Edit webhook to send cancel email @patti
+(04/08/2020 11:01 - 04/08/2020 13:08) review logs and check for cancellations @patti
+(04/09/2020 09:37 - 04/09/2020 11:07) Update git_check and publish two wordpress articles @personal
+(04/10/2020 09:58 - 04/10/2020 12:12) Examine logs, check EC2 status, apply for SES move from sandbox @patti
+(04/11/2020 09:42 - 04/11/2020 10:33) Complete SES Request for move from sandbox @patti
+(04/13/2020 10:21 - 04/13/2020 14:21) Work on queue @personal
+(04/13/2020 19:36 - 04/13/2020 21:36) work on separating header for use on all pages @personal
+(04/14/2020 09:27 - 04/14/2020 10:03) AWS review, check logs, backups, billing @patti
+(04/14/2020 10:03 - 04/14/2020 10:06) Work on refactoring queue @personal
+(04/14/2020 10:06 - 04/14/2020 13:04) Review ppt and writeup @quantellia
+(04/14/2020 14:33 - 04/14/2020 15:03) Add product-19 to webhook @patti
+(04/14/2020 18:49 - 04/14/2020 19:01) Fix group name for product-19 @patti
+(04/14/2020 18:01 - 04/14/2020 19:01) correct group name for product-19 @patti
+(04/14/2020 18:34 - 04/14/2020 19:34) Editing fixit @personal
+(04/15/2020 09:45 - 04/15/2020 10:13) Prepare documentation for Trello on adding product @patti
+(04/15/2020 10:13 - 04/15/2020 11:32) Install latest Visual Studio @quantellia
+(04/15/2020 11:32 - 04/15/2020 15:35) Team conference for on boarding with Mark Zangari @quantellia
+(04/15/2020 15:35 - 04/15/2020 20:29) Create initial prototype dashboard @quantellia
+(04/16/2020 09:49 - 04/16/2020 10:21) Review aws logs, billing @patti
+(04/16/2020 11:43 - 04/16/2020 13:23) Work on Dashboard with Mark @quantellia
+(04/16/2020 15:38 - 04/16/2020 16:38) Add textArea to dashboard @quantellia
+(04/17/2020 09:33 - 04/17/2020 10:13) Review AWS logs, backups, remote backups, bill @patti
+(04/17/2020 11:42 - 04/17/2020 12:39) Work on dashboard with Mark @quantellia
+(04/19/2020 09:23 - 04/19/2020 11:41) Work on labeled controls, saving and reloading from file @quantellia
+(04/20/2020 09:30 - 04/20/2020 10:40) Add reading in of saved json and rebuilding dashboard @quantellia
+(04/20/2020 10:40 - 04/20/2020 11:40) Add product-21 to aws products @patti
+(04/20/2020 16:06 - 04/20/2020 17:06) Work on inputting save file name @quantellia
+(04/20/2020 17:06 - 04/20/2020 17:59) Add Buzz level to AWS webhook @patti
+(04/21/2020 09:29 - 04/21/2020 10:29) Work on save and restore dashboard @quantellia
+(04/21/2020 10:29 - 04/21/2020 12:01) Review logs, look at affiliate problem @patti
+(04/21/2020 14:52 - 04/21/2020 15:38) Work with Mark on dashboard @quantellia
+(04/21/2020 19:04 - 04/21/2020 21:33) Work with Mark on dashboard @quantellia
+(04/22/2020 09:38 - 04/22/2020 13:05) Add Drag and Drop to dashboard @quantellia
+(04/23/2020 14:45 - 04/23/2020 14:45) Working on dashboard with Mark @quantellia
+(04/23/2020 10:45 - 04/23/2020 11:55) AWS Logs, cancellation, and affiliate @patti
+(04/23/2020 14:45 - 04/23/2020 15:15) Working on dashboard @quantellia
+(04/24/2020 10:45 - 04/24/2020 12:47) Working on dashboard @quantellia
+(04/26/2020 10:48 - 04/26/2020 12:47) Converting to use grid coordinates @quantellia
+(04/27/2020 10:36 - 04/27/2020 12:06) Fix alignment problem with dashboard @quantellia
+(04/28/2020 09:16 - 04/28/2020 10:06) Affiliate study @patti
+(04/28/2020 10:06 - 04/28/2020 13:43) Add stop drag behavior @quantellia
+(04/29/2020 11:06 - 04/29/2020 12:43) Position controls within sub dashes @quantellia
+(04/29/2020 12:43 - 04/29/2020 14:10) Review AWS logs and backups also remotes @patti
+(04/29/2020 14:52 - 04/29/2020 16:48) refactor to handle sub desk as control @quantellia
+(04/30/2020 11:21 - 04/30/2020 13:08) Continue work on positioning and img sizing @quantellia
+(05/01/2020 09:36 - 05/01/2020 12:22) Adding Custom control and fixing images @quantellia
+(05/03/2020 10:45 - 05/03/2020 11:53) Add updates to Trello on new proucts @patti
+(05/04/2020 09:35 - 05/04/2020 10:32) Scan logs, check backups, look at affiliate @patti
+(05/04/2020 10:32 - 05/04/2020 13:49) Work on Singleton @quantellia
+(05/05/2020 08:37 - 05/05/2020 10:37) Worked on inter system messaging @quantellia
+(05/05/2020 11:28 - 05/05/2020 12:50) Work with Mark on dashboard @quantellia
+(05/05/2020 09:15 - 05/05/2020 10:30) Get access to patti facebook @patti
+(05/06/2020 10:45 - 05/06/2020 11:53) Scan logs, backups, Look at Zillow and Facebook ads @patti
+(05/07/2020 10:25 - 05/07/2020 11:50) Scan logs, backups, Billing @patti
+(05/09/2020 10:15 - 05/09/2020 11:23) Scan logs, backups, Zillow and Facebook ads @patti
+(05/12/2020 09:45 - 05/12/2020 11:53) Evaluate how to get key for Zillo API @patti
+(05/13/2020 11:58 - 05/13/2020 14:39) Work with Mark on styles @quantellia
+(05/13/2020 13:57 - 05/13/2020 14:59) Discuss email handling with Patti @patti
+(05/14/2020 11:07 - 05/14/2020 13:07) positioning and new icons @quantellia
+(05/15/2020 11:07 - 05/15/2020 11:29) look at AWS for email-pipe @patti
+(05/15/2020 11:29 - 05/15/2020 12:50) Change to generalized eventHandler @quantellia
+(05/18/2020 10:38 - 05/18/2020 11:00) Email about bcc and reply-to @patti
+(05/18/2020 11:00 - 05/18/2020 12:49) Adding search and click to Dashboard @quantellia
+(05/20/2020 14:40 - 05/20/2020 16:21) Work on webmail @patti
+(05/20/2020 18:30 - 05/20/2020 21:15) Working on Table @quantellia
+(05/21/2020 07:57 - 05/21/2020 09:07) Change settings in webmail @patti
+(05/21/2020 09:07 - 05/21/2020 14:00) Refactor Table @quantellia
+(05/22/2020 09:06 - 05/22/2020 17:30) Work on Tree and passing through sessionStorage @quantellia
+(05/23/2020 09:02 - 05/23/2020 13:10) Review documentation on API specific keys for email @patti
+(05/25/2020 09:31 - 05/25/2020 12:14) Try using ssl and tls in smtp @patti
+(05/27/2020 10:03 - 05/27/2020 13:05) Got IMAP working for login but working on receiving email @patti
+(06/02/2020 10:58 - 06/02/2020 12:29) Look at Zap and use of javascript to parse string @patti
+(06/02/2020 12:45 - 06/02/2020 14:40) Look at missing adds from Thrivecart @patti
+(06/04/2020 14:06 - 06/04/2020 17:28) Work on root access to AWS @patti
+(06/05/2020 09:39 - 06/05/2020 10:29) Look at thivecart.php @patti
+(06/06/2020 09:47 - 06/06/2020 12:07) Figuring out what changed in add_acccount @patti
+(06/08/2020 10:07 - 06/08/2020 10:55) Obtain SSL Certificate for AWS webhook @patti
+(06/08/2020 10:55 - 06/08/2020 14:01) Work on tree in categories @quantellia
+(06/08/2020 14:02 - 06/08/2020 14:27) look at AllClient SSL @patti
+(06/08/2020 14:27 - 06/08/2020 16:32) Clean up code @quantellia
+(06/09/2020 08:35 - 06/09/2020 09:42) Add log for failure to webhook @patti
+(06/09/2020 12:49 - 06/09/2020 15:19) Try and document latest SSL test @patti
+(06/10/2020 08:19 - 06/10/2020 11:59) work on affiliate query @patti
+(06/11/2020 10:03 - 06/11/2020 12:46) Work on jsTree @quantellia
+(06/12/2020 10:15 - 06/12/2020 12:02) Work on Quantellia.tree @quantellia
+(06/13/2020 08:05 - 06/13/2020 10:02) Create mailnugget acct and test @patti
+(06/13/2020 10:05 - 06/13/2020 12:22) Work on SlickGrid @quantellia
+(06/14/2020 10:27 - 06/14/2020 12:31) Build inspector table  @quantellia
+(06/15/2020 10:11 - 06/15/2020 12:01) Work on Site and Entities @quantellia
+(06/16/2020 08:30 - 06/16/2020 11:03) stub in addContactNote @patti
+(06/16/2020 11:25 - 06/16/2020 13:37) Integrate Site into categories @quantellia
+(06/16/2020 14:45 - 06/16/2020 17:07) tooltips and behavior @quantellia
+(06/17/2020 08:34 - 06/17/2020 11:25) Create utility functions for addContactNote @patti
+(06/17/2020 11:25 - 06/17/2020 12:36) Work on dashboard @quantellia
+(06/17/2020 14:40 - 06/17/2020 15:57) Testing getContacts and addContactNote @patti
+(06/17/2020 15:58 - 06/17/2020 16:37) Check new qs_lib from Mark @quantellia
+(06/18/2020 06:37 - 06/18/2020 07:22) Work on addContact and addContactNote @patti
+(06/18/2020 11:18 - 06/18/2020 12:52) Work on notify and colors @quantellia
+(06/18/2020 12:52 - 06/18/2020 13:35) Try using accountId in addContactNote @patti
+(06/18/2020 16:07 - 06/18/2020 18:14) Examine getAccountId @patti
+(06/18/2020 18:45 - 06/18/2020 19:15) create branch for contactNote @patti
+(06/19/2020 11:06 - 06/19/2020 12:28) Work on colors and messaging @quantellia
+(06/19/2020 13:23 - 06/19/2020 15:03) colors and opacity @quantellia
+(06/20/2020 11:06 - 06/20/2020 11:38) testGetContact and get-contact.php @patti
+(06/20/2020 11:38 - 06/20/2020 12:14) add getContact to addContactNote @patti
+(06/20/2020 12:32 - 06/20/2020 17:43) debug addContactNote @patti
+(06/20/2020 18:41 - 06/20/2020 19:26) final changes to use method 2 instead of 1 @patti
+(06/21/2020 16:17 - 06/21/2020 16:18) fixing billing script @personal
+(06/22/2020 18:03 - 06/22/2020 18:28) Check results sent that showed on account not added to group @patti
+(06/23/2020 09:25 - 06/23/2020 09:38) checking aws logs and backups @patti
+(06/23/2020 09:39 - 06/23/2020 11:22) creating handlers section in categories.html @quantellia
+(06/23/2020 11:22 - 06/23/2020 14:53) adding to handlers @quantellia
+(06/24/2020 09:25 - 06/24/2020 12:40) Starting to build php data code @quantellia
+(06/24/2020 13:50 - 06/24/2020 17:10) Mark directions and line graph @quantellia
+(06/25/2020 08:21 - 06/25/2020 08:53) checking logs and backups @patti
+(06/25/2020 08:53 - 06/25/2020 12:24) working on JSON data and stubs @quantellia
+(06/25/2020 15:19 - 06/25/2020 17:01) working on restructuring ajax received data @quantellia
+(06/26/2020 10:53 - 06/26/2020 13:35) summarizing by state and US as a whole plus stash polygons @quantellia
+(06/28/2020 11:50 - 06/28/2020 12:47) setting correct Buzz @patti
+(06/28/2020 12:47 - 06/28/2020 13:26) try to sum states and US @quantellia
+(06/29/2020 09:36 - 06/29/2020 09:45) fixing product-data @patti
+(06/29/2020 09:45 - 06/29/2020 12:50) working on incorporating Quantellia ajax call @quantellia
+(06/30/2020 08:43 - 06/30/2020 12:15) work on ajaxHandler and snapToGrid @quantellia
+(07/01/2020 11:17 - 07/01/2020 12:29) snapToGrid and ajaxCall @quantellia
+(07/01/2020 12:57 - 07/01/2020 13:57) snapToGrid and ajaxCall @quantellia
+(07/02/2020 10:16 - 07/02/2020 12:17) fix plotting totals @quantellia
+(07/04/2020 08:31 - 07/04/2020 09:31) define new product cases @patti
+(07/04/2020 14:39 - 07/04/2020 17:09) work on testing drag drop without jQuery @quantellia
+(07/05/2020 15:16 - 07/05/2020 16:21) work on new product @patti
+(07/05/2020 16:54 - 07/05/2020 16:54) working on turning off billing @personal
+(07/05/2020 16:54 - 07/05/2020 18:43) see if billing turns off @personal
+(07/06/2020 09:43 - 07/06/2020 12:40) work on stubs for ajax @quantellia
+(07/07/2020 08:34 - 07/07/2020 12:14) fix drag, drop, resize @quantellia
+(07/07/2020 15:34 - 07/07/2020 17:51) add change group for product-29 @patti
+(07/08/2020 09:58 - 07/08/2020 12:59) Look into bcc problem @patti
+(07/08/2020 14:06 - 07/08/2020 18:36) working on transferring snapToGrid @quantellia
+(07/09/2020 09:06 - 07/09/2020 09:26) check on SendGrid url @patti
+(07/09/2020 09:26 - 07/09/2020 12:35) work on snapToGrid @quantellia
+(07/09/2020 14:35 - 07/09/2020 14:41) continue implementing snapToGrid @quantellia
+(07/09/2020 14:41 - 07/09/2020 15:05) fix patti product-24 instead of 29 issue @patti
+(07/09/2020 15:05 - 07/09/2020 15:28) save changes and format index.php @patti
+(07/09/2020 15:56 - 07/09/2020 17:07) trouble shooting product-29 @patti
+(07/10/2020 09:14 - 07/10/2020 10:58) revisions in add_contact @patti
+(07/10/2020 10:58 - 07/10/2020 13:30) start on fixing dashboard @quantellia
+(07/10/2020 18:14 - 07/10/2020 21:24) work on snapToGrid @quantellia
+(07/11/2020 11:21 - 07/11/2020 13:07) Fix the positioning of snapToGrid @quantellia
+(07/11/2020 14:08 - 07/11/2020 19:52) change to persistent resizer @quantellia
+(07/12/2020 09:47 - 07/12/2020 11:38) Work on covid chart and fixing a problem with true false @quantellia
+(07/13/2020 11:27 - 07/13/2020 12:57) meet with Lorien and Mark ie tasking @quantellia
+(07/13/2020 16:02 - 07/13/2020 16:47) research on plume models @quantellia
+(07/14/2020 12:11 - 07/14/2020 17:13) Leave running to test crontab @personal
+(07/15/2020 09:43 - 07/15/2020 13:51) work on add-contact-note @patti
+(07/16/2020 10:57 - 07/16/2020 12:58) meeting re unity and plumes @quantellia
+(07/18/2020 08:43 - 07/18/2020 12:26) Establish scaffolding for documentation of model @quantellia
+(07/18/2020 14:42 - 07/18/2020 15:27) look at sign-up problems @patti
+(07/20/2020 09:20 - 07/20/2020 11:04) Work on query error @patti
+(07/20/2020 11:04 - 07/20/2020 12:47) review with Mark and Nadine for tomorrow @quantellia
+(07/21/2020 09:15 - 07/21/2020 10:45) Run tests on query @patti
+(07/21/2020 10:45 - 07/22/2020 13:42) discussion with Paul, Lisa, Mark, and Nadine @quantellia
+(07/22/2020 09:12 - 07/22/2020 18:54) Write up notes on breathing @quantellia
+(07/23/2020 09:41 - 07/23/2020 12:32) Continue editing CovidMethodology.tex @quantellia
+(07/23/2020 13:32 - 07/23/2020 15:26) Fix the add_account problem failing mysteriously @patti
+(07/24/2020 09:34 - 07/24/2020 11:14) Check logs and fix logging error @patti
+(07/24/2020 11:14 - 07/24/2020 13:05) Work on breath volume and droplet expiration @quantellia
+(07/25/2020 09:02 - 07/25/2020 10:29) work on bad signup @patti
+(07/25/2020 10:29 - 07/25/2020 12:31) clean up dashboard @quantellia
+(07/26/2020 09:10 - 07/26/2020 12:45) Investigate rfc email formats and start email extractor @patti
+(07/27/2020 08:45 - 07/27/2020 11:47) Test email extractor @patti
+(07/28/2020 09:17 - 07/28/2020 10:37) improve email name extraction for later @patti
+(07/29/2020 10:27 - 07/29/2020 12:14) work on methodology. Meet with Mark and Nadine @quantellia
+(07/30/2020 08:52 - 07/30/2020 12:53) Look at query failures, design file logger for json @patti
+(07/31/2020 08:44 - 07/31/2020 12:17) Test file logger and revise for aws @patti
+(08/03/2020 09:21 - 08/03/2020 12:31) revise to log json to file @patti
+(08/04/2020 09:33 - 08/04/2020 15:33) work on consistency pgm @patti
+(08/05/2020 12:33 - 08/05/2020 15:33) more work on consistency pgm @patti
+(08/05/2020 20:18 - 08/05/2020 21:35) Upload documents@quantellia
+(08/06/2020 07:55 - 08/06/2020 13:35) work on probability of infection and phone call @quantellia
+(08/06/2020 18:27 - 08/06/2020 19:27) Answer Loriens questions @quantellia
+(08/07/2020 10:13 - 08/07/2020 11:59) work on consistency @patti
+(08/08/2020 15:39 - 08/08/2020 15:40) Fix billing in notes  @personal
+(08/08/2020 15:43 - 08/08/2020 15:47) Work billing in notes  @personal
+(08/08/2020 15:47 - 08/08/2020 15:51) Test billing in notes  @personal
+(08/08/2020 15:51 - 08/08/2020 15:56) Verify last line  @personal
+(08/08/2020 15:59 - 08/08/2020 16:02) Test on after adjusting lastline  @personal
+(08/08/2020 16:03 - 08/08/2020 16:05) Check on  @personal
+(08/08/2020 16:05 - 08/08/2020 16:05) Removed on newline  @personal
+(08/08/2020 16:05 - 08/08/2020 16:06) Check on  @personal
+(08/08/2020 16:06 - 08/08/2020 16:17) once more  @personal
+(08/09/2020 10:17 - 08/09/2020 12:34) work on updating user table @patti
+(08/10/2020 09:07 - 08/10/2020 12:34) more work on updating user table @patti
+(08/10/2020 13:05 - 08/10/2020 16:10) work on methodology paper @quantellia
+(08/11/2020 09:05 - 08/11/2020 12:50) moving sources and updating TeX @quantellia
+(08/11/2020 16:06 - 08/11/2020 17:04) Start Unity Tutorials @quantellia
+(08/11/2020 17:05 - 08/11/2020 17:55) add show user to AllUsers @patti
+(08/12/2020 09:50 - 08/12/2020 11:58) Mark, et. al. on DXL import into Unity @quantellia
+(08/12/2020 13:49 - 08/12/2020 16:47) follow Loriens advice @quantellia
+(08/13/2020 09:12 - 08/13/2020 12:41) Build ball and wall @quantellia
+(08/13/2020 16:23 - 08/13/2020 18:07) create repository and save dxf @quantellia
+(08/14/2020 09:14 - 08/14/2020 12:43) continue work on import dxf @quantellia
+(08/14/2020 16:16 - 08/14/2020 20:09) Download Blender, work on DXF @quantellia
+(08/15/2020 10:12 - 08/15/2020 12:34) Update user management panel and update users @patti
+(08/15/2020 15:06 - 08/15/2020 17:21) Work with Blender on DXF @quantellia
+(08/16/2020 09:28 - 08/16/2020 11:27) Work with DXF Convert from Lorien @quantellia
+(08/16/2020 13:08 - 08/16/2020 15:27) Review aws, check logs, errors @patti
+(08/17/2020 09:28 - 08/17/2020 11:06) Work on web-based management of accounts and users @patti
+(08/17/2020 11:06 - 08/17/2020 12:57) Work with Mark on getting V Studio working @quantellia
+(08/17/2020 14:47 - 08/17/2020 16:53) Import into steerable scene @quantellia
+(08/18/2020 07:58 - 08/18/2020 10:34) add motion to inspect drawing @quantellia
+(08/18/2020 10:34 - 08/18/2020 11:30) reconciling adds and dels @patti
+(08/18/2020 11:30 - 08/18/2020 12:29) scrum with Nadine and Jess re unity and documents @quantellia
+(08/18/2020 16:16 - 08/18/2020 17:07) add accountType to users table @patti
+(08/19/2020 09:48 - 08/19/2020 12:35) working with Jess on methodology @quantellia
+(08/19/2020 12:37 - 08/19/2020 13:00) tweak users and accounts to add accountType @patti
+(08/19/2020 18:27 - 08/19/2020 19:12) prepare unity status for Lorien @quantellia
+(08/20/2020 08:55 - 08/20/2020 11:45) Add selectors to Users utility @patti
+(08/20/2020 11:45 - 08/20/2020 12:45) work with ECC model - jessica @quantellia
+(08/20/2020 16:01 - 08/20/2020 17:29) start on particle generator @quantellia
+(08/21/2020 08:18 - 08/21/2020 08:25) add product types as selector @patti
+(08/21/2020 08:25 - 08/21/2020 09:59) test product types as selector @patti
+(08/21/2020 14:17 - 08/21/2020 17:20) work on nose and emission @quantellia
+(08/22/2020 09:21 - 08/22/2020 12:23) documenting parameters in particle generator @quantellia
+(08/22/2020 15:03 - 08/22/2020 17:14) continue documenting parameters and steps @quantellia
+(08/23/2020 09:04 - 08/23/2020 11:44) Check aws logs, errors, backups @patti
+(08/23/2020 13:04 - 08/23/2020 17:54) continue to create particle generator @quantellia
+(08/25/2020 07:18 - 08/25/2020 09:08) work on users and accounts sync @patti
+(08/25/2020 09:07 - 08/25/2020 13:07) revise ParticleGenerator.tex @quantellia
+(08/26/2020 08:57 - 08/26/2020 10:45) explore how to create particle generator @quantellia
+(08/29/2020 08:57 - 08/29/2020 11:57) Review aws logs, backups, remote backups, accounts @patti
+(08/31/2020 09:53 - 08/31/2020 10:23) review aws logs, backups, accounts @patti
+(08/31/2020 10:23 - 08/31/2020 10:35) Turn off most test accounts on Thrivecart @patti
+(08/31/2020 10:35 - 08/31/2020 11:52) work on more physical portrayal of viral emission @quantellia
+(08/31/2020 11:52 - 08/31/2020 15:32) Have lunch with bride @personal
+(08/31/2020 15:32 - 08/31/2020 17:07) Create Unity exhaust package, follow tutorial @quantellia
+(09/01/2020 09:09 - 09/01/2020 11:49) work on physical smoke look @quantellia
+(09/01/2020 11:49 - 09/01/2020 12:34) check aws @patti
+(09/07/2020 09:13 - 09/07/2020 11:48) work on changing emails for AWS @patti
+(09/08/2020 10:38 - ) Work on portraying density of invectioous particles @quantellia

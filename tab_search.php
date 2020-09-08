@@ -7,24 +7,24 @@ $data4 .= "<center><h2>Search</h2></center><br/>";
 if( empty( $_REQUEST['for'] ) ){
 $raw = "<form action='./index.php' method='post'><input type='text' name='for' value='' width='30'/><br/><input type='submit' value='Search' /><input type='submit' value='Cancel'/></form>";
 } else {
-  $raw = "Search for " . $_REQUEST['for'];
-  $raw .= "<br />";
+  $raw = "<center><h2>Search for '" . $_REQUEST['for'];
+  $raw .= "'</h2></center><br /><br />";
   $sources = array(".todo", "Port_Starboard.txt", "Language.txt", "Restaurants.txt");
   foreach( $sources as $source ) {
   $raw .= "Searching: " . $source . "\n";
   // | sed 's:~/Dropbox/Personal/Documents/Notes/::'
-  $cmd = "/usr/bin/grep -n -i " . $_REQUEST['for'] . " /Users/woo/Dropbox/Personal/Documents/Notes/$source ";
+  $cmd = "/usr/bin/grep -n -i " . $_REQUEST['for'] . " /Library/WebServer/Documents/notes/Data/$source ";
   //$raw .= "cmd: " . $cmd . "<br />";
   $output = "\n" . shell_exec($cmd);
   $raw .= nl2br($output);
 }
-$search_file = "search.txt";
+$search_file = "/Library/WebServer/Documents/notes/Data/search.txt";
 if( file_exists($search_file)) {
   unlink($search_file);
 }
 $handle = fopen($search_file,'a');
 fwrite($handle, "Searching Journal\n");
-$files = glob("/Users/woo/Dropbox/Personal/Documents/Notes/Journal_*.txt");
+$files = glob("/Library/WebServer/Documents/notes/Data/Journal_*.txt");
 foreach( $files as $file ) {
   $matches = match($file, $_REQUEST['for']);
   if( sizeof( $matches ) > 0 ) {

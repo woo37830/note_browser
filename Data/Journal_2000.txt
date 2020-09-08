@@ -1,0 +1,189 @@
+---200009
+  1)Persistence doesn't seem right.  JobTracker is updated way too many times
+	and then it deleted and then updated!  Put trace in for begin commit and end commit
+	then break on those and see where they are being called.
+		***2000-09-25*** fixed.  Errors in the persistence mechanism.  Objects
+		were not getting removed from the temporary cache after being persisted.
+		See below note on UOW being cleared.
+	2)Create a test of creating, updating, and deleting.
+	Should see exactly what I should expect.  Something is being left in a
+	cache that shouldn't be.
+		***Fixed by noting that after commit, the uow needs to be cleared if it's
+			***not being released.
+
+---200009
+ 1)Work needs to be done to check out the behavior of queuing.  The present case
+	always queues no matter what the skipQueuing flag.  In the test, we don't
+	set up a targetRole or targetSupplier to get past this.1
+		***Product appears to work as it should now.  Had not checked for
+		queued activities in initial release.
+	Appears problem with queuing initial activity may be related to the initial activity
+	not having an ActivityLink?  If so, then it can't located the skipQueuing flag.
+	***** check this out *****  If so, then be sure to add such a link when establishing
+	the initial activity.
+
+---200009
+ 1)Add ability to have loops in WorkFlow.  Be sure and check previous and same levels
+	in tree for the activity and terminate recursion if found.
+	2)How to display list of activities for general demo?  Applet appears to have that
+	hard coded.  Needs to get current one.  Should Application have separate ghm?
+	3)How to generate menu in general.
+		***2000-09-26*** Use PopupMenu for nodes, etc. but use a new Frame for
+			the display selections, i.e. pick from a list.
+	4)How to prevent frame problem with logging in after logging out.
+	5)How to get hint to show in mouseOver of menu tabs.
+	6)Generate workFlow for StateCollege
+	7)Extend activity to have additional attributes for video, etc. on screen
+	8)How to have graphical background have active areas that are the "buttons" for
+	  moving to next activity.
+	9)Build left frame with top and bottom.  Each of those can have additional
+	  process buttons? e.g. show email list in top.  select email shows it on right?
+	  click on actions, reply, forward, new, delete for email?  Email process that is
+	  linked in.
+	10) When client is set, get using javaScript? the list of demos in his directory to
+	select from.  Also, get the set of clients via javaScript? to select from.
+
+---200009
+ 1)Seems to have loop in job tracker for test demo.
+        2)Consistent names for client and then demo within clientl
+
+---200009
+ 1) Need CreateJT_and_Queue(processName)
+	2) create_queues()
+	3) JobTracker like EmployeeTracer but not for employees, but single step.
+	4) Frame in createMenu needs to be in front.
+        5) hide frame and show frame each time
+		***2000-09-27*** fixed.
+        6) change to select mode after hiding frame.
+	7) Seems to either not fully clear screen OR is getting objects and redrawing them
+           from somewhere.  This appears to be only associated with the nodes.  Do a
+	   workflow then a hierarchy.  Nodes from Workflow remain on screen or get redrawn.
+		***2000-09-27*** fixed.  Problem was in DisplayObject.getMembers().  It was
+			getting all display objects.  Query did not appear to work, so
+			wrote it as a get all with subsequent filtering.
+	8) Query inside DisplayObject.getMembers() did not work.  Had to do get all then
+		filter the objects.
+
+---200009
+ 1) Getting class cast exception in loadDocumentHandler at the Date Formatter?
+	2) Have put test code for routing into DefaultActivityPage and LoginHandler.
+		  <REMOVE THEM>
+	3) Install Rons ODBC Driver for access.  Getting no error message for write.
+
+
+---200010
+ 1) Added moving from organizational hierarchy to business process in work center.
+		*** DONE  ***
+	2) Title of frame needs to be current organization or business process
+	3) Work now on creating and linking activities.
+		a) add a "+" button for creating, another for adding existing.
+		b) add a link button for creating the link type
+		c) add drag and drop linking for connecting.
+	4) need to focus on saving configuration, forward and back buttons.
+		***2000-10-15***partially fixed.  Saves and uses forward and back buttons
+				but not consistently.  See 10-18/1
+
+
+---200010
+ 1) Logic for save is not consistent.  Should use boolean save() consistently.
+		if dirty, show dialog.  If clicked yes, save and continue
+		  			If clicked no, don't save and continue
+		***2000-10-19***Fixed.  Needs more checking but appears correct.
+	2) Need to bring up background menu
+	3) Add Information to corporation, etc.
+		***2000-10-19***Created ObjectInspector that shows fields in objects.
+	4) Get wc's and so forth correctly.
+	5) add create and connect logic via tool selection and drag to make connection.
+
+
+---200010
+ 1) ObjectInspector needs better layout.
+		*** 2000-11-02 *** Done converted to SC_Inspector
+	2) Edited objects that are not saved still appear the same on the screen.
+		the refresh objects does not appear to solve the problem.
+	3) Create a menu bar for the applet that has buttons that when clicked
+		produce a popup menu at that spot.
+	4) Redo some of the actions to use these menus.
+
+
+---200010
+ 1) Type should not extend Core, but rather implement all of the inherited interfaces
+		and therefore not involve any joins to instantiate it.
+		*** 2000-10-30 ***  Ron made change.  Need to test
+	2) Specify an interface that provides the same functionality as Context OR
+		should Context be in the core package?  Use that interface in jobTracker.
+
+
+---200010
+ 1) QueueEntry should extend Observable and implement UniquelyIdentifiable.  Does it need to extend anything else to be used in an Expression?
+	2) QueueEntryStatus should extend Object and implement
+	UniquelyIdentifiable.  Same question as 1.
+		*** 2000-11-02 *** QueueEntryStatus should extend Type
+	3) Add an update method as a separate server that checks for the dueDate if present on status "Waiting" and on getting the
+	update and due, then changes status to "Active"
+		*** 2000-11-02 *** Done
+	4) Check that a way exists to mark a queueEntry as "Waiting" and set the due date.
+		*** 2000-11-02 *** Done
+	5) Provide an example workflow for reviews that has a screen
+	where we can set the date of next review.
+	6) Implement create/edit in GraphicEditor.
+
+
+---200011
+ 1) SearchField, SearchObject, etc. need to be recovered and redone.
+	2) Seems like the Search could be assisted using the DirectedGraph.
+
+
+---200011
+ 1) Release 9 saved to Devclasses and gets data from object to screen.  Error was in using OLD binder.  Import statements were wrong.  Did search for pcpi and removed those in import statements.  Still getting object.toString if no other value.
+	2)  Have to check for saving.
+	3)  Getting Types and using router with new routes for Types worked.
+
+
+---200011
+ 1)Installed the wireless mouse and keyboard.  Worked without any
+	    additional software.  Assume additional software is for funky keys.
+
+
+---200011
+ 1)Added QueueActivity, checked it standalone.  Integrated into Demo, but having problems with Demo because startProcess seems to return after	doing the push to parent.  There appears to be a difference between the ScreenGenie way of moving and the Demo way of moving.  I think that this is the root of why we have problems with going back to the initial activity.  We seem to be using DeQueue as a part of the job stepping process.  It should not be, at least I don't think it should.
+	2)  Problem with java.security when trying to run applets.  Didn't happen in 3.02, but does in 3.5.
+	3)  Really need to clean up navigator!!!!
+	4)  Build some clean demo screens!!!
+	5)  Add create, edit functionality to GraphicEditor.  (run as application right now? ).
+
+
+---200012
+ 1) Added Rons code.
+	2) Converted almost all Observables to Notifications.
+	3) Changed all Types to CategoryItems
+	4) Tested SC_InspectorPanel with Person
+	5) Had to add getGenderCategory and setGenderCategory to Person
+	6) Data getting read in SC_Inspector but notifications not being sent
+	7) Change back to Observer?  fix Notification?  finish changes?
+	8) Do comparison and check back in changes for Ron.
+
+
+---200012
+ 1) Changed GraphicEditor to subclass from Frame to get by Applet problems
+	2) Problem was that couldn't locate code base.
+	3) Now have problem that when business process is selected, the
+		traverse seems to go into a loop.  Why would this change?
+		I'll need to test the build process and traversal next.
+		Once it's cleaned up, then see if GraphicEditor works.
+		***Problem was that workFlow had a <<back and had a loop.
+		Traverse can't handle this yet! ( not sure about tracker ).
+
+
+---200012
+ 1) Fixed traverse in saqqara demo by removing <<back route
+	2) Having painting problem.  Needs resize to repaint?
+	3) Can't edit until Notification problem in Navigator is solved.
+	4) Will proceed with adding Activities, linking them up?
+	5) Reverted to using Observer/Observable in gui.
+	6) Works, just can't use core objects yet.
+	7) If wrapped, then fields aren't exposed.  Need to get getters and setters.
+	8) When using DisplayObject, the collection is created and saved as a
+		different object for the dO itself and referenced from the dO.
+		However, the adapter or holder is not getting the correct one.
+		it is probably using the name or something incorrectly. Will have to track down.

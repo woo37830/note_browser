@@ -1,0 +1,39 @@
+---19901212 10:01:59
+Discussion with M.F. Theofanos about MICOM.
+I will review letter to Gary Miller about copies
+of code to ICS.  I belive legal must concur befor
+copies are given.  Discussed her review.  Also
+discussed that I will lead Patent effort and 
+finish e-sig document.
+
+---19901212 11:02:26
+Repaired diary to use bin/diary instead of alias
+
+---19901212 11:35:30
+Corrected ~/projects/unix_db/test_db & make_db by adding
+close to make_db and providing space for c and s in Data for
+retrieving data.  test_db wife now retrieve her name and phone.
+
+---19901217 16:44:31
+Replied to letter from George about Spawar audit
+Returned calls to auditor 4-6583 (Melanie Wood)
+Called Rhonda Walker re LIvermore Job, she will be out Tue-> 7 Jan.
+Worked on timelog. revised to turnoff and turnon better.  need summaries now.
+edited .cshrc to rearrange and remove a problem.
+
+
+---19901219 08:29:48
+Returned call to Mr. Richardson, representing IG's office (4-1933)
+He reviewed purpose of his questions re: 941 with Mantech. He suggested
+that an Invoice # 13 existed for a credit of 85K.  He also said the
+unpaid balance we had was 55K.  With the 85K credit, then the 131K
+outstanding overrun could be paid.  I have no such invoice, nor has
+Debra seen one.  He will call Bridges and get back to me.  I explained
+that I was the replacement Project Manager and held up several invoices
+until I could verify funding existed, work done, etc.
+
+---19901220 11:29:42
+corrected timelog and added timelog -f to .logout file..
+moved crontab.local to /private/etc and ln -s /usr/lib/crontab.local
+to test about calendar.
+

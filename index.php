@@ -87,7 +87,7 @@ if( readCookie("logged_in") && readCookie('userid') ) {
               $("#no-access").attr('class','show');
               //eraseCookie("tab");
   }
-  
+
    //alert('Hello, World!')
   if( readCookie("tab") ) {
     document.getElementById( readCookie("tab")).click();
@@ -95,13 +95,13 @@ if( readCookie("logged_in") && readCookie('userid') ) {
     document.getElementById('Latest').click();
   }
 }
- 
+
 
   </script>
- 
+
 </head>
 <body onload="start();">
- 
+
 
   <div class="wrapper" >
 
@@ -122,7 +122,7 @@ if( readCookie("logged_in") && readCookie('userid') ) {
  <?php
  require 'login.php';
  echo "$scripts";
- $NOTE_DIR="/Users/woo/Dropbox/Personal/Documents/Notes/";
+ $NOTE_DIR="/Library/WebServer/Documents/notes/Data/";
 
 echo "<div id='page' class='show'>"; // put in the page div
 //echo "$tab1";

@@ -1,0 +1,240 @@
+---19910104 09:05:06
+noticed that crontab entry for calendar was missing owner - added root
+
+---19910104 09:15:04
+Carol Szot called and will send package on contact at Univ or Maryland
+	also I told her that I had received final statement and would
+	pass it to Finance.  Then I would contact SPAWAR asap.  I will
+	check on 4-8 revised, as I thought Mantech should be getting
+	paid for that invoice (I approved it some time ago.)
+
+---19910107 15:23:55
+Gave demo to Col xxx of AIA this morning.  He appeared interested.  Said he
+would provide some money to support "me" in some data fusion work.  Wasn't too
+concerned about $1 million tag on Thinking machine for prototype, but
+perked up when I mentioned work on $5K version (He wants lots in the field).
+He was interested in scanning and in retrieval with simple interfaces.  Ron
+reported that some money might be coming from him.
+
+Also helped Bob Sanders prepare a chart for Ron about ACISO budget.
+
+Copied down f2c but will wait until version 2.0 to install it .
+
+---19910118 17:00:31
+sent note to young and Mary about PERM.
+
+---19910121 14:42:16
+developed simple property manager with check out and in features
+located in Property .. run prop.sh  -- finish in and others.
+
+---19910122 16:27:21
+finished rough version of property manager.  will test it for a few days before
+submitting it to ron.
+
+---19910123 20:38:17
+Ron said that I would be ACISO representative on DSRD self-evaluation team.
+Showed him prop.sh
+Added most of my records.  
+Worked at home refining the system.
+
+---19910128 10:02:40
+finished first version of office shell to run various utilities
+
+---19910128 10:11:41
+set prop.sh to execute mode
+
+---19910130 11:23:56
+draft of letter to Blagg sent to G.Dailey E. Patterson to review. due
+back at COB today.
+
+---19910130 15:47:46
+completed final revision of esig document--waiting on address of Young
+to sent for final copies.
+
+---19910130 17:14:42
+fixed Ftp to automatically add to .netrc
+fixed property to check for changes before prompting for update record
+fixed print out of po's to align totals and grand totals
+added M. Theofanos disk drive and warranty
+
+---19910211 10:56:13
+had Larry Underwood install new cpu board in NeXT
+changed ether address to 0:0:f:0:7a:35
+informed Karen Baggett of this.
+
+---19910211 17:33:55
+added separation of types of equipment on printout by custodian
+
+---19910214 15:46:08
+interviewed Barbara Atkinson for Ron Taylor
+
+---19910227 13:09:27
+contacted nara, talked to Nancy McGovern, sending pub on 
+managing Electronic Records ..no standards yet.
+
+---19910227 14:38:44
+spoke to dana grubb optical disk standards in nist.  He specified
+that 14" exists in one format has an agreed upon test methodology 
+has passed the technical committee and is in ISO balloting.  The 12 inch
+has no agreed upon format.  The 5.25 (130 mm) has an ISO standard
+ISO9171 that covers 2 formats (Continuous Composite Servo Format CCSF)
+A and B which is a spiral servo system.  they come in 650 mbyte platters
+while the 14in come in 6.8 gbyte.
+
+---19910308 10:55:54
+Sent note on WORM and latex to several people.
+
+---19910311 14:43:25
+Mickey,
+
+Please get addresses and send copies of this document with my compliments to:
+
+Geraldine Danford
+2001 MS 6050
+
+(301)975-2915       crubb dana          optical disk standards perm
+(202)501-5565       eaton fynnette      nara perm
+(202)275-9481       martin chris        gao treasury perm
+(301)436-6817       powell jerry        treasury perm
+(301)975-2938       smid miles          nist perm key md4 encryption
+
+Paul Smith - 4-8869
+Jim McKinley, K-1007, MS 7025
+
+
+Please mail me a list of people you've sent copies to with their addresses!
+
+John W. Wooten  woo@ornl.gov
+
+
+---19910312 14:13:10
+
+---19910312 14:33:39
+
+---19910326 14:54:26
+Input info from Ron Shipe TVA into prop.tex with margin notes.  Spoke to 
+J. Shrago.  She will send her comments.  Likes new document.  I gave her ball
+park number and equipment to think about.  She likes and will expand.  
+
+---19910409 13:56:52
+Lunch with Gary Lancaster of IBM, brief discussion of new IBM developments 
+and workstations high performance interests.  Discussed Paris switch and RIOS 
+super computer donations by IBM to set up ORNL Classroom of the 21st Century.
+
+---19910409 14:04:19
+called Charles perky.  change of banks should not affect trust.  Estate trust
+to be closed out soon (1-2 days). He will contact me about income familiar
+trust could generate asap.
+
+---19910410 17:15:12
+downloaded some classes, a time sound speaker, and a QuickPlot routine
+Also gnuplot now works, although the Latex documents don't print with diagrams
+yet.
+
+---19910422 14:25:17
+Added a makefile for latex to lib and tested it in TeX/memos
+Got most of a distribution list working.  Numbering of single copies really
+seems screwed up.  Numbering sometimes seems random.  I sent message to
+LaTeX guru to try to understand.
+
+---19910917 16:55:12
+Loaned book on Strategic Planning to Dennis Clark.
+
+---19911017 16:31:41
+Fixed version of wargames.
+Downloaded gnuplot3.0, problem may be HUGE -DNeXT?
+	Upgrade to version 2.1 asap.
+FrontEnd can't figure out where window is for csh.  Want to
+	put it into a panel and add a button to get help.
+
+---19911104 17:08:48
+Worked with McGaffey and found a way to create a table and then read it
+back in.  Also started testing using RCS as a way to store and maintain
+TeX files.  Haven't found out how to get the comments out or how to
+automatically include author name etc yet.
+
+---19911106 09:39:53
+changed /usr/adm/weekly to trim the log files in /usr/local/adm also.
+I probably need to mail myself a message monthly regarding disk space and
+sizes of log files, particularily large ones!
+
+---19911106 15:03:11
+added dwrite Terminal Shell "/NextApps/Terminal" to defaults so that Gopher
+would have something to read.  If I have problems with this later like
+automatically trying to access that node "wais" then what to do? 
+
+---19911108 10:43:22
+Ftp's to kum.kaist.ac.kr for sicstus, a version of prolog.  Haven't been 
+able to get it to compile yet.  There was a lot of other stuff like
+smalltalk, scheme, Xlisp, etc. there also.  Will have to explore that
+archive more.
+
+Also started having problems with NeXT version of WWW.  Unix version
+doesn't access WAIS correctly, could be problem with telnet again? NeXT
+version just dies!
+
+---19911108 16:46:11
+added header information to all *.c and *.h files in ~/project/nextdb.
+Need to finish with Makefile, nextdb_main.m, etc.
+Add Variable $Version$ to the startup so code will print its version.
+Also add to each routing so that on debug each module would print its version?
+
+---19911111 11:58:45
+Gave lecture at Claxton Elementary about networking.  They are really
+excited about possibilities.  Superintendent was there also.  
+Gave infor on OREN to Bill Burris at OR school bldg.  Also loaned him
+the laser disk of Jasper Woodbury and the video tape for about 2 weeks.
+
+---19911113 11:59:46
+Wrote dir2tex which outputs a directory "tree" as #include files
+for tex manual.  the directory is assumed to be a tree structured
+help file, include files, doc files, etc.  Still needs final work.
+
+Also George Dailey called and will pursue my transfer for Dec 1.
+
+---19911114 08:17:33
+Located example of finger piped to fgrep of set of users which looks
+interesting.  I copied it and named it peek in my ~/bin area.
+
+---19911114 10:30:34
+ftp nnsc.nsf.net anonymous nsfnet find macintosh hypercard stacks
+tour of the internet and binhex file tour...  k-12 teaching tool.
+
+---19911115 08:24:41
+Post to comp.lang.prolog a request for sbprolog functions that are missing.
+(Look up which ones they are first).
+
+---19911118 09:12:26
+Modified watch on sacam to allow demo1 to run.  Will mail message to 
+me if anyone else logs in.
+
+---19911118 10:41:28
+Downloaded corewars, cutpas, BerkleyProlog, phoon, snobol4, starchart from
+apple.com.  phoon abends with bus error.  cut and paste seem to compile
+correctly.  Installed man pages in local/man.  May have deleted cat1?
+Moved cut* and paste* to ~/bin.  Moved getopt.c to ~/src. Have to think about
+snobol4 some more.  Starchar seems to work but needs 4 arguments.  Run
+planet - to generate planet.star, then starpost -RA -DC -VW "title" > test.ps
+where RA and DC are centered on planet you want to see.
+
+---19911118 13:25:03
+trying to compile Berkley Prolog, trouble using cc++ finding library functions.
+
+---19911118 13:41:12
+get an out of core when trying basic from apple.com.  compiled using
+m68000 makefile?
+
+---19911118 14:03:03
+Problem in phoon with twslib.a.  twscopy is giving bus error.  Why?
+
+---19911119 09:11:05
+Added fopen("/dev/tty","r") to the coder.  It allows crypt key to be entered
+from the terminal.  I'll look up now how to prevent it echoing to the terminal.
+Problem exists however if the message is longer than the key.  Fix this soon.
+
+---19911202 10:07:33
+Greg sent me a sumex shell script for repeatly polling ftp site until file
+transfer is sucessful.  I put it into ~/bin.  It needs a file.in
+that probably has user, pass, and cd to directory then set binary
+and get file(s).  this could be improved I think.  Work on it later.
+

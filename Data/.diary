@@ -1,0 +1,2794 @@
+
+----Wed Dec 12 10:01:59 EST 1990---
+Discussion with M.F. Theofanos about MICOM.
+I will review letter to Gary Miller about copies
+of code to ICS.  I belive legal must concur befor
+copies are given.  Discussed her review.  Also
+discussed that I will lead Patent effort and 
+finish e-sig document.
+----Wed Dec 12 11:02:26 EST 1990---
+Repaired diary to use bin/diary instead of alias
+----Wed Dec 12 11:35:30 EST 1990---
+Corrected ~/projects/unix_db/test_db & make_db by adding
+close to make_db and providing space for c and s in Data for
+retrieving data.  test_db wife now retrieve her name and phone.
+----Mon Dec 17 16:44:31 EST 1990---
+Replied to letter from George about Spawar audit
+Returned calls to auditor 4-6583 (Melanie Wood)
+Called Rhonda Walker re LIvermore Job, she will be out Tue-> 7 Jan.
+Worked on timelog. revised to turnoff and turnon better.  need summaries now.
+edited .cshrc to rearrange and remove a problem.
+
+----Wed Dec 19 08:29:48 EST 1990---
+Returned call to Mr. Richardson, representing IG's office (4-1933)
+He reviewed purpose of his questions re: 941 with Mantech. He suggested
+that an Invoice # 13 existed for a credit of 85K.  He also said the
+unpaid balance we had was 55K.  With the 85K credit, then the 131K
+outstanding overrun could be paid.  I have no such invoice, nor has
+Debra seen one.  He will call Bridges and get back to me.  I explained
+that I was the replacement Project Manager and held up several invoices
+until I could verify funding existed, work done, etc.
+----Thu Dec 20 11:29:42 EST 1990---
+corrected timelog and added timelog -f to .logout file..
+moved crontab.local to /private/etc and ln -s /usr/lib/crontab.local
+to test about calendar.
+----Fri Jan  4 09:05:06 EST 1991---
+noticed that crontab entry for calendar was missing owner - added root
+----Fri Jan  4 09:15:04 EST 1991---
+Carol Szot called and will send package on contact at Univ or Maryland
+	also I told her that I had received final statement and would
+	pass it to Finance.  Then I would contact SPAWAR asap.  I will
+	check on 4-8 revised, as I thought Mantech should be getting
+	paid for that invoice (I approved it some time ago.)
+----Mon Jan  7 15:23:55 EST 1991---
+Gave demo to Col xxx of AIA this morning.  He appeared interested.  Said he
+would provide some money to support "me" in some data fusion work.  Wasn't too
+concerned about $1 million tag on Thinking machine for prototype, but
+perked up when I mentioned work on $5K version (He wants lots in the field).
+He was interested in scanning and in retrieval with simple interfaces.  Ron
+reported that some money might be coming from him.
+
+Also helped Bob Sanders prepare a chart for Ron about ACISO budget.
+
+Copied down f2c but will wait until version 2.0 to install it .
+----Fri Jan 18 17:00:31 EST 1991---
+sent note to young and Mary about PERM.
+----Mon Jan 21 14:42:16 EST 1991---
+developed simple property manager with check out and in features
+located in Property .. run prop.sh  -- finish in and others.
+----Tue Jan 22 16:27:21 EST 1991---
+finished rough version of property manager.  will test it for a few days before
+submitting it to ron.
+----Wed Jan 23 20:38:17 EST 1991---
+Ron said that I would be ACISO representative on DSRD self-evaluation team.
+Showed him prop.sh
+Added most of my records.  
+Worked at home refining the system.
+----Mon Jan 28 10:02:40 EST 1991---
+finished first version of office shell to run various utilities
+----Mon Jan 28 10:11:41 EST 1991---
+set prop.sh to execute mode
+----Wed Jan 30 11:23:56 EST 1991---
+draft of letter to Blagg sent to G.Dailey E. Patterson to review. due
+back at COB today.
+----Wed Jan 30 15:47:46 EST 1991---
+completed final revision of esig document--waiting on address of Young
+to sent for final copies.
+----Wed Jan 30 17:14:42 EST 1991---
+fixed Ftp to automatically add to .netrc
+fixed property to check for changes before prompting for update record
+fixed print out of po's to align totals and grand totals
+added M. Theofanos disk drive and warranty
+----Mon Feb 11 10:56:13 EST 1991---
+had Larry Underwood install new cpu board in NeXT
+changed ether address to 0:0:f:0:7a:35
+informed Karen Baggett of this.
+----Mon Feb 11 17:33:55 EST 1991---
+added separation of types of equipment on printout by custodian
+----Thu Feb 14 15:46:08 EST 1991---
+interviewed Barbara Atkinson for Ron Taylor
+----Wed Feb 27 13:09:27 EST 1991---
+contacted nara, talked to Nancy McGovern, sending pub on 
+managing Electronic Records ..no standards yet.
+----Wed Feb 27 14:38:44 EST 1991---
+spoke to dana grubb optical disk standards in nist.  He specified
+that 14" exists in one format has an agreed upon test methodology 
+has passed the technical committee and is in ISO balloting.  The 12 inch
+has no agreed upon format.  The 5.25 (130 mm) has an ISO standard
+ISO9171 that covers 2 formats (Continuous Composite Servo Format CCSF)
+A and B which is a spiral servo system.  they come in 650 mbyte platters
+while the 14in come in 6.8 gbyte.
+----Fri Mar  8 10:55:54 EST 1991---
+Sent note on WORM and latex to several people.
+----Mon Mar 11 14:43:25 EST 1991---
+Mickey,
+
+Please get addresses and send copies of this document with my compliments to:
+
+Geraldine Danford
+2001 MS 6050
+
+(301)975-2915       crubb dana          optical disk standards perm
+(202)501-5565       eaton fynnette      nara perm
+(202)275-9481       martin chris        gao treasury perm
+(301)436-6817       powell jerry        treasury perm
+(301)975-2938       smid miles          nist perm key md4 encryption
+
+Paul Smith - 4-8869
+Jim McKinley, K-1007, MS 7025
+
+
+Please mail me a list of people you've sent copies to with their addresses!
+
+John W. Wooten  woo@ornl.gov
+
+----Tue Mar 12 14:13:10 EST 1991---
+----Tue Mar 12 14:33:39 EST 1991---
+----Tue Mar 26 14:54:26 EST 1991---
+Input info from Ron Shipe TVA into prop.tex with margin notes.  Spoke to 
+J. Shrago.  She will send her comments.  Likes new document.  I gave her ball
+park number and equipment to think about.  She likes and will expand.  
+----Tue Apr  9 13:56:52 EDT 1991---
+Lunch with Gary Lancaster of IBM, brief discussion of new IBM developments 
+and workstations high performance interests.  Discussed Paris switch and RIOS 
+super computer donations by IBM to set up ORNL Classroom of the 21st Century.
+----Tue Apr  9 14:04:19 EDT 1991---
+called Charles perky.  change of banks should not affect trust.  Estate trust
+to be closed out soon (1-2 days). He will contact me about income familiar
+trust could generate asap.
+----Wed Apr 10 17:15:12 EDT 1991---
+downloaded some classes, a time sound speaker, and a QuickPlot routine
+Also gnuplot now works, although the Latex documents don't print with diagrams
+yet.
+----Mon Apr 22 14:25:17 EDT 1991---
+Added a makefile for latex to lib and tested it in TeX/memos
+Got most of a distribution list working.  Numbering of single copies really
+seems screwed up.  Numbering sometimes seems random.  I sent message to
+LaTeX guru to try to understand.
+----Tue Sep 17 16:55:12 EDT 1991---
+Loaned book on Strategic Planning to Dennis Clark.
+----Thu Oct 17 16:31:41 EDT 1991---
+Fixed version of wargames.
+Downloaded gnuplot3.0, problem may be HUGE -DNeXT?
+	Upgrade to version 2.1 asap.
+FrontEnd can't figure out where window is for csh.  Want to
+	put it into a panel and add a button to get help.
+----Mon Nov  4 17:08:48 EST 1991---
+Worked with McGaffey and found a way to create a table and then read it
+back in.  Also started testing using RCS as a way to store and maintain
+TeX files.  Haven't found out how to get the comments out or how to
+automatically include author name etc yet.
+----Wed Nov  6 09:39:53 EST 1991---
+changed /usr/adm/weekly to trim the log files in /usr/local/adm also.
+I probably need to mail myself a message monthly regarding disk space and
+sizes of log files, particularily large ones!
+----Wed Nov  6 15:03:11 EST 1991---
+added dwrite Terminal Shell "/NextApps/Terminal" to defaults so that Gopher
+would have something to read.  If I have problems with this later like
+automatically trying to access that node "wais" then what to do? 
+----Fri Nov  8 10:43:22 EST 1991---
+Ftp's to kum.kaist.ac.kr for sicstus, a version of prolog.  Haven't been 
+able to get it to compile yet.  There was a lot of other stuff like
+smalltalk, scheme, Xlisp, etc. there also.  Will have to explore that
+archive more.
+
+Also started having problems with NeXT version of WWW.  Unix version
+doesn't access WAIS correctly, could be problem with telnet again? NeXT
+version just dies!
+----Fri Nov  8 16:46:11 EST 1991---
+added header information to all *.c and *.h files in ~/project/nextdb.
+Need to finish with Makefile, nextdb_main.m, etc.
+Add Variable $Version$ to the startup so code will print its version.
+Also add to each routing so that on debug each module would print its version?
+----Mon Nov 11 11:58:45 EST 1991---
+Gave lecture at Claxton Elementary about networking.  They are really
+excited about possibilities.  Superintendent was there also.  
+Gave infor on OREN to Bill Burris at OR school bldg.  Also loaned him
+the laser disk of Jasper Woodbury and the video tape for about 2 weeks.
+----Wed Nov 13 11:59:46 EST 1991---
+Wrote dir2tex which outputs a directory "tree" as #include files
+for tex manual.  the directory is assumed to be a tree structured
+help file, include files, doc files, etc.  Still needs final work.
+
+Also George Dailey called and will pursue my transfer for Dec 1.
+----Thu Nov 14 08:17:33 EST 1991---
+Located example of finger piped to fgrep of set of users which looks
+interesting.  I copied it and named it peek in my ~/bin area.
+----Thu Nov 14 10:30:34 EST 1991---
+ftp nnsc.nsf.net anonymous nsfnet find macintosh hypercard stacks
+tour of the internet and binhex file tour...  k-12 teaching tool.
+----Fri Nov 15 08:24:41 EST 1991---
+Post to comp.lang.prolog a request for sbprolog functions that are missing.
+(Look up which ones they are first).
+----Mon Nov 18 09:12:26 EST 1991---
+Modified watch on sacam to allow demo1 to run.  Will mail message to 
+me if anyone else logs in.
+----Mon Nov 18 10:41:28 EST 1991---
+Downloaded corewars, cutpas, BerkleyProlog, phoon, snobol4, starchart from
+apple.com.  phoon abends with bus error.  cut and paste seem to compile
+correctly.  Installed man pages in local/man.  May have deleted cat1?
+Moved cut* and paste* to ~/bin.  Moved getopt.c to ~/src. Have to think about
+snobol4 some more.  Starchar seems to work but needs 4 arguments.  Run
+planet - to generate planet.star, then starpost -RA -DC -VW "title" > test.ps
+where RA and DC are centered on planet you want to see.
+----Mon Nov 18 13:25:03 EST 1991---
+trying to compile Berkley Prolog, trouble using cc++ finding library functions.
+----Mon Nov 18 13:41:12 EST 1991---
+get an out of core when trying basic from apple.com.  compiled using
+m68000 makefile?
+----Mon Nov 18 14:03:03 EST 1991---
+Problem in phoon with twslib.a.  twscopy is giving bus error.  Why?
+----Tue Nov 19 09:11:05 EST 1991---
+Added fopen("/dev/tty","r") to the coder.  It allows crypt key to be entered
+from the terminal.  I'll look up now how to prevent it echoing to the terminal.
+Problem exists however if the message is longer than the key.  Fix this soon.
+----Mon Dec  2 10:07:33 EST 1991---
+Greg sent me a sumex shell script for repeatly polling ftp site until file
+transfer is sucessful.  I put it into ~/bin.  It needs a file.in
+that probably has user, pass, and cd to directory then set binary
+and get file(s).  this could be improved I think.  Work on it later.
+----Tue Apr  7 14:03:15 EDT 1992---
+worked on menu program for new users
+----Wed Apr  8 10:36:12 EDT 1992---
+added the menu stuff to /usr/local/bin and asked it be moved to /usr/local
+----Mon Feb 18 19:30:44 EST 2008---
+----Sat Feb 23 18:17:41 EST 2008---
+compiled ddmmyy.c and replaced it.  Need to get rid of scripts to manage the
+science NeXT machines.  Found quarto.c, compiled it and got it working.  Need
+to learn how to insert the file in the middle of the piped commands.
+Also got model and minuit plotting.
+
+----Mon Jun 21 05:11:09 EDT 2010---
+found diary again and checked it out. It actually is pretty good for what 	I do.
+
+----Sat Nov 19 15:00:45 EST 2011---
+Just tried it again.  I'll review it and see if I can make it output to
+the yearly notes like Notes_2011.txt.
+----Tue Nov 22 12:30:44 EST 2011---
+Spent from 11:00 to 12:30 in conf call with ARK_ICU demo'ing freemind
+and showing how to checkout, compare, commit, tag, show history, etc.
+Demo went well and program worked flawlessly.
+Need to think about sub-maps that are "groupings" of nodes that are tagged 
+and can be reused elsewhere by name when inserting a new node OR group of nodes.
+Next big item is importing maps with VA ids and doing a generate of
+ids and changes for vendors.  ***DONE***
+
+----Tue Nov 22 18:10:01 EST 2011---
+Created automysqlbackup to do automatic backups on mysql databases.
+It currently does mm_test, blog_db, and bugtracker every day and rotates
+weekly etc.  It does a full backup of the entire database monthly.
+the backups are done to /var/backup/db.  To see them right now,
+do su/Fester. I changed the access to 755.  Check this.
+
+----Tue Nov 22 18:23:59 EST 2011---
+Added a /etc/daily.local with the line to /User/woo/bin/daily_tasks.sh
+and in that I call the automysqlbackup pgm with its config file.  It logs
+to daily.out, weekly.out, monthly.out I believe.  Not sure as the same program handles daily, weekly, and monthly.
+
+----Wed Nov 23 13:06:43 EST 2011---
+Changed the password on wooten.666@gmail.com to black.beauty
+Created channel id of woo37830 on youtube.  It uses wooten.666@gmail.com and
+its' password for access.
+
+----Thu Nov 24 11:14:21 EST 2011---
+----Thu Nov 24 12:37:20 EST 2011---
+
+Cache.plist in it.  Move it to LaunchDaemons/backup.
+Found that .rlogin.rc has some good things in it about calendar which appears
+like it should show dates/times of appointments, etc.
+Also it does a todo list, but it doesn't trim out the ones that are DONE.
+Need to add that so I have a completed and an active.
+
+----Thu Nov 24 12:44:27 EST 2011---
+----Sat Nov 26 12:34:19 EST 2011---
+Upgraded to WordPress 3.2.1 on xanadu.
+Fixed Kerberos problem on woo_laptop using trick from 2011 notes.
+Fixed bad script in geek_scripts/main.bash where it was looking
+to remove $myscriptname.text and I had commented out $myscriptname.
+Time machine backups are taking too long.  What is happening?
+Need to do a clone today.
+
+----Tue Dec  6 13:05:39 EST 2011---
+----Wed Dec  7 08:26:37 EST 2011---
+Fixed redaction problem in javascript redaction.  Needed node.firstChild.title="" instead of node.innerHTML.title="".
+
+----Tue Dec 13 22:47:35 EST 2011---
+Worked on sc_app.  Found some errors, fixed them.  Be sure to check into CVS.
+----Wed Dec 14 00:09:48 EST 2011---
+Worked with workspaces/btree/com/shoulderscorp/btree KWICmain and Kwic.
+Run ant run to build jar file, then java -cp btree.... com.shoulderscorp.btree.KWICmain with DragDrop.txt in same dir.
+Note that need to get rid of leading and trailing quites, etc. and also
+group items using TreeMap so they come out sorted.
+----Thu Dec 15 10:19:04 EST 2011---
+Downloaded and did build of lucene.  It provides stemming, and other text handling featrues that coulc be useful in redaction or in KWIC.  I placed it in Development/workspaces and intend for it to be an eclipse project.
+One thing to look at in the current KWIC (and in the Test HTML highlighter is to be sure that I'm reading the data in like I do in StyledText.  This may be why the funny characters are in the text.
+----Fri Dec 16 19:09:29 EST 2011---
+Installed mongo db and created alias in .alias to start the mongo daemon and also run the mongo shell.
+Got php working on this computer and downloaded and installed the mongo driver for php and tested it with ~/mongo/sample_session.php.
+----Sat Dec 17 17:51:21 EST 2011---
+Created a VMWare copy of Windooze just in case I can't get Parallels license working.
+Found that Deep6 de-selection of email in filter did not stop it being highlighted.
+----Mon Dec 19 16:48:20 EST 2011---
+Got DBD::DBI working.  Had to screw around with pointing to library
+by adding it to .bash_profile about where to look.  
+Now need to do the inserts.  Clean up the leading " etc.
+----Tue Dec 20 10:54:44 EST 2011---
+loadCRs loads changeRequests csv file into database on server.
+----Tue Dec 20 12:15:10 EST 2011---
+Created Deep6.app for Mike and published it to public.me.com/jwooten37830.
+I added two hours to my time log for this.
+Also, it was done using Eclipse, export as mac os x bundle.
+----Tue Dec 20 14:58:12 EST 2011---
+Got the export from Excel of the Terminology change_requests to work using
+the tab delimited AND changing to separate the resulting one input line using 
+\r.  Once I got the table structure, input, and spliting working, it was okay,
+BUT, it was also necessary to remove non-printable characters using
+the pattern I blogged today.
+----Tue Dec 20 15:55:05 EST 2011---
+Downloaded and installed JDepend plugin for Eclipse.  Important to click on the src folders, not the projects.
+Also downloaded and installed the JDepend zip file and installed it into
+~woo/lib and added the CLASSPATH and JDEPEND_HOME as stated in the
+web page under ~/Documents/Reference/JDepend.html.  Tested and got it to work.
+cd to Development/workspaces/btree/target and did
+java jdepend.swingui.JDepend classes to see ui.
+java jdepend.textui.JDepend -file report.txt classes to see text ui.
+Also possible to get xml using xmlui.
+There is an interesting FitNesse that gives a graph.  I'll have to try that.
+----Wed Dec 21 13:50:17 EST 2011---
+Downloaded statcvs.jar and placed it into ~/lib/jars along with html page.
+The command java -jar ~/lib/jars/statcvs.jar logfile.log ../sc_workspace
+creates a massive number of html files in the directory sc_workspace with
+stats about cvs activity, etc.  It must be preceded by a cvs log > logfile.log
+command.  Looks good for monitoring cvs usage and watching for problems in
+combination with JDepend above.
+----Wed Dec 21 14:45:47 EST 2011---
+Created two bash scripts to run svnstat and cvsstat each with the name
+of the project to be analyzed.  They check out the code into ~/tmp and either
+redaction for svn or cvsstat for cvs.  They do the analysis and then
+attempt to start firefox on the index page.  They won't work if firefox is running yet.
+----Mon Dec 26 20:50:25 EST 2011---
+map_terms.pl creates an xml file of the nodes to do a commit.
+Create file, open it, do checkin.  cardio.mm is a short test.
+Updated freemap so that it saved the additional columns. ( need to update sql and documentation )
+Updated so that it could checkout and display all attributes ( fixed the dependency on 4 attributes at least in the checkout.  Check other places )
+Need to add a way to create the genericIds when they are not there.  Possibly a separate menu item?  
+Need to insert a table generic ID, verdor name, vendor display.  Have them filled in ( perhaps separately from generic load ).
+Write a report to display the genericId, concatenated text, vendor stuff?
+----Wed Dec 28 11:59:13 EST 2011---
+Added vendorDisplay where genericId is mapped via vendorId to the vendor specific display.  vendor 0 means the alternate display.
+Added the change_requests table with change requests.  Not clear how to use.
+Will add a right click on node to show vendor display for that node (and revision history?)
+Will add menu item to create generic ids if null?
+Bring up list of CRs avail when ready to commit? via mag glass icon?
+
+----Wed Dec 28 17:09:21 EST 2011---
+Got reading of icon and color and cloud right.  Storing is still off
+as it's storing java.awt.Color... and images/icons/idea.png... instead
+of a #3Cffff and "idea".  Also is updating every node because compare is wrong because of above.
+----Thu Dec 29 18:42:38 EST 2011---
+Getting problem updating node nubmers from -99.x to new node.  Not
+getting the next major when I should!  Reload and check.
+----Fri Dec 30 14:16:10 EST 2011---
+Adding genericIds, handling next major, etc. okay.
+NOT detecting icon and bgcolor changes and persisting!  ***DONE***
+----Mon Jan  2 13:28:38 EST 2012---
+Changed the default httpDir, etc. to point to glassfish in WSApplication.
+Tested that it would run qFOIA, court, ECI without reloading KBs.
+sucessfully highlighted using web-service.
+Tried to install a file-uploader but no joy yet.
+----Wed Jan  4 13:48:33 EST 2012---
+Got the http://localhost/~woo/upload/index.php uploader to work.  It was
+the file permission on the upload folder under Sites needed to be a+w.
+Fixing the permissions on valums or fileUploader did not help those however.
+The simplest however is just ~woo/upload_file.html which uses upload_file.php
+----Wed Jan  4 15:27:34 EST 2012---
+Fixed the timelogger so that it does 201201 instead of 20121
+Found that to put html into word press had to surround by <pre><code> </code></pre> AND replace < by &lt; and > by &gt;  (create macro?)
+----Wed Jan  4 15:52:53 EST 2012---
+Got the image in upper left of index.html to stay fixed and not scroll by
+using fixed.  Can't see how to move it anywhere else yet, however.
+----Thu Jan  5 12:40:06 EST 2012---
+Left nodes are being added and persisted.  Links to other maps or to other nodes within a map are working and being persisted.  Colors are persisted. Diff shows the removed properly (with orientation correct) and new and edited colors temporarily.
+----Thu Jan  5 15:38:16 EST 2012---
+Updated tex, ER.jpg, regenerated technical manual, checked in all code for freemind.
+----Tue Jan 10 12:36:03 EST 2012---
+Ran loadCRs on Terminology_view.txt to load cr's.
+----Tue Jan 10 12:57:05 EST 2012---
+Added update 0000-00-00 00:00:00 to Null into loadCrs at end.  Works.
+----Tue Jan 10 15:26:57 EST 2012---
+Checked in all except ChangeRequestPanel which is not started.
+
+----Wed Jan 11 17:16:40 EST 2012---
+Created ChangeRequestPanel, integrated it into History & CommitPanel.
+Sent image out for review to Gerald, Smelling, etc.
+Created draft User Manual, sent out for review.
+Added access methods to ChangeRequest to find CRs containing values in colums.
+Need to refactor DataBaseReader to move some things into named classes. TODO
+----Thu Jan 12 12:48:38 EST 2012---
+Added FindAction and FindPanel and implemented in MenuExtender.
+Still need to add the scroll to visible for the found item, once found!
+----Thu Jan 12 18:26:05 EST 2012---
+Refactoring data base actions into classes such as ChangeRequest and TreeNode.
+Will need to create a Map class with fields and behavior.  Refactor
+its data base accessors into the Map class.
+TEST AND TEST for infinite recursing in the retrieval of the nodes. DONE
+----Fri Jan 13 22:52:33 EST 2012---
+Did complete update of ports on SnowLeopard woo_laptop (i.e. Macintosh HD)
+Did CCC from Macintosh HD to SnowLeopard partition
+Checked that SnowLeopard would boot and work ( iPhoto seems to be missing )
+Created USB of Lion installer
+Downloaded Lion from app store and installed on Macintosh HD
+Downloaded XCode from app store
+Installed XCode 4.1 on Lion (Macintosh HD)
+Checked that Mysql, php, Eclipse, Netbeans all worked.
+Did an uninstall of all ports
+started install of ports from myports.txt
+DONE - check that daily, weekly, monthly all work
+----Sat Jan 14 22:11:31 EST 2012---
+Finished all port installs.
+Still have to do mktemp
+----Tue Jan 17 09:53:33 EST 2012---
+Added PromptForClient to show at wakeup.  Logs to system.log and to /Library/Logs/sleepwatcher/billing.log.
+Also on sleep, script runs to turn off logging.
+scripts are in .sleep and .wakeup  run by /etc/rc.sleep and /etc/rc.wakeup
+note that the sleepwatcher daemon also runs.  Check that it restarts! DONE
+----Wed Jan 18 13:45:56 EST 2012---
+Updated PromptForClient to use only YES/NO buttons and cancel in client stops
+----Thu Jan 19 17:03:44 EST 2012---
+Fixed some unnecessary work being done when scanning and moved
+the presentation of the results into the finally block so always there.
+Added a LoginHook and LogoutHook through defaults write, but LoginHook, which
+brings up the PromptForClient screen fails with an exit code of 2.
+Found ScreenSaver 3 which will run applescript on screensave, etc. but
+can't see how to run shell script from it.
+----Sat Jan 21 09:49:10 EST 2012---
+Changed password for jwooten@areteq.com to Fester1. on https://panel.dreamhost.com
+----Sat Jan 21 14:16:24 EST 2012---
+Created Database Tools document detailing the perl tools used to create and update tables.  map_terms.pl creates a map from a spreadsheet csv file, while etl_display.pl directly updates the vendor display table (and data dictionary) using information from the same spreadsheet about generic ids.
+----Sun Jan 22 12:53:28 EST 2012---
+Installed HomeBrew then did brew install play to install Play framework
+Seems to be much like the ruby on rails in that it creates a framework for applications.
+Seems to have build in hibernate and easy connection to mysql database for persistence
+new installs seem to go to /user/local/Cellar and then are linked to proper places.
+----Sun Jan 22 15:56:33 EST 2012---
+Created vendor_display.pl with proper output using css into ~/Sites/Vendor.html.  DONE launch automatically
+----Sun Jan 22 20:00:14 EST 2012---
+Did CCC to Lion before starting updating with AppFresh
+----Mon Jan 23 12:20:11 EST 2012---
+I cd'd to NetbeansProjects and then did a play new yabe
+which created a yabe directory.  cd'd into yabe and typed play run
+which allowed me to go to browser at http://localhost:9000/ and see the default
+I then experimented with changing Application.java removing the trailing ;
+and refreshed to see the error message.  Changed it back.
+Then edited the conf/application.conf and turned on the memory db for testing
+now see the Connected to jdbc:h2:mem:play;MODE=MYSQL
+then edited the views/Application/index.html removing the #{welcome} and
+replacing it with <h1>A blog goes here</h1>.  Refresh and see that instead
+of default.
+Then cd'd to ~/NetbeansProjects/yabe directory
+Then created file .cvsignore with lines tmp, modules, lib, test-result, and logs
+Then did cvs import yabe INITIAL start
+and got a screen to fill in the initial information about the project
+followed by cvs importing the code.  checked on xanadu and found that
+yabe had been created correctly without the extra files to ignore!
+----Mon Jan 23 16:51:47 EST 2012---
+Continued and created first blog screen, saved to cvs.
+Remember to do cvs -n update to see what files to add after cd'ing to project
+Then do cvs add path to file use -m "message" if desired
+Then cd above project and do cvs -m "message" commit yabe (for instance)
+----Wed Jan 25 11:43:47 EST 2012---
+Just discovered that every mysql command line entry is in ~/.mysql_history!
+----Thu Jan 26 20:43:59 EST 2012---
+Did some refactoring in the ARK project to put actions in freemind.database.action and the panels that have been
+refactored into freemind.database.action.panel.  Also added a new Maint menu item with a dummy MaintAction and a MaintPanel for now.  They will handle actions like delete a map, roll back to a date, add a user, etc.
+----Thu Jan 26 20:45:37 EST 2012---
+Added a check for ~/tmp/.pfc file in beginning of PromptForClient.  If there, exit.  Else, create that file with the
+date-time in it.  The file is removed when timelogger -f is run when screen sleeps, etc. This prevents two requests for the client when awakening since that has both a login and a wake event.
+----Tue Jan 31 23:13:20 EST 2012---
+Downloaded cloc.pl and tested on redation, freemind, and sc_*/src, looks good
+
+----Mon Feb 20 17:18:49 EST 2012---
+Loaded cardio.mm from 20111031_ICU_FINAL_V1.2.1.csv after extensive edits.
+Removed all &, commas, and 's, from xsft file, saved as csv.
+Used map_terms.pl to load into database.
+Then cleared the vendorDisplay table as the etl_display.pl does not skip over existing entries yet.  Got it to load the vendor display table.
+Did backup on xanadu called 120220_1720.sql of all tables.
+Now going to run vendor_display.pl just to look at the vendorDisplay data.
+
+----Wed Feb 22 17:38:52 EST 2012---
+Received v1.3 from Chris which is Anesthesia.  Has more columns, slightly different in that root nodes are given.  Create a version of map_terms.pl that reads the Anethesia csv (which I edited, removed 's, ',' &, etc ) and creates an anesthesia.mm.  There are no vendor displays.  What do we do?
+----Thu Feb 23 16:23:09 EST 2012---
+Created Seth Jacobson an account seth with password stars81\laud
+cvs checkout via cvs -d :ext:seth@jwooten37830.com:/Users/woo/cvsrep checkout freemind
+
+----Mon Mar  5 11:16:14 EST 2012---
+Chris will add new column to my spreadsheet with N(new), C(change), D(delete) and antoher with CR #.  I create a new commit for each unique CR # ( i.e. sort by CR # ).  Then be able to display map by CR # if not approved ( new column in links with approval date ).  Now show diff before CR # and with CR #.  Have new button "Approve/Dissapprove".  If Approve, then put approval date on diff rows and commit.  If Dissapprove, then commit, but don't put approval time.  now for a release show the map with approved changes (diff between previous version), or unapproved( diff between previous version(release) ).  Then create release with only approved links.
+
+----Mon Mar  5 13:02:10 EST 2012---
+Created new Deep6 jar for Charles from the build.xml instead of with the
+Deep6.sh.  It appeared to work.  Charles is checking.
+
+----Mon Mar  5 15:20:48 EST 2012---
+Noticed that when inserting in sql files use the ', not the `.  See mm_woo.sql
+----Mon Jun  4 15:29:35 EDT 2012---
+did a port update installed
+and a port update outdated
+and a port install cvsgraph (to /opt/local/bin)
+fixed location in cvsview.conf and now cvsView shows graph of changes.
+Updated Indigo to use coverage and got mantisbt-1.2.10 working with it.
+Did some updates on freemind relative to unused concepts consistency re: dates
+and updated CR to handle new crs giving numbers > 100000 per Chris Jette
+Moved iTunes movies and songs to renamed Snow Leopard -> iTunes
+Freed up 150 Gbytes on Macintosh HD!
+
+----Thu Jan  3 11:41:02 EST 2013---
+Got cvs working inside Juno, needed to get ssh working without passwords between
+client and server first.  Then was a piece of cake.
+Found a way to use automate -i title RemindMe.workflow to create a reminder.
+Also a script reminder.sh that does similarly.  Need to work on these.
+Have barsoom as master and xanadu as slave for database automatic replication.
+
+----Sun Jan  6 16:10:15 EST 2013---
+TODO-20120107:1200(C) Finish writing the script to add info to Notes_2012 and
+    to move data to Calendar(C) or Reminders(R). Only put there if TODO followed by 
+    date:time.  
+----Mon Jan  7 11:50:06 EST 2013---
+Added the AppleScript to auto empty trash to ~/Library/Scripts/Folder Action Scripts
+    then selected .Trash command/Shift/G and selected Services
+    and clicked on Folder Actions and selected AutoEmpty.scrpt 
+    Tested and it appears to work.  When something added to Trash
+    it will check and throw away something older until under 2G.  If item
+    itself is larger than 2G, then it asks if you wish to delete it.
+    If not, puts on desktop.  Also installed this on va_air.
+----Wed Jan  9 12:00:19 EST 2013---
+Added reminder script to geek scripts to put reminders on screen.
+Need to put headings for different groups.
+----Thu Jan 10 13:52:42 EST 2013---
+Turned off replication on barsoom and xanadu.  Made export of mm_prod
+    and placed into Dropbox/Shoulders for upload to V8.
+Might look into rsync as a way to nightly move database dumps to xanadu
+    and load them there with mysqladmin script.
+----Sat Jan 12 16:16:22 EST 2013---
+ Finish ~bin/todo_updater.pl, make backup of both files, read both into me#
+   then look for TODO in .diary that is NOT in .todo, write to .todo
+   copy lines for today into Notes_201X at end.  Think about this more.
+~/bin/monitor_logs.pl will find the last note about the automatic backups#
+   and send a growl notification to message center.  ***TODO*** move to #
+   growl2 and growlnotifier and test
+Installed Tomcat 7.2 on barsoom linked via /Library/Tomcat
+    works.  Accessible from laptop http://jwooten37830.com:8080/
+Changed sc_app to web project by editing .project, but after deploy
+    to internal tomcat server did not work.  Check logs etc.
+----Sun Jan 13 20:36:22 EST 2013---
+Installed QuickSilver Option-Shift brings up panel to launch apps.
+Put info on boids and steering apps into Evernote
+----Mon Jan 14 18:15:03 EST 2013---
+Created user download with password guest on barsoom for sftp access.
+    Probably need to set default directory somehow.
+    sftp download@jwooten37830.com produces request for password
+    and then you are in sftp.
+----Tue Jan 15 12:55:45 EST 2013---
+nyc deployed using tomcat manager on localhost:8080
+    Working with some things that need updating and removing that 
+    aren't needed.  Need way to have users add to "wiki"
+----Tue Jan 15 14:00:09 EST 2013---
+Got helloWorld exported as warfile to /Library/Tomcat/webapps
+    Has a servlet called Dispatcher, edited web.xml to
+    set up so that http://localhost:8080/helloWorld/dispatcher
+    would bring up jsp/helloWorld.jsp which has 2 items added
+    to the request and shown in css table.
+----Wed Jan 16 16:53:28 EST 2013---
+Reviewing use of xml and xslt's.  
+    Found that opening ~/Documents/Reference/FEA/srm/FEA_XML_Doc_Rev_1.2.xml
+    in the Safari browser produces a fully formatted document with hyperlinks
+    and formatting. Use this as a model for how to do formatting
+    perhaps in a jsp?
+----Wed Jan 16 17:46:58 EST 2013---
+Set up beginning of rsync and backup scripts
+    ~/bin/scripts/rsync_01.sh will maintain sync between host and xanadu
+    ~/bin/scripts/remote_backup_bin_01.sh will clean out tarfiles older
+        than 7 days in the ~/backups/woo_laptop/tarfiles directory
+        and then put the compressed ~/bin in as a dated tar.gz
+    Add a list of files to the rsync_01.sh and loop through them to
+        keep that fileset synchronized.
+----Wed Jan 16 17:58:24 EST 2013---
+A single line rsync into a single directory, for instance keeping
+    two user directories synced would be
+    rsync -avzR --log-file=tmp/rsync.loc -e ssh data dumps pers woo@xanadu.local:/Users/woo/tmp
+    This put the directories data, dumps, and pers into tmp for testing.
+    If it was several directories in the users home directory
+    then they could be synced with the users home directory on the slave.
+----Wed Jan 16 18:15:59 EST 2013---
+rsync_01.sh now does a list of FILES.  This could be used to 
+    move myql dump files from mysqldump to backup where they would then
+    be loaded using the script.
+----Fri Jan 18 12:34:03 EST 2013---
+Installed jstl jars into Tomcat 7 lib directory
+    Tested using xform.jsp in helloWorld and the style.xsl in styles.
+    It worked fine.  It proves also that I can have several sets of
+    xml and different or same xsl transforms on the same page.
+    Can it be combined with css, probably.  Will test.
+----Fri Jan 18 13:22:29 EST 2013---
+Created two templates in style.xsl, one for books and one for non-fiction-books
+    Then in xform.jsp had an xml section for books and one for non-fiction-books
+    The transforms then applied the css to both tables if I put at the top
+    the window.onload function with altRows('fiction') and 'non-fiction';
+----Fri Jan 18 14:22:50 EST 2013---
+sc_statemachine has Login class that can support different authenticators
+    specified in the config file sc_workspace/sc_test/conf/sc_wfserver01.cfg
+    Currently it is using the ConfigFileAuthenticator successfully.
+    DONE - I need to test using LDAPAuthenticator and set up as a service.
+
+----Fri Jan 18 14:51:04 EST 2013---
+It appears that the TestApplication.java in sc_statemachinetests
+    receives the event when the transition is made from the create
+    state to the list state.  Right now, it is printing out a message
+    but it appears that it could queue the item and its data ( xml )
+    and mark the previous queue entry as completed. TODO
+----Fri Jan 18 15:09:25 EST 2013---
+TODO - Consider in ModelTests putting the xml string containing
+    the person information into the environment as attribute
+    xmlPerson.  The the process can carry around a compound
+    xml document that contains person, address, orders, etc.
+    When the queue entry is writen out, the xml is written to
+    a file in  a data directory.  The path to the file
+    is stored into the queue entry as the data field.
+    Clicking on a queue entry reconstitutes the state and
+    appplies the states xsl to the data to render what is 
+    desired on the screen.
+----Sun Jan 20 12:57:41 EST 2013---
+Downloaded ~/Development/workspaces/alltemplates, which is a set
+    of css and xhtml templates for setting up websites basic look
+    and feel.
+----Sun Jan 20 14:09:41 EST 2013---
+Downloaded FindTheProblem and moved it to ~/bin.  It is a Ruby script
+    that checks urls to see if they are up and if not, sends
+    a notification to Prowl.  Needs to be in crontab or whatever.
+----Sun Jan 20 16:53:02 EST 2013---
+Copied part of the bash book in Reference/Unix Books/Bash Scripts
+    that covered the coloring of the comman line into ~/bin/prompt.sh
+    But it doesn't do the colors right and some of the commands
+    aren't in Mac OS X.  Fixed a few, but still there.
+----Sun Jan 20 21:50:03 EST 2013---
+Added a /etc/motd to put up a special notice
+    Fixed the colors showing in the This is BASH by using \x1B instead
+    of \e ( just in the echo command, apparently )
+    Then fixed the display of the PS1, but need to check the
+    indication of suspended jobs.
+    Not sure about the su to root as it doesn't show up the same info
+    Also, do I need this on the remote machines?  How does ssh show it?
+----Mon Jan 21 13:26:19 EST 2013---
+Updated the Library/Folder Actions auto trash script to log
+    what it removes to ~/Library/Logs/auto_trash.log.  Need to
+    Add a date to it when I can.
+----Mon Jan 21 23:33:13 EST 2013---
+Got FreeMindArchiver working so that a node could be added to
+    the grouping node which is a child of a grouping node.
+----Sun Jan 27 22:09:05 EST 2013---
+Had thought to create services ( probably using NetBeans )
+    1)  getUsersApplicationsAndProcesses
+        returns xml with applications and processes user can initiate
+    2)  getUsersTasks
+        returns xml with tasks user can service
+    3)  startProcess
+        initiates a process given user token, application, process, organization
+    4)  deQueueProcess
+        dequques a process from the tasks and present screen
+    5)  advanceProcess
+        takes process id, usertoken, xml of data from form
+        and event name and advanes the process.
+    6)  authenticate
+        takes user token and determines if it is still valid.  
+        If not, asks for reauthentication.  Updates token after
+        checking if user is still a valid user.
+
+    Now, web pages are mostly jsp, presenting xml, calling services.
+        All statemachine activity is handled in the service calls.
+    Data becomes xml which is persisted, etc.
+
+----Mon Jan 28 16:54:20 EST 2013---
+Fixed so that http://localhost:8080/qServer will bring up question page
+    and if logged in with banking/banker or sql/sql will have two
+    different look and feels and allow a question, returning the answer.
+    At this time the kb isn't any good.  So the answer is no answer.
+    Also started on ConsistencyChecker Action for freemind.
+    Checked that pcpi runs on Parallels under pcpi vm.
+    The qServer runs under Tomcat.old/5.5...
+    IAskQue also runs at http://localhost:8080/
+    Seems to be pretty intact.  Install on barsoom?
+
+----Sun Feb  3 15:37:26 EST 2013---
+Completed expense report for January and mailed to Jim Donnelly and copies
+    Dianne.
+Printed out the DOE report from Charles, signed, and mailed to DOE.
+Created a copy of FreeMindArchiver in Jet using VMFusionWare Windooze
+    It ran fine on my VMs, but the packaged version wouldn't start
+    and the executable, which ran fine, did not run at VISN8 since
+    it did not have the Jet installer.  Have to package for it to run.
+    Will have to redo and find out why the installer version won't run.
+    It says it cannot do FreeMindMain Mode.
+    Perhaps create a different start point?  One that doesn't do the
+    Starter to Main, etc.?
+Updated my VMFusionWare and Parallels and installed tools in them to share
+    files with mac.  Only sharing PC_Share and Public
+
+----Tue Feb  5 13:34:15 EST 2013---
+Made some changes in freemind to fix problems of mm_log as it was
+    statically using the jwooten37830.com database server.
+    Also fixed a couple of places where it could fail better.
+    Installed and copied mm_prod.sql and mm_log.sql and sourced
+    them into mysql.
+    Tested running from the CST/Installations/freemind.bat and it worked!
+    Sent notice to Chris and others.
+----Wed Feb  6 17:30:51 EST 2013---
+Created NetBeans projects for StateMachineWS, StateMachineWSJSPClient,
+    TaskListWS, TaskListWSClient.
+    These were deployed and return xml ( in a SOAP envelope? )
+    to a jsp index.jsp.  The xml is correct and I created a
+    set of testHTML.xml for the xml returned so that I could put
+    the proper xsl at the top with <head> etc.  It then 
+    displays the xml as a table as I want.
+
+    However, when I try to take the data and transform it in the jsp
+    it gives me the values in result, but no formatting?  Also, a problem
+    on getting the "output" which is a var into the html pieces.
+
+----Fri Feb  8 22:09:41 EST 2013---
+TaskListWSClient demonstrates using two web services to create
+    the home page ( home.jsp ), using two xsl sheets, one to style
+    the tasklist (tasklist.xsl), and the other to layout the nav
+    (applications.xsl).  The test_user1.css colors and fonts, while
+    home.css positions the elements.
+----Sat Feb  9 17:22:56 EST 2013---
+Checked in current NetBeans WS projects.  Have home.jsp working with
+    some behavior and moving to jQuery for handling page events.
+    Had to let go of SkinServer for now.  Will revisit.
+    Background is not yet right, but Applications drop down and a few
+    others appear to be working.
+    Now, to add the dequeue an entry and get it's jsp, and data
+    back to the browser using xslt, jsp, and the xml data.
+    If action gets a list or such, then it is packed into xml ( or json)
+
+----Sun Feb 10 12:04:12 EST 2013---
+Synched freemind between Robert, air machine, and this one.
+----Thu Feb 14 13:05:56 EST 2013---
+Cocoon runs on port 8888, started by:
+    pushd '/Users/woo/Development/workspaces/cocoon-2.1.11/'
+    ./cocoon.sh  Ended by ^C killing process.
+
+----Fri Feb 15 17:11:30 EST 2013---
+----Wed Feb 20 10:10:57 EST 2013---
+Import waiting on Chris reply about bad maps ( pacu and icu, 
+    events, muscular, nursing care, icu neurological )
+Still have to load preop into production? Typical maps are:
+    Anesthesia History?  Does it handle vendor data?
+    Is vendor data in ICU and PACU
+Create statistical action to sample spreadsheet sheet and get leaf node
+    id.  Then retrieve branch with id from map. List spreadsheet
+    row, followed by VA branch, followed by any vendor branches.
+
+----Wed Feb 20 12:36:14 EST 2013---
+To determine the number of samples for a C% confidence level and
+    a E% max error rate, S = log(1-C)/log(1-E).  IF no errors found
+    in the S samples, then the error rate is less than E% to a C%
+    confidence level.  So, 1000 items, no more than 20 errors at
+    95% confidence gives S = log(1-.95)/log(1-.02) = 148 ( roughly )
+
+If you know the number of sample being taken, then
+    the maximum number of errors in the population is
+    E = 1-(1-C)^(1/S).  So, for C = .95, and S = 148,
+    then E = 1 - .05^(1/148) = .02 => .02*1000 = 20, QEF
+    That means that if you found no errors in the 148 samples
+    then there are less than 20 errors in the 1000 population to the
+    95% confidence level.
+
+
+----Wed Feb 20 19:07:17 EST 2013---
+Got QueueMonitor working roughly in sc_demo (GlassFish).
+    Need to add timer to it and reset to TaskListWS to
+    reset time to Now + increment and leave WAITING.  QueueMonitor
+    will reset if if the time expires.
+    Put the Reset timer and button on activities.jsp
+Create Dispatcher in sc_demo
+    Move web page stuff from TaskListClient into sc_demo
+    and use dispatcher to get too and from jsps.
+----Fri Feb 22 17:02:47 EST 2013---
+Got the QualityPanel factored out, coming up, doing statistics.
+    Next, have it create the list of rows to check
+    then get the matching tree elements using the genericId
+    and print out the pairs as HTML
+Got timer added to QueueMonitor and working.  Also created method
+    to retain a row.  This might be moved to TaskListWS as a service
+    and return either "RETAINED" or "FAILED: User xxx now has ownership"
+    in xml, of course.  Create test page with updating progress bar, etc.
+----Mon Feb 25 20:16:22 EST 2013---
+Got sc_demo working with home.jsp refreshing every 10 seconds correctly
+    and activity.jsp showing timer and right aligned text.
+    Next is to add the advance behavior to the next state.
+    CVS from NetBeans is not saving TaskListService or StateMachineService
+    but I have manually imported them.  ***TODO*** check that they
+    are in the local CVS repository.
+----Tue Feb 26 17:24:02 EST 2013---
+Got the sc_demo working with LoginEventHandler.  Revised header.jsp
+    to expect a token string.
+    Still need to get activity creating the string with the right data.
+    Think I can do that after the service has responded.
+    Careful to use same names when creating the token string.
+    Next will do the authentication in the AuthenticationService
+    as called from the AuthenticatingEventHandler.
+----Sat Mar  9 22:38:37 EST 2013---
+Removing all references in sc_demo to _application where it did
+    and app.getNotifier().... and changing to 
+    Notifiable notfier = (Notifiable)env.getAttribute("notifier");
+    BUT, notifier isn't in the environment sometimes.
+    May have fixed it, but now I'm getting no server logging,
+    and only part of the dispatcher log.  I don't see the notification
+    messages, which I think means that the notifier isn't being
+    found in the environment!  Do some testing on it.  Does
+    it dump its guts correctly?  Am I getting things into env?
+----Thu Mar 14 22:41:25 EDT 2013---
+Reset 15620 to ACTIVE, removed it's successor, and tried to set up
+    so that moving to next activity will work correctly.
+    Things to do are:
+    a)  Trace where the current-job gets sent to the QueueManager via
+        getting set in the environment.
+    b)  Add Logging where the rollback occurs.
+    c)  See if I can capture where the exception is thrown when the result
+        returned is not correct, put up error message and return to 
+        home.jsp with eror.  (Don't barf on the persons page!)
+----Tue Mar 19 12:37:24 EDT 2013---
+----Mon Mar 25 13:10:44 EDT 2013---
+Added ~woo/lib and ~woo/lib/tex/inputs to TEXPATH in .bash_profile
+and created an alias for latex that opens TeXShop using that
+path set in .bash_profile
+----Tue Apr  9 09:37:16 EDT 2013---
+copied cvsb from http://marcbrooks.com/2012/08/27/installing-cvs-on-mac-os-x/
+and placed it in ~/bin.  It supposedly checks in files listed
+and tags them.  Check it out carefully.  I suppose you cd into directory
+that is under cvs, then do it.  Try on a test, not something good.
+----Tue Apr  9 12:20:16 EDT 2013---
+Awaiting css files from Alex for the NewCR.html in Sites.  Test
+Then change to our server for submit and put the data into our
+database.
+----Tue Apr  9 17:40:09 EDT 2013---
+Downloaded the MuleESB community edition and installed it into Developer/Applications.
+Put icon on dock.  Need to experiment to see value.
+Gave Chris Version 1_19 with some fixes.  I'll move it to VISN also.
+Need to load data into VISN database.
+----Sun Apr 14 17:46:22 EDT 2013---
+Start new Employee, enter data, move to createUser.  Data for person
+is persisted and available to createUser.  However, the queue entry
+for createPerson should have been marked completed when data entered
+and moved to createUser.  That isn't happening.  Fix logging and fix.
+----Mon Apr 15 11:43:02 EDT 2013---
+Apparently new employee fills in data, then oid changes before marking,
+so createPerson oid is still active, and that oid ends up being passed
+to createUser.  Probably how it gets the right data.  Pass it as the data?
+----Tue Apr 16 17:03:34 EDT 2013---
+Got start, advance, dequeue all showing data correctly.
+Created zips 20130416 for all projects.
+----Wed Apr 17 20:16:39 EDT 2013---
+Updated PromptForClient.java from redaction/test so that it shows 
+"New Client" as default.  Also, if Cancel, then lock is not set. It always 
+removes the lock when starting.  ( Not sure why it's there now! )
+----Tue Apr 23 12:31:52 EDT 2013---
+Installed Synergy on laptop, barsoom, and xanadu.  Should allow use of laptop keyboard
+on those platforms remotely.  Compare to screen sharing.  ***TODO***
+Donated $10 to Synergy group.  Cannot get it to work between computers.
+Claims protocol error.
+----Tue May 21 12:21:39 EDT 2013---
+Got validation working with nice form labels ( in field ) for login.jsp
+Backed up sc_demo to sc_demo_20130521.zip since things sometimes get
+screwed up without warning.  Found nice article on validation
+that using validator in the field so it might work well with xml
+from the state model.  It has a standard validator in the header
+for the activity.jsp, for instance.  Put it into Evernote with tag field
+
+
+----Mon May 27 16:41:36 EDT 2013---
+Added tablesorter javascript to ListCR.jsp and style sheets.
+It now sorts and allows pagination, but some residual problems with
+placement of the paginator when number of rows changes, and that
+the 1 to 20 of 50 does not show at all.
+Also, the sort arrows are too close to the text in the headers in small rows.
+Maybe set their width?
+
+----Thu Jun 20 17:21:16 EDT 2013---
+Downloaded examples from Castro's HTML, XHTML, & CSS
+Put navbar.html, and stylesheets into Sites/menus/
+http://localhost/~woo/menus/navbar.html brings it up.
+1)  How to make menu be vertical and slide down for hidden items?
+2)  What do these things mean and how do they work?
+Put Robert on this?
+
+----Fri Jun 21 11:07:16 EDT 2013---
+Added drilldownmenu.js and drilldownmenu.css to _js and _css and backone.jpg to images ( copy to _images )
+Added  jquery.treeview to sc_demo for evaluation. ( provides cookie persistence )
+
+----Tue Jun 25 12:16:23 EDT 2013---
+Why isn't current_job showing up at top of activity.jsp?
+Why does the alert about show process show up instead of jumping to
+new workflow-view.jsp?  No reference to show process ... alert in project.
+----Tue Jun 25 12:49:16 EDT 2013---
+Got the jobID showing and the link to the test page working.
+Can now show a dummy workflow-viewer.jsp with boxes.  No lines yet.
+----Mon Jul  1 15:08:55 EDT 2013---
+remember that latex and tex local style files might be located in
+/usr/local/teTeX/share/texmf.local
+I need to test this out.
+----Mon Jul  1 15:26:53 EDT 2013---
+(./OREN.tex (/Users/woo/Library/texmf/tex/mmes.fwp
+(/Users/woo/Library/texmf/tex/cmr.fwp (/Users/woo/Library/texmf/tex/tenpt.tex)
+(/Users/woo/Library/texmf/tex/eightpt.tex)))
+(/Users/woo/Library/texmf/tex/fwpform.tex)
+This is where I put the local stys and tex (and fwp) as in the "How to install style files in TexShop on MacOs X
+As opposed to the above use of texmf.local
+----Mon Jul  1 15:33:02 EDT 2013---
+Remember that this is where Robert thinks TeX stuff is:
+/usr/local/texlive/2012/texmf-dist 
+----Thu Aug  1 19:44:01 EDT 2013---
+Ran defaults write -g ApplePersistence -bool no to supposedly
+turn off the auto-lock feature.  check what this does to time capsule 
+and to backups when Time Capsule isn't available.
+----Wed Aug  7 09:53:20 EDT 2013---
+Turned off .wakeup by commenting out line that runs PromptForClient
+----Wed Aug 14 21:44:46 EDT 2013---
+added column db to messages in mm_log and updated it with:
+UPDATE `messages` SET db='mm_test_rwm' WHERE localIp LIKE 'Roberts-MacBook%'
+----Fri Aug 16 16:58:58 EDT 2013---
+Can do ssh barsoom tail /var/log/daily.out to see latest daily events
+Also can do ssh barsoom ls -al /var/backup/db/daily/mm_prod to see list
+of mysqldump files and the date and time they were made.
+----Tue Aug 27 12:03:41 EDT 2013---
+Created backups.sh on barsoom to quicky list backups of mm_prod
+created backups.sh on laptop to ssh to barsoom and run that command.
+----Wed Aug 28 15:46:01 EDT 2013---
+----Thu Sep 19 16:49:17 EDT 2013---
+----Fri Sep 20 10:14:00 EDT 2013---
+jwooten37830.com:80 goes to barsoom.
+jwooten37830.com:8080 goes to woo-laptop
+Currently, sc_demo, qServer, etc. are on laptop running under glassfish
+Move them to barsoom
+----Fri Sep 20 11:14:18 EDT 2013---
+getPOVRelatives is in code located at Desktop/Archive/qEngine
+----Fri Sep 20 11:44:50 EDT 2013---
+JDGui is the java decompilier and is in Utilities.
+To decompile, drag jars into window.
+Save source files.
+----Sun Sep 22 12:10:22 EDT 2013---
+Scanned in RitzCarlton-20130911.jpeg and moved it to Desktop/Expenses
+Now do expenses for August and September!
+----Sun Sep 22 12:19:34 EDT 2013---
+Create constant PI with 3.14159265 constant PI
+load loader.dict, then PI fill will put PI into the X array
+----Mon Sep 23 09:55:51 EDT 2013---
+Copied NewQEngine over to workspaces.  It contains jaysec, which are the servlets
+for dmeHelp and qEngine under q.  These might be moved and renamed to fit
+into the redaction workspace better.  ***DONE***
+----Mon Sep 23 13:37:24 EDT 2013---
+In the database, there are several places where we use
+latin1_swedish_ci that means case insensitive.
+I changed the text of the label in dataDictionary to be
+general_cs so that it would be case sensitive.
+This might need to be done in a few other places like branch label
+and mapName, but not necessarily.
+----Wed Sep 25 22:20:24 EDT 2013---
+Updated mm_prod, ran branchIdMapper, copied mm_prod to rwm, woo
+Also made a backup copy of old mm_prod and new one.
+tagged freemind as V1_25c.
+Marked it released in Mantis.
+Note to Chris and Robert.  FreeMindArchiver.app in Dropbox/ShouldersCorp.
+----Wed Sep 25 22:24:00 EDT 2013---
+testing iaskque on laptop using /Library/Tomcat.  Problems.
+Have Tomcat on barsoom also for port 8080.
+Have to move demos to Tomcat including sc_demo and services.
+----Sun Sep 29 12:32:46 EDT 2013---
+Today I wrote my unlock script in bin that will go through sub directories
+and unlock every file there using sudo chglags nouchg filename.
+It appears to work.  We'll see if they come back.  If necessary, I will
+had to my login script a calling this  on my freemind directory!
+----Thu Oct 10 12:05:44 EDT 2013---
+Solved my problem with being unable to mount some .dmg files using:
+sudo rm -rf /System/Library/Filesystems/ntfs-3g.fs
+This must have been left behind by MacFuse.  I also uniinstalled it.
+The preferences pane is still in Preferences, but shouldn't matter.
+----Fri Oct 18 06:38:52 EDT 2013---
+Copied mm_prod to mm_test_woo. Copied mm_prod to mm_prod_20131017 as backup.
+Updated users added person
+edited maps to add area/abbrev to maps missing such.  WHY?
+Ran consistency and found PACU_Activity and ICU_Activity
+    have same area/abbrev.  Have to fix this and genericId in PACU_Activity
+    which is map #49.  Create tool and perform
+Copied mm_prod as revised to mm_prod_V1_26_release as backup
+Copied mm_prod to mm_test_woo and mm_test_rwm.
+Edit AddUserAction and User.delete to prevent user with sysadmin
+being deleted.  Change Person to displaying, but marked deleted.
+Fixed so that can reactivate a deleted Person.  Their userIds are
+still linked and roles can be reset.
+Tagged V_1_26 development as V_1_26_ReleaseCandidate
+Replaced with HEAD.
+Team/Merge selected end set to develop_1_26, base set to Root_ (it filled in )
+Merge,
+Get list of changes in develop that have to be applied to HEAD
+Merge them.  HEAD now is consistent with development stream.
+Commit it and tag it as a release V_1_26.
+Created new FreeMindArchiver and put into Dropbox.
+create new branch from new HEAD and label it V_1_27,
+create new branch from HEAD and label it bug_fixes_1_26 ( for fixing bugs
+    in the release app.  Move to either the bug_fixes_1_26
+    or the develop_1_26 to work.  Do NOT work in HEAD.
+Sent note to Chris about new release!
+----Sun Nov  3 13:11:21 EST 2013---
+This script will install icalBuddy and related files:
+
+/usr/local/bin/icalBuddy
+/usr/local/share/man/man1/icalBuddy.1
+/usr/local/share/man/man1/icalBuddyConfig.1
+/usr/local/share/man/man1/icalBuddyLocalization.1
+
+We might need administrator privileges to install to
+this location so please enter your password if prompted.
+
+Input y to continue installing, c
+to change the installation path or q to quit.
+[y/c/q]: y
+- Copying icalBuddy to /usr/local/bin
+  copied.
+- Copying icalBuddy.1 to /usr/local/share/man/man1
+    copied.
+- Copying icalBuddyConfig.1 to /usr/local/share/man/man1
+    copied.
+- Copying icalBuddyLocalization.1 to /usr/local/share/man/man1
+    copied.
+
+icalBuddy has successfully been installed.
+
+----Tue Nov  5 12:04:37 EST 2013---
+freemind web access to Terminology Requests is installed and works
+in Tomcat.old on woo_laptop. Login as woo/woo/VHA.
+This needs to be moved to barsoom at 8080 running under Tomcat.
+sc_demo will still need to run under glassfish, perhaps on 9090.
+Added memory so we have 16 Gigabytes on barsoom.
+----Tue Nov  5 13:32:18 EST 2013---
+Changed glassfish-3.1.2.2 to run on ports 9090, 9191, and admin on 9848
+
+----Thu Nov  7 14:44:04 EST 2013---
+Implemented ArchiverConnection and track connections by name with summary
+at end if click File/Quit.
+Tested out and seems pretty robust.
+Tagged branch_1_26_bug fix as V_1_26a_pool today.
+----Fri Nov  8 20:47:15 EST 2013---
+finished and tagged freemind 1_26a_pooled_fully with all DataBaseReader.getConnection
+replaced except two in ArchiveConnection where it gets the connection.
+This was left to retain the showing of the panel and so forth for now.
+----Mon Nov 11 11:44:05 EST 2013---
+automysqlbackup gets it information from ~/bin/daily_tasks.sh
+It gets the databases to backup from /etc/automysqlbackup/myserver.conf
+It backs up the databases listed in that file to /var/backup/db.
+Today I added askjane_users_db to the list which was 
+mm_prod, blog_db, bugtracker, queue, and queue_db.
+----Mon Nov 25 23:45:31 EST 2013---
+installed SDFormatter.app for installing os on RaspberryPi.
+Also have NOOBS in downloads which is the contents to be dragged to
+the formatted SD chip
+Then it comes up and asks about install which OS and I choose Rasperian
+----Tue Nov 26 14:52:40 EST 2013---
+Used sudo raspi-config to change to starting raspberry pi in GUI mode.
+----Tue Nov 26 17:25:52 EST 2013---
+Added
+Lyndon-Johnson-Signature.JPG, proposalnsf.cls
+Microsoft-Logo.pdf, texMemo-example1.pidf*
+Microsoft-Logo.svg, texMemo-example1.tex*
+Vice-President-Seal.pdf, SealtexMemo-example2.pdf*
+Vice-President-Seal.svg, texMemo-example2.tex*
+exMemo.cls*
+proposal.cls
+
+to /Users/woo/Library/texmf/tex/latex so that texMemo style would work.
+See specSheet.tex in ~/Development/workspaces/freemind/doc/tex.
+----Wed Nov 27 22:26:25 EST 2013---
+added mm_log mm_test_woo mm_test_rwm to daily, weekly, monthly automysql backups
+This file is located on barsoom at /etc/automysqlbackup in myserver.conf
+
+----Wed Nov 27 22:27:47 EST 2013---
+The instruction from VISN8 are partly in Notes_2012.
+----Thu Dec  5 16:56:38 EST 2013---
+Downloaded and tested jScience, a library for handling numbers with dimensions.
+/Users/woo/Development/workspaces/measures/measurements/src/com/shoulderscorp/examples
+type in java -cp javolution.jar -jar ../../../../lib/jscience.jar test
+to see output.  I also put the source code in workspaces/measures/jscience-4.3.2 and the
+jar file into measurements/lib with the documentation.
+----Fri Dec  6 15:49:44 EST 2013---
+moved part of .bash_profile to .bashrc so it will get executed always.
+sourced .bashrc from .bash_profile.
+cleaned up a couple of old references in .bashrc and .alias.
+updated the locate database.
+use locate to find some things.
+find / -name ant found a lot of ant files.
+Added sup to start tomcat and glassfish for work on sc_demo
+added sdown to stop them.
+Will take diary and put all things for 2013 into Notes_2013
+
+----Mon Dec  9 16:47:27 EST 2013---
+Got sc_demo working on laptop using glassfish 3 from netbeans.
+Still having problem on getting queueEntry to delete on first quit of process
+Did backup to sc_demo_20131209.
+Archived all to cvs EXCEPT sc_notifyingStateMachine src/.../core did not
+get checked in.  WHY?  Not able to get a lock.?
+----Mon Dec  9 21:21:30 EST 2013---
+glassfish-3.1.22 is the one I'm using for sc_demo
+glassfish-4.0 not being used.
+NetBeans 7.3.1.app not being used.
+tomcat-7.0.32 is linked to from /Library/Tomcat and is being used.
+   It has axis2, iaskque, and nyc.
+tomcat-5.5.12 is under /Library/Tomcat.old and has nyc, pcpi-bpm, pcpi-jsp, qServer, sc_app, web ( freeemind ), ROOT (dmehelp.com)
+tomcat-7.0.34 is under /Applications/NetBeans, not being used.
+----Mon Dec  9 21:30:45 EST 2013---
+Under Eclipse Kepler, Preferences/Java/Editor/Templates
+    javadoc items like <b>, <code>, <i>, <pre>, select text, type <b>
+    then cntrl/space.
+    crc cntrl/space will insert template for CRC in header.
+    for over selection 
+    for with array selected creates loop
+    for with collection
+    lazy
+    log4j
+    logd, logerr, logi
+    main
+    query
+    readfile
+    scrollTable
+    strf, selected word
+    sysout
+    toarray of collection
+    try wraps a set of lines
+    writefile
+
+----Mon Dec  9 23:21:10 EST 2013---
+Wrote diary2txt.pl to take diary 2013 and make a txt file diary.txt of it.
+----Tue Dec 10 11:07:46 EST 2013---
+Found a whereAmI unix command to be used inside script files to
+tell you where the command is actually located.
+echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+I'll try this in one of my scripts to see if it's helpful.
+----Thu Dec 12 16:46:53 EST 2013---
+Got scroll to visible working and also resetting project.
+Changed to sc_demo and added lots of try catches so that I could
+find out what was happening.  
+Notes:
+    Must currently have a <prerender> for each state!  fails if not.
+    The use of "Quit" as an event name causes the item to be queued!
+        Not sure if this is as it should be.  Perhaps handle it
+        via the actionLibrary instead.  i.e. Quit just does exit or such
+    It appears that substituting noop for abandonProcess causes an error
+    but they are the same code.  Perhaps being caught in code like quit?
+    System Admin/Queue Entries does not get entry # or job #
+----Sat Dec 14 14:16:46 EST 2013---
+Got addition of ValidationRule that takes two Validation rules as arguments, with
+boolean operator between them working.  Handles case like;
+If the hadIds box is checked then both abbrev and area must be correctly
+filled in with two letters that are unique.
+NOTE:  If p then q becomes !q || p.  not q or p.
+----Sat Dec 14 15:09:45 EST 2013---
+NOTE:  run oddball by typing oddball.  Follow directions.
+perhaps should add an option when loading that if forth has
+an argument, it assumes that is a dictionary and loads it?
+----Fri Dec 27 18:50:27 EST 2013---
+Wrote a Growler app that checks that barsoom is serving up dmehelp.com
+Then made a jar of that into ~/bin/checkServer.jar
+Added a line to ~/bin/geek_scripts/servercheck.bash
+mycommand="java -cp /Users/woo/bin/checkServer.jar http.TestDmeHelp"
+$mycommand | grep site ( which filters out all but the first line )
+The TestDmeHelp program will send a notifiation via Growl if the server
+is not running.  That copies to Prowler on my phone!
+If I get the message, ssh barsoom, then tcu will start the server.
+Now to creat this on the server so I don't have to monitor from my laptop.
+
+----Wed Jan  1 21:39:12 EST 2014---
+Downloaded Workless, a framework for rapid creation of web pages.
+Made a hard link to .diary and put it into ~/Dropbox/Personal/Documents/Notes
+----Wed Jan  1 21:40:37 EST 2014---
+It appears to work and thus should be searchable and available
+from my iPhone.
+----Fri Jan  3 21:28:10 EST 2014---
+Commented out references to icalBuddy in ~/bin/geekscripts/main.bash and tommorrow.bash
+renamed /user/local/bin/icalBuddy to icalBuddy.bak
+Quit Found.app and made it not start at login.  It was causing
+numerous logging errors.  Will uninstall if not needed.
+----Fri Jan  3 21:45:35 EST 2014---
+Installed teco in Utilities/teco.  Alias teco points to executable there.
+Backing it up to backups as tar.gz file.
+----Sun Jan  5 14:53:25 EST 2014---
+Tested starting ~/Development/Applications/jira-standalone.
+Downloaded fisheye and created FisheyeUser and /usr/local/fisheye
+then installed fisheye zip into FishEyeUser directory and set
+.profile FISHEYE_INST to point to /usr/local/fisheye ( chmoded to let
+fisheyeuser own it ( user password is random1 ).
+Started fisheye from it's bin directory start.sh and set admin password
+to random1.  Then added woo as a user with password random1
+Then "linked" fisheye to jira giving url as http://woo-laptop.local:8060
+and userid as woo and password as randome.  Added project sc_demo with key demo
+somehow it knows about sc_authenticate, etc.  added an issue.
+Not sure how this relates to the cvs directory.
+----Sun Jan  5 18:44:17 EST 2014---
+created queueAdmin.jsp which is a duplicate of home.jsp.
+QueueEntries.xml now directs to this when you select Queue Manamagement
+I need to alter the queue.jsp which is a duplicate of tasklist.jsp
+to provide for showing the queue entries and having ways to select them
+and delete them or reassign them through actions.
+This should probably NOT be a queued action, so I'll take that part out
+by adding a flag in the process of isQueued false default is true.
+----Tue Jan  7 21:08:01 EST 2014---
+nextdb_new is now a XCode project.
+I had to remove a bunch of externs for dbinfo and test_info
+I think that is causing a memory error.
+To create the executable, do an Archive
+then click on the archived file, show in finder, then select show contents
+navigate down until you find the nextdb executable and copy it
+to /usr/local/bin
+Now it executes, but gets a memory error, because I believe
+the dbinfo and tst_info aren't being shared.
+----Wed Jan  8 12:02:38 EST 2014---
+Meeting with Jerry and Bill and Chris on Moderate Sedation
+Deal with duplicates and "view", If a vendor has a dropdown list
+A different use is for a specific sedation.  Anesthesia is reponsible, but 
+non-Anesthesists do it.
+May need ability to "hide" elements in a view.
+in VA click on insert Epidural
+Questions on managing common terms that appear in multiple maps.
+The problem is that we are trying to do this as a categorization that
+depends upon the root nodes, etc. instead of an ontology.
+----Fri Jan 10 15:35:42 EST 2014---
+Tagged V_1_27 with a pre_view tag before staring to correct view logic.
+We added a consistence check for duplicate genericIds.
+----Thu Jan 16 16:34:40 EST 2014---
+Wrote AdHocExcelReader and SelectColumnDialog to
+provide a quick way to read in an ad hoc spreadsheet and output
+a tree in xml form.
+In configuration ( Eclipse ), the input xls file is first
+Sheet name is second, followed by optional output file name for tree.
+Ran it against spreadsheet Chris sent and it seemed to run fine.
+Used capabilities of the Tree class instead of externally handling
+levels, etc. Wrote 447 SLOC that worked!
+----Thu Jan 16 16:38:54 EST 2014---
+Committed the handling of views.  It will now read in nodes from another 
+map and add them to the view on checkout, BUT they are connected
+to the wrong parent!  Possibly the lookup is faulty as the id of the node
+in the child map is being used, but all external nodes added
+should HAVE to be added to a grouping node!
+----Mon Jan 20 12:31:00 EST 2014---
+All of my movies are in Barsoom on iTunes Drive as Music/iTunes/iTunes Media/Movies in folders.
+Each folder has an mp4, m4v or other formatted movie.
+I've also copied them to a folder on Barsoom desktop called MyMovies.
+I'm copying that folder to this laptop (Wooten-laptop) and will put int
+my Movies folder and import into iTunes.  They are apparently in the
+Shared movie folder on Barsoom.
+----Tue Jan 21 09:51:50 EST 2014---
+Completed letter to DOE on royalties and response back about closing of contract
+with Mike Uzzle.
+----Tue Jan 21 16:37:56 EST 2014---
+Movies now contains all movies from iTunes backup on barsoom.
+Haven't imported all into iTunes on laptop yet.
+Turned off LDAP on barsoom to stop key errors caused by expired certificates.
+Fixed, I think, the @reboot problem by sourcing .bash_profile from
+bin/start_tomcat.
+Need to fix it so that if tomcat goes down, it restarts.  Call in to Happy Mac.
+Still some problems with the grouping nodes.  Creating some
+child ids that aren't pointing to any parents.
+MyMovies.zip needs to be copied locally.
+----Fri Jan 24 16:35:43 EST 2014---
+vim launchd_wrapper.sh   # launchd wrapper 
+sudo cp launchd_wrapper.sh /Library/Tomcat/bin
+vim org.apache.tomcat.plist  # daemon for launchd
+sudo cp org.apache.tomcat.plist /Library/LaunchDaemons
+vim ~/bin/tomcat # tomcat start/stop/restart        
+Still need to create a crontab job that looks for:
+ps -ax | grep /Tomcat/bin/launchd_wrapper.sh # gets line if there
+If it is there ( how to test ? ), then okay
+If it is not then ~woo/bin/tomcat start should start it.
+----Tue Jan 28 10:47:54 EST 2014---
+Worked with Ken at HappyMac to fix problem of dmehelp.com not
+redirecting to jwooten37830.com:8080.
+He changed it so that in the file where the dmehelp.com files
+are in the Server app, he put an index.html with
+a piece of meta-data that redirects to http://dmehelp.com:8080
+this fixed it.  Use for askjane and others!
+Also, replaced the crontab @reboot with a set of files I tested on
+my laptop and ftp'd into ~/ftp.  A launchd_wrapper.sh was then
+copied to /Library/Tomcat/bin along with a do-nothing setenv.sh
+The launchd_wrapper.sh contains some opts and stuff.
+The org.apache.tomcat.plist was copied to /Library/LaunchDaemons.
+The tomcat shell script was copied to ~/bin.  It is used to start
+and stop the tomcat service using the launch_wrapper.sh and plist.
+I found a nice article on maintainable shell scripts and created a 
+~/bin/utilities.sh with a couple of examples and refered to it from
+~/bin/tryme.sh.  It asks a question and takes action.
+BTW, the launchd_wrapper.sh refers to ~/.bashrc just in case.
+----Tue Jan 28 12:02:40 EST 2014---
+Installed mosh on xanadu, barsoom, and woo-laptop.  It works fine
+between woo-laptop and barsoom.  Doesn't work with xanadu.
+mosh is a faster and more reliable ssh apparently.
+----Wed Jan 29 10:37:25 EST 2014---
+To add a user to wheel and admin groups:
+sudo dseditgroup -o edit -a usernametoadd -t user admin
+sudo dseditgroup -o edit -a usernametoadd -t user wheel
+----Wed Jan 29 17:44:30 EST 2014---
+Fixed the view portion of FreeMindArchiver, I believe.
+Adjusted the menuNotifier to handle some things better.
+Began to create the MergePanel so that we can alter
+the set of new, edited, and deleted lists that get committed.
+----Thu Jan 30 10:24:59 EST 2014---
+changed interactive_timeout, wait_timeout, and max_connections 
+on barsoom mysql by:
+starting mysql from command line, then
+set global max_connections = 500;
+set global interactive_timeout = 600;
+set gloval wait_timeout = 600;
+command from woo-laptop is mysql --host barsoom -u woo -p ( enter passwd)
+----Thu Jan 30 10:27:42 EST 2014---
+created mysql_status in ~/bin.  Takes one or two arguments
+run as mysql_status proc stat for instance.  Enter db pw of random1
+May create some aliases which run this with different standard arguments
+----Fri Jan 31 12:18:32 EST 2014---
+Fixed email on Mantis to use the jwooten37830@gmail.com.  Tested.
+----Sat Feb  1 14:23:34 EST 2014---
+Downloaded BlockHosts-2.7.0.  It is supposed to scan log files
+periodically and block breakin attempts after a few times.
+Need to figure out how to get to work on Mac and then install on barsoom.
+Installed /etc/blockhosts.cfg with minimal info and
+/etc/hosts.allow and ran sudo blockhosts.py and it didn't complain.
+----Sat Feb  1 14:50:29 EST 2014---
+Apparently the logs are in /private/var/log/system.log
+and can be looked at with syslog -C | tail -n 50 ( maybe in Geektool )
+Add an egrep -e 'sshd|ftpd|afp|vnc' etc.  to look for violations?
+----Sat Feb  1 15:10:35 EST 2014---
+This apparently works as a geek script to watch for breakin attempts
+syslog | tail -n50 | egrep  -E "ftp|ssh"  looking for ftp or ssh.
+----Sun Feb  2 11:14:18 EST 2014---
+Updated mm_prod database, dropped PreOp and reloaded from
+map Chris sent me in docs/maps.  Set databaseVersion to 1_27a
+and put V_1_27a up on Dropbox in ShouldersCorp.  Note to Chris.
+----Mon Feb  3 12:40:45 EST 2014---
+Robert found bug in release where copied node from one map was not
+correct in pasted map.  The childMap attribute was not getting set.
+Corrected that, reduced printouts, removed some updateMenus.
+Created new version V_1_27b by merging it into HEAD.  Released to Chris.
+Working in V_1_27b now.
+----Mon Feb  3 12:42:36 EST 2014---
+Decided to let the mysql handle the number of connections.  I have edited
+my.cnf in /etc to set maximum to 500 and timeouts to 10 minutes.
+TODO-still could reduce amount of printout.  (look at connections then )
+----Tue Feb  4 15:07:09 EST 2014---
+Using:
+echo "Barsoom Hackers?" ; ssh barsoom syslog | tail -n10 | egrep  -E "ftp|ssh"; echo "\nsystem.log";  ssh barsoom grep "POSSIBLE" /private/var/log/system.log | cut -d " " -f 8 | sort | uniq -c
+to look at number of messages in syslog that are POSSIBLE BREAK-IN attempts
+----Tue Feb  4 17:16:44 EST 2014---
+Sold PT-111 and Bond derringer to Harles Holt, frient of Tims for $650.
+Worked on RevertAction. Created nodes-edited-twice script for testing.
+Using Review Changes, it can be rolled back to the original
+----Wed Feb  5 13:45:03 EST 2014---
+Copied down some awk scripts into ~/Development/scripts.
+Put awk tutorial into Evernote and synched bookmarks from Safari to 
+iPhone after correcting some links.
+----Wed Feb  5 14:18:42 EST 2014---
+Created rsync_doc.sh to copy freemind docs to barsoom website.
+Run after creating new pdfs for freemind.
+----Thu Feb  6 18:33:55 EST 2014---
+Got revert mostly working.  It marks all unapproved in latest to approved,
+then copies original nodes below.  They should be in their original state.
+But, it appears that the approval process by itself is not preserving
+earlier states, #502.  We should copy the edited node before marking it approved!
+Fixed history graph so that it now shows reverts in red, offset correctly.
+Also fixed so that state between graph and tabs is correct.
+Now getting a review changes after being in branch produces a commit
+to the branch!  #504.
+Also, getting notice after creating a branch and checking its review changes
+that the panel says it is not the latest, # 503.
+----Fri Feb  7 14:14:25 EST 2014---
+Wrote ~/bin/mail_offer.php and ~/bin/mail_old_users.php that
+go to the askjane_users_db and hit the leads and users tables to send
+mail message viz.:
+14:06 woo@woo-laptop ~ > php ~/bin/mail_offers.php
+Select returned 49 rows.
+To=rctnavylt@me.com, name= Robert Thompson
+To=tmoore@wilkrx.com, name= Tim Moore
+To=roliver@inspiredmedical.com, name= Bret Lumpkin
+To=scott@bradleydme.com, name= scott
+To=andrew.w.schmid@gmail.com, name= Andrew Schmid
+To=iaskque@gmail.com, name= Helen Davis
+To=tkandrt@gmail.com, name= 
+To=cpund@hlshomemedical.com, name= 
+To=pamico@primecaremed.com, name= 
+To=baileywilliams16@hotmail.com, name= 
+To=jcmedical@yahoo.com, name= 
+To=danielm@capitalmedsys.com, name= 
+To=aabon@hotmail.com, name= 
+To=traci.hood@mindspring.com, name= 
+To=advancemedical5@yahoo.com, name= 
+To=martha.mccall@triadhospitals.com, name= 
+To=andersonso2@oppcatv.com, name= 
+To=kim@evhomehealth.com, name= 
+To=vickyp@alhnet.org, name= 
+To=brad@fms.lvcoxmail.com, name= 
+To=brandon@rehabtechnologiesonline.net, name= 
+To=vsylte@medsouthinc.net, name= 
+To=djones@smec.biz, name= 
+To=linda@applemobility.com, name= 
+To=rgraver@medtechmail.com, name= 
+To=chuckp@smme.us, name= 
+To=pczapla@bellsouth.net, name= 
+To=telmore@medsouthinc.net, name= 
+To=sseagersrn@msn.com, name= 
+To=ABILLINGSERVICES@TAMPABAY.RR.COM, name= 
+To=cfullingtonams@bellsouth.net, name= 
+To=beverly.workman@kdmc.net, name= 
+To=dmemanagement@yahoo.com, name= 
+To=melissa@twinstateshomehealth.com, name= 
+To=harrisonmotorsports@rocketmail.com, name= 
+To=SNICOLE_1@HOTMAIL.COM, name= 
+To=mswrdx@yypujc.com, name= 
+To=melissa@durhampharmacy.com, name= 
+To=pnworc@wyfskw.com, name= 
+To=gaylesf@tds.net, name= 
+To=melissa.mcdaniel86@yahoo.com, name= 
+To=qygdtv@lttvns.com, name= 
+To=hayes.snicole03@yahoo.com, name= 
+To=shayes455@hotmail.com, name= 
+To=Mobimed@bellsouth.net, name= 
+To=cvhpce@bnpizn.com, name= 
+To=nouarf@pastpg.com, name= 
+To=lohupf@ahfvsq.com, name= 
+To=awilson@areteq.com, name= 
+14:07 woo@woo-laptop ~ > php ~/bin/mail_old_users.php
+Select returned 1 rows.
+To=tkvochick@me.com, name= Teresa
+14:13 woo@woo-laptop ~ > php ~/bin/mail_old_users.php
+Select returned 7 rows.
+To=tkvochick@me.com, name= Teresa
+To=sonjajockisch@aol.com, name= Sonja
+To=tmoore@wilkrx.com, name= Tim
+To=rctnavylt@me.com, name= 
+To=loretta@jencomobility.com, name= Loretta
+To=missy@jencomobility.com, name= Melissa
+To=thuffman5@gmail.com, name= Tammy
+----Fri Feb  7 14:32:49 EST 2014---
+Updated the ~/bin/diary shell command to copy the diary file
+to /Users/woo/Dropbox/Personal/Documents/Notes so it is 
+always in sync with the diary I maintain.
+----Fri Feb  7 14:51:09 EST 2014---
+Got logging to database working on barsoom for dmehelp.
+----Fri Feb  7 14:52:59 EST 2014---
+Also got the mail from command line working on laptop!
+See my Evernote article about this.  
+----Fri Feb  7 15:49:54 EST 2014---
+Fixed the problem with editing, committing, then reviewing, approving, committing
+and then was not able to find the unapproved node if checked
+out map before approval.  Problem was in testing for unapproved node
+in Tree.  It was ignoring the date of the approval ( or rejection ).
+----Sat Feb  8 12:43:42 EST 2014---
+Log into dreamhost.com and sign in as Charles Wilson/Qetra666
+----Sun Feb  9 00:34:13 EST 2014---
+Purchased home edition of Mathematica to study Worlfram Language
+as applied to Health.  Activation key =  3593-7808-Y3KJH7
+----Sun Feb  9 19:09:17 EST 2014---
+Worked a bit with ~/Development/Forth/fiji.1.2_beta
+I created a shell script in ~/bin named fiji which launches
+the fiji "forth-like" interpreter.
+First cd to ~/Development/Forth/fiji.1.2_beta/com/SoftWoehr/FiJi/examples/fiji/io.
+then start fiji > fiji
+type cat.fiji load
+Then filename cat will list out the contents of the file.
+../util/dir.fiji load will load the dir utility
+and ../util dir will list the contents of the util directory
+../awt/hellowin.fiji load loads an awt window example
+follow directions.
+----Sun Feb  9 19:30:32 EST 2014---
+To use coco-sf "swiftforth" on mac os x, I created an alias sforth
+ that launches it.
+ after launch from ~woo, type include graphics.ldr
+ This loads a graphics library and creates a window.
+ Now, image will show an image
+ and, slide-show will produce a slide show until a space is entered
+ Then do include oddball.ldr and the words for manipulating
+ a stack array are loaded.  disp will display the beginning of the array
+ 
+----Mon Feb 10 20:05:05 EST 2014---
+Now, Home on networks uses the static ip over the wireless.
+Mobile, is for all moving around and using discovered networks.
+AT&T Hotspot works through Mobile.
+----Wed Feb 12 19:14:15 EST 2014---
+Worked all day fixing AllTests.  Found many mistakes in 
+using endTransaction and the use of transactions. Continue tomorrow.
+----Thu Feb 13 09:41:50 EST 2014---
+Just for fun, I downloaded the scripts for running a bourne shell
+web server pages.  I moved in.httpd.sh and shspc.sh into /usr/local/bin
+and made them executable.  I also moved the inetd script into ~/bin as http
+for now.  To make it run, apparently I need to move http into the /etc/xinet.d ( or equivalent )
+and then send HUP signal to xinetd.  Then a page like:
+<html>
+   <body>
+      <h1><$ echo "Hello, world!" $></h1>
+   </body>
+</html>
+Will produce a web page.  Any borne shell commands can go between
+the <$ and $> While <title><` $JAVA_HOME `></title>
+would cause the variable $JAVA_HOME to be evaluated and appear as
+the title.
+The tag <^ ... ^> means to include other stuff where the ... is.
+So <^ more.shit ^> would be replaced by evaluating the server page
+more.shit.
+shspc.sh converts .shit files into .sh scripts.  They are served by
+in.httpd.sh which is the web server.
+----Thu Feb 13 10:13:33 EST 2014---
+Installed http://jwooten37830.com/home/RegEx.html on barsoom
+it allows you to see and check out regular expressions.  Variants don't work, but so what.
+
+----Thu Feb 13 10:20:53 EST 2014---
+Added alias for barsoom ~woo home page directory 'hp'
+and alias for tomcat 8080 webapps 'tc'
+So, ssh barsoom hp, puts me in my home page directory
+----Thu Feb 13 15:39:41 EST 2014---
+Got tests working at least to where a table lock will get released after
+a MAX_BUSY time.  Many tests are still broken and this may be due to
+differences in the data and also in the way we do unapproved now.
+----Tue Feb 18 14:27:41 EST 2014---
+The codes for old Mathematica which dealt with light moving past black
+holes can be found in ~/Development/OlderSoftware/DESolve.  They
+have the mathematica extension .ma.
+
+----Fri Feb 21 11:06:43 EST 2014---
+By putting a smaller size on the scrollPane itself than its contents
+a horizontal and/or vertical scroll bar will appear.
+----Fri Feb 21 15:49:16 EST 2014---
+Finished implementation of the ViewsReportPanel.  It shows a list of
+all views with their mapnames and vendors.  Clicking on a row, brings
+up that view.
+----Wed Mar  5 16:57:12 EST 2014---
+Spent day fixing the add client, duplicate deleted node rows in compare.
+Posted to Mantis and continued to work on other bugs. Chris has issue with
+generating vendor data reports.  Robert will check.
+----Thu Mar  6 12:45:51 EST 2014---
+----Sat Mar  8 19:55:43 EST 2014---
+The style files listed as:
+\documentstyle[quote,italic]
+go in ~woo/Library/texmf/tex
+----Sun Mar  9 16:15:28 EDT 2014---
+Downloaded gcc-4.9-bin.tar.gz and installed it into /usr/local
+Created a shell command for compiling in c on command line cc.sh
+and an alias cc that invokes it with one argument, name of c file.
+e.g. cd Development/OlderSoftware/sirds
+cc sird.c results in a.out that is the compiled and linked sird program
+invoke with a.out < dt.stereo
+----Sun Mar  9 16:17:58 EDT 2014---
+----Sun Mar  9 17:42:28 EDT 2014---
+Current good version is develop_1_27b.  Create Chris from this.
+----Mon Mar 10 10:55:05 EDT 2014---
+Created version for Chris from HEAD which is duplicate of develop_1-27b
+and develop_1_28 at this time.  DON't touch except to fix bug
+in new branch bug_fixes_1_27b.2
+----Tue Mar 11 13:00:43 EDT 2014---
+Copied some digester code and put it into testHarness as a text file
+need to break it out and also look at code I put into evernote
+called Tricks For Better Software.  Want to try to extend that one.
+----Sat Mar 15 09:08:18 EDT 2014---
+Edited org.apache.tomcat.plist on barsoom in /Library/LaunchDaemons
+it did not have a correct java home.  Set it to the echo $JAVA_HOME value
+edited ~/.alias and changed tcu to '~/bin/tomcat start' and
+tcd to '~/bin/tomcat stop', note that tomcat restart with bounce it.
+It now uses the launchctl to start and stop from the plist
+and $CATALINA_HOME/bin/launchd_wrapper.sh program.
+HAVE NOT TESTED YET.
+Set barsoom so it would log in as woo automatically starting iTunes
+then screen saver will come on requiring login.
+----Sun Mar 16 17:13:24 EDT 2014---
+Bought 4 TByte LaCie drive for Laptop backup.  Formatted with
+120 GByte partition that can be used by Windows Paralles, or VMWare Fusion
+Set LaCie to be TimeMachine for laptop.  When on road shift to
+my 1 TByte portable drive.  Switch back when return.
+Need to purchase a Thunderbolt hub so I can connect monitors and drive.
+----Sun Mar 16 17:37:56 EDT 2014---
+Found dopushmail.com forwarding from wooten.666@gmail.com
+removed forwarding.
+----Wed Mar 26 13:11:37 EDT 2014---
+Log into VA network
+remote desktop to 10.70.134.175
+----Sat Mar 29 13:53:19 EDT 2014---
+remember to do F6 if can't find cursor.  Mouse Locator is in preferences panel.
+----Sun Mar 30 11:00:09 EDT 2014---
+Added a search shell script to bin.  It searchs .diary and all Notes
+for argument.
+----Sun Mar 30 11:26:56 EDT 2014---
+Downloaded Backboard.app, Deeper.app, GarageBuy.app, slife, Anxiety.
+----Mon Mar 31 15:23:55 EDT 2014---
+Got document generation scripts working and creating pdf files.
+rsync moves them and the archiverWeb to barsoom port 8080 ( use ssh barsoom then tc to get to it)
+Copied mysqlconnector into $TOMCAT_HOME/lib and restarted.  Then it did connection
+and allowed me to log in as woo/woo/VHA.
+Page comes up, but clicking isn't working.  And get jsp can't compile jsp errors on
+New, edit, etc.  
+----Tue Apr  1 12:52:01 EDT 2014---
+Moved class files to WEB-INF instead of jar and all began working fine.
+All cliks work, etc.
+----Tue Apr  1 12:53:07 EDT 2014---
+Submitted expenses to Dianne for review, then to Jim.
+----Tue Apr  1 13:39:04 EDT 2014---
+Worked on NSA and Apple proposals.  Need feedback from Charles, CV from
+Robert and a bit more words for Apple.  Send these soon.
+Work tomorrow on the MVE book.
+----Wed Apr  2 09:34:41 EDT 2014---
+----Tue Apr  8 12:04:51 EDT 2014---
+Sending out proposals to ORNL, Apple, and NSA.  Posted on online to Google.
+----Thu Apr 10 11:33:33 EDT 2014---
+Time Capsule, Time Machine.  Learned that if you press Option Key and
+click on the Time Machine icon at the top of the screen, that you can
+browse other time machines you have things on.  Also, that if you are
+alternating between backup devices as I do on LaCie and Time Machine-1
+that what you can access from the Time Machine "star wars" view is the
+latest device you backed up to.  The others show, but can't be used for
+recovery.  To access them, disconnect the one you don't want to use, then
+do another backup to the one you want.  Then open time machine and you'll
+be able to recover from those dates.  I now have access back to Sept
+2013 on my Time Machine-1!
+----Tue Apr 15 09:42:59 EDT 2014---
+Did CCC of barsoom/iTunes/Music/iTunes_Files to T2_1000G.  Should have
+backed up all movies and music on barsoom.
+----Tue Apr 15 16:36:54 EDT 2014---
+Downloaded liquidprompt from git and can source as ~/liquidprompt/liquidprompt
+Doesn't have color like prompt.sh at Desktop/prompt.sh,
+perhaps should take best from liquidprompt and put it into prompt.sh
+% cpu does show, just not in color.  prompt.sh doesn't update % value.
+----Wed Apr 16 20:54:03 EDT 2014---
+set .bash_profile so that it loads liquidprompt.  this fixed problem
+of vt100, since that is in prompt.sh.  Colors in vim now.
+Seem to have problem if turn off automatic login, that woo no longer
+shows up as a user!
+----Thu Apr 17 11:20:02 EDT 2014---
+Learned that vm_stat gives free etc. pages of memory in 4096 byte pages.
+sysctl -a list all of the system variables like hw.ncpu = 8 on this.
+----Thu Apr 17 14:28:23 EDT 2014---
+Added queue_manager to bin.  Start it with queue_manager &
+It runs in background every 5 seconds.  To put jobs into the queue
+create a script that is bash compatable in a file, say test.job
+Then do: create_job
+It will ask for email address and name of file.
+Then do submit test.job.  It will get submitted to the queue.  You
+will be notified when the job starts and completes.
+waiting tells what is in the queue.  stop_queue stops the queue.
+so:
+create_job, submit, queue_manager, and waiting are part of the ability
+to submit batch jobs and run them one after another.
+Does it need logging?  Be sure jobs send their output somewhere.
+----Thu Apr 17 18:17:18 EDT 2014---
+Can now create a test.job file, then do create_job
+and tell it to submit.  it will send a notification to
+the requested email addr if you say so.  It uses the information
+in /etc/postfix/sasl_password.  You have to 
+sudo postmap /etc/postfix/sasl_password if you change things.
+Then be sure /etc/postfix/main.cf has smtp_sasl_auth_enable=yes, etc.
+Then either sudo postfix start or sudo postfix reload.
+Then date | sendmail -s Test your_email_addr 
+should send the date as the body of the email to you.
+----Sat Apr 19 16:22:07 EDT 2014---
+Downloaded and installed pip a package manager for phython.
+used ~/bin/install_pip.py, a self installer using sudo.
+The did pip search "pygmentize" to locate name
+then did pip install tw.pygmentize using sudo again.
+Then pygmentize utilities.sh worked, so turned it back on
+in .bashrc for less using lessfilter.sh in ~/bin
+----Mon Apr 21 17:23:51 EDT 2014---
+Started doing an ant build script to run tests.  Learned a lot,
+but couldn't get it to work right.  Abandoned. Did copy
+junit-4.8.2.jar to the antlib home and renamed it junit.jar
+then put that in classpath in build.xml and it worked.
+Started building a CompareFiles.java that will split the appended
+AllTests.txt into two arrayLists and then compare them after filtering
+and detect changes.  Currently working on writing the filter.
+----Fri Apr 25 10:37:48 EDT 2014---
+The kepler eclipse preferences settings for the workspace are located at:
+workspaces/archiver/.metadata/.plugins/org.eclipse.core.runtime/.settings
+in prefs extension files.  For instance, org.eclipse.jdt.ui.prefs 
+contains the names of the xml formatter and cleanup files along with
+the settings for all of the cleanup options, etc.
+----Mon Apr 28 15:58:35 EDT 2014---
+model getting compiled and running, but says arrays exceed memory.
+The value being printed out as needed is WAY too big. Look at ptr calculation.
+Installed gfortran in /usr/local/gfortran/bin/gfortran
+Then created link to it as ln -s /usr/bin/gfortran /usr/local/gfortran/bin/gfortran
+
+----Tue Apr 29 10:42:40 EDT 2014---
+Downloaded wget and installed it on barsoom into /usr/local/bin.
+Checked that it was installed.
+Then on barsoom, did cvs co CVSROOT into ~woo.
+Then added a directory under CVSROOT called scripts
+and put postCommitTriggerBuild.sh there and chmoded to a+x.
+Then added a line to CVSROOT/loginfo, viz.
+archiver /Users/woo/cvsrep/CVSROOT/scripts/postCommitTriggerBuild.sh.
+did cvs add scripts, cvs add scripts/postcommitTriggerBuild.sh
+then cd CVSROOT, and cvs commit to commit all of this.
+Set Jenkins to only update if triggered and tested.  No trigger!
+Then committed a broken file and hand started the build.  No error!
+DONE:  More work on Jenkins
+----Tue Apr 29 11:11:15 EDT 2014---
+Although jenkins is only accepting anonymous and not my ssh key,
+it still is doing an update from cvs, but not compiling the code.
+I guess I have to add that as a post checkout action in jenkins
+and have it run an Ant script to compile.  After this works, it
+can checkout archiverTest and then compile and run the tests.
+----Tue Apr 29 11:15:53 EDT 2014---
+Made a change in Base, then committed.  Did not auto trigger, BUT
+I then ran jenkins build -c archiver and it produced a build.
+----Tue Apr 29 14:43:40 EDT 2014---
+Downloaded wget into ~/tmp by:
+cd ~/tmp
+curl -O http://ftp.gnu.org/gnu/wget/wget-1.13.4.tar.gz
+Then:
+tar -xzf wget-1.13.4.tar.gz
+cd wget-1.13.4
+./configure --with-ssl=openssl
+make
+sudo make install
+test with:
+wget --help
+The code is installed into /usr/local/bin.
+Then cleanup with:
+cd .. && rm -rf wget*
+All done!
+----Tue Apr 29 15:12:27 EDT 2014---
+Copied ecj*.jar from tomcat lib to ANT_HOME/lib.  Still didn't solve
+problem of missing class when trying to run ant build from eclipse.
+----Wed Apr 30 08:37:42 EDT 2014---
+The build.xml file in archiver/archiver works from the command line.
+ant clean, then ant build-project creates the runnable files.
+ant Archiver then runs FreemindArchiver successfully.
+It probably needs lib checked out and possibly something Eclipse,
+but it's close.  I think I can fix it so that lib and archiver are there
+and then build-project to see if all compiles.
+Create another like this for archvierTests and we should be able
+to run the tests after a commit also.
+----Wed Apr 30 22:45:05 EDT 2014---
+Got ant script to work on barsoom.  It now checks out ( updates ) from
+archiver, then runs the ant script to compile.  If errors, it sends me 
+email.  Will now add new target to script to check out archiverTest,
+compile it, then run the tests.  Installed ant from download site.
+----Thu May  1 08:30:41 EDT 2014---
+Got archiverTests to be checked out and compiled and got a .freemind/properties
+into place for it.  Now, it seems to need a X11-Display to be set
+to run headless.  Possible download and install Xvnc plugin.
+Might try runnnin without turning on headless.
+----Mon May  5 14:36:49 EDT 2014---
+Created new_workspace.sh that should create a new workspace and
+copy over the setting from an old one.  See about altering this so
+that it allows Robert and I to copy our settings between each other also.
+----Mon May 12 14:48:14 EDT 2014---
+Downloaded html5 zip file for evaluation.  It's in Downloads.
+----Thu May 15 16:02:45 EDT 2014---
+~/Development/GeneticAlgorithms has good code for PlotXY, Histogram,
+FrameConstraint, layout, etc.  Also good notes about threading, notification,
+and running applet as application.
+----Tue May 20 10:33:04 EDT 2014---
+Updated TestPlans.tex and ran scripts to create tabular test plans
+and then create test plan then rsync to move to server.  Had to split
+the table of actions into two tables.  Need to find out how to get rid
+of the two side feature.
+----Tue May 20 11:20:34 EDT 2014---
+Check on sc_demo again.  Had to change to woo/random1 for several
+places as I had changed the root password, etc. on the database.
+It now shows queue entries and can sort of work.  Needs a lot of
+review.  Need to be able to delete entries that aren't good.
+----Tue May 20 13:56:39 EDT 2014---
+Used OmniGraffle to create an abbreviated sequence diagram for
+Franklin Planner.  Is in Documents/Discussions.
+----Wed May 21 18:18:53 EDT 2014---
+Added an InspectEventHandler to sc_demo.  It currently just
+returns an error message.  It uses the homeAdmin.js that replaces
+the home.js in the queueAdmin.jsp.  When you click on a task entry
+it should cause the queue entry to be brought up for inspection.
+Choices then should be to delete, delete job?, change status to
+active, requeue to another, look at history?, also need to be sure
+we get all that are active, or waiting.
+----Thu May 22 14:14:46 EDT 2014---
+Did an initial creation of iPhone Planning look and feel.  It
+shows Daily Tasks, Schedule and Notes.  Still need to add
+Daily Tracker and try to position at bottom.  Then add sections
+for Master Tasks, and Monthly Calendar.  Look up how to get
+Calendar entries to put into Schedule.
+----Wed May 28 16:31:34 EDT 2014---
+Received VA access and put into Evernote.  Need to test.
+Also, reworked the handling in View of the transfer node checking
+to make sure we aren't pasting an ancestor to a descencent which
+would cause a loop.
+----Thu May 29 12:26:47 EDT 2014---
+Installed latest TomEE-plus in /usr/local and shortcut in /Library/TomEE-Plus
+It appears it is a full stack.  If I can create war files for sc_demo
+and the services, they MIGHT run in this stack.  I can then install it
+on barsoom, and perhaps use it from Eclipse.
+----Thu May 29 16:06:10 EDT 2014---
+Got Netbeans working again.  Problem seemed to be the Exceptions.
+I explicitely referenced ClassNotFoundException, SQLException, ParseException
+and created a TransactionFailedException.  I also had to recover
+Scope.java from an older version.  The TimeCapsule is not working right.
+I have only one days backups.  I can find the files on the drives, but they 
+show as not there in the TimeCapsule history.
+----Thu May 29 16:08:11 EDT 2014---
+I created a ~/Archives/sc_demo_201400529 directory with all source
+and libraries zipped up.
+----Fri May 30 07:48:29 EDT 2014---
+Enter sudo tmutil disablelocal to disable local backups. But, these
+are only done if not connected to external Time Machine and will be
+deleted if disk space goes above 80%.
+----Wed Jun 11 09:36:47 EDT 2014---
+Corrected bug in Archiver where a failure to obtain a lock on the log
+file caused an exception which then prevented the settings of the 
+database url, userid, password, and documentation url.
+Now, Version 1_29c uses the -D paramenters if there, but overwrites
+them with anything found in the user preferences under .freemind.
+Uploaded to VA 10.70.255.115 by emailing from laptop to jwooten37830@gmail.com
+then logging into it as administrator/PICIS1231! ( or !1 ), opening
+Internet Explorer and downloading the jarfile from there to C:
+Edited archiver.bat so that it uses 1_29c and specifies documentation url as
+http://localhost/freemind/index.html
+----Wed Jun 11 10:26:18 EDT 2014---
+uploaded current documentation for Archiver using gmail and installed
+on Program Files/aamps/www/freemind and updated index.html to use
+correct name for Installation Manual.  Saved old copies to backups
+in same directory.  Need to update documents so that they refer to
+V_1_29c.
+----Wed Jun 18 16:14:23 EDT 2014---
+Wrote obituary draft and stored it in Documents/TeX/memos.
+----Fri Jun 20 13:12:27 EDT 2014---
+Case number with Carbonite - 0875540, Marc
+----Fri Jun 27 13:32:39 EDT 2014---
+Downloaded calcage package for LaTeX,
+LaTeX package 'calcage'
+~~~~~~~~~~~~~~~~~~~~~~~~
+Copyright (C) 2012 by Robin Schneider <ypid23@aol.de>
+
+This work may be distributed and/or modified under the
+conditions of the LaTeX Project Public License, either version 1.3
+of this license or (at your option) any later version.
+The latest version of this license is in
+  http://www.latex-project.org/lppl.txt
+  and version 1.3 or later is part of all distributions of LaTeX
+  version 2005/12/01 or later.
+
+  CTAN: http://www.ctan.org/pkg/calcage
+  Code repository: https://github.com/ypid/latex-packages/tree/master/calcage
+
+
+  DESCRIPTION
+  Calculates the age in years
+
+  The calcage package can calculate the age of someone or something in years.
+  Internally it uses the datenumber package to calculate the age in days. The
+  conversion from days to years is implemented by this package. It is also taken
+  care about leap years and such odd things. 
+
+  GENERATING THE FILES
+  You can generate the canlcage.sty file with: pdflatex calcage.ins
+
+  The documentation can be generated with:
+  pdflatex calcage.dtx
+  makeindex -s gglo.ist -o calcage.gls calcage.glo
+  makeindex -s gind calcage
+  pdflatex calcage.dtx
+  thumbpdf calcage
+  pdflatex calcage.dtx
+
+----Fri Jun 27 15:57:20 EDT 2014---
+Logged into www.tms.va.gov as wooten.john0813 and set password to Fester1#.
+Will have to change VA password at some time again.
+----Thu Jul  3 14:06:50 EDT 2014---
+For VA TMS Training Management Service - wooten.john0813/Fester1#
+----Wed Jul  9 11:49:54 EDT 2014---
+When changing email passwords, especially jwooten37830@gmail.com,
+change that password on barsoom in mantis and others.
+----Fri Jul 11 22:36:50 EDT 2014---
+Changed memory to 2 x 4 GBytes in MK's old MacBook Pro.
+----Wed Jul 23 09:35:57 EDT 2014---
+To connect to remote desktop where freemind is: administrator/PICIS123!1
+
+----Wed Jul 23 16:47:35 EDT 2014---
+Changed XBox password to Fester1# for jwooten@shoulderscorp.com
+----Sat Jul 26 11:22:50 EDT 2014---
+Set admin password for glassfish to admin/random1
+----Thu Jul 31 16:34:25 EDT 2014---
+Downloaded limesurvey and collabtive-12 to see if they were good
+for surveys and for doing project management.  Moved them into Tomcat.old
+webapps, but can't get them to run.  Created the MySQL db collabtive said it needed,
+but http://localhost:8080/collabtive-12/install.php gets a 404.
+nyc works as do others there.
+----Mon Aug  4 09:57:04 EDT 2014---
+CCC license key is: GAWAE-FDH3B-8HTM6-77Y9R-TQG6Y-M4UA6-EG4DP-NKH9C-CR76J-WDN4Z-TA87Y-965Z4-VNQR4-Y9LLS-RURU
+----Wed Aug  6 19:14:44 EDT 2014---
+Eclipse Tomcat v7.0 Server on local host at: /Users/woo/Documents/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps
+----Fri Aug  8 10:47:17 EDT 2014---
+Note that ` around strings means field, while ' means string in mysql
+To replace a substring in mysql one way is
+UPDATE table_name SET field_name = REPLACE( field_name, 'value', 'new-value') WHERE qualifierString
+----Fri Aug  8 11:14:37 EDT 2014---
+Copied mm_prod to mm_test_woo.
+Saved mm_prod to mm_prod_10140808.
+Edited mm_test_woo to drop duplicate maps 64, 35, and 21.
+Change name ending in (2) to not ending in (2)
+Replaced IC in PACU_ACTIVITY with PA in maps and in all nodes for that map.
+Removed 64, 35, and 21 from the branch table.
+Copied mm_test_woo back to mm_prod.  Put replace sql into .diary
+----Sat Aug 30 12:14:44 EDT 2014---
+Logged into VA and then into Archive server.  Looked at recent activity
+and found no recent activity since 06241014.  PICIS123!1 was admin password.
+----Mon Sep 15 13:48:46 EDT 2014---
+Created V_1_30 and tagged it in CVS.  Sent note to Chris about it.
+V_1_30 has it set so that only Testers can import files and do spell check.
+----Thu Sep 18 16:14:55 EDT 2014---
+Created LogFileViewer and tested it.  Need to add preferences to be
+able to select which columns are shown.  Store in userPreferences.
+Updated Test Harness so that MindMapNodes on top of stack are automatically centered.
+----Fri Sep 19 22:49:58 EDT 2014---
+Got the LogFileVeiwer working and reading in user preferences saved
+from the LogFilePreferences pane.  Seemed to have the button clicks
+working now.  Need to move the Show and Limit values to the preferences
+and use them when building the panel.
+----Sun Sep 21 10:00:08 EDT 2014---
+MantisClient connection is http://jwooten37830.com/mantisbt-1.2.10/api/soap/mantisconnect.php
+----Thu Sep 25 13:12:31 EDT 2014---
+Had to set LP_ENABLE_BATT=0 in ~/.liquidpromptrc so that I would not get
+an error on the server barsoom because was getting error
+-bash: [[: Now drawing from 'AC Power': syntax error: invalid arithmetic operator (error token is "'AC Power'")
+Found that the statement
+12:59:30 ⏚ [woo@jwooten37830:~] > pmset -g batt | tail -n1
+Now drawing from 'AC Power'
+but I don't know where this is causing the problem.  Added a todo
+to look into how to handle this statement in ~/bin/liquidprompt/liquidprompt shell process
+----Fri Sep 26 09:12:14 EDT 2014---
+If you run CVSROOT/scripts/postCommitBuildTrigger.sh from the command line
+then Jenkins schedules and executes a job.  However, doing a commit
+does not cause the postCommitBuildTrigger to be run!
+----Mon Sep 29 11:59:45 EDT 2014---
+Created branch to archiver called JProgressBarDevelopment coming
+from HEAD on September 29th at version 1_30a.
+----Fri Oct  3 15:33:52 EDT 2014---
+Determined that there are about 23,882 SLOC in the freemind.database code.
+190 public classes, 13 private classes, or 239 classes and interfaces
+2547 methods or about 10 per class.
+----Mon Oct  6 16:45:27 EDT 2014---
+Fixed Access view of freemind laying out the table, etc.
+Note the use of Viewport and don't auto space columns.
+----Mon Oct  6 19:30:41 EDT 2014---
+Ordered cheeses to be here 10-10?
+----Thu Oct 23 16:04:12 EDT 2014---
+Completed mation Security Awareness and Rules of Behavior 
+on https://www.tms.va.gov/learning/user...
+Using wooten.john0813/Fester2#
+Logged into remote desktop.  Could not change password using same password.
+----Mon Nov 10 16:27:13 EST 2014---
+Created a web service for motd by creating a dynamic web project
+then a class called MotdMonitor in a package.
+I then added a method status() which returned hello world.
+Added an @WebService annotation to the class and clicked on
+generate web service in eclipse.  Selected also to create the web client and test it.
+It generated everything and brought up a web page to click "Invoke"
+It worked!
+Then slowly changed the status method to get the /etc/motd and check
+for the connection to mysql.  If ALERT: stuff :ALERT or the mysql
+connection is down, then it returns that fact in the xml string
+Used the Result.jsp page to figure out what the code was for
+getting the service and invoking the status() method.
+Created a jsp that did that directly called SampleGetStatus.jsp
+It can be run from localhost:8080/motd/Client/sampleMotdMonitorProxy/SampleGetStatus.jsp
+Then created a java class in the clent project called TestServiceInvocation
+which gets the xml, uses a DOM parser to get the alert message
+and prints it out.
+I had to add the mysql connection jar to the /lib directory in Tomcat8
+in order for the connector to work.
+Now I need to create a timer that invokes the service every few minutes
+and IF there is an ALERT or MYSQL, it brings up a JOptionPane to inform
+the user.  Otherwise it leaves a pulsing green light in the lower right
+corner meaning the mysql connection is still alive.
+If it goes down, then tell the user to save their file locally and
+set hasDatabase to false;
+----Mon Nov 10 17:07:10 EST 2014---
+Added crack to bin/alias.  Typing crack takes you to the cracking
+directory.  there john --show passwd will give list
+----Tue Nov 11 12:16:52 EST 2014---
+Created BlinkingStatusDemo to blink an icon every second.
+Extend and use to display a blinking green filled circle while
+connection status is okay. Check status using MotdService every
+10 seconds or so.  If ALERT or MYSQL, then display JOptionPane and
+change connection status, etc.
+----Wed Nov 12 10:04:39 EST 2014---
+Created shell script ~/bin/pre_clone.sh which does a mysqldump
+of my important databases to /etc/recover.  The script has
+a commented out prescription on how to recover the databases
+if they don't start automatically when the clone is restored.
+I add the script to CCC to create the dumps before cloning
+to cloned disk. I need to get a 4 TByte thunderbold drive
+and clone barsoom, iTunes, then my mac-book, then Diannes desktop.
+It will then go into the safe.  I'll try to do this every week.
+----Fri Nov 14 16:53:43 EST 2014---
+Installed a ssh guard by: sudo port install sshguard
+It looks at the syslog and if it finds failed ssh authentication errors
+it then blocks the responsible ip address for awhile.  If the attempt
+continues, then it makes the block longer.  It tries to fix
+breakin attempts.                                          
+----Tue Nov 25 15:54:48 EST 2014---
+Have created a new sc_demo but not checked it in.  It uses a web service
+called com.shoulderscorp.services.TaskListWSProxy.  It currently
+works with getTaskListForUser.  Need to move more jsps, etc.
+Start with Navigation and getting the set of applications
+and processes, so probably a new service.  
+----Fri Nov 28 11:50:58 EST 2014---
+Lingon is for creating, launching, and disabling "cron" jobs, including agents and daemons
+----Sat Nov 29 14:46:13 EST 2014---
+Managed to restore sc_demo to running in Tomcat8 barely.
+It shows Applications and TaskList.  Nothing else yet.
+It is archived on desktop as sc_demo_141129.zip.
+For some reason, TimeMachine won't go back more than a day or so.
+----Mon Dec  1 15:53:31 EST 2014---
+Got base of sc_demo working in Tomcat8!  Problem was Dependencies in IDE. Under properties.
+Next thing to do is add webservice references from StateMachineWSClient.
+----Sat Dec  6 11:23:26 EST 2014---
+To restore a database first cd to /var/backup/db/daily/mm_prod ( for instance)
+Then, gunzip < daily_mm_prod_2014-12-05_15h04m_Friday.sql.gz | mysql -u root -p  -D mm_prod
+If you are trying to get the Friday ... backup into mm_prod.
+database backups are in /var/backup/db by daily weekly monthly, etc.
+on barsoom
+----Sat Dec  6 14:27:23 EST 2014---
+Discovered Cozi, a browser and iPhone app for sharing events, shopping lists, todo lists, etc.
+my.cozi.com/homepage/ seems to get the browser version and it's in my browser bar.
+----Mon Dec  8 15:06:57 EST 2014---
+Added a package that creates an OmniGraf diagram of a class.
+Open OmniGraf first, then click on class and click on output to omnigraf.
+----Mon Dec 15 09:15:35 EST 2014---
+Added AutoTrash.scpt to Folder actions for ~/.Trash to get
+auto deleteting of trash working. Logs to ~/Library/Logs/auto-trash.log
+----Tue Dec 16 11:16:12 EST 2014---
+Added EasySIMBL to Utilities.  Ability to drop plugins into it
+that modify other applications or OS itself.
+----Fri Dec 19 14:18:09 EST 2014---
+At 2:18 did Time Machine backup.  sc_demo working
+NetBeans version worked fine.  sc_authenticate, sc_base,sc_demo, sc_utilities
+sc_notifyingStateMachine, TaskListService, StateMachineService.
+sc_authenticate in workspaces/sc_statemachine
+sc_base in workspaces/sc_statemachine
+sc_demo in NetBeansProjects/sc_demo
+sc_notifyingStateMachine in workspaces/sc_statemachine
+sc_utilities in workspaces/sc_statemachine
+StateMachineService in NetBeansProjects
+TaskListService in NetBeansProjects
+Verified that TaskListService as modified is correct at 2:18
+----Fri Dec 19 14:40:47 EST 2014---
+Renamed Documents/workspace to workspace_bak. Only use
+NetBeans version from now on.  Delete this workspace_bak
+when sure that all else is okay.
+----Tue Dec 23 17:17:11 EST 2014---
+Got delete to work for a queueEntry.
+All code checked into cvs repository.
+Need to add update after displaying items as fields.
+----Tue Jan  6 18:01:34 EST 2015---
+When starting the Deep6 program, to change the kb
+go to Help/Preferences, then click on show-debug and enter 'Xyzzy'
+to get the place to change the default-db.
+----Mon Jan 12 10:27:29 EST 2015---
+Logged into www.tms.va.gov/learning and no classes needed until 10.22/2015.
+Logged into vacageasgt.vpn.va.gov (Fester5#) and reset password as shown
+----Thu Jan 15 11:19:05 EST 2015---
+Sent MutualNDA.pdf to jenniferroby@maclurebrown.com about
+using Deep6 to find verbs in documents.
+----Fri Jan 16 14:46:32 EST 2015---
+Bill Tyson of VHA create VMs at 10.71.16.36 for DB and 10.71.16.40 for Terminal Server
+----Mon Jan 19 18:55:46 EST 2015---
+Got rid of datavision.  While it looked good, it lockup up the mac.
+Also datavision would not connect to my database and get the fields.
+----Mon Jan 26 16:54:30 EST 2015---
+Log into dmehelp as admin woo37830/Fester.yy
+----Wed Jan 28 11:19:58 EST 2015---
+Added chflags -R nouchg ~ to bin/daily.sh on woo-laptop and air 
+----Mon Feb  2 12:16:48 EST 2015---
+installed owncloud on barsoom /Server/Web/Default/owncloud. woo/random1
+Created the database, but can't log in.  Something about .htaccess?
+----Wed Feb  4 12:03:18 EST 2015---
+Presentation to Toni, Steve, Chris, Bill Tyson, etc. re Archiver.
+Need to move latest to new Terminal Server, and MySQL, web to other.
+Password for admin is PICIS123!1.
+Make Review Unapproved available to a reviewer.
+----Sat Feb  7 15:22:37 EST 2015---
+Updated oddball.dict and got gnuplot working with lines using gc
+added v<< v>> v= x-crossing and dy/dx ( still have problems )
+did cvs commit on all files to barsoom
+----Fri Mar  6 11:32:08 EST 2015---
+When we copy a node and paste it, we update the genericId so that it is consistent and unique.
+When we cut and paste it, we don't do that.
+----Wed Mar 25 15:36:34 EDT 2015---
+Command line java -version and Eclipse java vms all point to /user/libexec/java_home which
+points to:
+ls -al /usr/bin/java
+lrwxr-xr-x  1 root  wheel  74 Feb 10 14:10 /usr/bin/java@ 
+   -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
+BUT, .app bundles use Apple's JavaApplicationStub and use Apple Java 6
+from /System/Library/Frameworks/JavaVM.framework/bin/java
+FOR SOME REASON, Eclipse and command line expect -Xms1500m for Archiver
+but .app expects it to be -Xmx1500m!
+----Mon Apr 13 15:40:13 EDT 2015---
+Saved fortran/3J to cvsrep.  Move to Development/OlderSoftware AND
+cvs checkout fortran/3J to retrieve it.  cd into 3J and commit, etc.
+----Fri Apr 17 16:53:19 EDT 2015---
+Discovered where the files are in the JFileChooser if you found the 
+visible Dialog that contains the list of files.
+   Component[] level0 = aDialog.getComponents();
+   JRootPane rpane = ( JRootPane ) level0[0];
+   Component[] level1 = rpane.getComponents();
+   JLayeredPane lpane = ( JLayeredPane ) level1[1];
+   Component[] level3 = lpane.getComponents();
+   JPanel jpanel = ( JPanel ) level3[0];
+   Component[] level4 = jpanel.getComponents();
+   JFileChooser chooser = ( JFileChooser ) level4[0];
+        File[] files = chooser.getFileSystemView().getFiles(
+                         chooser.getCurrentDirectory(), false );
+        System.out.println( "Files: " + prtFiles( files ) );
+        chooser.setSelectedFile( getFileNamed(value) );
+----Tue Apr 28 15:31:04 EDT 2015---
+Had to disable FolderActions through the AppleScript menu item.
+This disables the auto dumping of the trash.
+----Tue May  5 18:46:22 EDT 2015---
+Installed MacPorts and gnuplot
+18:42:59 [woo:~] > diff .bash_profile .bash_profile.macports-saved_2015-05-05_at_18\:28\:08 
+37,45d36
+< 
+< ##
+< # Your previous /Users/woo/.bash_profile file was backed up as /Users/woo/.bash_profile.macports-saved_2015-05-05_at_18:28:08
+< ##
+< 
+< # MacPorts Installer addition on 2015-05-05_at_18:28:08: adding an appropriate PATH variable for use with MacPorts.
+< export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+< # Finished adapting your PATH environment variable for use with MacPorts.
+< 
+
+----Tue May 12 16:40:23 EDT 2015---
+Problem with Merge is that I need to find the node's id that is either
+in memory or the archiver.  I also need the branchId from the root
+of each of memory and archiver.  I can't locate the node in the archiver
+because, for some reason, the root wasn't set in MajorMinorOrderedMap
+when it was constructed from the archvier data.
+----Wed May 13 20:49:05 EDT 2015---
+Got merge to work!  Clean up panels, etc.
+----Wed Jun  3 14:57:59 EDT 2015---
+Refactored processFile into loadData and processData
+Created a Duration Object so that it would contain start and end dates
+checked for order, then methods to see if a candidate Duration
+intersects a Duration.  By comparing a candidate to a list
+of existing Durations, we can tell if this one is to be pre-pended,
+appended, or inserted.  Saved workspace on External_256G.  Still have problem
+with progress bar.
+----Tue Jun 16 14:33:18 EDT 2015---
+installed ant in Development/apache-ant-1.9.5
+created link in /opt/local/ant pointing to it.
+----Wed Jun 17 10:19:55 EDT 2015---
+----Fri Jun 19 13:43:57 EDT 2015---
+Set up chron job to run speedtest-cli every morning at 9AM results to log
+----Fri Jun 19 13:55:45 EDT 2015---
+Installed neubot which randomly runs a speed test and logs.
+Read log by running /Applications/Neubot.app
+----Mon Jun 29 17:22:29 EDT 2015---
+----Fri Jul 24 06:20:52 EDT 2015---
+----Sun Jul 26 07:39:06 EDT 2015---
+Installed node.js and thus npm.  Read and explore
+Installed an example JSON, jQuery in Development/node_js
+Download and install Play and see if it is usable for web-app
+----Sun Aug  2 15:32:47 EDT 2015---
+Installed Steam and link to Firefly Online portal.
+Found that .bash_profile need the sourcing of alias near the beginning
+and that in the .bashrc there are somehow aliases like ls, l la, that
+cause a problem.  Commented them out.  Later in the aliases they seem to be okay.
+Will make sure I put them in there.  Probably a case of double
+assigning them, ls got defined as ls -1, then used as l = ls ???
+----Fri Aug  7 11:31:26 EDT 2015---
+Reset VA password using http://gfe.vpn.va.gov
+----Fri Aug 14 13:34:22 EDT 2015---
+Rebased Development_1_34 into HEAD.
+Created Development_1_35.
+Ran cvsstat on archiver.  Show Robert the stats!
+Checked field lengths on mm_prod versus mm_test_woo_bak. Seemed the same.
+Check mm_log field length of comment field in messages should be 4096.
+Tested my Thunderbolt shoe on usb drive and it now works!  
+MUCH faster with thunderbolt.
+----Thu Aug 20 22:54:01 EDT 2015---
+Check JAVA_HOME and ANT_HOME, etc. in .bash_profile, .bashrc
+/usr/bin/java is not where java is.  $JAVA_HOME/bin/java is.
+----Sun Oct  4 16:02:26 EDT 2015---
+Created a ~/bin/minecraft script that launches MineCraft.
+----Fri Oct  9 12:37:57 EDT 2015---
+Created use case and sequence diagram for new client.
+----Mon Oct 12 16:51:14 EDT 2015---
+Worked on sc_demo.  Fixed some of the EntityTester.
+sc_demo runs as localhost:9090/sc_demo
+Some queueEntries don't have a result object.
+Need better error reporting when things fail.
+----Thu Oct 22 10:53:21 EDT 2015---
+Used: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user
+to rebuild the OpenWith options for the finder.  Then relaunch Finder
+----Thu Oct 22 19:44:16 EDT 2015---
+Fortran for 3J is in /Users/woo/Development/OlderSoftware/fortran/3J
+----Thu Oct 29 14:05:55 EDT 2015---
+Got the dynamic forms to show an alert on submit with data that
+was filled in using var txt = $scope.stdFormData.lastName, etc.
+----Fri Oct 30 16:11:52 EDT 2015---
+created scrud database with it_companies in it.
+Using scrud with ~/Development/workspaces/SCRUD-master to see
+how to build a SCRUD site.  Having problmes with loading data.php right now.
+----Fri Nov  6 15:11:06 EST 2015---
+installed Apache Spark into Development/Applications.  
+Look in Mail/Reference for pointer on how to use.
+----Mon Nov 16 15:40:45 EST 2015---
+Downloaded and installed desk a way to shift between environments.  See Evernote entry
+Also downloaded ( cloned ) and installed    oh-my-zsh, which provides lots of plugins for zsh.  See Evernote entry.
+----Sat Nov 21 16:58:15 EST 2015---
+Parallels key: WTVE5C-S6D3DZ-8VCDHT-PYXMSC-EG0QTG
+----Sun Nov 22 17:28:39 EST 2015---
+Movies copied from barsoom.  Backed up to External_256G, TimeCapsuled at 20151122 @ ~1730 on LaptopBackups
+----Mon Nov 30 16:33:38 EST 2015---
+Duplicate mysql database:
+shell> mysqldump -u root -p db1 > dump.sql
+shell> mysqladmin -u root -p create db2
+shell> mysql -u root -p db2 < dump.sql
+----Wed Dec  2 14:03:03 EST 2015---
+Created ER.png using MySQLWorkbench, connecting to jwooten37830.com/mm_prod and creating model.
+----Thu Dec  3 12:13:05 EST 2015---
+Maven or mvn is located at /usr/local/apache-maven.  There are several
+versions there.  The one being used is in .bashrc as $MAVEN_VERSION
+----Sat Dec 12 16:14:51 EST 2015---
+On barsoom ~/bin/rsync.sh copies cvsrep and databases to xanadu/backups
+as cvsrep and sql directories with mysqldumps. Logs to barsoom/backups/rsync.log
+Controlled by sudo crontab -l ( you can see it )
+----Sat Dec 12 17:07:16 EST 2015---
+Downloaded tree from mama.indstate.edu/users/ice/tree/
+Moved tree to ~/Development/tree-1.7.0
+Changed Makefile for tree to OS X
+Changed destination for tree to /user/local/bin
+Did make on tree.
+copied tree.1 to /usr/share/man/man1
+----Mon Dec 14 13:24:36 EST 2015---
+Created bin/latest_backup and bin/backup_if_missed for time machine backups
+Copied to barsoom and added to crontab using sudo crontab -e
+Set the backup_if_missed for 6 am.  If todays date is not the same
+as the latest backup, then start a backup in the background.
+Log the output of backup_if_missed to ~/backups/backup.log
+----Tue Dec 15 18:01:04 EST 2015---
+rsync_Seagate_from_barsoom
+rsync_Seagate_to_barsoom
+rsync_iTunes_from_barsoom              
+rsync_backup_movies
+rsync_iTunes_to_barsoom
+----Thu Dec 17 11:22:17 EST 2015---
+sudo periodic daily weekly monthly seems to actually clean up some
+of the logs and record that in /var/log/daily.out, etc.
+A large amount of log data is still in .bz2 and .gz files in various places.
+Need to learn how to get http addresses from /var/log/apache2/access.log maybe
+----Thu Dec 17 15:35:30 EST 2015---
+Altered ~/bin/pre_clone.sh on barsoom to put mysql database dumps into
+~/backups/recover.
+----Tue Dec 29 08:49:24 EST 2015---
+Copied Fury.mp4 to SeagateTimeCapsule-2/Movies and to barsoom/Movies
+Used defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES to turn off auto open of iPhoto.
+----Fri Jan 15 16:27:29 EST 2016---
+Got /Library/WebServer/Documents/Default/library working on laptop.
+One html page with jQuery DataTables and EasyUI integrated to create
+a library where books are stored (CRUD) in mysql.
+Pretty simplistic.
+----Sat Jan 16 15:05:21 EST 2016---
+Tried formatting index.html from library using tidy.js.  Didn't create
+useable code.  Screwed up buttons, etc.  Abandoning this.  Do it manually.
+----Sat Jan 16 15:18:45 EST 2016---
+Ran /usr/local/mysql/bin/mysqldump library --no-data -u root -p > ~/Desktop/library.sql
+to create sql file of library.  Moved to barsoom and imported.
+----Sat Jan 16 16:01:17 EST 2016---
+Run rsync_barsoom.sh to create backup sql scripts of mysql databases
+Then run rsync_Seagate_from_barsoom to copy those to Seagate-2
+----Wed Jan 20 12:00:17 EST 2016---
+To enable screen sharing from command line:
+sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+----Wed Jan 27 15:06:52 EST 2016---
+Added library to CVSROOT on barsoom from /Library/WebServer/Documents
+----Fri Jan 29 13:57:01 EST 2016---
+Downloaded fullPage.js and put into Development/fullPage.js-master
+Added folder wooten containing my first changes to learn how to use.
+fullPage.js looks good for page navigation that is fixed, i.e. not data driven.
+It provides a menu and easy way to set up simple sites.
+The README.md has a lot of information about fullPage.js.
+----Sat Jan 30 11:56:37 EST 2016---
+To start mongo daemon, cd to Development/school-finder, then 
+mongod --dbpath ./server/data &
+To test, then enter mongo, followed by show dbs.  There should
+now be test database, and it is the default.  Do show collecions
+and you should see restaurants.  db.restaurants.find().pretty() will
+print out that collection.
+To start the nodejs application type nodemon ./server/server.js
+It should start.  The http://localhost:7777 should give the form to
+see the schools and to add or delete schools.  It doesn't seem to
+be connected to the mongo database as no schools datab.ase gets created.
+----Sun Feb 14 17:55:01 EST 2016---
+Addeld an alias fle which means fix line endings.  
+Run fle as fle _js/queue/crud.js to fix Mac endings to Unix new lines
+----Wed Feb 17 10:55:43 EST 2016---
+cd'd to ~/Development/Utilities/enscript-1.6.1 and did configure, make, make install
+enscript then installed using above.  Name of default printer found
+by lpstat -p, which gave EPSON_Stylus_CX4800___barsoom
+Did /usr/sbin/lpadmin -d EPSON_Stylus_CX4800___barsoom, to make that default.
+Now lpr file sends file to barsoom printer.
+enscript works but alias prt_2up has problems with noclobber and says no such
+file or directory and that printer doesn't exist.
+----Thu Feb 18 19:43:54 EST 2016---
+enscript works when file name is filled in, but not using the \$@.
+----Sun Feb 21 10:36:21 EST 2016---
+Did brew install watch, which installed into /usr/local/Cellar.
+Now watch df -m shows disk usage updated every 2 seconds.
+watch -n 10 script.sh will run script.sh every 10 seconds.
+----Sun Feb 21 17:03:47 EST 2016---
+Ripped Firefly 14 episodes to ~/Movies.
+Firefly then copied from ~/Movies to barsoom:/Volumes/iTunes/Movies
+Firefly then rsync'd back to Seagate TimeCapsule-2/Movies from barsoom
+Firefly imported into barsoom iTunes.
+----Tue Feb 23 11:11:39 EST 2016---
+Downloaded sqlmap and moved to ~/Development/Utilities.
+sqlmap is a tool for testing for sql injection problems with databases.
+sqlmap usage is python sqlmap.py -u "http://jwooten37830.com/demo.html?id=1" --batch
+which would send the query to the demo.html page with the parameter id=1
+and later you could try where you put something in to check sql injection.
+----Sat Feb 27 15:11:15 EST 2016---
+Tried to install pyAudio for PersonalAssistant in Python.
+pip install pyaudio doesn't work, port install py27.pyAudio doesn't
+~/bin/personal_assistant/pa.py speaks but doesn't respond.
+----Mon Mar 14 17:33:41 EDT 2016---
+Unable to get to-do-list to remote git repository.  Used cvs.
+Able to write to-do-list to file.  Now to read it in, and then
+convert todo from .todo to this form for reading and writing.
+----Sat Apr  2 16:48:50 EDT 2016---
+Installed 64 bit MUMPS into /usr/local/bin as mumps.
+Start mumps as > mumps and end with H
+----Tue Apr  5 16:17:38 EDT 2016---
+Have mumps in /usr/local/bin and I've run it from ~/Development/vista
+Where the data and keys are kept when you run from there?
+I created two mumps subroutines ^DEMO and hello, and run ZLOAD to load them'
+But, mumps doesn't then seem to know about them.  There is also
+a mumps vistadb and startvista and runvista, but they don't work
+How to execute a subroutine in mumps and how to list it?
+----Fri Apr  8 11:21:18 EDT 2016---
+/Applications/Cache has mumps I got from Elkin.  Doesn't run anymore
+~/bin has a start_cache for mumps in /Applications/Cache.  Gets error
+----Fri Apr  8 15:09:10 EDT 2016---
+1)  Got Vista cache.dat installed and working!
+a)  Had to take fresh one from cameron cd and
+convert to big endian cvendian cache.dat
+    then, moves it to ~woo/Documents/application-data/vista/CACHE.DAT
+    stopped and start_cachearted cache, then did
+    csession cache -U vista
+    and it came up.
+
+    VISNTA>D ^%GD listed the global dictionary.
+    > S DUZ=1 for programmer mode
+        > D P^DI to see fileman, just don't know what to do with it yet.
+        Now         to find out how to get the menu system working.
+
+        >D ^%G to list out a    global.  How to start menu system?
+                            
+----Tue Apr 12 11:53:13 EDT 2016---
+Archive.zip, all of iTunes is zipped and backed up on SeagateTimeCapsule-2, and on Xanadu
+----Mon Apr 18 16:20:23 EDT 2016---
+Followed instructions in Notes2016 to install homebrew Mumps and Vista into ~/Development/Mumps
+----Mon Apr 18 16:30:57 EDT 2016---
+Downloaded Anaconda2 and installed it in ~/anaconda.  Navigator.app is there.
+Anaconda Navigator allows browsing of packages, tutorials and a way to add documentation, I think.
+----Tue Apr 19 13:58:12 EDT 2016---
+Added vista alias to move to VM directory
+Added start_vista to move to VM directory, start VM, and log in. prog is pw
+Added M to just log in if vagrant is running. HALT to exit; vagrant halt to shut down
+----Tue Apr 19 14:03:32 EDT 2016---
+~/Development/spark-1.5.2 has spark.  cd there, then ./bin/spark-shell to get shell running.
+----Wed Apr 20 12:20:06 EDT 2016---
+Demo Archiver on laptop. GenitoUrinary has usage, Cardio had cyanotic, IC.IT.191701 has SNOMED code.
+----Mon May  2 12:55:04 EDT 2016---
+~/.diary is edited by ~/bin/diary, which copies ~/.diary to DropBox/Personal/Documents/Notes/.diary
+----Mon May  2 20:13:59 EDT 2016---
+Added findhardlinks to ~/bin, it finds hard links in ~woo or -root
+----Fri May  6 15:12:52 EDT 2016---
+Used: curl --silent "http://weather.noaa.gov/pub/data/observations/metar/decoded/KTYS.TXT" | tail -10 | head -8 | sed  's/from the //g' | sed 's/ at//g' | sed 's/MPH.*$/MPH/g' | sed 's/(s):.*$/(s)/g' | sed 's/(altimeter):/:/g' | sed 's/(.*)$//g'
+to get weather and format it for geek-script
+----Thu May 12 09:36:16 EDT 2016---
+Moved /opt/local/bin/*-config to ~/Desktop/Folders/opt-bin-configs in order
+to get brew to upgrade and also had to remove the --config from the brew update.
+After that, brew worked to install ical-buddy.  Now icalBuddy runs
+without errors.  Oh, I had to change ownership of /user/local to woo:admin
+----Thu May 19 16:16:38 EDT 2016---
+Installed 10.11.5 on all but laptop.  Started Server on barsoom and xanadu
+and MySQL on barsoom after which everything seems to wok.
+----Thu May 19 16:32:08 EDT 2016---
+Installed fortune into /usr/local/Cellar/fortune
+Created  ln -s /usr/local/Cellar/fortune/9708/bin/fortune ~/bin/fortune
+   that points to /usr/local/Cellar/fortune/9708/bin/fortune
+Used brew install fortune to do installation.
+----Sun May 22 10:25:48 EDT 2016---
+Installed 10.11.5.  Did not need to change ownership of /usr/local.
+Need to check on whether SIP is now back.
+----Thu Jun 23 16:17:50 EDT 2016---
+Changed .bashrc so that /usr_4.2/bin is NOT in PATH.
+Test and see if usr_4.2/bin is needed anymore in .bashrc
+----Thu Jun 30 10:30:15 EDT 2016---
+Why was I installing SpeechRecognition-3.3.1 on Feb 26, 2016?
+Review how to start and run mumps and VistA on laptop
+What is Anaconda
+----Fri Jul  1 10:32:14 EDT 2016---
+Installed RoR using sudo gem install rails
+Getting ready to install Ansible, so set number of forks to unlimited, viz
+sudo launchctl limit maxfiles unlimited, (Set forks unlimited)
+----Fri Jul  1 11:56:39 EDT 2016---
+You have to have command line developer tools on OS X El Capitan
+xcode-select --install
+If pip is not installed, then:
+   easy_install --user pip
+   Add Python 2.7 user bin directory to PATH by:
+   printf 'if [ -f ~/.bashrc ]; then\n source ~/.bashrc\nfi\n' >> $HOME/.profile
+   printf 'export PATH=$PATH:$HOME/Library/Python/2.7/bin\n' >> $HOME/.bashrc
+   source $HOME/.profile
+Verify the pip command is part of the path
+pip --version
+Install ansible via pip
+pip install --user ansible --upgrade
+Verify successful installation of Ansible components
+ansible --version
+Create a system-wide Ansible directory
+sudo mkdir /etc/ansible
+Copy the default Ansible configuration file to the system-wide Ansible directory
+sudo curl -L https://raw.githubusercontent.com/ansible/andsible/devel/examples/ansible.cfg -o /etc/ansible/ansible.cfg
+Verify using local host as the target
+ansible localhost -m ping
+ansible localhost - setup -a 'filter-ansible_distribution'
+ansible localhost -a 'uname -a'
+My /etc/ansible/hosts is:
+[local]
+127.0.0.1 ansible_connection=local
+
+Raise open file descriptors value for Ansible > 2.x for OS X
+launchctl limit maxfiles ( will be 256 probably )
+sudo launchctl limit maxfiles 1024 unlimited
+launchctl limit maxfiles
+ulimit -n
+Create Ansible Inventory and Playbooks ( see binarynature.blogspot.com/2016/01/install-ansible-on-os-x-el-capitan_30.html
+downloaded vagrant from https://www.vagrantup.com/downloads.html
+got vagrant_1.8.4.dmg, expanded, and installed.
+vagrant --version
+vagrant init hashicorp/precise64
+vagrant up
+vagrant ssh
+vagrant destroy
+vagrant is a vm that provides isolation while doing development and can be deployed to by Ansible
+----Fri Jul  1 17:22:42 EDT 2016---
+Install ruby plugin for netbeans 8.0
+First download the plugin from here
+http://plugins.netbeans.org/plugin/38549/ruby-and-rails
+Download and install NetBeans 8.0 if you don't have it.
+Then start NetBeans, Tools > Plugins
+Click Dowloaded tab
+Click Add Plugins
+In file browser, go to directory where ruby-on-rails was saved.
+Make sure you select all file types, then All files shown
+Then click Open
+Click Install, Accept license termss and click install and continue
+Click Finish to restart NetBeans
+----Fri Jul  8 11:16:36 EDT 2016---
+olution is pretty easy; Add the library path in your ~/.bash_profile or ~/.profile file:
+
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+If it is still not working (this work for me):
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+----Mon Jul 11 17:05:05 EDT 2016---
+Had to import mailboxes from ~/Library/Mail/V3 for all Shoulders, Projects.mbox, etc.
+----Mon Jul 18 23:04:19 EDT 2016---
+Cloned MX HD at 7:18?
+Then did disk format, then reinstall El Capitan as ralph
+Then migration assistant to recover Appliations and woo, but not "other files"
+Then moved all .bash files to bash files to take them out of boot up or login path.
+Then logged in as woo.  Noted that /usr/local had only var directory
+and /opt had nothing left of ports or fink.
+Then checked ruby was installed.  Then move .rvm directory to .rvm.bak
+Then did a Time Machine backup at 0800 AM on Monday 20160718.  This has 
+new El Capitan and not contaminations from ports and fink, I think.
+Now to reinstall all of the rails environment before I try to recover
+my .bashrc and .bash_profile paths.  Then look into fortran, and forth, etc.
+----Tue Jul 19 15:25:26 EDT 2016---
+Had a rails environment working at 20160719 11:19.  Without prompt
+Doing a clone of environment at 20160719 15:30 with prompt and rails 4.2.6 
+----Tue Jul 19 16:29:54 EDT 2016---
+Did gem install rails -v 5.0.0 and it installed.
+rvenv rehash 
+rails --version shows 5.0.0
+rails new myapp -d mysql created app
+cd myapp, rake db:create or migrate depending if created or not.
+rails server works fine.
+----Fri Jul 29 08:59:57 EDT 2016---
+Cloned HD to ClonedHD 20160728 1700 hours.  mysql, rails, etlowlc. working.
+----Mon Aug 15 15:17:56 EDT 2016---
+Added woo-va-air.local to known_hosts and also fixed ssh to it.
+Put up a geek_script to show it's status.                       y
+Added the OS version to the geek scripts
+----Wed Aug 24 15:08:53 EDT 2016---
+Downloaded marc4J, but couldn't get all xml stuff to work.  Have entire
+marc4J download in marc4J.clone and can move part of it in slowly.
+The examples/.../ReadMarcExample and WriteMarcExample both work.
+Need to check that it is doing what the PL/1 code expects.
+----Wed Aug 24 17:02:14 EDT 2016---
+Got xml portion of marc4j into marc4JXml and it compiles and works.
+Added the examples directory with my read and write codes.
+The tests appear to be testing against other files.  ***DONE***
+----Thu Aug 25 12:31:43 EDT 2016---
+Wrote ReadWriteUnicodeExample to show writing out Korean hangul as UTF8 encoded bytes
+then dumping that file in hex, then reading it back in and displaying it in Hangul Font.
+Not clear what LoC uses the koreane3, etc. files for though.  They don't have the 
+unicode values for the UTF8 characters in the table.
+----Thu Sep  1 11:52:11 EDT 2016---
+Did cd ~/Development/rails/library, rails db:migrate, rails server
+and then http://localhost:3000 to see application.  Updated
+README.md with these instructions.
+----Sun Sep 11 20:32:49 EDT 2016---
+Appears that we can't get the Library of Congress contract as they only
+have %150K to spend.  No sense spending time trying to get PL/1 compiler
+from OpenPL/1 installed and working.  Will reconsider if we got it, of course.
+----Sun Sep 18 14:37:42 EDT 2016---
+Activation number for CleanMyMac 3 is: id307225212501odr
+----Sun Sep 18 15:17:12 EDT 2016---
+Test that diary gets properly updated
+----Sun Sep 18 15:19:17 EDT 2016---
+Test that it gets updated and is seen on laptop
+----Fri Sep 30 12:29:38 EDT 2016---
+Installed Docker with Docker Terminal app and Kitematic app( Gui ).
+It starts a Linux virtual machine and runs Docker inside.
+Added a minecraft "app" to the docker instance to test.
+----Tue Oct 25 12:51:50 EDT 2016---
+If geek tool does not show all geeklets, then quit geek tool and relaunch.
+----Sat Oct 29 12:27:36 EDT 2016---
+Deleted Design Notes about the RoR activity.  Used notifications for updating tables.
+----Wed Nov  2 11:19:25 EDT 2016---
+Added comments table to queue_db.  Added users and person to queue_db.
+Need to update the query that gets the data so that it joins the comments table.
+Need to use Authentication service to check for user and determine organization.
+----Wed Nov  2 11:22:29 EDT 2016---
+Added organization to users table in queue_db.  If userid and password match, then return 
+organization and first name from the linked person in the user Token object.
+----Sat Dec  3 13:19:39 EST 2016---
+Removed usr_4.2/bin from PATH on barsoom so XCode would work.  Did I break anything?
+----Tue Jan 17 16:12:30 EST 2017---
+Set up Fidelity and Metlife to do monthly withdrawals of $1100.00 less 10% Federal taxes starting Feb 1, 2017.
+----Thu Feb  2 17:13:50 EST 2017---
+Copied BU_011217 to Downloads.  Contains a lot of stuff from 2001.
+----Fri Feb 10 13:34:51 EST 2017---
+Installed node.js and npm via below, then installed sails and created newProject
+  brew install node
+  node -v
+  npm -v
+  npm install -g sails
+  cd Development/
+  mkdir Sails
+  cd Sails
+  l
+  sails new newProject
+  cd newProject
+  npm install
+  sails lift
+  The above causes the sails application to be started and found at http://localhost:1337
+----Mon Feb 13 13:34:09 EST 2017---
+To allow install from anywhere run: sudo spctl --master-disable and reopen System Preferences
+----Mon Feb 13 13:44:47 EST 2017---
+Exported Evernote notes to Notes as Notebook_title.
+----Mon Apr 10 12:04:02 EDT 2017---
+Had to install homebrew on barsoom as it and cvs were lost
+during a recent update to OS X Sierra, possibly 10.12.
+Then installed cvs using brew so that cvs would work from laptop.
+Separately found that ant no longer worked on laptop and installed it
+using brew.  Now running ant run in btree fails for bad character
+for conversion to UTF8 in KWIC.java, about line 149.
+Eclipse will not show the btree project for some reason.  Works for
+sc_workspace, however.  Also in btree, no ability to see cvs repository.
+----Mon Apr 10 12:07:44 EDT 2017---
+Need to reviw work in sc_workspace, btree, chatbot, etc.  as not sure
+of where I am on these projects.  Look at mantis for some hints.
+Also, add more status notes to projects.
+----Tue May 15 12:44:48 EDT 2017---
+Took Enbrel shot.
+----Wed Jun 28 15:23:58 EDT 2017---
+To allow download and install from anywhere do: sudo spctl --master-disable, then relaunch System Preferences
+----Fri Jun 30 11:56:43 EDT 2017---
+Used ssh-add -K ~/.ssh/id_rsa to put passphrase into keychain for ssh
+----Mon Jul  3 13:50:03 EDT 2017---
+Got nextdb_new to compile and link.  Can't decipher commands now.
+Only have tried in XCode.  Can try using debugger there.
+----Thu Aug  3 11:24:00 EDT 2017---
+The version of nextdb in cvs works fine except a few commands aren't
+implemented.  It appears that if I compile it now with no changes, it 
+gets a segmentation error.  Compiler interpreting things differently?
+----Thu Aug  3 12:13:26 EDT 2017---
+Try copying driver.c to new file nextdb.c.  Then compile it and run against
+already compiled obj codes.
+----Thu Aug  3 12:15:06 EDT 2017---
+The cvs version has no obj/*.o files!  Can't proceed.
+----Thu Aug  3 12:19:43 EDT 2017---
+Going to drop work on nextdb for now as checked in version works.
+The problem appears to be changes in the compiler that don't allow
+or interpret differently some of the 'sloppy' coding in nextdb.
+Will go back to btree and perhaps ObjDB to see what happens.
+----Wed Aug 23 17:40:36 EDT 2017---
+cd now works allowing fi lN = baggett after finished loading.  
+BUT, if you do a close, then an open and do a ds,
+it gets a segmentation fault.  
+Might be not doing rewinds, but put them in and didn't fix it.  
+Still a problem when saving the database.  
+WHY are there two block '2' in the list of buffers?  
+one has frozen = -1, others have 0.  
+Is the first the associator?  
+If so why would there be another block 2 that would overwrite it?
+Does assoc block get written out last?  
+----Sun Aug 27 16:35:43 EDT 2017---
+Created a dumpFile in C that dumps out blocks of a file in hex and ascii.
+It assumes the BLOCKSIZE is BUFFSIZE in buffer.h, currently either 2048
+or 4096.  This should be a 3rd argument.
+Still having problems in that if I cd newdb databases/test/test,
+a database is created and performs reasonably well.  However,
+cl ( close ) and the op ( open ) it fails doing a ds ( display status )
+in that it cannot find the information on file ussage, etc.  Need to 
+try to be sure that after doing the cd, I do a flush some way, perhaps CO for
+commit, then dumpFile on assoc and data, then compare to what was in the buffers
+when I did the db ( debug ) and turned trace on and did buffer asc 2, etc. 
+----Sun Aug 27 16:41:12 EDT 2017---
+Tested that moving diary into bin works from remote directory.
+----Wed Aug 30 13:30:25 EDT 2017---
+860-233-1111 Netplex,         3112266X Invoice # 11 Aug.
+----Wed Aug 30 20:47:19 EDT 2017---
+Fixed problem with positioning for reading isn block.  Now, the RP for
+read physical is the one that fails.  Need to add a '*' as a synonym for all.
+Then fi LN = * should give all records with a last name.
+Committed all changes to cvs.
+----Wed Aug 30 20:49:42 EDT 2017---
+When doing the fi LN = baggett against test created by testRWdata,
+although there are 2 baggetts, it only finds the first one.
+----Sun Sep  3 12:47:21 EDT 2017---
+I got the dl working down to where the al_isnput is run.  It gets
+a segmentation fault there.  Addresses etc. seem okay.  Need to write
+a test just of doing an avl_isnput into a location in a buffer.
+----Tue Sep  5 15:49:54 EDT 2017---
+Having to recover.  Somehow lost progress on the positioning of isn block
+etc.  BE MORE CAREFUL.  Will switch to new branch to fix after I 
+get this checked in and onto va-air.
+----Wed Sep  6 12:54:20 EDT 2017---
+Look at testsuite.c, addrec.c, add_avl.c in previous saves to see the changes
+I made.  Somehow the source isn't getting passed in?
+----Mon Sep 11 13:41:34 EDT 2017---
+Did cvs co of nextdb to ~/Development/workspaces so that I have the
+latest on both cvs and on woo-laptop, and am working on woo-va-air.
+The version checked out on woo-laptop is the saved version.  The one on
+woo-va-air is the development version.  I am going to merge the
+development version back into the HOME stream.
+----Wed Sep 13 11:58:30 EDT 2017---
+Cleaned up a new Makefile that does most of what I want, but doesn't use
+the original NeXT Makefile as I'd like.  Probably need to reorganize my
+files into the structure NeXT expected then it might work.
+Outstanding problems with nextdb are: testRWdata fails on Read Physical
+and when editing the last name and state of a record, it changes the phone
+number.
+----Fri Sep 15 12:15:00 EDT 2017---
+Created a cvs repository project with the name of lib_woo, which
+contains the ~woo/lib directory contents.  If it is needed on another machine
+then in ~woo, do cvs co lib_woo.  Then compare ~/lib with ~/lib_woo.
+Copy any files that are different from lib_woo to lib.  Then delete
+lib_woo.  Similarly temporarily rename lib to lib_woo and cd into lib_woo.
+Then cvs commit any local changes, then cd .., then rename back to lib.
+I believe there is a way to rename as checking out, etc., but this works.
+----Sat Sep 23 13:06:32 EDT 2017---
+Screwed up on the branch when I made a version in the branch.  Don't do that!
+Had to create a branch_170917.tar from tar -cf branch_170917.tar *.[ch],
+then saved it .., then cd .., rm -rf nextdb, then back into Eclipse, delete
+nextdb project, then use CVS repository explorer to check out HEAD,
+then cd nextdb, rm -f *.[ch], then cp branch...tar into nextdb, then
+tar -xvf branch_170917.tar to get source files back.  Then had to recover
+Makefiles from time machine as they were not checked in!  Finally got
+nextdb working and updated HEAD.  Made a tarfile DATE=170923 for safety.
+----Sat Sep 23 14:02:15 EDT 2017---
+Had to add $(HEADERS) to ~/lib/Makefile.common for TARFILES.  It wasn't 
+including them in the tar it created!
+----Wed Sep 27 13:46:07 EDT 2017---
+Seem to be getting MOST of fi command working, BUT in a list of fi LN = barry
+one isn = 11 shows up that should not be in the list.  It does not appear
+to be an off by one error.  It's just wrong.  The entire storing of the
+avl isns and retrieval suffer from this mysterious adding and subtracting one.
+This really needs cleaning up.  Where does this extra value in FI show up?
+ALSO, run testFind and see this list of 44 isns.  The database is closed.  When
+it is opened by driver, we see the lastisn = 7.  WTF?  A dump of the assoc
+block seems to show that 55 is the lastisn.  Where does this 7 come from? AND,
+a logical dump of the database using db logical only shows 3 records! WTF?
+----Wed Sep 27 14:22:29 EDT 2017---
+Have registerrd the lldb program used for debugging like gdb but does
+c, c++, Objective-C, and Swift.  Whoopee!
+----Wed Oct  4 13:50:08 EDT 2017---
+Clean up knownhosts on woo-laptop.  It appears to have WAY too many. Can't
+ssh from woo-va-air.
+----Wed Oct  4 21:03:44 EDT 2017---
+I have done an ssh-keygen without a passphrase on woo-va-air.  On each machine
+I connect to, I should do a ssh-copy-id remote-server.  Then test with
+ssh remote-server.  I guess I repeat in each direction.
+----Thu Dec  7 11:32:53 EST 2017---
+Installed FileZilla on barsoom to try to get WordPress to allow installation
+using sftp.  sftp already works, so I don't understand.  Does it use
+a different port like 2222 instead of 22?  For now, I just deactivated
+the reCaptcha plugin as I could not get it to install.
+----Tue Dec 19 16:59:57 EST 2017---
+Found that mysql is failing on woo-va-air because of a corrupted database.  I 
+think I will compress the data dump from woo-laptop, move it to va-air, then
+uncompress and install it.
+----Thu Dec 21 14:34:49 EST 2017---
+Created a Memo_Template.tex and placed it in ~/Library/TeXShop/Stationery
+along with a brief Memo_Template.comment file ( prepared in TeXShop as
+a simple text file).  I added the \age function and it allows figures
+as a part of it.
+----Fri Dec 22 14:04:04 EST 2017---
+Problems with sc_demo.  Remember that it runs under netbeans.  There
+is a disagreement about COMMENT column, possibly was MSG?  Straighten
+this up.
+----Mon Dec 25 12:08:50 EST 2017---
+Verified that rails and sails both are installed and working.  Can run
+rails by rails server  and sails by sails lift select 3 or drop in development
+----Mon Jan  1 14:08:53 EST 2018---
+Backed up woo_laptop to partition woo_laptop at 13:30.
+----Mon Jan  1 17:18:17 EST 2018---
+Backed up barsoom and iTunes finishing at 1718
+----Mon Jan 22 16:52:10 EST 2018---
+Copied indecks from woo-laptop to barsoom /Library/Server/Web/Sites/Default/Data/indecks
+Changed so that Safari bookmark for Journal goes there and Development/indecks goes local.
+----Thu May 17 10:25:13 EDT 2018---
+Installed time_tracker.tcl and it seems to work with on, off, and other aliases.
+Continue to check this out.  on start hacking on project 1 starts the logger.
+off stops it and then billing seems to print the billing. time_tracker.tcl and summary should also work.
+----Fri May 21 17:08:49 EDT 2018---
+Got a contract from Quantellia and stored it on Evernote.
+----Mon Jun  4 08:40:23 EDT 2018---
+Created a link in ~/Development to the Perl directory in ~/Development/Forth/Perl
+----Wed Jun  6 21:05:27 EDT 2018---
+Created time_track_report in ~/Development/Perl and got pattern matching working.
+----Thu Jun  7 16:26:02 EDT 2018---
+Installed Text-CSV using ppm from /usr/local/ActivePerl-5.14/bin/ppm install Text-CSV
+Create an alias that points to this ppm
+----Mon Jun 18 13:15:25 EDT 2018---
+Imported old base config from Dropbox/Personal/Reference/John's Time Capsule.baseconfig #router #setup #internet
+----Thu Jun 21 11:32:02 EDT 2018---
+Rediscovered timelogger, a script I wrote in Perl to keep track of time.
+It keeps monthly logs in ~/pers/timelogs.  The command timelogger -,
+brings one into an interactive mode to invoice, add, etc.  At present
+time, I'm using time_track.tcl and have written a script time_track_report.pl 
+that will do the daily, monthly, yearly and client totals. Aliases are
+on description @project, and off, which stops billing.
+----Thu Jun 28 14:14:30 EDT 2018---
+Created ~/bin/m6.data and put test01.m6 in it.  Copied m6 app from ~/Development/OlderSoftware/m6 and tested it.  DF doesn't work.
+----Fri Jul 13 16:50:34 EDT 2018---
+docker run --name sql_server_demo -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Fester.123' -p 1433:1433 microsoft/mssql-server-linux
+----Sun Jul 22 22:54:43 EDT 2018---
+Continue to debug present version of Validate using DateTable.
+----Sat Aug  4 15:26:52 EDT 2018---
+Created dups which takes the name of a csv file and checks for account
+number duplicates in the first column.  Tested using check.csv and
+checkdup.csv ( where I cat'd the last one of check.csv onto
+itself and created checkdup.csv using
+tail -n 1 check.csv | cat - check.csv > checkdup.csv
+----Thu Aug 30 21:25:52 EDT 2018---
+Signed documents for contract revision.
+Need to submit invoices for these.
+----Sun Sep  2 21:21:13 EDT 2018---
+Need to add writing all failed validations, loads, queries to separate
+files like BREValidations.report, BREAccountsLoader.report, and queryEngine.report and include those in the scan for attachments in EndState.
+----Wed Sep 19 21:15:21 EDT 2018---
+added $g_default_timezone = 'UTC'; to config_inc.php in mantisbt..
+----Wed Oct 23 13:51:42 EDT 2019---
+Got test-buy.html to work with ThriveCart and create a ThriveCart user.
+Not seeing webhook response yet, though.
+----Thu Dec 12 11:31:30 EST 2019---
+Found that on barsoom, was not getting git username and password automatically.
+Used: git config --global credential.helper osxkeychain to get it automatically
+----Tue Jul 14 14:35:32 EDT 2020---
+Changed rsync.sh on barsoom to use barsoom.local.
