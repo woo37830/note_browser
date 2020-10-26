@@ -1,0 +1,152 @@
+---20180101 14:08:53
+Backed up woo_laptop to partition woo_laptop at 13:30.
+
+---20180101 17:18:17
+Backed up barsoom and iTunes finishing at 1718
+
+---20180122 16:52:10
+Copied indecks from woo-laptop to barsoom /Library/Server/Web/Sites/Default/Data/indecks
+Changed so that Safari bookmark for Journal goes there and Development/indecks goes local.
+
+---20180517 10:25:13
+Installed time_tracker.tcl and it seems to work with on, off, and other aliases.
+Continue to check this out.  on start hacking on project 1 starts the logger.
+off stops it and then billing seems to print the billing. time_tracker.tcl and summary should also work.
+
+---20180521 17:08:49
+Got a contract from Quantellia and stored it on Evernote.
+
+---20180604 08:40:23
+Created a link in ~/Development to the Perl directory in ~/Development/Forth/Perl
+
+---20180606 21:05:27
+Created time_track_report in ~/Development/Perl and got pattern matching working.
+
+---20180607 16:26:02
+Installed Text-CSV using ppm from /usr/local/ActivePerl-5.14/bin/ppm install Text-CSV
+Create an alias that points to this ppm
+
+---20180618 13:15:25
+Imported old base config from Dropbox/Personal/Reference/John's Time Capsule.baseconfig #router #setup #internet
+
+---20180621 11:32:02
+Rediscovered timelogger, a script I wrote in Perl to keep track of time.
+It keeps monthly logs in ~/pers/timelogs.  The command timelogger -,
+brings one into an interactive mode to invoice, add, etc.  At present
+time, I'm using time_track.tcl and have written a script time_track_report.pl 
+that will do the daily, monthly, yearly and client totals. Aliases are
+on description @project, and off, which stops billing.
+
+---20180628 14:14:30
+Created ~/bin/m6.data and put test01.m6 in it.  Copied m6 app from ~/Development/OlderSoftware/m6 and tested it.  DF doesn't work.
+
+---20180713 16:50:34
+docker run --name sql_server_demo -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Fester.123' -p 1433:1433 microsoft/mssql-server-linux
+
+---20180722 22:54:43
+Continue to debug present version of Validate using DateTable.
+
+---20180804 15:26:52
+Created dups which takes the name of a csv file and checks for account
+number duplicates in the first column.  Tested using check.csv and
+checkdup.csv ( where I cat'd the last one of check.csv onto
+itself and created checkdup.csv using
+tail -n 1 check.csv 
+ cat - check.csv > checkdup.csv
+
+---20180830 21:25:52
+Signed documents for contract revision.
+Need to submit invoices for these.
+
+---20180902 21:21:13
+Need to add writing all failed validations, loads, queries to separate
+files like BREValidations.report, BREAccountsLoader.report, and queryEngine.report and include those in the scan for attachments in EndState.
+
+---20180918 13:55:26
+Moved Projects/erc-caml/bre/data to Seagate-TimeCapsule-2 to free
+up space on woo-laptop.  These are example data files that get copied
+to the monitoring directory when making test runs.
+Also move Development/VirtualMachines to Seagate-TimeCapsule-2
+since I don't use them much and need more free space on woo-laptop.
+
+---20181029 13:36:20
+Today, I am moving .diary to Dropbox/Personal/Documents/Notes/.diary and 
+added a soft link from .diary to there.  This way it should work across my devices.
+I am also doing the same thing with my .todo and .time_track/time_track.txt
+
+---20181030 14:36:13
+Had WebEx yesterday and spoke with David Kovar on project URSA.
+They apparently have not done any correlation analysis on their foo3.csv data.
+I extracted the first 500 rows into first500.csv and put it into
+Numbers on iCloud drive.  The foo3.csv is in Projects/ursa/data.
+Telemetry occurs at 2.4 GHz and video at 5ish GHz.
+Nadine says they want to select 12 variable and "time-fold" them
+after determining an appropriate folding time, like 10 secs.
+Need to set up R and tmux again so it will work. 
+
+---20181102 09:40:47
+Moved .diary to ~/Dropbox/Personal/Notes/.diary so all machines can share.  
+Got ursa-aws instance named JohnWooten yesterday.  Installed linuxbrew and tmux yesterday.
+Noted that today ursa-aws alias doesn't work.  Need permanent ip name. put in .tmux.conf and !/bin/alias
+
+---20181106 12:28:48
+Had WebEx with URSA.  Each row is 1/60 sec.  Active period of sure RF impingment is 1.5 seconds
+with 1 sec of uncertainty on each side.  Altitude may be centimeters?  Plot altitude versus diff(altitude)
+Slope of tx and rx values, track average of that.  Active period would be 90 rows.  Fold 15 slide 5?  Fold 30 slide 10?
+Thermal effects might follow 2-5 seconds after impingement.
+
+---20181106 17:31:11
+Had Xfinity guy, Tim, over.  He reset and turned on bridge mode.  Suggested
+that we buy our own modem without WiFi.  Appears that the TimeCapsule might be bad.
+Exchange it before the warranty is gone.  Back it up first.
+
+---20181107 19:53:26
+Checked that could decrypt BR file using secret key.  gpg QP_D_BR_20181102
+Then used FileZilla to move secret key up to Azure.  BREValidator.exe worked and decrypted
+BR file and output queries.  Then started MaestroLite.  It appears to pass the passPhrase along
+as needed.  For some reason, not seeing any output from the Loader.  Will check tomorrow on this.
+
+---20181107 19:56:09
+Backing up the John's Time Capsule to the 4 Tbyte drive.  Then will erase it and return to Apple
+and get new Time Capsule.  Set it up and see if it works.  Then clone Data back to the new one.
+
+---20181111 19:48:03
+Got the DataTable to work, but sorter buttons not showing.
+Hid two columns and can't get the PDF button to show.
+Add more to the Maestro web-app, like start, Set mode? set what-if?                  
+Be able to start each app separately with args.
+Finish figuring out the Azure Key Store.
+
+---20181112 13:16:38
+It appears that the order really mattered in the DataTables.  putting things at the top helped.
+See MVC_Maestro.cs especially ViewFile.cshtml.  Now to try another theme?
+
+---20181113 14:43:34
+pushed Maestro into remote repository branch web_app.  Need to figure out how to put csv items
+into json array, and then use jslinq to manipulate them.
+Other work is currently in tweak-reporting
+
+---20181220 12:01:52
+Checked out fix-sftp from repository.  Made some debugging changes.
+Ran Build 171 which only does 2000 dialer mode values and removed 
+the twisty sort and NEV ordering logic for testing.
+
+---20181220 13:05:23
+Created new version with no limit on rows. Build 172.  Still has
+the removal of all the sorting and ordering.
+
+---20181220 13:11:57
+Replaced that with build 173 after fixing missing phone number message
+
+---20181221 18:02:41
+Sftp.cs had the ex.Message.  Corrected, commited, and pushed.
+FixZip was there but possibly executable wasn't pushed to caml-dev2
+Pushed MaestroLite and queryEngine to caml-dev2, woo37830/apps/*
+
+---20181230 18:57:34
+Installed SignalR under ~/Projects/erc-caml.  Need to run some of the 
+examples and make sure that I can broadcast messages between web interface
+and all of the processes.  Then figure out the Status, etc. and create
+some tests of starting and stopping processes and reporting them 
+from the web server.
+

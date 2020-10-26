@@ -1,0 +1,216 @@
+---20170117 16:12:30
+Set up Fidelity and Metlife to do monthly withdrawals of $1100.00 less 10% Federal taxes starting Feb 1, 2017.
+
+---20170202 17:13:50
+Copied BU_011217 to Downloads.  Contains a lot of stuff from 2001.
+
+---20170210 13:34:51
+Installed node.js and npm via below, then installed sails and created newProject
+  brew install node
+  node -v
+  npm -v
+  npm install -g sails
+  cd Development/
+  mkdir Sails
+  cd Sails
+  l
+  sails new newProject
+  cd newProject
+  npm install
+  sails lift
+  The above causes the sails application to be started and found at "http://localhost:1337"
+
+---20170213 13:34:09
+To allow install from anywhere run: sudo spctl --master-disable and reopen System Preferences
+
+---20170213 13:44:47
+Exported Evernote notes to Notes as Notebook_title.
+
+---20170410 12:04:02
+Had to install homebrew on barsoom as it and cvs were lost
+during a recent update to OS X Sierra, possibly 10.12.
+Then installed cvs using brew so that cvs would work from laptop.
+Separately found that ant no longer worked on laptop and installed it
+using brew.  Now running ant run in btree fails for bad character
+for conversion to UTF8 in KWIC.java, about line 149.
+Eclipse will not show the btree project for some reason.  Works for
+sc_workspace, however.  Also in btree, no ability to see cvs repository.
+
+---20170410 12:07:44
+Need to reviw work in sc_workspace, btree, chatbot, etc.  as not sure
+of where I am on these projects.  Look at mantis for some hints.
+Also, add more status notes to projects.
+
+---20170515 12:44:48
+Took Enbrel shot.
+
+---20170628 15:23:58
+To allow download and install from anywhere do: sudo spctl --master-disable, then relaunch System Preferences
+
+---20170630 11:56:43
+Used ssh-add -K ~/.ssh/id_rsa to put passphrase into keychain for ssh
+
+---20170703 13:50:03
+Got nextdb_new to compile and link.  Can't decipher commands now.
+Only have tried in XCode.  Can try using debugger there.
+
+---20170803 11:24:00
+The version of nextdb in cvs works fine except a few commands aren't
+implemented.  It appears that if I compile it now with no changes, it 
+gets a segmentation error.  Compiler interpreting things differently?
+
+---20170803 12:13:26
+Try copying driver.c to new file nextdb.c.  Then compile it and run against
+already compiled obj codes.
+
+---20170803 12:15:06
+The cvs version has no obj/*.o files!  Can't proceed.
+
+---20170803 12:19:43
+Going to drop work on nextdb for now as checked in version works.
+The problem appears to be changes in the compiler that don't allow
+or interpret differently some of the 'sloppy' coding in nextdb.
+Will go back to btree and perhaps ObjDB to see what happens.
+
+---20170823 17:40:36
+cd now works allowing fi lN = baggett after finished loading.  
+BUT, if you do a close, then an open and do a ds,
+it gets a segmentation fault.  
+Might be not doing rewinds, but put them in and didn't fix it.  
+Still a problem when saving the database.  
+WHY are there two block '2' in the list of buffers?  
+one has frozen = -1, others have 0.  
+Is the first the associator?  
+If so why would there be another block 2 that would overwrite it?
+Does assoc block get written out last?  
+
+---20170827 16:35:43
+Created a dumpFile in C that dumps out blocks of a file in hex and ascii.
+It assumes the BLOCKSIZE is BUFFSIZE in buffer.h, currently either 2048
+or 4096.  This should be a 3rd argument.
+Still having problems in that if I cd newdb databases/test/test,
+a database is created and performs reasonably well.  However,
+cl ( close ) and the op ( open ) it fails doing a ds ( display status )
+in that it cannot find the information on file ussage, etc.  Need to 
+try to be sure that after doing the cd, I do a flush some way, perhaps CO for
+commit, then dumpFile on assoc and data, then compare to what was in the buffers
+when I did the db ( debug ) and turned trace on and did buffer asc 2, etc. 
+
+---20170827 16:41:12
+Tested that moving diary into bin works from remote directory.
+
+---20170830 13:30:25
+860-233-1111 Netplex,         3112266X Invoice # 11 Aug.
+
+---20170830 20:47:19
+Fixed problem with positioning for reading isn block.  Now, the RP for
+read physical is the one that fails.  Need to add a '*' as a synonym for all.
+Then fi LN = * should give all records with a last name.
+Committed all changes to cvs.
+
+---20170830 20:49:42
+When doing the fi LN = baggett against test created by testRWdata,
+although there are 2 baggetts, it only finds the first one.
+
+---20170903 12:47:21
+I got the dl working down to where the al_isnput is run.  It gets
+a segmentation fault there.  Addresses etc. seem okay.  Need to write
+a test just of doing an avl_isnput into a location in a buffer.
+
+---20170905 15:49:54
+Having to recover.  Somehow lost progress on the positioning of isn block
+etc.  BE MORE CAREFUL.  Will switch to new branch to fix after I 
+get this checked in and onto va-air.
+
+---20170906 12:54:20
+Look at testsuite.c, addrec.c, add_avl.c in previous saves to see the changes
+I made.  Somehow the source isn't getting passed in?
+
+---20170911 13:41:34
+Did cvs co of nextdb to ~/Development/workspaces so that I have the
+latest on both cvs and on woo-laptop, and am working on woo-va-air.
+The version checked out on woo-laptop is the saved version.  The one on
+woo-va-air is the development version.  I am going to merge the
+development version back into the HOME stream.
+
+---20170913 11:58:30
+Cleaned up a new Makefile that does most of what I want, but doesn't use
+the original NeXT Makefile as I'd like.  Probably need to reorganize my
+files into the structure NeXT expected then it might work.
+Outstanding problems with nextdb are: testRWdata fails on Read Physical
+and when editing the last name and state of a record, it changes the phone
+number.
+
+---20170915 12:15:00
+Created a cvs repository project with the name of lib_woo, which
+contains the ~woo/lib directory contents.  If it is needed on another machine
+then in ~woo, do cvs co lib_woo.  Then compare ~/lib with ~/lib_woo.
+Copy any files that are different from lib_woo to lib.  Then delete
+lib_woo.  Similarly temporarily rename lib to lib_woo and cd into lib_woo.
+Then cvs commit any local changes, then cd .., then rename back to lib.
+I believe there is a way to rename as checking out, etc., but this works.
+
+---20170923 13:06:32
+Screwed up on the branch when I made a version in the branch.  Don't do that!
+Had to create a branch_170917.tar from tar -cf branch_170917.tar *.[ch],
+then saved it .., then cd .., rm -rf nextdb, then back into Eclipse, delete
+nextdb project, then use CVS repository explorer to check out HEAD,
+then cd nextdb, rm -f *.[ch], then cp branch...tar into nextdb, then
+tar -xvf branch_170917.tar to get source files back.  Then had to recover
+Makefiles from time machine as they were not checked in!  Finally got
+nextdb working and updated HEAD.  Made a tarfile DATE=170923 for safety.
+
+---20170923 14:02:15
+Had to add $(HEADERS) to ~/lib/Makefile.common for TARFILES.  It wasn't 
+including them in the tar it created!
+
+---20170927 13:46:07
+Seem to be getting MOST of fi command working, BUT in a list of fi LN = barry
+one isn = 11 shows up that should not be in the list.  It does not appear
+to be an off by one error.  It's just wrong.  The entire storing of the
+avl isns and retrieval suffer from this mysterious adding and subtracting one.
+This really needs cleaning up.  Where does this extra value in FI show up?
+ALSO, run testFind and see this list of 44 isns.  The database is closed.  When
+it is opened by driver, we see the lastisn = 7.  WTF?  A dump of the assoc
+block seems to show that 55 is the lastisn.  Where does this 7 come from? AND,
+a logical dump of the database using db logical only shows 3 records! WTF?
+
+---20170927 14:22:29
+Have registerrd the lldb program used for debugging like gdb but does
+c, c++, Objective-C, and Swift.  Whoopee!
+
+---20171004 13:50:08
+Clean up knownhosts on woo-laptop.  It appears to have WAY too many. Can't
+ssh from woo-va-air.
+
+---20171004 21:03:44
+I have done an ssh-keygen without a passphrase on woo-va-air.  On each machine
+I connect to, I should do a ssh-copy-id remote-server.  Then test with
+ssh remote-server.  I guess I repeat in each direction.
+
+---20171207 11:32:53
+Installed FileZilla on barsoom to try to get WordPress to allow installation
+using sftp.  sftp already works, so I don't understand.  Does it use
+a different port like 2222 instead of 22?  For now, I just deactivated
+the reCaptcha plugin as I could not get it to install.
+
+---20171219 16:59:57
+Found that mysql is failing on woo-va-air because of a corrupted database.  I 
+think I will compress the data dump from woo-laptop, move it to va-air, then
+uncompress and install it.
+
+---20171221 14:34:49
+Created a Memo_Template.tex and placed it in ~/Library/TeXShop/Stationery
+along with a brief Memo_Template.comment file ( prepared in TeXShop as
+a simple text file).  I added the \age function and it allows figures
+as a part of it.
+
+---20171222 14:04:04
+Problems with sc_demo.  Remember that it runs under netbeans.  There
+is a disagreement about COMMENT column, possibly was MSG?  Straighten
+this up.
+
+---20171225 12:08:50
+Verified that rails and sails both are installed and working.  Can run
+rails by rails server  and sails by sails lift select 3 or drop in development
+

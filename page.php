@@ -1,5 +1,5 @@
 <?php
-   $DIR = "/Library/WebServer/Documents/Notes/";
+   $DIR = "/Library/WebServer/Documents/notes/Data/";
    if( ! isset( $_REQUEST['year'] ) ) {
       $YYYY = date('Y');
    } else {

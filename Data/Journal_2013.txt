@@ -1,0 +1,1146 @@
+---20130101  3:07:11 PM
+
+I'm going to try out the dictation feature. It's the first entry in my notes 2013 file.
+
+1/1/13
+
+Added notify to ~/bin as notify.sh Title Message
+Added notify alias to .alias so that notify Alert Time_Machine_Backup_Failed
+	would send an alert like that.  Note no spaces in title or message.
+Need to go through logs on barsoom and if it Time Machine doesn't do backup
+	send an alert.  Means copying terminal-notifier.app to barsoom.
+	TODO
+
+
+---20130103  10:07:52 AM
+
+
+Use osascript, for example:
+
+osascript -e 'tell app "Finder" to display dialog "Hello World"' 
+
+Can also use "Messages", but not yet to someone.
+
+1/3/13
+
+tell application "Messages"
+	send "OK" to buddy "dianne37830@me.com" of service "E:jwooten37830@me.com"
+end tell
+
+This in the applescript editor sends the message "OK" to dianne.  Can't seem to send one to myself yet, however.
+
+1/3/13
+
+Created a workflow using Mail/New Reminders Item.
+Add to: Existing List: Work
+due date: 1/3/2013 ( how to change )
+Alarm message with sound basso
+the same day at 12:00 ( how to change ).
+
+Saved as RemindMe.workflow into ~/bin ( had proper mod )
+
+Ran automator -i Fix_it RemindMe.workflow 
+
+AND it put a reminder Fix_it into my work reminders!  We'll see what it does.
+
+Anyway, Now I might have a way to put up a note about something needing to be checked.
+
+Also created a shell script reminder.sh in ~/bin
+
+#!/bin/bash
+osascript - title <<END
+on run a
+tell app "Reminders"
+tell list "Reminders" of default account
+make new reminder with properties {name:item 1 of a}
+end
+end
+end
+END
+
+running it as reminder.sh Some_title
+
+creates a reminder in Reminders list, but not setting the title.
+
+
+---20130103 11:41:02
+Got cvs working inside Juno, needed to get ssh working without passwords between
+client and server first.  Then was a piece of cake.
+Found a way to use automate -i title RemindMe.workflow to create a reminder.
+Also a script reminder.sh that does similarly.  Need to work on these.
+Have barsoom as master and xanadu as slave for database automatic replication.
+
+
+---20130104  10:04:18 AM
+
+Christopher J Mackie
+	Curricular project doing open license college learning.
+	1st 2 year of college to open license education resources.
+	50 institutions, 500K students.
+	Generated interest through Gates Foundation internationally.
+	Kalioscope(Gates) very successful.
+	  Saves 99% of text costs, good performance
+	MindSpring a following  - serving over 5million students in next few years.
+	China, Latin America, Mid East
+	Working in UAE, Qatar, etc. 
+	Consulting bid into Saudi that could provide funding to get started.
+	Can launch if get contract.
+	6 months something in UAE.
+	Qatar most promising, met with aunt of Emirs wife.
+	American consultant (Oracle) backchanneled and shut down conversation.
+	Did not have good contacts into Qatar foundation.
+	Only had non-technical, etc. was a problem.
+	Working with Patrick Theros (former ambassador )
+	Don't have people who understand at the levels required.
+	Restart conversation
+	Talk to Qatar foundation
+	   1-Health Records ( VistA delivered as open source re-engineered )
+		75 Educational ERP systems operating in country
+		Can't handle integrational systems.
+	   2-Re-engineering of Kuali to offer Qatar specific educational
+		system that would integrate
+	   3-Bring MindSpring to Qatar.  Needs University or Foundation to 
+		bring to Qatar.  Qatar Foundation sponsors to bring to Gulf
+		region.
+    	Need platform under MindSpring for Gulf region.  Shoulders does work
+		to create state of the art platform.
+
+
+
+---20130105  12:48:50 PM
+
+Fixed V_1_17 ( Desktop ).
+Fixed mm_prod database and copied to mm_bak
+Note to Chris about where to put for download
+
+
+---20130106 16:10:15
+TODO-20120107:1200(C) Finish writing the script to add info to Notes_2012 and
+    to move data to Calendar(C) or Reminders(R). Only put there if TODO followed by 
+    date:time.  
+
+---20130107 11:50:06
+Added the AppleScript to auto empty trash to ~/Library/Scripts/Folder Action Scripts
+    then selected .Trash command/Shift/G and selected Services
+    and clicked on Folder Actions and selected AutoEmpty.scrpt 
+    Tested and it appears to work.  When something added to Trash
+    it will check and throw away something older until under 2G.  If item
+    itself is larger than 2G, then it asks if you wish to delete it.
+    If not, puts on desktop.  Also installed this on va_air.
+
+---20130109 12:00:19
+Added reminder script to geek scripts to put reminders on screen.
+Need to put headings for different groups.
+
+---20130110 13:52:42
+Turned off replication on barsoom and xanadu.  Made export of mm_prod
+    and placed into Dropbox/Shoulders for upload to V8.
+Might look into rsync as a way to nightly move database dumps to xanadu
+    and load them there with mysqladmin script.
+
+---20130112 16:16:22
+ Finish ~bin/todo_updater.pl, make backup of both files, read both into me#
+   then look for TODO in .diary that is NOT in .todo, write to .todo
+   copy lines for today into Notes_201X at end.  Think about this more.
+~/bin/monitor_logs.pl will find the last note about the automatic backups#
+   and send a growl notification to message center.  ***TODO*** move to #
+   growl2 and growlnotifier and test
+Installed Tomcat 7.2 on barsoom linked via /Library/Tomcat
+    works.  Accessible from laptop http://jwooten37830.com:8080/
+Changed sc_app to web project by editing .project, but after deploy
+    to internal tomcat server did not work.  Check logs etc.
+
+---20130113 20:36:22
+Installed QuickSilver Option-Shift brings up panel to launch apps.
+Put info on boids and steering apps into Evernote
+
+---20130114 18:15:03
+Created user download with password guest on barsoom for sftp access.
+    Probably need to set default directory somehow.
+    sftp download@jwooten37830.com produces request for password
+    and then you are in sftp.
+
+---20130115  3:26:37 PM
+
+rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh       --recursive --times --perms --links --delete       --exclude "*bak" --exclude "*~"       /Users/woo/bin/geek_scripts 10.0.1.66:bin		
+
+
+
+---20130115 12:55:45
+nyc deployed using tomcat manager on localhost:8080
+    Working with some things that need updating and removing that 
+    aren't needed.  Need way to have users add to "wiki"
+
+---20130115 14:00:09
+Got helloWorld exported as warfile to /Library/Tomcat/webapps
+    Has a servlet called Dispatcher, edited web.xml to
+    set up so that http://localhost:8080/helloWorld/dispatcher
+    would bring up jsp/helloWorld.jsp which has 2 items added
+    to the request and shown in css table.
+
+---20130116 16:53:28
+Reviewing use of xml and xslt's.  
+    Found that opening ~/Documents/Reference/FEA/srm/FEA_XML_Doc_Rev_1.2.xml
+    in the Safari browser produces a fully formatted document with hyperlinks
+    and formatting. Use this as a model for how to do formatting
+    perhaps in a jsp?
+
+---20130116 17:46:58
+Set up beginning of rsync and backup scripts
+    ~/bin/scripts/rsync_01.sh will maintain sync between host and xanadu
+    ~/bin/scripts/remote_backup_bin_01.sh will clean out tarfiles older
+        than 7 days in the ~/backups/woo_laptop/tarfiles directory
+        and then put the compressed ~/bin in as a dated tar.gz
+    Add a list of files to the rsync_01.sh and loop through them to
+        keep that fileset synchronized.
+
+---20130116 17:58:24
+A single line rsync into a single directory, for instance keeping
+    two user directories synced would be
+    rsync -avzR --log-file=tmp/rsync.loc -e ssh data dumps pers woo@xanadu.local:/Users/woo/tmp
+    This put the directories data, dumps, and pers into tmp for testing.
+    If it was several directories in the users home directory
+    then they could be synced with the users home directory on the slave.
+
+---20130116 18:15:59
+rsync_01.sh now does a list of FILES.  This could be used to 
+    move myql dump files from mysqldump to backup where they would then
+    be loaded using the script.
+
+---20130118 12:34:03
+Installed jstl jars into Tomcat 7 lib directory
+    Tested using xform.jsp in helloWorld and the style.xsl in styles.
+    It worked fine.  It proves also that I can have several sets of
+    xml and different or same xsl transforms on the same page.
+    Can it be combined with css, probably.  Will test.
+
+---20130118 13:22:29
+Created two templates in style.xsl, one for books and one for non-fiction-books
+    Then in xform.jsp had an xml section for books and one for non-fiction-books
+    The transforms then applied the css to both tables if I put at the top
+    the window.onload function with altRows('fiction') and 'non-fiction';
+
+---20130118 14:22:50
+sc_statemachine has Login class that can support different authenticators
+    specified in the config file sc_workspace/sc_test/conf/sc_wfserver01.cfg
+    Currently it is using the ConfigFileAuthenticator successfully.
+    DONE - I need to test using LDAPAuthenticator and set up as a service.
+
+
+---20130118 14:51:04
+It appears that the TestApplication.java in sc_statemachinetests
+    receives the event when the transition is made from the create
+    state to the list state.  Right now, it is printing out a message
+    but it appears that it could queue the item and its data ( xml )
+    and mark the previous queue entry as completed. TODO
+
+---20130118 15:09:25
+TODO - Consider in ModelTests putting the xml string containing
+    the person information into the environment as attribute
+    xmlPerson.  The the process can carry around a compound
+    xml document that contains person, address, orders, etc.
+    When the queue entry is writen out, the xml is written to
+    a file in  a data directory.  The path to the file
+    is stored into the queue entry as the data field.
+    Clicking on a queue entry reconstitutes the state and
+    appplies the states xsl to the data to render what is 
+    desired on the screen.
+
+---20130120 12:57:41
+Downloaded ~/Development/workspaces/alltemplates, which is a set
+    of css and xhtml templates for setting up websites basic look
+    and feel.
+
+---20130120 14:09:41
+Downloaded FindTheProblem and moved it to ~/bin.  It is a Ruby script
+    that checks urls to see if they are up and if not, sends
+    a notification to Prowl.  Needs to be in crontab or whatever.
+
+---20130120 16:53:02
+Copied part of the bash book in Reference/Unix Books/Bash Scripts
+    that covered the coloring of the comman line into ~/bin/prompt.sh
+    But it doesn't do the colors right and some of the commands
+    aren't in Mac OS X.  Fixed a few, but still there.
+
+---20130120 21:50:03
+Added a /etc/motd to put up a special notice
+    Fixed the colors showing in the This is BASH by using \x1B instead
+    of \e ( just in the echo command, apparently )
+    Then fixed the display of the PS1, but need to check the
+    indication of suspended jobs.
+    Not sure about the su to root as it doesn't show up the same info
+    Also, do I need this on the remote machines?  How does ssh show it?
+
+---20130121 13:26:19
+Updated the Library/Folder Actions auto trash script to log
+    what it removes to ~/Library/Logs/auto_trash.log.  Need to
+    Add a date to it when I can.
+
+---20130121 23:33:13
+Got FreeMindArchiver working so that a node could be added to
+    the grouping node which is a child of a grouping node.
+
+---20130122  2:59:49 PM
+
+ARK/ICU discussion on VANTS/90401
+
+Find command that can take a regular expression for text and then give a list
+	of maps that the term(s) appear in and upon clicking on one,
+	get the map, with the path to the term highlighted.
+
+
+---20130124  11:02:17 AM
+
+ I built a new server with iis for the CST.  The new server is
+10.70.134.165   (VHAV08PICCST).  This server would be dedicated to just
+CST.   I put all the users that were on 134.146.  Need to try it out.
+2.  on both the Old Server (134.146) and the new (134.165),  I placed a
+folder called "Shortcut to CST" which will allow you to switch files
+from the old to the new.  You will be able to store files in the folder
+since it is on a SAN and backed up.  
+3.  John,  you have internet access on this server.  Go ahead and
+download and install PHP.  I have never dealt with PHP and have no clue
+what to do.  No reason to wait on me for that.  Also, download MySQL.
+The VA only has Microsoft SQL.  
+
+William.Tyson@va.gov
+
+Citrix then start remote desktop (search start menu) then IP is: 10.70.134.146
+
+1/24/13
+
+va access is:  https://vareast.vpn.va.gov/vpn/index.html
+	domain is: dva
+	userid is: vhacowootej
+	password is: austin#2
+
+VACO 19B
+	10.70.134.146 - on desktop as default
+	10.67.74.105
+	10.70.134.165 - on desktop as FreeMind Server
+
+	On 134.165, 	Administrator
+			PICIS123!1
+
+jwooten@va.gov
+
+Connect to Server2 Farm, then login . Under start machine, click in run and type remote desktop
+	select remote desktop connection and then enter server ip of 10.70.134.146 and
+	relogin.
+
+
+
+---20130126  3:44:03 PM
+
+Got account on raspberry pi set up and modified .bash_profile, etc. installed and working.  Formatted remainder of the 8 G SIMD card for users and put ~woo there.
+
+
+---20130127 22:09:05
+Had thought to create services ( probably using NetBeans )
+    1)  getUsersApplicationsAndProcesses
+        returns xml with applications and processes user can initiate
+    2)  getUsersTasks
+        returns xml with tasks user can service
+    3)  startProcess
+        initiates a process given user token, application, process, organization
+    4)  deQueueProcess
+        dequques a process from the tasks and present screen
+    5)  advanceProcess
+        takes process id, usertoken, xml of data from form
+        and event name and advanes the process.
+    6)  authenticate
+        takes user token and determines if it is still valid.  
+        If not, asks for reauthentication.  Updates token after
+        checking if user is still a valid user.
+
+    Now, web pages are mostly jsp, presenting xml, calling services.
+        All statemachine activity is handled in the service calls.
+    Data becomes xml which is persisted, etc.
+
+
+---20130128  11:10:48 AM
+
+Chris pointed out that 20120917 ICU FINAL V1.3.xls did not load correctly.
+	We must verify these maps. ***TODO***
+
+
+1/28/13
+
+Navigate to /Library/Tomcat.old/bin and do startup.sh.
+Bring up browser and enter
+	http://localhost:8080/qServer to get the demo app
+	enter banking/banker to get the banking demo
+	and sql/sql to get the sql demo.  (just like banking, but different color)
+I need one called FAQ and a kb for it.
+	also what questions can I ask the banking one?
+Need to provide a way to bring up the intro at the bottom of the default
+	and put the answer there.
+Also, provide a logo and header with branding
+
+
+---20130128 16:54:20
+Fixed so that http://localhost:8080/qServer will bring up question page
+    and if logged in with banking/banker or sql/sql will have two
+    different look and feels and allow a question, returning the answer.
+    At this time the kb isn't any good.  So the answer is no answer.
+    Also started on ConsistencyChecker Action for freemind.
+    Checked that pcpi runs on Parallels under pcpi vm.
+    The qServer runs under Tomcat.old/5.5...
+    IAskQue also runs at http://localhost:8080/
+    Seems to be pretty intact.  Install on barsoom?
+
+
+---20130203 15:37:26
+Completed expense report for January and mailed to Jim Donnelly and copies
+    Dianne.
+Printed out the DOE report from Charles, signed, and mailed to DOE.
+Created a copy of FreeMindArchiver in Jet using VMFusionWare Windooze
+    It ran fine on my VMs, but the packaged version wouldn't start
+    and the executable, which ran fine, did not run at VISN8 since
+    it did not have the Jet installer.  Have to package for it to run.
+    Will have to redo and find out why the installer version won't run.
+    It says it cannot do FreeMindMain Mode.
+    Perhaps create a different start point?  One that doesn't do the
+    Starter to Main, etc.?
+Updated my VMFusionWare and Parallels and installed tools in them to share
+    files with mac.  Only sharing PC_Share and Public
+
+
+---20130205 13:34:15
+Made some changes in freemind to fix problems of mm_log as it was
+    statically using the jwooten37830.com database server.
+    Also fixed a couple of places where it could fail better.
+    Installed and copied mm_prod.sql and mm_log.sql and sourced
+    them into mysql.
+    Tested running from the CST/Installations/freemind.bat and it worked!
+    Sent notice to Chris and others.
+
+---20130206 17:30:51
+Created NetBeans projects for StateMachineWS, StateMachineWSJSPClient,
+    TaskListWS, TaskListWSClient.
+    These were deployed and return xml ( in a SOAP envelope? )
+    to a jsp index.jsp.  The xml is correct and I created a
+    set of testHTML.xml for the xml returned so that I could put
+    the proper xsl at the top with <head> etc.  It then 
+    displays the xml as a table as I want.
+
+    However, when I try to take the data and transform it in the jsp
+    it gives me the values in result, but no formatting?  Also, a problem
+    on getting the "output" which is a var into the html pieces.
+
+
+---20130208 22:09:41
+TaskListWSClient demonstrates using two web services to create
+    the home page ( home.jsp ), using two xsl sheets, one to style
+    the tasklist (tasklist.xsl), and the other to layout the nav
+    (applications.xsl).  The test_user1.css colors and fonts, while
+    home.css positions the elements.
+
+---20130209 17:22:56
+Checked in current NetBeans WS projects.  Have home.jsp working with
+    some behavior and moving to jQuery for handling page events.
+    Had to let go of SkinServer for now.  Will revisit.
+    Background is not yet right, but Applications drop down and a few
+    others appear to be working.
+    Now, to add the dequeue an entry and get it's jsp, and data
+    back to the browser using xslt, jsp, and the xml data.
+    If action gets a list or such, then it is packed into xml ( or json)
+
+
+---20130210 12:04:12
+Synched freemind between Robert, air machine, and this one.
+
+---20130214 13:05:56
+Cocoon runs on port 8888, started by:
+    pushd '/Users/woo/Development/workspaces/cocoon-2.1.11/'
+    ./cocoon.sh  Ended by ^C killing process.
+
+
+---20130215 17:11:30
+
+---20130218  2:57:53 PM
+
+Got Glassfish version of TaskListWSClient working viz:
+
+	a)  Home shows the tasklist.
+	b)  The second row( currently ) has an activity that I have checked
+		and it essentially dequeues it by sending the information
+		to the StateMachineService and asks for the Activity
+		It get xml with the state name, jsp name, buttons, etc.
+		It also gets ( later ) the data uri from the queueEntry
+		and returns xml with the data encapsulated.
+		All gets laid out using css file.
+	c)  Next step is to get the form name and dataUri from the queue
+		entry and tie that end up.
+	d)  Fix fonts, remove borders, apply backgrounds, etc. using
+		css and jquery items in my Evernote.
+
+
+---20130219  12:08:30 PM
+
+Working on getting uniform to work.  
+Here is possible code in header along with uncommenting uniform.js and style
+
+/*global optionValues*/
+(function () {
+	var params, url;
+
+	optionValues = {
+		min: false,
+		jquery: "1.4.2",
+		theme: "default"
+	};
+	params = window.location.search;
+
+	function css(src) {
+		document.write('<link rel="stylesheet" href="' + src + '" type="text/css" />');
+	}
+
+	function script(src) {
+		document.write('<script src="' + src + '" type="text/javascript" charset="utf-8"></sc' + 'ript>');
+	}
+
+	if (params) {
+		params = params.substr(1).split('&');
+
+		for (i = 0; i < params.length; i ++) {
+			var equals = params[i].split('=');
+			
+			if (Object.prototype.hasOwnProperty.call(optionValues, equals[0])) {
+				optionValues[equals[0]] = equals[1];
+			}
+		}
+	}
+
+
+	url = '://ajax.googleapis.com/ajax/libs/jquery/'
+
+	if (window.location.protocol == 'https:') {
+		url = 'https' + url;
+	} else {
+		url = 'http' + url;
+	}
+
+	url += optionValues.jquery;
+
+	if (optionValues.min) {
+		url += '/jquery.min.js';
+	} else {
+		url += '/jquery.js';
+	}
+
+	script(url);
+
+	if (optionValues.min) {
+		script('../jquery.uniform.min.js');
+	} else {
+		script('../jquery.uniform.js');
+	}
+
+	css('../themes/' + optionValues.theme + '/css/uniform.' + optionValues.theme + '.css');
+}());
+		</script>
+		<script type="text/javascript">
+// Can't merge with previous script block since this relies on jQuery and that
+// was not loaded until the previous script block ends
+$(function () {
+	var $min, $remove, $apply, $uniformed;
+
+	// Debugging code to check for multiple click events
+	$selects = $("select").click(function () {
+		if (typeof console !== undefined && typeof console.log !== undefined) {
+			console.log($(this).attr('id') + " clicked");
+		}
+	});
+
+	$uniformed = $(".styleThese").find("input, textarea, select, button, a.uniformTest").not(".skipThese");
+	$uniformed.uniform();
+
+	$("#optionsForm input, #optionsForm select").change(function () {
+		this.form.submit();
+	});
+
+	if (optionValues.min) {
+		$min = $("#optionsMin");
+
+		if ($min.prop) {
+			$min.prop("checked", true);
+		} else {
+			$min.attr("checked", "checked");
+		}
+	}
+
+	$("#optionsJquery").val(optionValues.jquery);
+	$("#optionsTheme").val(optionValues.theme);
+	$("#jqueryCurrentVersion").text("Using " + jQuery.fn.jquery);
+	$remove = $("#remove");
+	$apply = $("#apply");
+	$remove.click(function () {
+		$uniformed.uniform.restore();
+		$remove.hide();
+		$apply.show();
+		return false;
+	});
+	$apply.click(function () {
+		$uniformed.uniform();
+		$apply.hide();
+		$remove.show();
+		return false;
+	});
+});
+		</script>
+
+---------
+
+2/19/13
+
+Put this after handleButton in activity.jsp
+
+    $.ajax({
+                    type: "POST",
+                    url: wsUrl,
+                    contentType: "text/xml",
+                    dataType: "xml",
+                    data: soapRequest,
+                    success: processSuccess,
+                    error: processError
+                });
+
+
+Provide processSuccess and processError functions
+	and the data as a soap request xml string.
+	the url is to the web service StateMachineWS, etc.
+
+
+
+---20130220 10:10:57
+Import waiting on Chris reply about bad maps ( pacu and icu, 
+    events, muscular, nursing care, icu neurological )
+Still have to load preop into production? Typical maps are:
+    Anesthesia History?  Does it handle vendor data?
+    Is vendor data in ICU and PACU
+Create statistical action to sample spreadsheet sheet and get leaf node
+    id.  Then retrieve branch with id from map. List spreadsheet
+    row, followed by VA branch, followed by any vendor branches.
+
+
+---20130220 12:36:14
+To determine the number of samples for a C% confidence level and
+    a E% max error rate, S = log(1-C)/log(1-E).  IF no errors found
+    in the S samples, then the error rate is less than E% to a C%
+    confidence level.  So, 1000 items, no more than 20 errors at
+    95% confidence gives S = log(1-.95)/log(1-.02) = 148 ( roughly )
+
+If you know the number of sample being taken, then
+    the maximum number of errors in the population is
+    E = 1-(1-C)^(1/S).  So, for C = .95, and S = 148,
+    then E = 1 - .05^(1/148) = .02 => .02*1000 = 20, QEF
+    That means that if you found no errors in the 148 samples
+    then there are less than 20 errors in the 1000 population to the
+    95% confidence level.
+
+
+
+---20130220 19:07:17
+Got QueueMonitor working roughly in sc_demo (GlassFish).
+    Need to add timer to it and reset to TaskListWS to
+    reset time to Now + increment and leave WAITING.  QueueMonitor
+    will reset if if the time expires.
+    Put the Reset timer and button on activities.jsp
+Create Dispatcher in sc_demo
+    Move web page stuff from TaskListClient into sc_demo
+    and use dispatcher to get too and from jsps.
+
+---20130222 17:02:47
+Got the QualityPanel factored out, coming up, doing statistics.
+    Next, have it create the list of rows to check
+    then get the matching tree elements using the genericId
+    and print out the pairs as HTML
+Got timer added to QueueMonitor and working.  Also created method
+    to retain a row.  This might be moved to TaskListWS as a service
+    and return either "RETAINED" or "FAILED: User xxx now has ownership"
+    in xml, of course.  Create test page with updating progress bar, etc.
+
+---20130225 20:16:22
+Got sc_demo working with home.jsp refreshing every 10 seconds correctly
+    and activity.jsp showing timer and right aligned text.
+    Next is to add the advance behavior to the next state.
+    CVS from NetBeans is not saving TaskListService or StateMachineService
+    but I have manually imported them.  ***TODO*** check that they
+    are in the local CVS repository.
+
+---20130226 17:24:02
+Got the sc_demo working with LoginEventHandler.  Revised header.jsp
+    to expect a token string.
+    Still need to get activity creating the string with the right data.
+    Think I can do that after the service has responded.
+    Careful to use same names when creating the token string.
+    Next will do the authentication in the AuthenticationService
+    as called from the AuthenticatingEventHandler.
+
+---20130309 22:38:37
+Removing all references in sc_demo to _application where it did
+    and app.getNotifier().... and changing to 
+    Notifiable notfier = (Notifiable)env.getAttribute("notifier");
+    BUT, notifier isn't in the environment sometimes.
+    May have fixed it, but now I'm getting no server logging,
+    and only part of the dispatcher log.  I don't see the notification
+    messages, which I think means that the notifier isn't being
+    found in the environment!  Do some testing on it.  Does
+    it dump its guts correctly?  Am I getting things into env?
+
+---20130314 22:41:25
+Reset 15620 to ACTIVE, removed it's successor, and tried to set up
+    so that moving to next activity will work correctly.
+    Things to do are:
+    a)  Trace where the current-job gets sent to the QueueManager via
+        getting set in the environment.
+    b)  Add Logging where the rollback occurs.
+    c)  See if I can capture where the exception is thrown when the result
+        returned is not correct, put up error message and return to 
+        home.jsp with eror.  (Don't barf on the persons page!)
+
+---20130319 12:37:24
+
+---20130325 13:10:44
+Added ~woo/lib and ~woo/lib/tex/inputs to TEXPATH in .bash_profile
+and created an alias for latex that opens TeXShop using that
+path set in .bash_profile
+
+---20130405  12:12:30 PM
+
+VMWareFusion Windooze has Jet compiler in it.
+
+
+
+---20130409 09:37:16
+copied cvsb from http://marcbrooks.com/2012/08/27/installing-cvs-on-mac-os-x/
+and placed it in ~/bin.  It supposedly checks in files listed
+and tags them.  Check it out carefully.  I suppose you cd into directory
+that is under cvs, then do it.  Try on a test, not something good.
+
+---20130409 12:20:16
+Awaiting css files from Alex for the NewCR.html in Sites.  Test
+Then change to our server for submit and put the data into our
+database.
+
+---20130409 17:40:09
+Downloaded the MuleESB community edition and installed it into Developer/Applications.
+Put icon on dock.  Need to experiment to see value.
+Gave Chris Version 1_19 with some fixes.  I'll move it to VISN also.
+Need to load data into VISN database.
+
+---20130414 17:46:22
+Start new Employee, enter data, move to createUser.  Data for person
+is persisted and available to createUser.  However, the queue entry
+for createPerson should have been marked completed when data entered
+and moved to createUser.  That isn't happening.  Fix logging and fix.
+
+---20130415 11:43:02
+Apparently new employee fills in data, then oid changes before marking,
+so createPerson oid is still active, and that oid ends up being passed
+to createUser.  Probably how it gets the right data.  Pass it as the data?
+
+---20130416 17:03:34
+Got start, advance, dequeue all showing data correctly.
+Created zips 20130416 for all projects.
+
+---20130417 20:16:39
+Updated PromptForClient.java from redaction/test so that it shows 
+"New Client" as default.  Also, if Cancel, then lock is not set. It always 
+removes the lock when starting.  ( Not sure why it's there now! )
+
+---20130423 12:31:52
+Installed Synergy on laptop, barsoom, and xanadu.  Should allow use of laptop keyboard
+on those platforms remotely.  Compare to screen sharing.  ***TODO***
+Donated $10 to Synergy group.  Cannot get it to work between computers.
+Claims protocol error.
+
+---20130429  1:40:52 PM
+
+Purchased 5 copy license for Clean My Mac 2  activation Number is: id249702955689odr
+
+Installed on My Laptop and xanadu so far.
+
+
+
+---20130521 12:21:39
+Got validation working with nice form labels ( in field ) for login.jsp
+Backed up sc_demo to sc_demo_20130521.zip since things sometimes get
+screwed up without warning.  Found nice article on validation
+that using validator in the field so it might work well with xml
+from the state model.  It has a standard validator in the header
+for the activity.jsp, for instance.  Put it into Evernote with tag field
+
+
+
+---20130527 16:41:36
+Added tablesorter javascript to ListCR.jsp and style sheets.
+It now sorts and allows pagination, but some residual problems with
+placement of the paginator when number of rows changes, and that
+the 1 to 20 of 50 does not show at all.
+Also, the sort arrows are too close to the text in the headers in small rows.
+Maybe set their width?
+
+
+---20130620 17:21:16
+Downloaded examples from Castro's HTML, XHTML, & CSS
+Put navbar.html, and stylesheets into Sites/menus/
+http://localhost/~woo/menus/navbar.html brings it up.
+1)  How to make menu be vertical and slide down for hidden items?
+2)  What do these things mean and how do they work?
+Put Robert on this?
+
+
+---20130621 11:07:16
+Added drilldownmenu.js and drilldownmenu.css to _js and _css and backone.jpg to images ( copy to _images )
+Added  jquery.treeview to sc_demo for evaluation. ( provides cookie persistence )
+
+
+---20130625 12:16:23
+Why isn't current_job showing up at top of activity.jsp?
+Why does the alert about show process show up instead of jumping to
+new workflow-view.jsp?  No reference to show process ... alert in project.
+
+---20130625 12:49:16
+Got the jobID showing and the link to the test page working.
+Can now show a dummy workflow-viewer.jsp with boxes.  No lines yet.
+
+---20130701 15:08:55
+remember that latex and tex local style files might be located in
+/usr/local/teTeX/share/texmf.local
+I need to test this out.
+
+---20130701 15:26:53
+(./OREN.tex (/Users/woo/Library/texmf/tex/mmes.fwp
+(/Users/woo/Library/texmf/tex/cmr.fwp (/Users/woo/Library/texmf/tex/tenpt.tex)
+(/Users/woo/Library/texmf/tex/eightpt.tex)))
+(/Users/woo/Library/texmf/tex/fwpform.tex)
+This is where I put the local stys and tex (and fwp) as in the "How to install style files in TexShop on MacOs X
+As opposed to the above use of texmf.local
+
+---20130701 15:33:02
+Remember that this is where Robert thinks TeX stuff is:
+/usr/local/texlive/2012/texmf-dist 
+
+---20130707  11:56:30 AM
+
+Send note to Legacy Reserves, viz.
+It has been over a year since we made a trip to Pampa where I met with Johnny Russell, the production supervisor of the Pampa area for Legacy Reserves operations who currently owns the oil and gas drilling rights for the property.  His office is 1 mile from the property which is described as: SEC 139 BLK 31 & GN 160 AC ABST 452 NE/4.
+He mentioned that he only has the rights to drill into the dolomite layer. Legacy Reserve's lease agreement probably refers to the 1962 Phillips Unit Agreement, of which I have a copy, that defines the Unitized Formation to be the "subsurface portion of the dolomite formation encountered in the interval 3,133 feet to 3,315 feet". Those drilling rights granted to Philips have been bought and sold numerous times and finally to Legacy Reserves.  To the east and west of the property this dolomite layer drops off to 12,000 feet.  This indicates that our property lies over a "dome", which is of obvious interest to oil producers.  Due to its shallowness, Mr. Russell would like to drill below that into the granite wash formation and perhaps lower. He does not, however, have the rights to do so. In fact he wondered if the owners even own the mineral rights at that lower level. To the best of our knowledge we definitely do own all rights to all levels and have leased out the rights to the dolomite level.
+Should we be seeking another party that might have interest in drilling below the dolomite level?  We've received no interest from Legacy as to it acquiring those rights.
+We were also told on our visit that production would be increasing and we would receive quarterly "reports", but have received nothing.
+
+This is a very interesting time for those of us who have owned this property for generations.  We would appreciate more information and aggressiveness in this area.
+
+
+---20130801 19:44:01
+Ran defaults write -g ApplePersistence -bool no to supposedly
+turn off the auto-lock feature.  check what this does to time capsule 
+and to backups when Time Capsule isn't available.
+
+---20130807 09:53:20
+Turned off .wakeup by commenting out line that runs PromptForClient
+
+---20130814 21:44:46
+added column db to messages in mm_log and updated it with:
+UPDATE `messages` SET db='mm_test_rwm' WHERE localIp LIKE 'Roberts-MacBook%'
+
+---20130816  4:48:23 PM
+
+Found that putting a line /Users/woo/bin/daily_tasks.sh into /etc/daily.local
+will cause the periodic which runs daily to execute it.
+/etc/weekly.local has similiar references in it.
+/etc is also where rc.sleep and rc.wakeup are.  They run $home/.wakeup and $home/.sleep
+
+
+---20130816 16:58:58
+Can do ssh barsoom tail /var/log/daily.out to see latest daily events
+Also can do ssh barsoom ls -al /var/backup/db/daily/mm_prod to see list
+of mysqldump files and the date and time they were made.
+
+---20130827 12:03:41
+Created backups.sh on barsoom to quicky list backups of mm_prod
+created backups.sh on laptop to ssh to barsoom and run that command.
+
+---20130828 15:46:01
+
+---20130919 16:49:17
+
+---20130920 10:14:00
+jwooten37830.com:80 goes to barsoom.
+jwooten37830.com:8080 goes to woo-laptop
+Currently, sc_demo, qServer, etc. are on laptop running under glassfish
+Move them to barsoom
+
+---20130920 11:14:18
+getPOVRelatives is in code located at Desktop/Archive/qEngine
+
+---20130920 11:44:50
+JDGui is the java decompilier and is in Utilities.
+To decompile, drag jars into window.
+Save source files.
+
+---20130922 12:10:22
+Scanned in RitzCarlton-20130911.jpeg and moved it to Desktop/Expenses
+Now do expenses for August and September!
+
+---20130922 12:19:34
+Create constant PI with 3.14159265 constant PI
+load loader.dict, then PI fill will put PI into the X array
+
+---20130923 09:55:51
+Copied NewQEngine over to workspaces.  It contains jaysec, which are the servlets
+for dmeHelp and qEngine under q.  These might be moved and renamed to fit
+into the redaction workspace better.  ***DONE***
+
+---20130923 13:37:24
+In the database, there are several places where we use
+latin1_swedish_ci that means case insensitive.
+I changed the text of the label in dataDictionary to be
+general_cs so that it would be case sensitive.
+This might need to be done in a few other places like branch label
+and mapName, but not necessarily.
+
+---20130925 22:20:24
+Updated mm_prod, ran branchIdMapper, copied mm_prod to rwm, woo
+Also made a backup copy of old mm_prod and new one.
+tagged freemind as V1_25c.
+Marked it released in Mantis.
+Note to Chris and Robert.  FreeMindArchiver.app in Dropbox/ShouldersCorp.
+
+---20130925 22:24:00
+testing iaskque on laptop using /Library/Tomcat.  Problems.
+Have Tomcat on barsoom also for port 8080.
+Have to move demos to Tomcat including sc_demo and services.
+
+---20130929 12:32:46
+Today I wrote my unlock script in bin that will go through sub directories
+and unlock every file there using sudo chglags nouchg filename.
+It appears to work.  We'll see if they come back.  If necessary, I will
+had to my login script a calling this  on my freemind directory!
+
+---20131010 12:05:44
+Solved my problem with being unable to mount some .dmg files using:
+sudo rm -rf /System/Library/Filesystems/ntfs-3g.fs
+This must have been left behind by MacFuse.  I also uniinstalled it.
+The preferences pane is still in Preferences, but shouldn't matter.
+
+---20131018 06:38:52
+Copied mm_prod to mm_test_woo. Copied mm_prod to mm_prod_20131017 as backup.
+Updated users added person
+edited maps to add area/abbrev to maps missing such.  WHY?
+Ran consistency and found PACU_Activity and ICU_Activity
+    have same area/abbrev.  Have to fix this and genericId in PACU_Activity
+    which is map #49.  Create tool and perform
+Copied mm_prod as revised to mm_prod_V1_26_release as backup
+Copied mm_prod to mm_test_woo and mm_test_rwm.
+Edit AddUserAction and User.delete to prevent user with sysadmin
+being deleted.  Change Person to displaying, but marked deleted.
+Fixed so that can reactivate a deleted Person.  Their userIds are
+still linked and roles can be reset.
+Tagged V_1_26 development as V_1_26_ReleaseCandidate
+Replaced with HEAD.
+Team/Merge selected end set to develop_1_26, base set to Root_ (it filled in )
+Merge,
+Get list of changes in develop that have to be applied to HEAD
+Merge them.  HEAD now is consistent with development stream.
+Commit it and tag it as a release V_1_26.
+Created new FreeMindArchiver and put into Dropbox.
+create new branch from new HEAD and label it V_1_27,
+create new branch from HEAD and label it bug_fixes_1_26 ( for fixing bugs
+    in the release app.  Move to either the bug_fixes_1_26
+    or the develop_1_26 to work.  Do NOT work in HEAD.
+Sent note to Chris about new release!
+
+---20131103 13:11:21
+This script will install icalBuddy and related files:
+
+/usr/local/bin/icalBuddy
+/usr/local/share/man/man1/icalBuddy.1
+/usr/local/share/man/man1/icalBuddyConfig.1
+/usr/local/share/man/man1/icalBuddyLocalization.1
+
+We might need administrator privileges to install to
+this location so please enter your password if prompted.
+
+Input y to continue installing, c
+to change the installation path or q to quit.
+[y/c/q]: y
+- Copying icalBuddy to /usr/local/bin
+  copied.
+- Copying icalBuddy.1 to /usr/local/share/man/man1
+    copied.
+- Copying icalBuddyConfig.1 to /usr/local/share/man/man1
+    copied.
+- Copying icalBuddyLocalization.1 to /usr/local/share/man/man1
+    copied.
+
+icalBuddy has successfully been installed.
+
+
+---20131105 12:04:37
+freemind web access to Terminology Requests is installed and works
+in Tomcat.old on woo_laptop. Login as woo/woo/VHA.
+This needs to be moved to barsoom at 8080 running under Tomcat.
+sc_demo will still need to run under glassfish, perhaps on 9090.
+Added memory so we have 16 Gigabytes on barsoom.
+
+---20131105 13:32:18
+Changed glassfish-3.1.2.2 to run on ports 9090, 9191, and admin on 9848
+
+
+---20131107 14:44:04
+Implemented ArchiverConnection and track connections by name with summary
+at end if click File/Quit.
+Tested out and seems pretty robust.
+Tagged branch_1_26_bug fix as V_1_26a_pool today.
+
+---20131108 20:47:15
+finished and tagged freemind 1_26a_pooled_fully with all DataBaseReader.getConnection
+replaced except two in ArchiveConnection where it gets the connection.
+This was left to retain the showing of the panel and so forth for now.
+
+---20131111 11:44:05
+automysqlbackup gets it information from ~/bin/daily_tasks.sh
+It gets the databases to backup from /etc/automysqlbackup/myserver.conf
+It backs up the databases listed in that file to /var/backup/db.
+Today I added askjane_users_db to the list which was 
+mm_prod, blog_db, bugtracker, queue, and queue_db.
+
+---20131125 23:45:31
+installed SDFormatter.app for installing os on RaspberryPi.
+Also have NOOBS in downloads which is the contents to be dragged to
+the formatted SD chip
+Then it comes up and asks about install which OS and I choose Rasperian
+
+---20131126 14:52:40
+Used sudo raspi-config to change to starting raspberry pi in GUI mode.
+
+---20131126 17:25:52
+Added
+Lyndon-Johnson-Signature.JPG, proposalnsf.cls
+Microsoft-Logo.pdf, texMemo-example1.pidf*
+Microsoft-Logo.svg, texMemo-example1.tex*
+Vice-President-Seal.pdf, SealtexMemo-example2.pdf*
+Vice-President-Seal.svg, texMemo-example2.tex*
+exMemo.cls*
+proposal.cls
+
+to /Users/woo/Library/texmf/tex/latex so that texMemo style would work.
+See specSheet.tex in ~/Development/workspaces/freemind/doc/tex.
+
+---20131127 22:26:25
+added mm_log mm_test_woo mm_test_rwm to daily, weekly, monthly automysql backups
+This file is located on barsoom at /etc/automysqlbackup in myserver.conf
+
+
+---20131127 22:27:47
+The instruction from VISN8 are partly in Notes_2012.
+
+---20131205 16:56:38
+Downloaded and tested jScience, a library for handling numbers with dimensions.
+/Users/woo/Development/workspaces/measures/measurements/src/com/shoulderscorp/examples
+type in java -cp javolution.jar -jar ../../../../lib/jscience.jar test
+to see output.  I also put the source code in workspaces/measures/jscience-4.3.2 and the
+jar file into measurements/lib with the documentation.
+
+---20131206 15:49:44
+moved part of .bash_profile to .bashrc so it will get executed always.
+sourced .bashrc from .bash_profile.
+cleaned up a couple of old references in .bashrc and .alias.
+updated the locate database.
+use locate to find some things.
+find / -name ant found a lot of ant files.
+Added sup to start tomcat and glassfish for work on sc_demo
+added sdown to stop them.
+Will take diary and put all things for 2013 into Notes_2013
+
+
+---20131209 16:47:27
+Got sc_demo working on laptop using glassfish 3 from netbeans.
+Still having problem on getting queueEntry to delete on first quit of process
+Did backup to sc_demo_20131209.
+Archived all to cvs EXCEPT sc_notifyingStateMachine src/.../core did not
+get checked in.  WHY?  Not able to get a lock.?
+
+---20131209 21:21:30
+glassfish-3.1.22 is the one I'm using for sc_demo
+glassfish-4.0 not being used.
+NetBeans 7.3.1.app not being used.
+tomcat-7.0.32 is linked to from /Library/Tomcat and is being used.
+   It has axis2, iaskque, and nyc.
+tomcat-5.5.12 is under /Library/Tomcat.old and has nyc, pcpi-bpm, pcpi-jsp, qServer, sc_app, web ( freeemind ), ROOT (dmehelp.com)
+tomcat-7.0.34 is under /Applications/NetBeans, not being used.
+
+---20131209 21:30:45
+Under Eclipse Kepler, Preferences/Java/Editor/Templates
+    javadoc items like <b>, <code>, <i>, <pre>, select text, type <b>
+    then cntrl/space.
+    crc cntrl/space will insert template for CRC in header.
+    for over selection 
+    for with array selected creates loop
+    for with collection
+    lazy
+    log4j
+    logd, logerr, logi
+    main
+    query
+    readfile
+    scrollTable
+    strf, selected word
+    sysout
+    toarray of collection
+    try wraps a set of lines
+    writefile
+
+
+---20131209 23:21:10
+Wrote diary2txt.pl to take diary 2013 and make a txt file diary.txt of it.
+
+---20131210 11:07:46
+Found a whereAmI unix command to be used inside script files to
+tell you where the command is actually located.
+echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+I'll try this in one of my scripts to see if it's helpful.
+
+---20131212 16:46:53
+Got scroll to visible working and also resetting project.
+Changed to sc_demo and added lots of try catches so that I could
+find out what was happening.  
+Notes:
+    Must currently have a <prerender> for each state!  fails if not.
+    The use of "Quit" as an event name causes the item to be queued!
+        Not sure if this is as it should be.  Perhaps handle it
+        via the actionLibrary instead.  i.e. Quit just does exit or such
+    It appears that substituting noop for abandonProcess causes an error
+    but they are the same code.  Perhaps being caught in code like quit?
+    System Admin/Queue Entries does not get entry # or job #
+
+---20131214 14:16:46
+Got addition of ValidationRule that takes two Validation rules as arguments, with
+boolean operator between them working.  Handles case like;
+If the hadIds box is checked then both abbrev and area must be correctly
+filled in with two letters that are unique.
+NOTE:  If p then q becomes !q 
+
+ p.  not q or p.
+
+---20131214 15:09:45
+NOTE:  run oddball by typing oddball.  Follow directions.
+perhaps should add an option when loading that if forth has
+an argument, it assumes that is a dictionary and loads it?
+
+---20131227 18:50:27
+Wrote a Growler app that checks that barsoom is serving up dmehelp.com
+Then made a jar of that into ~/bin/checkServer.jar
+Added a line to ~/bin/geek_scripts/servercheck.bash
+mycommand="java -cp /Users/woo/bin/checkServer.jar http.TestDmeHelp"
+$mycommand 
+ grep site ( which filters out all but the first line )
+The TestDmeHelp program will send a notifiation via Growl if the server
+is not running.  That copies to Prowler on my phone!
+If I get the message, ssh barsoom, then tcu will start the server.
+Now to creat this on the server so I don't have to monitor from my laptop.
+
+

@@ -1,0 +1,19 @@
+apache-tomcat-7.0.34, 7.0.32, 5.5.12 -> move all to 7.0.34
+Create a bash script to run a minuit or other batch job with output
+Update Software Reference document found on ~woo
+In OlderSoftware/atomlib/m6, see if all files there.
+Then compile all of those files.  If not right look at m6 processing.
+Makefile?  Not happening automagically.
+Check kohn.f for correct handling of TITLE FROM ZTITLE ( substring?)
+fc.sh kohn cause compile successfully into m6/obj
+Run all routes of all processes from StateMachineWS main.
+Need to print listings for TaskList and QueueManager
+Install viewvc-1.1.24 on barsoom and configure it so it works again.
+Work on creating github on jwooten37830.com/github, then push blog to it.
+Appears that queue_manager submitted job even though told not to.
+Look at localhost/queue/index.html ( infor.php?)
+Postgres seems to not be installed and brew install postgres doesn't work.
+Run backups_db on barsoom daily.
+Add search to the note_browser ( and delete lines from todo? )
+reduce metlife and fidelity to $850 less 10% taxes starting march or april
+Handle 'cancel' in Search form for notes on woo-va-air

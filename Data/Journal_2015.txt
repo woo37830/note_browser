@@ -1,0 +1,256 @@
+---20150106 18:01:34
+When starting the Deep6 program, to change the kb
+go to Help/Preferences, then click on show-debug and enter 'Xyzzy'
+to get the place to change the default-db.
+
+---20150112 10:27:29
+Logged into www.tms.va.gov/learning and no classes needed until 10.22/2015.
+Logged into vacageasgt.vpn.va.gov (Fester5#) and reset password as shown
+
+---20150115 11:19:05
+Sent MutualNDA.pdf to jenniferroby@maclurebrown.com about
+using Deep6 to find verbs in documents.
+
+---20150116 14:46:32
+Bill Tyson of VHA create VMs at 10.71.16.36 for DB and 10.71.16.40 for Terminal Server
+
+---20150119 18:55:46
+Got rid of datavision.  While it looked good, it lockup up the mac.
+Also datavision would not connect to my database and get the fields.
+
+---20150126 16:54:30
+Log into dmehelp as admin woo37830/Fester.yy
+
+---20150128 11:19:58
+Added chflags -R nouchg ~ to bin/daily.sh on woo-laptop and air 
+
+---20150202 12:16:48
+installed owncloud on barsoom /Server/Web/Default/owncloud. woo/random1
+Created the database, but can't log in.  Something about .htaccess?
+
+---20150204 12:03:18
+Presentation to Toni, Steve, Chris, Bill Tyson, etc. re Archiver.
+Need to move latest to new Terminal Server, and MySQL, web to other.
+Password for admin is PICIS123!1.
+Make Review Unapproved available to a reviewer.
+
+---20150207 15:22:37
+Updated oddball.dict and got gnuplot working with lines using gc
+added v<< v>> v= x-crossing and dy/dx ( still have problems )
+did cvs commit on all files to barsoom
+
+---20150306 11:32:08
+When we copy a node and paste it, we update the genericId so that it is consistent and unique.
+When we cut and paste it, we don't do that.
+
+---20150325 15:36:34
+Command line java -version and Eclipse java vms all point to /user/libexec/java_home which
+points to:
+ls -al /usr/bin/java
+lrwxr-xr-x  1 root  wheel  74 Feb 10 14:10 /usr/bin/java@ 
+   -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
+BUT, .app bundles use Apple's JavaApplicationStub and use Apple Java 6
+from /System/Library/Frameworks/JavaVM.framework/bin/java
+FOR SOME REASON, Eclipse and command line expect -Xms1500m for Archiver
+but .app expects it to be -Xmx1500m!
+
+---20150413 15:40:13
+Saved fortran/3J to cvsrep.  Move to Development/OlderSoftware AND
+cvs checkout fortran/3J to retrieve it.  cd into 3J and commit, etc.
+
+---20150417 16:53:19
+Discovered where the files are in the JFileChooser if you found the 
+visible Dialog that contains the list of files.
+   Component[] level0 = aDialog.getComponents();
+   JRootPane rpane = ( JRootPane ) level0[0];
+   Component[] level1 = rpane.getComponents();
+   JLayeredPane lpane = ( JLayeredPane ) level1[1];
+   Component[] level3 = lpane.getComponents();
+   JPanel jpanel = ( JPanel ) level3[0];
+   Component[] level4 = jpanel.getComponents();
+   JFileChooser chooser = ( JFileChooser ) level4[0];
+        File[] files = chooser.getFileSystemView().getFiles(
+                         chooser.getCurrentDirectory(), false );
+        System.out.println( "Files: " + prtFiles( files ) );
+        chooser.setSelectedFile( getFileNamed(value) );
+
+---20150428 15:31:04
+Had to disable FolderActions through the AppleScript menu item.
+This disables the auto dumping of the trash.
+
+---20150505 18:46:22
+Installed MacPorts and gnuplot
+18:42:59 [woo:~] > diff .bash_profile .bash_profile.macports-saved_2015-05-05_at_18\:28\:08 
+37,45d36
+< 
+< ##
+< # Your previous /Users/woo/.bash_profile file was backed up as /Users/woo/.bash_profile.macports-saved_2015-05-05_at_18:28:08
+< ##
+< 
+< # MacPorts Installer addition on 2015-05-05_at_18:28:08: adding an appropriate PATH variable for use with MacPorts.
+< export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+< # Finished adapting your PATH environment variable for use with MacPorts.
+< 
+
+
+---20150512 16:40:23
+Problem with Merge is that I need to find the node's id that is either
+in memory or the archiver.  I also need the branchId from the root
+of each of memory and archiver.  I can't locate the node in the archiver
+because, for some reason, the root wasn't set in MajorMinorOrderedMap
+when it was constructed from the archvier data.
+
+---20150513 20:49:05
+Got merge to work!  Clean up panels, etc.
+
+---20150603 14:57:59
+Refactored processFile into loadData and processData
+Created a Duration Object so that it would contain start and end dates
+checked for order, then methods to see if a candidate Duration
+intersects a Duration.  By comparing a candidate to a list
+of existing Durations, we can tell if this one is to be pre-pended,
+appended, or inserted.  Saved workspace on External_256G.  Still have problem
+with progress bar.
+
+---20150616 14:33:18
+installed ant in Development/apache-ant-1.9.5
+created link in /opt/local/ant pointing to it.
+
+---20150617 10:19:55
+
+---20150619 13:43:57
+Set up chron job to run speedtest-cli every morning at 9AM results to log
+
+---20150619 13:55:45
+Installed neubot which randomly runs a speed test and logs.
+Read log by running /Applications/Neubot.app
+
+---20150629 17:22:29
+
+---20150724 06:20:52
+
+---20150726 07:39:06
+Installed node.js and thus npm.  Read and explore
+Installed an example JSON, jQuery in Development/node_js
+Download and install Play and see if it is usable for web-app
+
+---20150802 15:32:47
+Installed Steam and link to Firefly Online portal.
+Found that .bash_profile need the sourcing of alias near the beginning
+and that in the .bashrc there are somehow aliases like ls, l la, that
+cause a problem.  Commented them out.  Later in the aliases they seem to be okay.
+Will make sure I put them in there.  Probably a case of double
+assigning them, ls got defined as ls -1, then used as l = ls ???
+
+---20150807 11:31:26
+Reset VA password using http://gfe.vpn.va.gov
+
+---20150814 13:34:22
+Rebased Development_1_34 into HEAD.
+Created Development_1_35.
+Ran cvsstat on archiver.  Show Robert the stats!
+Checked field lengths on mm_prod versus mm_test_woo_bak. Seemed the same.
+Check mm_log field length of comment field in messages should be 4096.
+Tested my Thunderbolt shoe on usb drive and it now works!  
+MUCH faster with thunderbolt.
+
+---20150820 22:54:01
+Check JAVA_HOME and ANT_HOME, etc. in .bash_profile, .bashrc
+/usr/bin/java is not where java is.  $JAVA_HOME/bin/java is.
+
+---20151004 16:02:26
+Created a ~/bin/minecraft script that launches MineCraft.
+
+---20151009 12:37:57
+Created use case and sequence diagram for new client.
+
+---20151012 16:51:14
+Worked on sc_demo.  Fixed some of the EntityTester.
+sc_demo runs as localhost:9090/sc_demo
+Some queueEntries don't have a result object.
+Need better error reporting when things fail.
+
+---20151022 10:53:21
+Used: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user
+to rebuild the OpenWith options for the finder.  Then relaunch Finder
+
+---20151022 19:44:16
+Fortran for 3J is in /Users/woo/Development/OlderSoftware/fortran/3J
+
+---20151029 14:05:55
+Got the dynamic forms to show an alert on submit with data that
+was filled in using var txt = $scope.stdFormData.lastName, etc.
+
+---20151030 16:11:52
+created scrud database with it_companies in it.
+Using scrud with ~/Development/workspaces/SCRUD-master to see
+how to build a SCRUD site.  Having problmes with loading data.php right now.
+
+---20151106 15:11:06
+installed Apache Spark into Development/Applications.  
+Look in Mail/Reference for pointer on how to use.
+
+---20151116 15:40:45
+Downloaded and installed desk a way to shift between environments.  See Evernote entry
+Also downloaded ( cloned ) and installed    oh-my-zsh, which provides lots of plugins for zsh.  See Evernote entry.
+
+---20151121 16:58:15
+Parallels key: WTVE5C-S6D3DZ-8VCDHT-PYXMSC-EG0QTG
+
+---20151122 17:28:39
+Movies copied from barsoom.  Backed up to External_256G, TimeCapsuled at 20151122 @ ~1730 on LaptopBackups
+
+---20151130 16:33:38
+Duplicate mysql database:
+shell> mysqldump -u root -p db1 > dump.sql
+shell> mysqladmin -u root -p create db2
+shell> mysql -u root -p db2 < dump.sql
+
+---20151202 14:03:03
+Created ER.png using MySQLWorkbench, connecting to jwooten37830.com/mm_prod and creating model.
+
+---20151203 12:13:05
+Maven or mvn is located at /usr/local/apache-maven.  There are several
+versions there.  The one being used is in .bashrc as $MAVEN_VERSION
+
+---20151212 16:14:51
+On barsoom ~/bin/rsync.sh copies cvsrep and databases to xanadu/backups
+as cvsrep and sql directories with mysqldumps. Logs to barsoom/backups/rsync.log
+Controlled by sudo crontab -l ( you can see it )
+
+---20151212 17:07:16
+Downloaded tree from mama.indstate.edu/users/ice/tree/
+Moved tree to ~/Development/tree-1.7.0
+Changed Makefile for tree to OS X
+Changed destination for tree to /user/local/bin
+Did make on tree.
+copied tree.1 to /usr/share/man/man1
+
+---20151214 13:24:36
+Created bin/latest_backup and bin/backup_if_missed for time machine backups
+Copied to barsoom and added to crontab using sudo crontab -e
+Set the backup_if_missed for 6 am.  If todays date is not the same
+as the latest backup, then start a backup in the background.
+Log the output of backup_if_missed to ~/backups/backup.log
+
+---20151215 18:01:04
+rsync_Seagate_from_barsoom
+rsync_Seagate_to_barsoom
+rsync_iTunes_from_barsoom              
+rsync_backup_movies
+rsync_iTunes_to_barsoom
+
+---20151217 11:22:17
+sudo periodic daily weekly monthly seems to actually clean up some
+of the logs and record that in /var/log/daily.out, etc.
+A large amount of log data is still in .bz2 and .gz files in various places.
+Need to learn how to get http addresses from /var/log/apache2/access.log maybe
+
+---20151217 15:35:30
+Altered ~/bin/pre_clone.sh on barsoom to put mysql database dumps into
+~/backups/recover.
+
+---20151229 08:49:24
+Copied Fury.mp4 to SeagateTimeCapsule-2/Movies and to barsoom/Movies
+Used defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES to turn off auto open of iPhoto.
+

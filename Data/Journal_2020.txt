@@ -1,0 +1,874 @@
+
+
+
+---20200102 18:21:19
+Added product-15(free month/$99) to server code and tested as well as
+removed subscription requirement and started using purchase-map-flat for productid.
+
+---20200106 10:40:05
+Bought CleanMyMacX 5 copies, installed on dew, woo-laptop, woo-va-air.
+
+---20200107 11:33:39
+Corrected some thrivecart logging and reduced fh use. Tested on Free and worked.
+
+---20200108 12:18:52
+Fixed product-15 issue where it would have dropped data when repaid since
+it was saving as product-9 (default) instead of passing in productid.
+
+---20200109 16:57:20
+To get TeXShop to set type, put /Library/TeX/texbin/pdfTeX into prefs for engine location.  /usr/local one is for different PC type.
+
+---20200109 17:21:28
+Got instructions to set Buzz to 5000 emails and Impact to 10000.  See Notes
+
+---20200110 12:42:54
+Added adjust_email_limits and tested.  API not enabled? test again later.
+
+---20200113 19:14:13
+reinstalled OS from network after problems.  check everything.
+
+---20200114 17:06:23
+Found that "'$product'" causes a PHP error?
+
+---20200115 15:43:10
+Added value for DEW Annuity as cash.  Adjust when new statement.
+
+---20200116 17:22:46
+Added display maps(url) in indecks and pushed, pulled to barsoom
+
+---20200122 17:27:12
+Fixed Reader to display year, page, and in order by sorter.php
+
+---20200127 17:03:47
+Removed users.txt, added to .gitignore.  Replace with ENV variables.
+
+---20200128 10:37:39
+Did brew install chruby on old-mac-pro.  Not on others, using rbenv I think.
+
+---20200128 11:52:51
+Created ~/Development/tools/diary-notes.pl as a starter to Notes/diary problem.
+
+---20200128 14:27:22
+develop branch in indecks on woo-laptop starts removing cols. save and update not working yet.
+
+---20200131 11:45:49
+Updated master and develop for indecks to 7462583 and pushed.
+
+---20200131 12:38:35
+Externalized db attributes in webhooks mysql_common.php. master on barsoom is old
+while develop on barsoom is updated and running.  Roll back to master if necessary.
+Update master merging with develop when tested out.  develop is pushed.
+
+---20200206 17:20:56
+Test of using new diary to update Journal
+
+---20200206 17:22:48
+Added getting the Journal for the current year.
+
+---20200207 09:49:42
+Created recent.sh and used in geek-script. pushed devel.
+
+---20200208 11:31:49
+sftp'd search, diary, recent.sh to barsoom.  Tested.
+
+---20200208 16:37:30
+Updated notes, index.html and page.php.  Pushed but needs pull on barsoom
+plus get it to read from dropbox location
+
+---20200209 10:22:17
+Copied perl files from diary-notes to web server notes so all would be
+together.
+
+---20200209 10:34:58
+Deleted diary-notes repository from local and github as the perl
+scripts have been copied into the note_browser repository.  The
+temporary Journal_YYYY.txt files were thus removed as they might have
+added passwords, etc.
+
+---20200209 12:29:22
+Fixed localhost/queue to read queue entries using mysqli.  main and
+develop branches pushed to github project queue.  Need to replace passwds.
+
+---20200209 13:02:05
+Externalized passwords for queue.  Need to remember config.ini.php is needed.
+
+---20200209 13:05:23
+Deployed develop to barsoom with config.ini.php and tested.
+
+---20200210 16:17:52
+Found that sharing the ~/Dropbox/Personal/Documents/Notes folder in the
+WebServer FileSharing allowed my php app to access the documents.
+
+---20200213 13:52:43
+Copied phpmyadmin from woo-laptop and configured it to connect to aws.
+Some errors, but working.  Will fix errors as I go.
+
+---20200213 16:38:55
+Tested webhook from browser without args and it updated log.  Have to figure
+out how to get Thrivecart to reset webhook url and test again.
+
+---20200213 16:50:52
+Config.ini.php
+Create this file: config.ini.php with these contents.
+<?php
+$config['RAILS_ENV']='development';
+$config['RAILS_USER']='woo';
+$config['RAILS_USERID']='jwooten37830@mac.com';
+$config['RAILS_PASSWORD']='random1';
+$config['MAIL_HOST']='localhost:3000';
+$config['EMAIL_FROM']=$config['RAILS_USERID'];
+$config['SENDMAIL_SERVER']='smtp.gmail.com';
+$config['SENDMAIL_PORT']='587';
+$config['SENDMAIL_USERNAME']='wooten.666@gmail.com';
+$config['SENDMAIL_PASSWORD']='Fester1.';
+$config['ISSUES_SERVER']='https://github.com/woo37830/blog/issues';
+$config['PATTI_ISSUES_SERVER']='https://github.com/woo37830/patti_rails/issues';
+$config['PATTI_DOCUMENTS']='https://44.231.61.194/patti/index.html';
+$config['PATTI_DATABASE_SERVER']='localhost';
+$config['PATTI_DATABASE_USER']='root';
+$config['PATTI_DATABASE_PASSWORD']='random1';
+$config['PATTI_DATABASE']='users_db';
+$config['PATTI_LOG_TABLE']='logs';
+$config['PATTI_USERS_TABLE']='users';
+$config['NOTES_SERVER']='https://jwooten37830.com/wiki/projects/blogdiscussions/Blog_Discussions.html';
+$config['MSG_USER']='4K9vV0InIxP5znCa7d';
+$config['MSG_PASSWORD']='ie6n85dF826iYe5npA';
+$config['THRIVECART_SECRET']='IEYDASLZ8FR7';
+?>
+NOTE THAT THERE ARE PASSWORDS AND KEYS IN HERE AND SHOULD BE PROTECTED.
+
+Go to aws.amazon.com and either create an account or log into your account.
+If you don't have an instance then create a small free one. Add security resources for SSH on port 22,
+then http resources on port 80, 0.0.0.0/0
+Assign an elastic-ip and associate it with the instance.
+
+If you do, then 'spin up' the instance by clicking on it, noting the elastic-ip and then click on Actions/State/Start
+The instance should start up. after it has started, then from a terminal window, follow the below after ssh ec2-user@elastic-ip and login.
+
+[ec2-user@ip-172-31-22-116 ~]$ history
+1 yum -y install httpd
+2 sudo yum -y install httpd
+3 sudo yum -y install php
+4 httpd -v
+5 php -v
+6 sudo service httpd start
+9 sudo usermod -a -G apache ec2-user
+10 exit
+11 groups
+12 sudo chown -R ec2-user:apache /var/www
+13 sudo chmod 2775 /var/www
+14 find /var/www -type d -exec sudo chmod 2775 {} \;
+15 find /var/www -type f -exec sudo chmod 0664 {} \;
+16 echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+17 sudo rm -rf /etc/httpd/conf.d/welcome.conf
+18 sudo service httpd restart
+.. http://elastic-ip/phpinfo.php (make sure this works)
+19 sudo yum install git
+20 cd /var/www/html
+21 sudo git clone https://github.com/woo37830/patti.git
+22 copy the config.ini.php file from Trello into /var/www/html/patti/webhook/
+23 Do http://elastic-ip/patti/index.html (Documentation page should show)
+
+NOTE that if you don't want to be charged while testing, you should shut down the instance when done testing. It appears that this tier costs:
+2.15/750 Hrs so a year would cost about $25. We need to check this.
+
+Install mysqld via
+
+sudo yum install mysql-server
+sudo chkconfig mysqld on
+sudo service mysqld start
+/usr/libexec/mysql55/mysqladmin -u root password 'random1'
+
+In order to be sure httpd and mysqld are started on start and reboot,
+
+sudo chkconfig mysqld on
+sudo chkconfig httpd on
+sudo chkconfig --list (check for mysqld and httpd)
+
+To install the users_db database, import the users_db.sql files resulting from a sql dump of the database originally stored on jwooten37830.com, viz.
+
+On jwooten37830.com use the phpmyadmin tab from the jwooten37830.com/home/index.html. Log in with woo/passwd
+Then select the users_db database from the left column, then from the actions at the top, select export.
+Click the quick export and it will result in a users_db.sql file saved to your default file save area ( Downloads on my server ).
+Using sftp from the AWS instance:
+
+sftp woo@jwooten37830.com
+cd location of the users_db.sql file
+ls ( be sure its there )
+get users_db.sql
+quit
+Now:
+
+mysql -u root -p
+create database users_db;
+use users_db;
+source users_db.sql ( give file path if needed )
+should see create statements
+show tables;
+
+In the AWS console add the rule to allow mysql access to port 3306 from 0.0.0.0/0
+ssh to the instance
+
+mysql -u root -p
+(enter root password)
+mysql> CREATE USER 'woo'@'%' IDENTIFIED BY 'random1';
+Query OK, 0 rows affected (0.00 sec)
+mysql> GRANT ALL PRIVILEGES ON . TO 'new-userid'@'%';
+
+After completing the permissions described, from a remote terminal session try:
+
+mysql -h elastic-ip -u userid -p
+(enter passwd from CREATE USER)
+You should be connected to the mysql database on AWS.
+Try:
+
+show databases;
+( should show several including users_db )
+use users_db;
+show tables;
+select * from users limit 10;
+exit
+
+
+---20200214 19:33:07
+In order to prevent ssh shells from timing out, 
+Edited /etc/ssh/ssh_config
+Uncommented this following line
+   ConnectTimeout 0
+#   StrictHostKeyChecking ask
+#   VisualHostKey no
+....
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+Added the following line.
+    ServerAliveInterval 60
+
+---20200215 14:06:34
+Got AWS thrivecart.php working for add new users.  MORE WORK
+
+---20200215 15:57:31
+Check on webhook_test that order.success and order.subscription_cancelled worked plus
+a second order.success is marked as a payment made.
+
+---20200216 15:23:32
+Created bin/backup.sh on AWS and it backs up mysql db to backups
+use restore alias to recover given a yyyymmdd.
+
+---20200217 12:06:47
+Made some corrections to bin/backup on AWS.  Wrote cron_logs.sh to look at cron_log.
+The cron job should write a dated sql file to ~/backups and a log to ~/logs/backups.log
+
+---20200217 14:47:57
+Created bin/restore.sh.  Message to Thrivecart about affiliates.
+
+---20200220 12:53:25
+Wrote aws-latest.sh and aws-details.sh.  1st show latest users added and logs, while
+aws-details.sh shows the details on a selected log id in expanded json pretty print.
+
+---20200221 11:44:06
+Created /etc/logrotate.d/thrivecart on aws.  added /home/ece-user/logs/daily/*.sql with 14 days, rotating daily.
+Then did weekly, monthly, and yearly.  See thrivecart file above for details.
+Tested logrotate using  sudo vim /etc/logrotate.d/thrivecart
+    sudo /usr/sbin/logrotate -v /etc/logrotate.conf
+
+---20200227 18:26:44
+Wrote monthly_report.php for AWS reporting.  Updated Trello, sent report to Patti
+
+---20200229 13:29:48
+moved working aws to master, pushed new develop and pulled on AWS.  Logging improved and adds order
+and invoice to users when new user.
+
+---20200304 11:03:27
+Added diary update and editing todo
+
+---20200304 11:03:35
+Added diary update and editing todo
+
+---20200305 05:03:12
+Corrected erroneous Logout: null when starting new session in notes
+
+---20200305 06:03:16
+Test clearing url after add
+
+---20200305 06:03:36
+Test clearing url after add
+
+---20200305 06:03:39
+Corrected erroneous Logout: null when starting new session in notes
+
+---20200306 03:03:21
+Refactored into named php tabs
+
+---20200307 22:11:30
+Added on/off to Billing(develop/pushed) and branched to format_times
+
+---20200309 15:56:57
+Corrected erroneous Logout: null when starting new session in notes
+
+---20200309 18:56:30
+Created format_time for billing
+
+---20200309 19:39:55
+Added encrypt of password
+
+---20200311 20:13:41
+Updated technical.tex for patti, added validation for on/off in billing
+also, but on barsoom, note-browser doesn't work, probably diff in php version.
+
+---20200312 16:43:45
+Believe I got rid of 0 length mysql backup files on aws by telling it not to create 0 length backups
+
+---20200313 12:41:40
+Updated patti docs and pushed to AWS/develop.  Notified patti
+Asked Thrivecart about mysterious payments to test accounts.
+
+---20200317 11:51:54
+Found static book in query instead of $table.  Sorter in indecks
+was updating a different table from that being viewed.
+
+---20200319 11:15:37
+Sent notice to El Cid to cancel 18 April week.  Requested confirmation.
+
+---20200319 11:43:10
+Posted question to discussions.app.e.com/thread/251195343.  woo_37830.
+
+---20200320 12:06:18
+Updated technical.tex for patti.  turned on compress in logrotate and changed backup.bash to handle.
+
+---20200320 16:10:41
+submitted 2020 census.  Really racist approach.
+
+---20200321 12:25:12
+Moved tomcat-old webapps into WebServer on woo-laptop.  Some don't work
+as they need to be in a Tomcat server.  Copy these to barsoom 8080 service.
+
+---20200322 21:38:34
+Created bin/git_check to check status of git repositories in bin/git_repositories.txt
+
+---20200323 12:33:32
+Resolved git issue on woo-laptop queue.  It is using ssh instead of https
+and thus had to be sure the remote loging was working.  did rcp of id_rsa.pub from woo-air to woo-laptop.local
+
+---20200323 12:49:00
+Used sudo spctl --master-disable to unlock and allow downloads from all
+
+---20200323 12:51:54
+Shift-Cmd-P will send selected text to iPhone Prowl
+
+---20200324 13:40:29
+Discovered needed to do a cd ~/bin at start of git_check to fix
+first repository not displaying.  Was getting not a repository for some reason on ~.
+Discovered that a file ~/.hushlogin will silence checks for mail, etc. but
+not the echo statements in .bash_profile
+
+---20200325 15:06:14
+Select a piece of text, Do Command/Shift-P and it gets sent to my iPhone via the prowlmenu.
+echo "text" | pbcopy puts "text" into the clipboard.
+
+---20200326 11:26:31
+Moved downloaded Mail Notification.applescript to ~/Library/ApplicationScripts/com.apple.mail
+and then added a rule to Mail.app that when a mail arrives with
+a particular username in the from, it will send a Growl notification.  Tested on myself and it worked.
+
+---20200326 15:35:30
+To allow downloads from anywhere. Enter sudo spctl --master-disable in Terminal.
+
+---20200327 10:45:45
+On March 23, 2020 barsoom cloned the bin directory.
+
+---20200327 10:52:22
+Between 9/22/2019 and 9/29/2019, woo-laptop/bin was checked into github
+
+---20200327 15:01:31
+Installed pforth.standalone with make after editing out some old flags.
+pforth seems to do basic forth okay. TODO check more.
+
+---20200327 15:40:42
+Study t_corex.fth in pforth/fth,  cd to that fth dir then pforth.
+
+---20200327 16:10:16
+use ssh-copy-id remotehost to copy the id_rsa.pub to the remote host.
+
+---20200329 12:10:46
+REMEMBER to copy the id_rsa.pub to the authorized_keys in .ssh!
+
+---20200329 12:21:36
+if mount | grep /mnt/md0 > /dev/null; then
+    echo "yay"
+else
+    echo "nay"
+fi
+
+---20200329 16:43:04
+on barsoom there is a /etc/myserver.conf that backs up daily, weekly, and all
+dbs monthly to /var/backup/db
+
+---20200330 20:44:22
+Added patti to mantis and added two problems for email and monitoring
+Created monitor_patti_users [password] and a monitor_users.txt
+
+---20200331 10:35:14
+Created adminstartors group on AWS with full access to AWS
+Created policy and attached it to administrators
+made sure Patti and Chris were part of this group.
+Created user Administrator/Fester1# and added to this group.
+Log in as Administrator normally.
+Send email to patti about access
+
+---20200331 16:52:41
+[@ip-172-31-22-116:~/bin] $ php amazon-ses-smtp-sample.php 
+
+PHP Fatal error:  Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/ec2-user/bin/amazon-ses-smtp-sample.php on line 52
+But, composer.json has require statement for phpmailer/phpmailer.
+
+---20200331 18:56:52
+Sent march.txt from ~/Desktop to patti.
+
+---20200401 11:13:17
+Installed go language on woo-va-air and tested in ~/Development/go/home
+Also, it is installed and tested on barsoom at same location
+
+---20200401 17:07:02
+Apparently XCode was dropped by Apple in a recent upgrade to OS.
+I did brew install cvs on woo-laptop and it worked.  I then created
+a file README.txt in ~/Development/workspaces/btree/src/com/shoulderscorp/btree
+and then did a cvs add followed by cvs commit.  I then checked on
+barsoom in ~/cvsrep and found the new file was there with my data.
+So, cvs is working again on woo-laptop.  Will try to check somehting
+out onto woo-laptop using cvs.  
+
+---20200401 19:20:59
+Had to do brew uninstall cvs; brew install cvs to put a new cvs in /user/local/bin/cvs
+which cvs shows that it is the one used.  Then cvs update worked.
+
+---20200402 21:54:22
+amazon-ses-smtp-mailer.php seems to say it sent the email successfully.
+BUT, I don't get the email and I can't find in the log that it failed.
+
+---20200404 16:32:48
+Used a downloaded free Paint S.app to create patti's Sequence Diagram.paint, .jgp
+
+---20200404 19:38:01
+Moved technical.pdf to AWS so it shows Sequence diagram in documentation.
+
+---20200405 09:42:44
+Found that PHPMail from AWS was working.  Was going to Junk.  Added rule to help.
+
+---20200405 10:07:48
+smtp/notify.php compiles into thrivecart.php.  Add the call for a cancel.
+
+---20200405 10:12:40
+Integrated sendNotification into thrivecart.php at cancellation
+
+---20200405 11:15:34
+Merged develop into master on AWS.  
+
+---20200405 11:17:45
+The AWS Elastic IP of patti's thrivecart webhook is: http://44.231.61.194/patti/
+
+---20200406 15:47:26
+Sent email from AWS through amazon... pgm to test.
+
+---20200407 10:42:55
+Finished backups to safe of barsoom, iTunes, dew-desktop, va-air, woo-laptop
+
+---20200410 20:25:28
+Fount that changing from Screen Sharing to Remote Management and back on woo-laptop fixed screen sharing problem
+
+---20200410 20:30:16
+pre_clone.sh backs up the selected databases before doing a clone operation
+
+---20200411 16:19:41
+rsync.log is written by:
+daily_tasks.sh:rsync_log=/Users/woo/backups/rsync.log
+daily_tasks.sh:if [ -e "$rsync_log" ]; then
+daily_tasks.sh:  echo "Trimming rsync_log at $rsync_log"
+daily_tasks.sh:  echo "$(tail -n 50 $rsync_log)" > $rsync_log
+
+---20200411 16:26:41
+backups.log is written on barsoom by time_machine.sh?
+It is trimmed by ~/bin/daily_tasks.sh as is backup.sh
+~/bin/latest_backup gets the date of the latest TimeMachine Backup
+~/bin/backup_if_missed does a TimeMachine backup if there is not one for the current day
+In crontab ONLY on barsoom, there is an entry to run backup_if_missed at 6AM.
+It logs to ~/backups/backup.log
+Starting time machine backup: 20200322
+Look at the blog for a description of this
+
+---20200411 16:42:34
+woo-laptop has tomcats and WebServer apps mostly correct.
+Need to move woo-laptop demos to barsoom tomecat and WebServer
+
+---20200413 20:25:29
+Dianne EXT01 has movies that need to go to barsosm.
+BAckup woo Clone of va-air is empty
+System Backup Apps/Developer/..110905 has things to go through before erasing
+
+---20200413 21:35:29
+queue [develop] is trying to use an included header.html.  need to continue refactoring
+
+---20200414 12:25:27
+queue commit 3699f5b [develop] works in showing entries and git-info
+queue [fixit] is currently the same.  Work in [fixit] for now
+
+---20200414 15:02:15
+Added product-19 to addproduct branch on AWS.  Tested, but needs group in EM
+
+---20200415 20:33:45
+Created dashboard/index.html which demos use of Quantellia object. 
+
+---20200417 14:59:32
+On va-air, /Library/WebServer/Documents/dashboard is completely in cvs and up to date.
+
+---20200419 11:40:11
+Updated dashboard to have labeled controls, but they don't line up vertically.
+Added a test dashboard.html to start rebuilding from saved json file.
+
+---20200421 12:02:03
+Saved dashboard as woo_dashboard-common_base_20200421
+Created woo_dashboard-common_branch_20200421 to work on the AddControl
+
+---20200422 13:05:14
+Got radio group working, saving, and restoring
+
+---20200423 09:48:19
+Downloaded trial copy of unconverted to rip dvds onto barsom
+
+---20200427 18:58:28
+Created find-repos in ~/bin to search from the current directory down for 
+CVS, git, and SVN repositories.
+
+---20200427 23:06:25
+Found that body needed margin: 0px; to make it line up with grid
+
+---20200429 12:43:24
+Saved  ~/backups/dashboard_200429_1243.tar.gz as working somewhat.
+
+---20200429 21:10:31
+Replaced dashboard rel-1-3(Marks attempt) with rel-1-2 which worked
+except for positioning the sub dashboard.
+
+---20200430 13:07:54
+Backed up non merged workign mark approach to ~/backups at 200430-1207
+
+---20200430 14:27:39
+Updated to rel-1-4 and tagged.  Need to update on woo-laptop
+
+---20200501 11:05:58
+Tagged rel-1-5 as version having custom control, etc.
+
+---20200501 12:22:06
+Added labelStyle, need to do field, etc. from Email.  Labels in sub dash not getting width right or something
+
+---20200505 15:41:06
+Created a git repos on barsoom for dashboard.  It's git@barsoom/repos/dashboard.git password random1
+
+---20200505 19:58:59
+Moved dashboard via git to woo-laptop and woo-va-air
+
+---20200506 10:03:14
+Moved git@barsoom:repos/dashboard.git to git@barsoom:woo/dashboard.git
+
+---20200507 10:45:09
+Moved git@barsoom:woo/dashboard.git to woo@barsoom:gitrep/dashboard.git
+and thug got rid of having to enter password all the time.
+
+---20200507 12:16:32
+dashboard develop has toJSON writting out some.  fromJSON isn't building from it correctly.
+
+---20200510 19:33:33
+Finally got dashboard master and develop working.  develop show git-info
+
+---20200510 19:40:25
+woo-laptop synched with repository and woo-va-air
+
+---20200517 16:58:59
+Installed roundcubemaili on barsoom.  Created mysql database, then need
+to add users to roundcubemail.users and mess with .htaccess?
+
+---20200519 09:59:44
+Installed CMake and created alias to it's executable.
+Tried to do cmake followed by make on nominatum, but it failed about no appropriate byteswap
+
+---20200519 10:46:10
+Uninstalled CMake and rmoved its alias as I don't need it.  Use ajax call instead.
+
+---20200519 18:51:01
+Got the reverse lookup to work, where clicking on map then the funny image shows
+the address in teh location field.
+
+---20200520 16:11:32
+Finally got logged in on webmail with woo/Bull$hit.  Can't send mail
+yet since SMTP does not support authentication (that I specified)
+Apparently webmail doesn't receive it either.
+
+---20200520 17:51:42
+Got Table class started and used on categories.html
+
+---20200522 17:30:53
+Got drawing Zones on map to work.
+
+---20200525 16:44:49
+Merged fix-zones into integrate-entities as root name showing now.
+
+---20200526 11:04:42
+Site for fix-zones being set up to create a custom control containing
+the root, use the size.addChild, to add categories, etc.
+
+---20200526 14:52:15
+Got develop-tree starting with develop, then merged in from integrate-entities to
+get the tree root showing instead of the table.  The clicking on the map
+still works, but you have to click below it.  The overlay isn't aligned anymore!
+Now, working on adding a category.
+
+---20200526 22:19:43
+After cloning PHPMailer into webmail, php test mailer worked!  Now to get
+this integrated into the email-pipe!
+
+---20200527 10:07:40
+Added default tree css, got icon on root node.  Factored creation into method
+in preparation for moving it to Site.  Using develop-tree
+
+---20200528 11:11:54
+Initial push to factor-to-controls of InputDialog
+
+---20200528 14:37:45
+Got Dialog sort of working, now do Map capture and Toolbar and tree.
+
+---20200528 20:29:33
+Got Dialog working, now do Toolbar, creating Tool.
+
+---20200529 11:43:34
+dashboard [develop] has good behavior, BUT shows table.
+dashboard [develop-tree] shows root of tree, but capture is below map
+dashboard [entities] appears out of date, not tests directory
+
+---20200530 09:49:51
+73ec9c3 has dashboard adjusted to 0,0
+
+---20200602 12:25:51
+Merged fix-zones into develop.
+Created integration from develop to integrate Map, InputDialog, and ToolBar
+
+---20200602 14:38:32
+added awsmysql alias.  opens mysql on aws.
+
+---20200602 14:41:31
+Sent an email to support@Thrivecart to ask about missing notifications
+
+---20200610 10:00:39
+Used perl -MCPAN -e 'install Bundle::DBI' to install DBI to use mysql with perl
+
+---20200610 10:40:43
+The above did not work.  Instead used ODBC via:
+cpan install DBD::ODBC
+Then perl extract-data.pl worked against jwooten37830.com/users_db.
+
+---20200610 14:07:10
+Got partial polygon toolTip.  tree not remembering desc and type.
+Will create Quantellia.nodes that holds name, desc, and type keyed by nodeId.
+Then onSelect will use nodeId to display toolTip on treeNode and
+also to fill in CurrentSelectedNode with it's id.  Then polyTool
+handleSelector will use that to create the toolTip for the polygon.
+Might keep count with node data to do display total.
+
+---20200611 12:21:56
+Moved to label-nodes for dashboard to store data on the nodes. 
+develop was merged with integration and pushed.
+
+---20200613 15:19:12
+Did a new release of thrivecart.php with product_id and order_id going into users table.
+
+---20200616 11:03:10
+Updated addContactNote so that email shows.  Where are other variables?
+
+---20200616 17:08:25
+Got tooltips for polygons and tree synced with model in dashboard isolate
+
+---20200618 06:57:18
+NOTE aws-latest.sh does NOT show the request_json, but it is there!
+
+---20200618 19:16:21
+Created add-contact-note branch for working on that.
+
+---20200619 15:11:54
+git_check still not doing right thing with latest update dccfea9
+
+---20200621 16:39:52
+Look at ~/bin/billing to see perl handle color and not present condition.
+
+---20200625 08:44:25
+Created crontab using EDITOR=vi crontab -e and entered
+0 12 * * *  /Users/woo/bin/backup_db random1
+To cause barsoom to run backup_db everyday at noon
+
+---20200625 16:42:40
+Submitted a StackOverflow question about restructuring data.
+
+---20200626 09:31:01
+Created ~/bin/examples/testArray.php to create array adder.
+
+---20200628 13:25:33
+Got states, state totals, and US totals.  Now, put into TN => {}, etc.
+
+---20200630 10:44:26
+Use Evernote article in programming to do unshiift of first 4 elements
+
+---20200702 12:19:02
+Got US total, state total, working.  Now to cache data each day.
+
+---20200703 11:23:23
+Updated crontab on barsoom so that rsync runs at 7AM and time_machine backup at 6AM.  backup_db runs at midnight for user woo.  Other is root schedule
+
+---20200704 09:40:46
+rsync.sh from barsoom only works from cammand line.  crontab using it fails in xferring to xanadu.
+However, rsync_barsoom.sh from laptop or air works also.  Problem with rsync when root runs.
+
+---20200705 16:56:21
+Installed sleepwatcher into /usr/local/opt and created ~/.sleep executable to turn off billing
+
+---20200706 14:26:33
+Added tests/resizer.html showing pure javascript resize.  Now to integrate with drag drop
+
+---20200707 12:15:05
+resizer.html now has drag,drop,resize in notify branch and merged with develop
+
+---20200707 17:51:56
+Still having an xml problem in email_pipe to patti@exposedagent.com.
+
+---20200708 11:41:15
+Manually inserted pattyshort@pshort.org with engagemoreid = 2614 into users_db.users.
+
+---20200708 12:59:41
+Created index.php in patti/tests and monthly report and tests as php pages
+
+---20200708 22:13:13
+Moved 'on my mac' to iCloud folders.  Appears to make them available on all devices!
+
+---20200710 09:25:29
+Pushed to stash current work on adding authentication, checking for existing contact before adding
+and making some of the tests interactive via html.  Need to focus on each separate fix
+
+---20200710 09:42:46
+add-free-trial has product-29, handles subscription payment for it, and monthly report better
+
+---20200710 09:44:39
+develop branch of webhook has an error in product_data.php on line 11.  Fails.
+
+---20200710 09:47:41
+aws has add-free-trial c70b042 running with no error in monthly_report.php
+
+---20200710 10:56:08
+Created fancyAuthenticate and two testpages testAuthenticate and testAuthenticate2.php
+You can go to either and have to log in, but after logging in can go to either.
+Need to merge this into fix-add-free or whatever
+
+---20200711 11:20:42
+Preserved state of snapToGrid by merging it into develop and pushed develop.
+Will now continue to work on snapToGrid.
+
+---20200711 19:51:54
+Added some mouse coord printing and locatiosn to figure out conversions.
+
+---20200715 16:23:38
+Got add-contact-note seems to work. Problem was weird email addresses
+that had 'Patti AZ Sampson <patti@engagemorecrm.com'.  It got confused by
+the AZ.
+
+---20200718 15:26:02
+Fixed bug in code due to getting wrong branch.  add-free-trial is now
+current version on aws.  Needs to be merged with develop and repushed.
+
+---20200724 11:09:18
+Added a filter to remove \/ from sql as it caused an insert problem for webhook.
+
+---20200724 17:15:05
+Use command-` to cycle through windows of an app
+
+---20200725 12:30:42
+Fixed problem with syntax of log message in patti and cleaned up dashboard.
+
+---20200728 12:33:00
+Added alias for awsweb to aliases and ftp'd to aws ~/bin.  Tested.
+
+---20200803 17:27:56
+add-free-trial is current on aws.  verify is being used to create a consistency check
+
+---20200803 17:51:43
+As of about 1500 on this day, all was working on patti.  Had a problem with stash.  verify questionable.
+Verify the add-free-trial before updating it on aws
+
+---20200805 15:57:13
+https://govotetn.gov/ - to check vote by mail status
+
+---20200807 12:01:07
+Added consistency check for patti.  localhost/patti/tests/index.html
+
+---20200807 17:18:14
+Check out master since develop with functions doesn't work
+
+---20200807 19:03:19
+Got Notes to hightlight tab
+
+---20200811 09:04:29
+Copied sources in dashboard/Documents/Sources to Slack/location
+
+---20200811 17:53:15
+Current patti test version is verify with latest.
+
+---20200812 16:45:48
+Got ball on plane, built with mono no errors, but keys not sending messages
+to ball to move apparently. Question about InputActions and PlayerController
+
+-n--20200813 12:25:42
+Moved RollerBall to ~/Development/Unity and made it a local git repository
+Now to push it to barsoom for safekeeping, then repair it and track
+
+---20200813 12:41:33
+Create rollerball.git on barsoom!
+
+---20200814 22:04:43
+Downloaded Blender to va-air and woo-laptop.  Investigate.
+
+---20200817 12:55:40
+Saved full unity to unity_full_20200819 and stripped down to just ECC_Project and DXF files.  Then compressed to unity.zip and sent to Unity folder for Jessica and Lorien
+
+---20200823 17:54:22
+Sent ThreeSizes.unitypackage to Lorien, et. al.  Still need
+refinement of scaling, puffing, visibility of particles and control
+
+---20200831 16:34:06
+Moved Dropbox Notes to iCloud and fought thru that
+
+---20200831 16:51:09
+Use ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/Documents/iDrive
+to create a link to the iCloud location to be used in scripts
+
+---20200901 10:39:24
+Placed an ACL on all levels from /User to Notes to allow _www access.
+Did not work to allow open from php in apache
+
+---20200901 11:47:02
+Kindle crashes on new woo-pro. What's with the mouse drag on woo-pro
+
+---20200901 12:13:00
+Got queue working on woo-pro.  It was missing correct config.ini.php
+
+---20200902 15:25:10
+Going to tar up notes.  Having real problems reading and writing as needed
+to ~/bin, Dropbox or iCloud from php on web-pages.  Use command line.
+
+---20200902 15:51:00
+Put webserver notes into ~/lib/tarfiles/notes.090220.tar.gz
+
+---20200907 11:17:58
+Moved Notes back to Dropbox.  Was failing in iCloud.  Limits?
+
+---20200907 13:24:30
+Changed Amazon login to wooten.666@gmail.com.  Apparently this changed the
+AWS root login also.  How to transfer the root login over to patti without
+messing up my Amazon shopping?
+
+
+---20200908 15:16:08
+brew install unity, added rsync_Notes, dropbox to webserver

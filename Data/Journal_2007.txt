@@ -1,0 +1,1795 @@
+---20070102
+
+	1)  Use:
+		com.mysql.jdbc.Driver as the driver class in the config file
+			driverClass for pcpi.
+	2)  Need to remap objects -> relational using Hibernate to get rid of
+		TopLink in pcpi.
+	3)  Look up forth displa and add it as screens plus an editor for forth.
+	
+
+---20070108
+
+	1)  Determined again that ShouldersPortable (AirPort) network 
+		signin is 128 bit ASCII and value is 20202.
+		
+	2)	Progress in getting pcpi running in Windows under Mac.
+		a)  Added advworks odbc connector.
+		b)  Added taxdb odbc connector.
+		c)  Created a D: drive under parallels
+		d)  Learned about Shift-Control click for right click.
+		e)  copied over the webapplication folder from Development/pcpi-deployed.
+			apparently the top piece of the pcpi colored part is inline, BUT
+			the bottom piece is in Development/web-applications?
+		f)  The logo doesn't show up under the pcpi application ( probably a skin server thing)
+		g)  Get error when trying to run quickcalc.  Not sure why yet.
+		h)  Added a new hire sucessfully.
+		i)  Haven't checked many things, but will begin.
+		j)  Self Service not working, haven't added benefits, etc.
+		k)  Haven't tried to go over to using mySQL yet.
+		l)  Not seeing any queued items.  How to add one or why not seeing them?
+			I don't think queuedb is separate is it?
+		
+
+---20070109
+
+	1)  Created new Starbucks name and passwd.
+			woo37830/random1
+			
+	2)  Ran pcpi in windows.  Fixed the SkinServer.jsp?  Need to add button
+		to access the way we change the user profile.  CompanyInformation.jsp
+		doesn't have that button.  Uses advworks from d:/Development/Projects/pcpi/conf.
+	3)  Would really like to start over, by building a "loader" that builds up the
+to build the processes.
+		Slowly add the database tables and connections to get and put information that is
+		needed to be stored.  Use the SOA approach.  When I need data get it via a service
+		or save via a service.  Many of the services would be CRUD for various tables.
+		a)  Start with define a person who has roles of employee, and user.  Thus, we
+			have an actor that is a link joining the person to the role.  Does the general
+			role such as employee or user have a list of behaviors?  When someone logs in,
+			I ask the roles for the role 'user'.  From it, I get the name of the implementing
+			class User.  Classes have a flag that tells me if it is a persistent class, I.e. it implements
+			the persistent interface.  I can then use the name of the class to look up
+			the service name for CRUD operations.
+			
+			<roles>
+				<role name='user' />
+				<role name='employee' />
+				<role name='su' />
+				...
+			</roles>
+			<services>  // create Service that reads these in and makes them available.
+				<service name='addPerson(1,2,3,4,5)' sql='create PERSON with (lastName, firstName, 
+					emailAddress, phomeNumer, phoneType ) using (%1, %2, %3, %4, %5 )' />
+				<service name='addRole(1)' sql='create ROLE with (roleName) using (%1)' />
+				<service name='addActor(1,2)' sql='create ACTOR with (roleName, 
+					role, className) using (%1.as.%2, %1, %2) />
+				<service name='addUser(1,2,3)' sql='create USER with (userID,password,personID) 
+					using (%1,%2,%3 ) />
+				<service name='validateUser(1,2)' class='Validate' method='user'
+					args=(%1,%2) />  // calls Validate.user(%1,%2) returns true or false
+				<service name='getPersonWithUserID(1)' sql='select User.personID PERSON.lastName, PERSON.firstName,
+					PERSON.emailAddress, PERSON.phoneNumber, PERSON.phoneType from USER join PERSON using personID' />
+				...
+			</services> // read into client/servlet to define calls.
+			
+
+---20070111
+
+	1)  Go to the access database and get the list of processes built into pcpi
+	2)  Create a new workspace that is pcpi-bpm
+	3)  Create those business processes, including early creating a default page
+but has the top branding, and uses AJAX where
+		possible for updating current worker, etc.
+	4)  So, when a process is started like EmployeePersonalData, that process just
+		loops on itself until it is terminated by starting another process.
+		The process id is kept in session as current_process and if there when starting a
+		new process, the current_process is terminated, i.e. marked complete and the transition
+		is made to its end state.  The new process then becomes the current_process.
+		There is also a current_selected_employee and that is the data that is displayed
+		if the process is an "employee_process".  Clicking on an employee in the list
+		of employees, makes that employee the "current_selected_employee".
+	5)  To test this, create a process to addEmployees.  This fills out some Personal data
+		(lastname, firstname, payid, ssn, email, phone, phone_type).  This will be maintained via the
+		transition from "Add", where the action will be to add the employee object
+		to an employees list in session, and wait for another add or Done.
+	6)  Start the Processes/Employee/PersonalData process.  We should see
+		the PersonalData.jsp with the list of employees down the left, fields filled in
+		with the current_selected_employee, which will be the first one if null.
+	6)  The next/prev buttons should select change the current_selected_employee and
+		cause the page refresh.  Clicking on an employee should do the same.
+	7)  Create the EmployeeList.jsp to handle this list.  If the List is null in
+		session, bring up popUp list to enter a fileName to load employees from and 
+		load them in.
+		
+
+---20070114
+
+	1)  write a database script to select all in the business process table and dump it to a file.
+		the menupaths to a file.  ***DONE*** using export to Excel and then exported to .csv
+		In the jsp, check if xmlmenu and tabs are in session.  If not, then read in file
+		using data from config.  Possibly use parts of the Navigator.java and the PayExpertMenu.java
+	2)  Work on the tree and tabs.  See ~woo/Documents/Reference/xml_asl.webarchive?
+	
+
+---20070116
+
+	1)  Session not being cleared on logout.  Also clear it on login!
+	2)  Need to copy from CompanyInformation.java the stuff about the news months, etc.
+		Also may have hints about tabs
+	3)  Need to figure out how to do the xml when it is in a string rather than a file. ***DONE***
+	4)  Support center stuff comes from CompanyInformation.java also.
+	5)  Integrate a test case of a process and getting the queue list from JBossBPM.
+	
+
+---20070117
+
+	1)  Purchased Hidango's Calc Plus.
+		order number is:  12529019
+		and activation key is: 2RYP14HEYM
+	
+
+---20070120
+
+	1)  got new version of tree working using xmlmenu from session.  Still reads xsl in, but can cache that also in session.
+	2)  Need to add proper links in UIMenu and get employee list working same.
+	3)  make each link do a target= proper frame!
+	4)  Should probably just create an xml file with the process menus laid out.  They could
+		have a set of tags about which payroll cycle they should be exposed in.  Absence of the tag
+		means they are exposed in all.  Add the actual process names and the role that can start them.
+		
+	5)  When select employee, set an session variable to the current_selected_employee and put the information from the xml file
+		read in once during testing.  Get the ssn, payroll #, and status and put them in session with the current_selected_employee also.
+		display them in the little employee browser.  Make the forward and backward arrows actually select the previous and next from the tree!
+	
+
+---20070219
+
+	1)  Open .mac web site with http://homepage.mac.com/jwooten37830  for the one under Sites.
+	2)  under web/sites is addressed by http://web.mac.com/jwooten37830/ProcedureManuals/
+	
+
+---20070220
+
+	1)  the pcpi-bpm is started and needs updating to run the processes via a servlet.
+	2)  Created a new btree workspace where I will build a btree component.
+	
+
+---20070222
+
+	1)  Subscribed to www.eclipsemag.com ***DONE***
+	2)  Installed FastTrack into Eclipse 3.2 - seems to be a nice way to track actions
+		on work being done.  Discuss with Robert.  ***TODO***
+	3)  Downloaded Sbuversion.dmb and installed.  It says it is okay.  But apparently must
+		also have a subversion server.  I've set up account btree@OpenSVN.csie.org
+		to test it out.  Not working yet.
+	4)  Need to learn how to use with Eclipse, etc.  How to set up our own local server.
+	5)  Aptis - design summary - last mtg. list of services were gone over - no questions
+			use cases from which invoked?  Strategies for moving cache?  Alternative study,
+			evaluate them.  Reasonable data, sizes, etc.  Not face to face, not in scope.
+			
+
+---20070223
+
+	1)  Cannot locate xanadu from Windows in Parallels.  ***DONE***  Had to go to shared ethernet in the VM settings for Windooze.
+	2)  Need to be able to move documents between them.  
+	
+
+---20070225
+
+	1)  eBay account is woo3780 
+	2)  paypal account is jwooten@shoulderscorp.com/random123
+	
+
+---20070226
+
+	1)  Downloaded all chapter examples of the O'Reilly book Ruby on Rails, Up and Running.
+		These were put into ~woo/Development/Library as photos-chapter-n.  There was
+		some confusion about the names of the files.  They had 7 & 8 but no 6.  There is no
+		chapter 8 in the book.  The alignment seemed to be 5,6,7 instead of 5, 7,8.
+		***TODO*** Start with the chapter 5 and show images, etc. Learn how to do stylesheets
+		view images, etc.
+		
+
+---20070227
+	
+	1)  Attended Interagency mtg.  Met Jennifer who is replacing Pablo.  We have to meet later
+		in the week to learn how to help her.  Also Sarah Djuric introduced Joe who is the new program
+		manager on Northrup side.  He wants to meet perhaps on Friday.
+	2)  Reviewed SNOMed with Bob.  He's working on a set of notes about the mapping process.
+	3)  Met with Col. Marenkovitch about Imaging, Aptis, and problems with mapping. Long conversation
+		and he wants perhaps a request for a white paper from Aptis about how abstraction will
+		be done to prevent vendor binding.  Also, what is status of putting proprietary 3M codes
+		as referencial elements in the image repositories.  8-8 day.
+	4)  Spent dinner with Bob going over the capture of lessons learned and he roughed out how
+		he could do that.  This is billable as it will then be available to Ed on our Wiki.
+		
+
+---20070228
+
+	1)  Downloaded and installed WxPerl and tested.  It provides graphics capabilities on
+		os x from inside perl.  Run by using wxPerl forth.pl
+		the demos are in a folder under Perl in OlderSoftware and there is documentation
+		under wxPerl in Documents/Reference.
+	2)  Changed password on Wiki at:  http://shoulders.pbwiki.com/ to "should1!" and sent to
+		Christine and Bob.  Christine installed a page of pictures.  Bob is working on some
+		content about how he does his job at MHS.
+	3)  Look at forth.pl and forth.dict the FORGET removes the word, but the word can still be
+		executed.
+	4)  Installed perlDBv1 under Perl and tested.
+	
+
+---20070301
+
+	1)  downloded pforth-v21 a C version, put it into XCode as standard C command line code
+		compiled it, created pforth in build/Release/pforth and copied to pforth directory.
+		executed it with pforth -i system.fth and it created the pforth.dict.
+		Now running it with pforth loads from pforth.dict and executes.
+		Need to see what the defs are, etc.  and do more testing.
+		***TODO*** read *.fth and understand and test more.
+		***TODO*** Figure out how to talk to AquaTerm and create plot there!
+	2)  pfcompil.c has the ok\n where one could put the ">" if desired.  Also should
+		print out version of code and saved dictionary being used.
+		
+
+---20070302
+
+	1)  Create minimal Tomcat webapp with jsps, css, web.xml, and servlet to send to Robert.
+	
+
+---20070304
+
+	1)  Create jsp? or servlet that runs and allows a phone to connect and do commands that
+		one's mac or pc also connects to, providing credentials and handles those commands.  Like
+		from the phone I can do an "ls ~woo" and it gets saved on the server, then when the mac
+		connects and identifies itself, it reads the command, executes it in a terminal window,
+		then prepares the response and sends it back to the server where it's saved until the
+		phone asks for a result and receives it.  Back and forth.  Come up with a set of 
+		commands to do system tasks, look up mail, documents, etc. and retrieve and put them.
+		
+
+---20070305
+
+	1)  Clear up AppSuite and Meeting Assist, which is most developed, etc.?  Get rid of other.
+	2)  Also sc_workspace, sc_statemachine, pared workspace, which does what and why 3 of them?
+		Clean up and get rid of duplicates.  Refer to the other if necessary.
+		
+
+---20070313
+
+	1)  Worked from 12:30 until 6:00 with Robert on getting a new "demo" site available.
+		It is in workspaces/AreteQWebApp and the target directory is the webapps/qServer
+		but one has to edit web.xml to point to the demoConfig.ini and in that to the
+		location of the controlData.  We need to use a classLoader reader to get to the
+		files in a machine independent way.  ***TODO***
+		Also, we need to fix the login and logout, etc.
+		
+	2)  The areteq web site is:  ftp://tetris.dreamhost.com/areteq.com
+		and the user/password is:  areteq/ferret, but there is no Tomcat there.
+		Charles will work to get that setup on jaysec.
+	3)  www.josbank.com	jwooten37830/random.1
+	
+
+---20070316
+
+	1)  paypal is jwooten@shoulderscorp.com/random01
+	2)  Completed another version of AreteQWebApp with two projects and tested.
+			3 hours
+	3)  CITPO - reviewed the new document received and placed in review  ***TODO***
+			2 hours
+	4)  Worked on the report for CITPO
+			2 hours
+	5)  Installed /Applcations/Utilities/AMSTracker
+			AMSTracker -u 1 produces 3 column output of the accelerometers on the notebook
+	6)  Downloaded iRobot.pl and placed in ~woo/bin.  It reads the accelerometer and
+			can use it like a Wii to control a Roomba with bluetooth or serial.
+	7)  Downloaded AMSVisualizer and installed into Utilities.  Shows notebook orientation.
+	8)  Downloaded AMS2HID which allows accelerometer data to be directed to an application.
+	9)  Installed neverball in Applications/Games/neverball  haven't been able to get it
+			to work with AMS2HID.
+			
+
+---20070329
+
+	1)  Started a ProjectTracker rails project
+		a)  cd Development/workspaces/rails
+		b)  rails projectTracker
+		c)  cd projectTracker
+		d)  ruby script/generate model Project
+		e)  mysql -u root -p
+			i)  create database projecttracker_development;
+			ii) quit
+		f)  edit 001_create_projects.rb under db/migrate and add under self.up
+			    create_table :projects do 
+t
+
+					t.column "name", :string
+					t.column "poc", :string
+					t.column "technical_status", :integer
+					t.column "schedule_status", :integer
+					t.column "cost_status", :integer
+					t.column "milestone_due_date", :date
+					t.column "comment", :string
+    			end
+    	g)  rake migrate ( creates table and columns )
+    	h)  ruby script/generate controller Tracker
+    	i)  under app/controllers edit tracker_controller.rb to read
+    		class TrackerController < ApplicationController
+				scaffold :project
+			end
+			( Note here that :project is the name of the model "Project" )
+		j)  ruby script/server
+		k)  http://localhost:3000/tracker ( note here that the controller is used )
+			(This give a listing of the items in the project table  and can add, delete, etc. )
+		l)  ruby script/generate scaffold project tracker
+			( this generates the scaffold and the rhtml pages for further editing 
+				You're asked about replacing files, etc. )
+	
+
+
+---20070330
+
+	1)  made backup copy of /usr/local/mysql/data as data_070330.tar after thinking I had
+			erased it.  Used > sudo tar -c -f data_070330.tar data/  to accomplish this.
+
+
+---20070401
+
+	1)  Wrote "Is It Time?" for possible publication in CIO magazine.  Sent to editor for consideration.
+		filed under ~woo/Documents/Marketing/IsItTime.doc.  Charged 5 hours to marketing 11:00-16:20.
+	
+
+---20070403
+
+	1)  Used gem to install openwferu a ruby workflow engine.
+			sudo gem install openwferu
+	2)  added a rails project called testrubywf and created a file operwferu.rb with an example
+			from the open source site http://openwferu.rubyforge.org/index.html.
+	3)  Executed ruby openwferu.rb and it executed correctly posting the results of the work flow.
+	4)  It isn't clear whether this handles queuing very well or roles.  Will have to check farther.
+			***TODO***
+	5)  Downloaded all source using:
+			sudo svn checkout svn://rubyforge.org/var/svn/openwferu/trunk/openwfe-ruby
+			into testrubywf.  Need to look this over more.  Apparently there is supposed to be
+			an example of persistent work items.
+	6)  Downloaded rote from rote.rubyforge.org using:
+			sudo gem install -r rote
+			Installed into /usr/local as far as can be determined.  Tests stopped failing
+				because of lack of ability to include 'rote'  Also this caused a download
+				of RedCloth a documentation package?
+				
+
+---20070404
+
+	1)  Use alt-daisy-L to toggel line numbers in TextMate!
+	2)  A little work with StereoScope.  NSView.h instead of View.h, etc.
+		but, Cube.h doesn't seem to work.  Maybe a method in implementation or not there that is
+		the Cube.h file?  Also, the static xxx something gives a syntax error. NXVector or
+		such not understood or the static part?  Need to write tests for some of these files!
+	
+	
+
+---20070409
+
+	1)  Nieman Marcus account woo37830/random1
+		Account # 044928820719
+		
+
+---20070412
+
+	1)  Skype account name is jwooten37830/random1
+	2)  Still need to extend using visa, I suppose.
+	3)  Sent resume to www.atlanticresearch.com/candidates.
+			Should be able to login with art/friend to do searches, read stuff about
+				negotiation.
+				
+
+---20070414
+
+	1)  Installed Darwin Ports by downloading diskimage from Darwin Ports and installing
+		created /opt/... and installed.
+	2)  did sudo port -d selfupdate and entered root password.  Did not update as was current.
+	3)  did sudo port install p5-pdl.  It began fetching and installing.
+			failed with 
+			checking host system type... i686-apple-darwin8.9.1
+checking target system type... i686-apple-darwin8.9.1
+checking build system type... i686-apple-darwin8.9.1
+checking for a BSD compatible install... /usr/bin/install -c
+*** This configuration is not supported in the following subdirectories:
+     target-libobjc target-libffi target-boehm-gc target-zlib target-libjava
+    (Any other directories should still work fine.)
+gcc-3.3: installation problem, cannot exec `cc1': No such file or directory
+gcc-3.3: installation problem, cannot exec `cc1': No such file or directory
+*** The command '/usr/bin/gcc-3.3 -o conftest -g   conftest.c' failed.
+*** You must set the environment variable CC to a working compiler.
+
+Error: The following dependencies failed to build: p5-astro-fits-header p5-astro-fits-cfitsio cfitsio gcc34 perl5.8 p5-extutils-f77 p5-filter p5-inline p5-parse-recdescent p5-text-balanced
+Error: Status 1 encountered during processing.
+
+Couldn't locate CC but i set it to /usr/bin/gcc.
+
+
+---20070428
+
+	1)  Installed g77-intel-bin.tar.gz from sourceforge.net.
+		a)  Had to put  export PATH=/usr/local/bin:$PATH as first statement
+			at beginning of model.sh to get model to compile using this compiler instead of
+			one I had copied earlier that was for the PPC.  
+		b)  Both minuit and model run successfully with this.
+		c)  Installed Stalarium and gnuplot.  gnuplot needs X11 from OS X developer DVD
+		d)  Installed Plone, a content management system.
+		
+		Use the account information below to log into the Zope Management Interface
+The account has full 'Manager' privileges.
+ 
+  Username: admin
+  Password: 785OEWQg
+ 
+Before you start Plone, you should review the settings in:
+ 
+  /Applications/Plone-2.5.2/Instance/etc/zope.conf
+ 
+Adjust the ports Plone uses before starting the site.
+ 
+To start Plone, issue the following command in a Terminal window:
+ 
+  sudo /Applications/Plone-2.5.2/Instance/bin/zopectl start
+ 
+To stop Plone, issue the following command in a Terminal window:
+ 
+  sudo /Applications/Plone-2.5.2/Instance/bin/zopectl stop
+
+
+I made new account called woo/random1 as a manager using  sudo bin/zopectl adduser woo random1
+	after stopping plone.  It worked and I could log in.
+	
+	Need to do some reading about this.  ***TODO***
+	
+	e) Installed ChangeFinder and it has two pieces CF-A and CF-R, CF-A shows all files.
+	f)  Installed Emacs also.
+	g)  Installed CLIX, a gui for executing common unix commands.  Click on the .clx file to get
+		a list of those.
+	h)  Installed Onyx a utility to do periodic cleaning of log files, etc.
+	i)  Joined Plone at http://www.contentmanagementsoftware.info as woo/random1
+	
+
+---20070430
+
+	1)  OpenCMS seems to be working with Admin/admin and woo/random1.  Need to experiment to see how to use it.
+	2)  SugarCRM seems to go to try to install and fails.
+	3)  Mambo ( CMS ) seems to bring up stuff, but not sure what to do with it yet.
+	
+
+---20070504
+
+	1)  Downloaded Palm OS development stuff.  See docs in WabaJump for instructions.
+			Need to change batch files to shell files and check with the watch example.
+			
+	2)  Created new account jwooten37830@gmail.com/random1 for all except Shoulders.
+	
+
+---20070508
+
+	1)  Installed Ruby RDT in Eclipse 32.  Tested that it showed up.  Need to create a Ruby project
+		and verify that I can compile and run and debug.   ***TODO***
+	2)  PRIVACY ASSIST   JWOOTEN37830/RANDOM1
+	
+
+---20070510
+
+	1)  Downloaded pgp263is.tar into Utilities.
+	2)  did make with 386bsd before trying to follow instructions about USA.
+	3)  Created okay version, but can't create USA version
+	4)  copied non-USA version to ~woo/bin and found in tarfiles the pgp_keys I had.
+	5)  copied that directory to .pgp in ~woo.
+	6)  Doing pgp -d Code.pgp created Code file that was decoded!  All of poem not there.
+		will have to figure out where it is.
+	7)  Look on Windooze version to see if I can decode.
+	
+
+---20070512
+
+	1)  Downloaded dist-build.xml.  It is an ant script that purposes to create a distribution
+		exe file obfuscated, etc.  Need additional "things" to get it to work.  ***TODO***
+	2)  Need to create the database for storing and managing the licenses.
+		Will start with a spread sheet.
+		
+
+---20070513
+
+	1)  Downloaded JExpress to evaluate for creating self installing code releases.
+	
+
+---20070519
+
+	1)  Downloaded ProGuard, a java class file obfuscator, and put it under
+			~woo/Development/Utilities/proguard3.8
+	2)  To make it so that the application has only one menu bar at the top of the screen
+		do:  java -Dapple.laf.useScreenMenuBar=true classname
+		
+
+---20070520
+
+	1)  Checked out Plone.
+		xanadu:~ woo$ cd /Applications/Plone-2.5.2/ 
+		xanadu:/Applications/Plone-2.5.2 woo$ sudo /Applications/Plone-2.5.2/Instance/bin/zopectl start
+			Password: (my login password)
+		. daemon process started, pid=474
+		xanadu:/Applications/Plone-2.5.2 woo$ 
+		Start Safari
+		http://localhost:8080/Plone
+		login as woo/random1
+		
+
+---20070606
+
+	1)  Password for Chase Fraud alert is JWOOTEN37830/random1
+	2)  Downloaded aipdf-bin.jar, decompiled and then figured out how to 
+		make PDF show up in separate frame.  Text shows up (raw) in regular frame.
+		***TODO*** Look at how to bring up pdf in regular frame with paging buttons, etc.
+	3)  Downloaded JPedal, and open source PDF viewer and source and API.  It appears
+			to be reasonably easy to use as a panel not a frame.  Then extract
+			content using api methods?  Alter to get more data on location, etc.?
+			
+
+---20070609
+
+	1)  I might need to create a new interface "Configurable" that has a method:
+	
+			public Object getValue(String name)
+			
+			public void setValue(String name, Object value)
+			
+			and a configure(Configurable object)
+			
+			Then each listener has an empty constructor and is followed by 
+				listener.configure(Configurable gui);
+				
+			QGUI implements Configurable and is passed into MenuBuilder at construction time.
+			
+			Each listener then can request "by name" the value it needs and it is returned as
+				an object.  It is responsible for converting it to the proper type and getting the
+				information.  Thus the listener for redact has gui.getValue("textHasValue") checks that the textPane.getText()
+				is not empty and returns a new Boolean(true) which is evaluated and if it has value, the redact
+				button is enabled.  the open listener does a gui.getValue("hasDictionary") and QGUI
+				checks that the path to the dictionary is set and returns a new Boolean() true or false.
+				If not set, then the open menu item is disabled.  Thus as soon as the open dictionary item
+				is clicked the action handler for it gets the value, and sets it etc.  The notice goes to
+				the open item which does the above.
+				
+				
+				
+
+---20070614
+
+	1)  jsp-skins works if you login via jsp/ChangeUserProfile.jsp
+	2)  nyc works logging in as nyc/login.jsp  some features fail now.  SQL errors
+	3)  pcpi-bpm/login.jsp works with &PI/SuperUser/adpadp
+		looks okay, but most functionality missing.  Need to revisit and see where I was and what
+			is status.
+	4)  qServer can be logged into via banking/banker or such.  Seems to be missing things.
+	5)  sc_app, which used to work seems to have entirely wrong paths, etc.  hangs
+	6)  Corrected some places where I had moved things around in sc_framework, etc.
+		viewWorkflow.jsp hangs, but needed the jms jar file which I found.
+		(clinical client doesn't show place to enter patient id)
+	7)  Created FileUtilities.fixDirectoryPath(path, org) to fix up the screwed up
+		paths with duplicates, etc. 
+	8)  This corrected the DocumentationCreator with now works.
+		I added a login window to it so that it would better locate the directories and files
+			with added browse buttons.
+			
+
+---20070618
+
+	1)  <SCRIPT LANGUAGE="javascript">
+<!--
+window.open ('titlepage.html', 'newwindow', config='height=100,
+width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no,
+location=no, directories=no, status=no')
+-->
+</SCRIPT>
+
+
+---20070708
+
+	1)  PdfDecoder - 5710 or so.  If we uncomment lines, boxes get drawn on screen.
+	2)  In SwingGUI - 1765 or so.  Adding to decode_pdf which is a PdfPanel does not show boxes on screen.
+		will try to set background color or something.
+	3)  boxes get drawn ( wrong places/size, etc. ) but when click, screen redraws without them!
+	
+
+---20070715
+
+Joined Palm Dev.  https://pdn.palm.com/regac/pdn/auth/page?Page_Name=GET_STARTED_PALMOS
+
+Need to download a bunch of stuff.
+
+Also installing WebSphere Java VM on phone and other stuff including "opera mini" supposedly a more iPhone-like browser.
+
+Treo_700p_Sprint_Simulator_Release_Build_1108 install on windooze.
+
+Discussed changing plan to 2100 free, nights after 7 & weekends don't count, first add'l phone free, others $10, drop 9901.
+	$20 unlimited text all lines.  mobile to mobile roaming free.  end of cycle.
+	Ardis(Nova Scotia) - 2nd line 4774 disconnected.  2:38 min.
+	
+excite page - john-wooten/641090
+
+Signed up for SimulScribe on Phone. Need to record the current voice mail number if I want to go
+	back to it.  865-300-4774
+	forward no answer to 9315634013  [x] 070719
+	(603) 369-4498 is the number I call to get voice mail ( program to a key ) [x] 'P'
+	Should I not get a text message or some way to use this?
+	
+
+---20070719
+
+New Tasking - Cathy wants us to help determine the main point of contact for the MHS Help Desk
+	so that we can find out how to set up the Tier 1, Tier 2, and Tier 3 help contacts for
+	the various JEHRI programs.  The tier 3 will be someone from the vendor for that contract,
+	The Tier 1 or 2 might be a Shoulders person.  We need to collect the training materials for
+	all of the programs under JEHRI and review them and then figure out the process for training the
+	people who will be the help desk assistance for Tier 1, 2, and 3.
+	
+
+---20070720
+
+Waffles - review Lockheed M to recommend CTO. Do calls.
+ 	Near end of next week.
+ 	26th
+ 	
+
+---20070725
+
+Got CAC card activated.  Use 07141789 for PIN number with card.
+	if have to log in with username/password, use jwooten/JBond_007.
+	
+
+---20070728
+
+Parallels Desktop ProductID 00009-3221231270-030004
+Downloaded new build 4560 July.
+	expanded windooze hd1 to 16 Gbytes using Parallels Image tool.
+	Then tried the Unbuto expander but it failed.
+	Started Windooze, and used Partition Magic to expand and it did.
+	apparently now have 16 Gbytes of disk.  New version of Parallels seems better.
+	Need to set Smart Select so that Word uses Mac version always.   ***TODO***
+	
+	
+
+---20070731
+
+Completed updates to Palm after OS update.  Need to create inventory and where each comes from
+		with keys's etc.   ***TODO***
+		Status
+	1.  Location crashes Palm - location mgr x
+	2.  Missing Golf - websphere site midlet
+	3.  Missing WebSphere Java x
+	4.  Movie app is missing x CorePlayer
+	5.  Opera Mini is missing x
+	6.  Dictionary missing files - www.beiks.com x.  
+	7.  SuperWaba crashes x
+	8.  GoogleMaps missing x
+	9.  CorePlayer  x
+	10.  OnDemand has problems and TV schedule doesn't work - seems okay now.
+	
+	Set FileZ to do backups on all of the above and supporting files.  Be sure conduit for
+		backup is turned on occassionally.  Did this 0n 2007-07-31
+		Updated Treo Songs also in iTunes.
+		
+Ginsberg's Theorem:
+        (1) You can't win.
+        (2) You can't break even.
+        (3) You can't even quit the game.
+
+Freeman's Commentary on Ginsberg's theorem:
+        Every major philosophy that attempts to make life seem
+        meaningful is based on the negation of one part of Ginsberg's
+        Theorem.  To wit:
+
+        (1) Capitalism is based on the assumption that you can win.
+        (2) Socialism is based on the assumption that you can break
+            even.
+        (3) Mysticism is based on the assumption that you can quit the
+            game.
+
+
+Downloaded newest version of JBoss Application Server and installed in ~woo/Applications
+Need to complete download following notes in readme.txt under jboss-seam/examples/registration
+	I'm interested in experimenting with the tasks etc. to see how to do that better.
+	
+	The source codes etc. are in examples, i think.
+	
+Seam tutorial in under Sites/seam/ and can be found under MoreStuff on web-page
+	at http://localhost/~woo/
+	
+	
+
+---20070801
+
+Meeting at Towers Cresent Office Space Conf. Room C, 13th Floor.
+	Present:  Bob, Ed, John
+	Time:     15:00 - 17:00
+	Subject:  JEHRI - Overall System Configuration, POC's, etc. 
+	
+
+---20070814
+
+Add /Library/Logs/... to the crontab file for periodically cleaning up
+Add /Library/Tomcat/... logs to the crontab file for periodically cleaning up
+Edit and fix the Ant script for generating the application.  Add one option
+	that is one executable jar file.  Is there a way to assign an icon to the jar?
+Add the swim lane painting now that the pages are displaying correctly in wf_editor
+Check on the repaint problem in QGUI!
+Change the author, etc. in the info when the redact is done!
+
+	
+
+---20070821
+
+240860635
+FedX
+Federal Express
+ShouldersCorp.
+
+
+---20070826
+
+The codes for the EVDO Sprint WWLAN card are:
+
+	Activation:  556099
+	MDN:		 865-684-3077
+	MSID:		 865-385-1805
+	
+
+---20070906
+
+to free up a branch tag
+
+  552  cvs status -v RedactionGui
+       
+  607  cvs tag -d alpha 
+  608  cvs tag -b alpha
+  609  cvs update -r alpha
+  
+
+---20070908
+
+Determined that if I place a script in /etc/weekly.local it will be run weekly by crontab or
+	anachrontab.
+	
+Run ls -al /var/log/*.out to see when scripts were last run.
+Created script in alias to run this at terminal startup.
+It appears that on the Mac instead of crontab, launchd is used to schedule scripts.
+	/System/Library/LaunchDaemons directory contains com.apple.periodic-weekly.plist
+	and this points to /usr/bin/periodic with the keystring of "weekly"
+	The interval is set there with StartCalendarInterval of Hour=3, Minute=15, Weekday=6 (Sat)
+	The /usr/bin/periodic can be run as "periodic weekly" manually.
+	
+	It checks /etc/defaults/periodic.conf to see if there is a set of additional locations to check
+			and if so it sources them.
+			It contains references to /etc/periodic.conf.local and /usr/local/etc/periodic
+			It sets the weekly_output to /var/log/weekly.log
+
+Created bin/clean_extra_weekly_logs.sh and bin/clean_extra_monthly_logs.sh
+	The weekly one works on files in /private/var for *.gz and other dirs for *.gz
+	The monthly one checks for files *.log* that are older than 60 days in Tomcat logs and User/woo logs
+	I've added these to the /etc/weekly.local and the extra_monthly will check still only for those older than 60 days.
+	It ran sucessfully under test mode in sudo periodic weekly and logged to /var/log/weekly.out
+	
+Downloaded jfreechart and jcommon.  Look at it for charting in the simulations
+		How do they do their demo.  I like the look!  
+		
+Create a new area sc_graphics and have a demo.DemoSplitFrame that shows the frame
+	with the tree in the lhs, clicking on a tree item brings up a graph in the top right
+		and a reason in the bottom right.  If no class found, brings up default error msg in both.
+
+NOW,  See if we can put the wf_editor into this framework by having the appications
+	in the tree with the processes under them.  Clicking them bring us in the top right to edit, etc.
+	What shows up in the bottom right?
+	
+Look up CVSGrab
+
+Created DemoSplitFrame that runs JavaDrawViewer.  When you select a tool it creates
+	the figure in the scroll pane.
+	Clickikng on a tree Item causes a valueChanged message to go to DemoSplitFrame.
+		There it creates a DisplayDemo class from the description and fills in the bottom
+			with the html file from the description.
+	Now, how to handle if the item on the left is the name of a business process?
+	We want it to read in the process and create the panel just as DisplayDemo does, i think.
+	We add the panels as tabs? each has a scroll pane.  We keep a list of them in the Windows menu.
+	We put the results of selecting something into the bottom window.
+	Create the menus using my menu builder, but the Windows one is dynamic and the
+		apps and processes are dynamic, reading the directories under the organization/applications
+		
+	We put the different kinds of editors ( each a "JavaDrawViewer" ) into the Editors Menu
+		and use that to swap the kind of editor from workFlow to Simulation to Actions, etc.
+		
+	I need to factor out the parts of JavaDrawViewer that are the "framework" for each editor.
+	
+DemoSplitFrame shows a ProcessEditor getting created via the menu
+	and some charts being created via the tree.  The processView retains its figures between
+	viewing other charts. The list of windows gets added to and changes the title and description
+	when a Window is selected.  There needs to be an asterisk beside the selected window
+	AND the drawing itself is not being switched!  I think I can keep the drawing with the name
+	of the window in a hashMap and just restore it?  Did that with hashmap.
+	When a process is selected in the tree, and added to windows, it needs to have an asterisk.
+	When a process is selected in the Windows menu, it needs to change the asterisk and highlight
+	the proper tree item!  Use notifiers where possible.  Add a ShowProcessItemListener
+	so that each windows menu item gets hit in turn.  If the name is right, we set the "key" icon
+	and if not we turn it off.  We also in the menuhandler for the windows menu see if we can
+	make the TreeNodes be notifiable via extending them.  Then they check to see if they are the right
+	node and if so highlight, else unhighlight.
+	
+Factor out the JDrawingView stuff from DemoSplitPane and put it elsewhere.  I want to have
+	another editor to be able to add.  It could be real different.  So a lot  of stuff about
+	drawings go into JavaDrawViewer instead of DemoSplitPanel. 
+	
+
+---20070909
+
+Create a set of tabs across the bottom of the bottom right window in DemoSplitPane.
+	Those are the "views", docs(present), tasks( or todo on this perspective ), properties ( for
+	when you click on a figure, etc. ).
+
+Extract an interface from JavaDrawViewer that others can implement such as an ActionEditor.
+	Abstract class here for common behavior?
+
+Have a Project menu?  Have preferences for the project like which views to show at bottom right
+	Which editors are available, for the left panel, what perspectives are available? 
+	Also add in File menu the New... which will allow creating new Application (?), New Process
+	under current application ( where does that show ? in tree? ), New organization (again at top of
+	the tree? )
+	
+Organize and now do first thing of extracting all JDrawingView stuff from DemoSplitPane.
+	Create the new notifiable Tree Node first.  Replace drawingEditor by currentDrawingEditor.
+	
+Created TAG with REFACTORED_FOR_MODULAR_EDITOR that has wf_editor working and the new
+	DemoSplitFrame version swapping, etc.  Still needs refactoring of editor into editor.
+	Can't get Tree of processes to update when the process node listener gets a message that it
+	should highlight and the others de-highlight.  At beginning, the things added to the Windows
+	menu aren't highlighted either as they are added.  Should be.  Got the tab closer to work and
+	the drawing closer sending the right messages.  Need to remove the window from the view now
+	and also have a Project with preferences and show views, show Perspectives,etc.  Necessary
+	to add back in the doc if closed.
+	
+
+---20070910
+
+Retrieve email from Josh on OpenAir summary for previous month
+Save into Projects/CITPO/AuditBackup as OpenAir_YYMMDD.xls
+Make a copy of the previous monthlyYYYYMM.xls and rename it to monthlyYYYYM+.xls where M+ is
+	the month reporting on.  Example in Sept, the report will be for Aug and the prevous will be 
+	July.  Copy monthly200707.xls and rename it monthly200708.xls.  The OpenAir_070831.xls should
+	already have been saved in 1 above.
+Sort the OpenAir_YYMMDD.xls on Task, Date, User and save.
+I create a formula in the column (H) at the bottom of each Task type and 
+	enter =sum(Dt:Db)+sum(Et:Eb)/60, where t os the beginnig row for the task type
+	and b is the row number of the bottom task item of a given type, e.g. Data Management
+	This produces the total hours for that task type.  I make sure the cell is formatted to show
+	to the tenths. ( i.e. one decimal place ).
+	
+	Repeat this for the task types. Sum them for the total.
+	I then create one more which is total - ProjectManagement total and that is total engineering support
+	
+Save the file.
+
+Open the monthlyYYYYMM.xls for this report ( previous month to present month ).
+Select the tab for Performance from Mar 11 ( ask Bob Stults )
+If at the top there isn't a section for the month reporting on, copy the previous section and insert
+	it.  Be sure to fix all references, etc. ( I was lucky this month and i had already created one ).
+	If created properly, there shoudl be %allocated, hours allocated, planned hours, and an empty actual
+	hours.  This is where the numbers from the OpenAir go.
+Carefully ( using esc a lot of times ) hand enter the data ( Excel can't copy the data easily
+	from one sheet to another ), and then check that the references for the new cells seem reasonable.
+	Then be sure the cumulative variance is right ( ask Bob Stults ).
+Remember the column number for the last entry. e.g. AK for Aug
+Scroll back to where the plot is.  Click on each line, note the pattern e.g. 
+		=SERIES("Data Management",,('Performance from Mar 11'!$G$4,'Performance from Mar 11'!$M$4,'Performance from Mar 11'!$S$4,'Performance from Mar 11'!$Y$4,'Performance from Mar 11'!$AE$4),2)
+		for DataManagement.  
+		Copy from the last ',' up to but not including the ')'.  Paste that at the end.
+		Then alter the column in this entry to be AK for instance. (The column you remembered before).
+Repeat for each line in the graph.
+At the bottom of the legend, add a line for this entry, i.e. 7 = Aug07 or whatever.
+Save the worksheet
+Close the openAir worksheet.
+Click on the Progress tab in the monthly report.
+Enter/alter any data that is significant, and place the proper item into the task matrix
+	at the top.
+Click on Narrative tab at bottom and update/enter narrative data about previous month.  Some
+	can come from previous statements from open air if significant.
+Save the sheet.
+Locate the transmittalOfMMMYYPerformanceAndProgress.txt from the last month.
+Change all occurrences of the previous month to the present month.  DON't change the 
+	deliverable number.  It is always 2.  Deliverable 2 is to provide a monthly report!
+	Save this with MMMYY changed to Aug07 for instance.
+Prepare an email using this as the information in the body.  Be sure the to addresses
+	are correct.  The support center must be the primary receipient.
+Send this off by the 15th of the month!  DON'T forget to attach the monthlyYYYYMM.xls spreadsheet!
+
+
+Apparently I threw away my ubuntu-6.10-i386...iso disk image from downloads and thus Linux
+	won't start.  NOTE TO SELF... MOVE THINGS LIKE THIS TO ANOTHER PLACE.
+	NEED TO RE-DOWNLOAD ubuntu for i386 and install.  Use fast line.  It is almost a gig.
+	
+Downloading dsl-3.1.iso damn small linux.  Need to remove the ubuntu and install this one.
+
+Discovered that after I moved dsl-3.1.iso to Backups and then in the Linux vm
+		set it to point to that for the CD, that low and behold, what came up was Ubuntu
+		as I guess that's what was in the HD that I had configured.  I just needed something to 
+		cause the boot up?  Anyway, it works now and seems okay.  Will do more.  There are lots of
+		applications out there!
+		
+		The popup menu is by control-shift-click and select.
+		To remove a remote server ( i.e. to unmount something ) select it in places
+		and click to get the popup and remove it.
+		DO MORE STUFF HERE TO SEE WHAT I CAN DO WITH UBUNTU .
+		
+Got submenus to work with MenuBuilder.  The New Organization, Application, Process show up.
+Still When click on tree, the resulting item in the menu isn't highlighted.  Fixed this
+	problem.  It turned out that I wasn't notifying if the window was new.
+	Still don't know how to set the selected condition on a tree node.
+	
+Can't get treePath correct, throws class cast exception.  More research
+Set default editor and need to change background for editor selection ( show somewhere?)
+
+
+---20070911
+
+Have DemoSplitFrame now responding to the Windows, highlighting the proper tree item,
+	and vice-versa.  Also, when the close button is clicked on a window it is removed from the
+	open windows list.
+The Views Docs, and Tasks each add a new tab ( right now doesn't check if available and not add )
+	***DONE***  When closed should still be available, i.e. don't create new each time.
+	Tasks will have data in it at least. TAG="TASKS_TAB_SWITCHES_NO_MOUSE_PROBLEM"
+Getting some kind of mouse problem in the dissplay panel which goes away if I first click
+	on a palette item.  Acts like there is no default tool selected or such.
+	***DONE***  this was failure to set fTool at end of init in DrawingPanel.  TAG="TASKS_TAB_SWITCHES_NO_MOUSE_PROBLEM"
+Should save and then refactor the DemoSplitFrame stuff that belongs to the editor
+	back into the editor and clean up and save again.
+	***DONE**  TAG="TASKS_TAB_SWITCHES_NO_MOUSE_PROBLEM"
+Somehow, the demo description at the bottom doesn't change unless I've done an AreaChart.
+	See palette problem (4)  also.  ***TODO***
+	
+created gooSync acct woo37830 and downloaded a  GooSync prc to my Palm.  It will sync when
+		asked to wooten.666@gmail.com ( changed password on that to black.beauty ).  Set so that
+		Mac also syncs to that wooten.666@gmail.com account and both should be in sync.
+Downloaded viewvc-1.0.4, rcs-5.7, and diffutils-2.8.1 and placed in Development/Utilities/cvsView
+Tested by editing the standalone.py to point to my Python installation launcher.
+	Then in viewvc-1.0.4 typed bin/standalone.py -r /Users/woo/cvsrep
+	Then opened browser to http://localhost:7467/viewvc/
+	and this brings upt the viewer in a limited way.
+	Still ***TODO*** need to install via ./viewvc-install and so forth
+	integrate with either the standard port 80 server via instructions
+	
+Also downloaded cvsgraph-1.6.1 tarball version into same directory
+did the ./viewvc-install and installed into /Users/woo/Sites/viewvc-1.0.4
+Edited the viewvc.conf in the installed location and set the cvsroot to /Users/woo/cvsrep
+copied the cgi scripts (*.cgi) from bin/cgi in the installation directory to
+	/Library/WebServer/CGI-Executables.  Stopped the server from the Preferences panel
+	by clicking on stop personal websharing and restarted it.
+	Typed http://localhost/cgi-bin/viewvc.cgi
+	and the cvs view appeared ( I had changed my address at the bottom and it showed up also ).
+	I then edited my index.html in my ~woo/Sites to include the cvs link and that works!
+Still need to install rcs-5.7, diffutils-2.8.1, and then cvsgraph-1.6.1 and edit
+	the viewvc.conf to tell it where these things are installed.
+Downloaded and installed i2GCal.scpt in /Library/Scripts/Mail.  I added a rule
+	to the mail box to have it run the script if it finds an attachment ending with .ics.
+	What I don't understand is how it connects to my google mail? ( It doesn't work, btw ).
+	
+
+---20070912
+
+Fixed the display of the title of the window to be a JLabel so it shows without a border.
+Got background to finally be white, appears to be the view?
+Got ActivityCreation Tool to create the Activity figure ( using demo.creationTools version)
+	Still need to implement update in the FigureEditor implementation since it is what
+	adds the state to the model, or the process to the application. ***TODO***
+	Use the pn we receive when we are creating the diagram to keep track of the current
+	Application and process!  ProcessNode currentSelection;  Would like the background to be
+	a very light gray. This is in DrawingPanel ***TODO*** make faint outline around border of Activity.
+Add a gradient to the title bar like in the ActivityFigure.   ***TODO***
+Change Demos to "Editor"
+Have ability to create Activities and link them in diagram.  need to implement the adding to 
+	application and processes, etc.  
+Add elbow connector and angle connector so that when they are connected between states
+	they ask for the name of the transition!  They create the linkFigure and I remove it from the
+	palette.  Depending upon the choice of connectors when laying out, it is either an angle or
+	an elbow connection.  May just extend the simple elbow they already have for first test.
+Why doesn't double clicking on ActivityFigure bring up properties browser?
+
+HOW TO CHANGE SCALE?  Can I have each figure be a notification listener and get the scaling information 
+	and the drawing also get the information and everything resets its scale factor so that
+	the paint method uses it?  OR, could I in the panel, in panel override the paint method
+	to pick up the graphics and do an affine transformation by the scale factor and then to super.paint(g)?
+	***DONE*** The scaling is being picked up, etc. but, OF COURSE,  the mouse contains is WRONG
+	Will need to have local copies of the figures and get the scaling to set the contains correctly
+	***TODO***
+PRIORITIES:
+
+		1)  Read in the StateModel if not in memory on first click.
+		2)  Use to do layout as in wf_editor ( just the reading of existing ones ).
+		3)  Figure out why the dbl click isn't working and fix.  Probably the figure
+			isn't handling it's own dbl-clicks and that logic is in wf_editor ( refactor in this case )
+			NEW FIGURES.
+		4)  Add logic for saving, etc as from wf_editor, but through actions.
+		5)  Copy ActivityDependency and correct it so that it allows drag from state to state
+			and asks for transition event name.  Creates link figure and connects it.
+Built and installed rcs-5.7 using ./configure, make, sudo make install, make clean
+	and also diffutils-2.8.1
+	Failed to install cvsgraph-1.6.1 since it neede GD lib and when I downloaded it and tried a make
+		I got a failure in that /usr/local/lib/libpng12.dylib was not found.  More research needed.
+		Can't find rpm version to install directly.
+		
+
+---20070913
+
+Updated GooSync account (woo37830/random1) to provide multiple calendar support.
+	can't seem to see those on my phone yet, though.  Had to go back after paying and deleting
+	my device and then select the categories I wanted to have synced.  Now syncing 7 calendars.
+	I think the Mac via the Sync app syncs to google, while the Mac also syncs to .Mac.
+	Then the GooSync app on the phone can get the infor from the GooSync account which gets its info
+	from Google calendar.
+Signed up for developerpavillion an Access site for getting tools to develop for Palm.
+	jwooten@shoulderscorp.com/random1
+Added bookmark ACCESS to take me there to download Palm SDK when I have more bandwidth.
+Saved a simple HelloWorld.java in Development/Palm/HelloWorld. That seems to need a java
+	SDK, while the one above is a C one?  Where to get started here?
+	
+Go to sun.com and download j2se sdk and put on windows side.
+	I have a reference about what else to do in the References about midlets and palm
+	Also, to get a midlet, type in the url to the .jar file on my palm.
+	Installed the RGB midlet to get colors.
+	
+
+
+---20070914
+
+Successfully create a midlet on windows part using method in Guru's guide to creating midlets
+	compiled HelloWorld which was actually an example SampleMidlet and uploaded only the jar file
+	up to my .Mac account by going to:
+	
+	http://idisk.mac.com/jwooten37830-Public?view=web
+	
+	There I did an upload and selected the HelloWorld.jar file.
+	
+	I then went to the IBM Java app on my phone and did an install from 
+	
+	http://idisk.mac.com/jwooten37830-Public/HelloWorld.jar
+	
+	it installed it and it ran!
+	
+	Should also be able to create a PRC file with another utility and other Palms could run it without
+	java?
+	
+	I think I can also just drop the jar into the iDisk/Public file area and it will get pushed to
+	the .mac site and available for download.  Going to try that with another app.  It worked, I just
+	drag or copy something to my iDisk/Public area on my desktop and if connected to the internet
+	I see it immediately at the web site.  I then drug it from there to my Trash can it it vanished
+	from the web site.
+	
+	Downloaded a Sprint 700p simulator that I can just drop .prc files onto to simulate adding them
+	to my phone.  Haven't figured out how to actualy create the .prc file yet.
+	
+	
+	
+866-866-2244,,, 3593796# was new dial-in for Spartanburg, etc. CITPO 
+Entered Time into Open Air and spreadsheet. MHS_2007.xls
+Foundation is a branch [alpha] and needs to be merged back into the HEAD.
+		save it as zip.  Recover head.   add bck the changes in ByteOperatorFactory, ByteStreamParser,
+			and ByteTokenizer, remove SingleValueToken?, remove teh Menulisteners under com.areteq.gui
+			and the prettyPrintlistener.?
+			 ***TODO***
+			 
+
+
+---20070915
+
+Carried out creation of a seam example by
+
+	created a Development/workspaces/Seam folder
+	then did
+	  507  seam setup
+      508  seam new-project
+      
+      after CD'ing into ~/Development/Applications/jboss-seam-1.2.1.GA
+      had to chmod a+x seam
+      did above giving /Libraryjboss-4.0.2 as jboss installation
+      
+      Then afterwards did an eclipse change workspace to Seam
+      and imported the project ( General, not java ) seam_example into eclipse
+      The tutorial said I could type http://localhost:8080/helloworld and see the app
+      That didn't work as jboss wasn't running.  I then checked and I had given it the wrong 
+      installation of JBoss AS.  The latest was at /Applications/jboss-4.0.5.GA.
+      I edited the build.properties to point to the new jboss
+      it rebuilt something.
+      I then in console did jboss_start which started the proper jboss as
+      Waited a bit and type the http://localhost:8080/helloworld and low and behold, it came up and worked
+      
+      I created an example action "ping" and it appeared in seam_example/ping.seam
+      
+      Not sure why it didn't deploy right, but it is there, try another to see if getting created
+      or not ***TODO***
+      
+      Want to try this with the demo app that had some databases.  metrics_db and preferences_db,
+      queue, and queue_db, users_db, and taxdb, entity_db, later advworks?
+      
+Ran into problems, downloaded new copy of jboss as and put zip into backups.
+	reinstalled ( dropped ) expanded into Applicatioins.
+	Tried to run eclipse-bpm, but it failed. need to track down.  Use a new copy of this to create
+	the jboss seam applications.
+	
+Used sony's go back to start to recreate 17inch to initial state.  only admin with no password
+	there now.  Then right clicked on my computer and brought up computer management/storage
+		and clicked on disk management and it shows a view of the drives.
+		I selected D and told it to delete the partition, recreate it, and then reformat it.
+		
+		
+
+---20070916
+
+Sent Robert the SwingGUI, RedactViewer, and MenuDefinition for not showing the thumbnail panel.
+	perhaps should have showThumbnails and debug as prefs in the PreferencePanel, but do this by
+	overridding the GenericPreferencesPanel and adding new items!
+	
+Downloaded GPL_SuperWabaSDK for version 5.8.2. move it to windows and install.  Does it provide
+	a new runtime?  The one on the phone crashed the phone! I installed this into 
+	C:/SuperWabaSDK.  It contains good docs and the .prc and .prb for the runtime on the Palm
+	need to read carefully because there are some different options before installing this.
+	Also, the development process is tricky.  Some flags need to be set when I compile using the
+	standard JVM so that the byte code is the right version for the process.  See documentation.
+	
+Moved aspectJ workspace to workspaces.  Eclipse 3.0 failed on startup.  Deleting it.
+	I think it had the aspectJ plugins!  It did have the aspectJ feature.  ***TODO*** Add this to
+	a newer Eclipse possibly.
+	
+Give new transitions and new states a default State1, Go1, type name and dbl-clicking brings
+	up a new panel Properties for: G1 But the split pane to the left has the items like
+	General, etc., General for a transition shows the Name: Go1 and allows change.
+	Others are listed in the split pane and then shown in the one to the right when clicked.
+	Look at how jbpm ide creates the properties pane!  "Properties for"
+	For a state we have Handler and it shows the Node Action with checkbox for Configure action
+	handler.  You can set the class(with a browse), the configuration type(e.g. Field,Bean,Constructor
+	Compatibility
+	and for fields you set the field name, and swimlaneName ( i.e. role ).  Look up how this
+even though there are errors, you can
+	see the Look and Feel.  I like the little icons in the tasks, showing the kind of task?
+	Also, the marque on the left, is divided up into the right kinds of things.
+	***TODO*** Fix current demo editor so that dragging creates proper things.  IDE for JBoss has
+	the split and join icons plus others!!!
+	
+Be sure to ask when a state is created, with the check box, that it has a "Cancel" or "Suspend"
+	added if desired!  ***TODO***  Maybe every state automatically has a "Cancel" node attached!
+	In the state properties, we show the outcomes!  Only editable via the act of adding or
+	removing a task link.
+	
+Fixed showing editor logs when I noticed via the weekly cleanup that I had misnamed the
+	log directory sw_editor instead of sc_editor.  Now logs to there and will get cleaned up.
+	Should direct the digester output to digester.log or such.  I want a log that shows the
+	action, the transition, etc. and the user.
+	
+Hook up the action of selecting from the tree to checking if the state model is in memory
+	and then reading it in if not and displaying it.  ***TODO***  Get the icons from the
+	jboss ide!
+	
+Installed Vue-6 a program for creating virtual landscapes.  Code is INST-GSSNY-MPJBD-BXT-VUE6ESL
+	need to register.
+	
+
+---20070917
+
+Sent copy of current code to Robert as his did not work correctly.  I checked everything in after
+	verifying that mine did work.  
+
+Got the PluggableEditor working with reading in the stateModel and displaying it.
+	the display of properties depends upon creating a SelectionTool ( override ) and
+	in the DisplayPanel and having it tell via the interface the PluggableEditor to create
+	a new tab if it doesn't exist and have it be added to the set of Views, plus that is where the
+	info on the objects will go and get selected when it occurs.
+	
+Change to use nicer icons in palette!
+	BP.gif
+	newreadme_wiz.gif "eye glasses"
+	
+
+---20070918
+
+Downloaded jbpm-jpdl-3.2.GA.zip and placed into ~woo/Development/Applications and zipped into
+	Backups.
+Downloaded eclipse-SDK-3.2.1 carbon tar gz and untarred then compressed and renamed to
+	eclipse-SDK-3.2.1.zip and edited build.properties in the pdl area to point to Backups and that
+	file and with terminal pointing to jpdl/designer, typed ant install to install Eclipse.
+	
+That did not work.  removed jpdl entirely.  copied zip file in to directory Development/Applications
+	and unzipped.  Then copied in separately the zip for the eclipse and unzipped.
+	Tested that that worked.  Then carefully copied from the designer/eclipse, the contents
+	of features to eclipse/features, contents of plugins to eclipse/plugins, and folder links
+	to exlipse/
+	Then started in a new workspace of designer/eclipse/workspace and new project/jbpm gives
+	me a sample diagram.  Removed the designer eclipse and moved this eclipse into its area.
+	tested again and works.
+	Note the very nice tabs at bottom of view iwth Diagram, Swimlanes, deployment, source!!! 
+	Also have all the icons now in my Desktop/images!  Can put those into PluggableEditor
+	and build it to look like theirs!!
+	
+	I also like having the tab at the top for the process!  have more than one open at a time.
+	Tools are:
+	Select with arrow
+	Marquee with square and cross at bottom right - selects nodes only
+	separator
+	Start with green circle and right arrow
+	State with arrow pointing to small green circle
+	End with square red box
+	separator
+	Fork
+	Join
+	Decision
+	Node with geared wheel 
+	Task Node with check mark on pages ( diff between node and task node?)
+	Process State with arrow pointing to pages
+	SuperState 
+	separator
+	Transition with arrow
+	
+	Name of state is in tab box at top.
+	
+to the JBPM?
+	
+Add the panes as tabbed panes with thename of the process as the tab.  Don't create
+	the "process" node like I have been.
+	Change icons now and wire them up.
+	
+
+---20070919
+
+Sent foia_1_5.zip to Charles.  Notes about lack of zoom repaint, rotate works, other issues.
+Got the drag and connect to wok in editor, but now need to be sure state model is updated and 
+	marked dirty.  Then look at creation from the start via the Menu item New...
+Review where things are in the demo packages.  Need to organize better as interfaces, etc.
+	Then move to regular structure or new package?  Find and fix and remove hard-coded
+		paths and "Shoulders". Login to get information?
+Going to try to change tool palette so it looks better.
+
+Charles at AreteQ Board Meeting
+
+	Have $6900 line of credit plus $600, plus $4K-$5K from Jaysec
+		October 1st is covered.  Interest due quarterly and payment due Oct.
+		If Monday goes okay, we do fund raiser and should be okay.
+		Presentation to person who works with Adobe and writing user manuals.  Knows mgmt at Adobe.
+		
+	Monday - Tennessee Wesleyan meeting.
+	
+	Joe Johnson, Johnson Group, and advertising. Crista Willa?  
+		Needed name - StrikeIt, OffTheRecord, SeQure, MrSmith, StriQer, StriQoutExpert, TheBabe
+						BabeRuth
+					A Redaction Tool, An Intelligent Redaction Tool
+					
+					Document with hightlighted pieces of text
+					
+					Logo - Exacto knife through Q , XciseIt, crossed exacto knives
+					
+Added to properties so it shows type = State Model, etc. and the name
+	it will then add a different subpanel below for the different types.
+	They will extend a BasicPropertiesPanel that gives description, and a few common items
+	Look at JBoss to see the way they did their tab with Parameters, Source, etc.
+	
+Fix so that all little panes may be minimized and maximized?  May need to create a little panel
+	that goes at the upper right that holds all three of these things!
+	
+When a window is closed, then go to menu and get last one and open it and set tree.
+
+Made all extend DescriptionPane and have notification listeners so they can do their thing.
+	Properties pane right now, removes itself.  TaskView gets set to General.  Would be
+	different if a menu item were selected if any there.
+	
+Now that notifications are working, have the Pluggable Editor listening also and it
+	checks for a minimize/maximize and the source.  If from the top and expands, sets divider to
+	100%, otherwise back to 75%?
+	
+Images are being drawn, but area is too small and they get "clipped".  How to handle?
+Got tool pallete looking sort of like I wanted.  Add icons to the states.
+	Need to have a preferences where one can hide the names of the tools.  Make them be notification
+	listeners and if told to hide words, they hide them.
+	
+
+---20070921
+
+Received deposit of 1765.91 extra this two weeks.  Regular deposite was 3845.87.
+	Check on what this implies.  It could mean that I'm owed a total of $229,568.30 back pay.
+	But, did it include 451.xx insurance pay?  Check it out before counting on it.
+	Tom said that we'd pay bi-weekly like this over 5 years to make up lost pay.
+	If that had insurance added, the net would still be 1308.86 and that would represent
+	$170,151.80 back pay.  This could also have taxes taken out, but sent note to Josh to find
+	out.
+
+
+---20070922
+
+QeFOIA - acme.pdf, Bat Brewery.pdf work and look okay on screen and saved.
+HIPPA - doe.pdf - messes
+About should show knowledge base if loaded.
+DEMO_ADOBE_ALPHA
+System, development, email, etc. backups done to LaCie disk.
+
+	
+
+---20070927
+
+Bank of America Credit Assist jwooten37830/random1/Heinlein
+Should the close button in the demo process editor change the selected path
+	in the tree to the next higher node? and that would also show the documentation
+	about the application, organization, etc.
+Selecting the Application node should show the application documentation!
+	Probably have to create an applicationNode and an organization node?
+
+
+---20071001
+
+The demo editor is adding a Do 1 Do 2 etc between states that are not linked in the
+	xml.  Also, the diagram size is somehow not right.
+getDescription isn't returning the description correctly for the statemodel, activity, or link
+	?
+Look at the demo memory usage as an  example of having a "ticking" chart collecting data.
+
+After creating new project in seam try (for existing tables)
+
+	seam generate-entities
+
+	seam restart.  Failed but got further along.
+	
+	Also, Had to put in persistence.xml a line about the hibernate dialect.
+	
+	
+
+---20071003
+
+Conf room at 1350 room at Tysons uses code 16-1006-9, then 1-800 etc.
+
+Updated XGP which is Mac Prolog.  started it and then did consult Examples/example_graph.
+	Then opend evaluate Query... and in that window entered Query:  example_graph and did "all"
+	and voila!  I got a graph!
+	
+Tried to get Aquaterm working with Perl but that involved doing
+	sudo cpan install PDL and that did something, but then did the 
+		perl Makefile.PL in the AquatermPDL directory under Forth and that failed.
+		Somehow things aren't in the right places.  
+		There is an AquaTerm.pm under the /Developer/Applications/Aquaterm/extras/adapters, ....
+		
+		
+
+---20071004
+
+Got the perl TestAqua.pl to work.  The AquaTerm must be started already, unlike gnuplot.
+	But, it does work to some extent.  Now try to get to it from the pforth I created.
+	Then see if I can get our old ODDBALL code to run in the pforth and draw graphics.
+	
+	
+
+---20071009
+
+go the Pluggable Editor to show the documents.  It was using a variable organization that was
+	null instead of the pn.getOrganization().
+Added logic to begin to handle showing the application documents and the organization documents
+	Right now they show an empty figure with a bad title.  Organization should probably show
+		and org chart and org docs while application should show some app chart and 
+			the app documentation ( ***DONE*** ).  Properties doesn't show right and neither does
+			the figure, of course.  ***TODO***
+Fix the bottom pane so it can get bigger!  ***TODO***
+Menus and Tree are now synched for Organizations, Applications, and Processes,
+	BUT, the drawing is NOT correct for Organizations and Applications.  ***TODO***
+When a drawing is removed, perhaps we should scroll to the Top of the Tree
+When the summary or the application doc shows, it does not have the proper selected
+	item at the top.  A problem in creating docs, I think.  Also, the links don't work
+	in the view I'm using.
+X should only show on panel that is selected!  When mousing over, it can show?
+DrawingPanel receives a selection changed message for the element, but it doesn't show
+	in the properties panel unless I dbl click and then if I dbl click in another it creates
+		a link!  Need to fix the select.
+		Fix the select and then add showing data elements, adding cancel button!
+Clicking on tree for app or organization should create a different editor? and drawing!
+What does process editor selection do?  It seems to clear drawing.
+Implement New/Application..New/organization.. new Process.  first two just
+		add a folder!, last creates a statemachine, etc. in memory.
+Look at the state of the stateMachine and see about writing it out.  Then add stuff as needed
+	to be sure new additions and deletions are handled.
+	
+
+---20071010
+
+Second Life = Vlad Dreadlow/random1
+Facebook = jwooten@shoulderscorp.com/random1
+
+
+---20071020
+
+Backed up all movies to DVD 071029-1,2,3 to make room for installing Leopard
+Backed up all email to DVD 071020
+Downloaded EmailStewardPro and backup up all through 12-31-2006 to myemail mysql database
+Created backup of the mysql database into woo/Backups/Databases
+did backup of email from 12/31/2006 to June 2007 to myemail_2007 mysql database
+Did backup of all Development to DVD_071020_1,2,3
+Waiting for JExpressPro to get back to me on key to evaluate for packaging QGUI
+
+
+---20071022
+
+cd to Development/Applications/jboss-seam...
+did seam setup viz:
+
+xanadu:~/Development/Applications/jboss-seam-1.2.1.GA woo$ seam setup
+Buildfile: build.xml
+
+setup:
+     [echo] Welcome to seam-gen :-)
+    [input] Enter your Java project workspace (the directory that contains your Seam projects) [/Users/woo/Development/workspaces/Seam]
+
+    [input] Enter your JBoss home directory [/Applications/jboss-4.0.5.GA]
+
+    [input] Enter the project name [seam_queuedb]
+seam_manageusers
+    [input] Is this project deployed as an EAR (with EJB components) or a WAR (with no EJB support) [ear] (ear,war,)
+
+    [input] Enter the Java package name for your session beans [com.shoulderscorp.queuedb]
+com.shoulderscorp.users
+    [input] Enter the Java package name for your entity beans [com.shoulderscorp.queuedb]
+com.shoulderscorp.users
+    [input] Enter the Java package name for your test cases [com.shoulderscorp.queuedb.test]
+com.shoulderscorp.users.test
+    [input] What kind of database are you using? [mysql] (hsql,mysql,oracle,postgres,mssql,db2,sybase,enterprisedb,)
+mysql
+    [input] Enter the Hibernate dialect for your database [org.hibernate.dialect.MySQLDialect]
+
+    [input] Enter the filesystem path to the JDBC driver jar [/Users/woo/Development/workspaces/ThirdPartyLibraries/mysql-connector-java-3.0.14-production-bin.jar]
+
+    [input] Enter JDBC driver class for your database [com.mysql.jdbc.Driver]
+
+    [input] Enter the JDBC URL for your database [jdbc:mysql:///queue_db]
+jdbc:mysql:///users_db
+    [input] Enter database username [root]
+
+    [input] Enter database password []
+
+    [input] skipping input as property hibernate.default_schema.new has already been set.
+    [input] Enter the database catalog name (it is OK to leave this blank) []
+
+    [input] Are you working with tables that already exist in the database? [y] (y,n,)
+n
+    [input] Do you want to drop and recreate the database tables and data in import.sql each time you deploy? [n] (y,n,)
+y
+[propertyfile] Updating property file: /Users/woo/Development/Applications/jboss-seam-1.2.1.GA/seam-gen/build.properties
+     [echo] Installing JDBC driver jar to JBoss server
+     [echo] Type 'seam new-project' to create the new project
+
+BUILD SUCCESSFUL
+Total time: 1 minute 22 seconds
+
+
+Then did seam new-project to create seam_manageusers in Development/workspaces/Seam
+
+xanadu:~/Development/Applications/jboss-seam-1.2.1.GA woo$ seam new-project
+Buildfile: build.xml
+
+validate-workspace:
+
+validate-project:
+
+copy-lib:
+     [echo] Copying Seam jars to the /Users/woo/Development/workspaces/Seam/seam_manageusers/lib directory...
+     [copy] Copying 56 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/lib
+     [echo] Copying Embeddable EJB3 configuration to the /Users/woo/Development/workspaces/Seam/seam_manageusers/embedded-ejb directory...
+     [copy] Copying 9 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/embedded-ejb
+
+file-copy-war:
+
+file-copy-ear:
+     [echo] Copying resources needed for EAR deployment to the /Users/woo/Development/workspaces/Seam/seam_manageusers/resources directory...
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources/WEB-INF
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers
+     [copy] Copying 6 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+
+setup-filters:
+
+file-copy:
+     [copy] Copying 8 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/.settings
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/resources
+     [copy] Copying 14 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/view
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/src/action/com/shoulderscorp/users
+     [copy] Copying 6 files to /Users/woo/Development/workspaces/Seam/seam_manageusers
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/src/model
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/src/test
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/nbproject
+     [copy] Copying 3 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/nbproject
+
+new-project:
+     [echo] A new Seam project named 'seam_manageusers' was created in the /Users/woo/Development/workspaces/Seam directory
+     [echo] Type 'seam explode' and go to http://localhost:8080/seam_manageusers
+     [echo] Eclipse Users: Add the project into Eclipse using File > New > Project and select General > Project (not Java Project)
+     [echo] NetBeans Users: Open the project in NetBeans
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+
+
+Then in separate shell did jboss_start to start jboss app server
+
+Then did seam explode in original to deploy
+
+xanadu:~/Development/Applications/jboss-seam-1.2.1.GA woo$ seam explode
+Buildfile: build.xml
+
+validate-workspace:
+
+validate-project:
+
+explode:
+     [echo] Deploying project 'seam_manageusers' to JBoss as an exploded directory
+
+init:
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.jar
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.ear
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.war
+    [mkdir] Created dir: /Users/woo/Development/workspaces/Seam/seam_manageusers/dist
+
+compile:
+    [javac] Compiling 1 source file to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.jar
+
+copyclasses:
+
+jar:
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.jar
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.jar/META-INF
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.jar/META-INF
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.jar
+
+war:
+     [copy] Copying 14 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.war
+     [copy] Copying 4 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.war/WEB-INF
+     [copy] Copying 10 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.war/WEB-INF/lib
+     [copy] Copying 1 file to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.war/WEB-INF/classes
+
+ear:
+     [copy] Copying 13 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.ear
+     [copy] Copying 2 files to /Users/woo/Development/workspaces/Seam/seam_manageusers/exploded-archives/seam_manageusers.ear/META-INF
+
+datasource:
+     [copy] Copying 1 file to /Applications/jboss-4.0.5.GA/server/default/deploy
+
+explode:
+    [mkdir] Created dir: /Applications/jboss-4.0.5.GA/server/default/deploy/seam_manageusers.ear/seam_manageusers.jar
+    [mkdir] Created dir: /Applications/jboss-4.0.5.GA/server/default/deploy/seam_manageusers.ear/seam_manageusers.war
+     [copy] Copying 5 files to /Applications/jboss-4.0.5.GA/server/default/deploy/seam_manageusers.ear/seam_manageusers.jar
+     [copy] Copying 29 files to /Applications/jboss-4.0.5.GA/server/default/deploy/seam_manageusers.ear/seam_manageusers.war
+     [copy] Copying 15 files to /Applications/jboss-4.0.5.GA/server/default/deploy/seam_manageusers.ear
+
+BUILD SUCCESSFUL
+
+
+Then in web browser did http://localhost:8080/seam_manageusers
+	and got web page that had login to the right.
+	
+Did login and got message in log that was logged in. This came from com.shoulderscorp.users.Authenticator
+	and present page.
+	
+Change the theme by copying the css/screen.css from the examples on hotel booking into 
+	stylesheet/theme.css and re-exploding.  Theme changed!
+	
+
+
+---20071023
+
+NOTE TO SELF - MUST USE JEMS installer to install JBoss to use EJBs.  
+
+
+---20071026
+
+Create a new seam project with Person, User, and Role entities.  Use the template, and style sheet from the seam_login to get things right
+Call the project step1.
+
+Use the way the top menu.xhtml does to get the list of *.seam items and use that for Workspaces on the left navigation.
+ 3)  save that and be sure it works correctly.
+
+Then create step2 ( do I copy or what ), and 
+	add the many to many and the search, etc.
+
+Then add the authentication using the authentication rules but have the dev script create an initial user, etc.
+
+Then create step3 where I add one business process.  Be sure that I put all of the control of the pages so you have to be logged in, etc.  Have a task list and explore how that is to be used.
+
+Then look at how to create the statistics, history, etc. pages for this and call it step 4.
+
+Consider a short book that has this as a example of building a business process framework using seam. !!!
+
+Where does the application get the /seam_login/UserLIst.seam and what is necessary for that to exist?
+
+Add the things that cause you to go to login if not logged in, and restrict view of workspaces if not logged in.  I.e. it will show something different.
+This will complete step1
+
+step2 will add entities.
+
+
+---20071102
+
+	1)  Where do the logs for mysql go so we 
+		can clean them up?
+	2)  Not getting the perl cgi script to run now.
+
+
+---20071103
+
+created Seam project advworks
+used mysql and did generate-entities to create ejb's etc.
+Compile errors on binaries is.*==0 and I changed to is.*)
+Seems to work.  Lots of empty cells and mostly oid's, but might be able to be
+		fixed up to work.  How?
+		
+
+---20071105
+
+Got icon to show and initial QGUI.ini for windows generated.  Control data seems okay
+	but initial directory for test data isn't ?
+The rotation and zoom are still using the properties.  I thought I changed these.  Check to change
+	them back.
+Ends up on page 3 but says it's page 1.  Wait for Robert on this one.
+
+
+---20071126
+
+Need log of redactions, name of document
+	user, date/time, page-word-reason
+
+Need save selected with reasons as 
+	*.rdf where * is pdf file name.
+	the rdf contains the path of the file
+	the reviewer, the date, and
+	the list of words/images and the 
+	selected/redacted and their reasons.
+	Upon opening a rdf it would show the
+	previous comments, reviewer, etc.
+	then open the document and use the rdf
+	data to highlight, etc.  ( i.e. the tokens are
+		read in instead of being discovered ).
+
+	Upon saving as redacted or ?
+	then we really redact and burn printing log
+	of what we did.
+
+
+Create an installer and test under windooze
+Check the java as in mail note.
+
+
+conf on comcast paym't 12/3/2007
+314607 - due may
+
+Download JBoss 4.2 to work with Seam 2
+DONE
+
+
+---20071130
+
+Edited ~/bin/clean_extra_monthly_logs.sh to include ~woo/Library/Logs/* where a lot 
+	of crash logs were piling up.
+	Do I need to also trim the /var/weekly.log etc.?  ***TODO***
+	
+Had to do following on tetris in mysql
+
+	mysql> alter table mantis_project_table add file_path VARCHAR(128) after view_state;
+Query OK, 1 row affected (3.22 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> alter table mantis_project_category_table add user_id VARCHAR(16);
+Query OK, 0 rows affected (0.47 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table mantis_project_version_table add date_order INT;
+Query OK, 0 rows affected (1.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table mantis_project_version_table add id INT;
+Query OK, 0 rows affected (0.90 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table mantis_project_version_table add description VARCHAR(128);
+Query OK, 0 rows affected (1.32 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table mantis_project_version_table add released DATE;
+Query OK, 0 rows affected (2.49 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+Discovered had old database.  deleted and then used install.php to get it right.
+
+Have Documentation section added to http://areteq.com/Deep6 svn.  Need to add
+	Mike Bell.
+	
+Have created http://bugs.areteq.com/index.php and added cwilson and rmcgaffey
+	need to add mike bell.
+	
+ssh woo37830@tetris.dreamhost.com works.
+
+
+
+---20071210
+
+Got user, person, role implemented.  Need to
+	learn how to alter tables, classes, to work together.
+
+Roquemore - 972-226-9266
+
+Supply Architecture picture for Toms missives.
+
+Need to provide a logout to log the message,
+an error message about login if not logged in.
+and set up the creation and assigning of roles
+to users!
+
+Using back arrow takes back to save and edit data after logout!
+
+813-552-3653 connolly recruiting
+cconnolly@kforce.com
+
+$75/hr ?
+
+
+21CBTV, 21CHTV tv shows that AreteQ could buy
+time on for about $25K
+
+Time Sheets x
+Monthly Report x
+Sprint Service x
+Taser x
+Cigar Store on 7th x
+Deep6 Work for AreteQ
+
+
+Need to work on Deep6 handout, etc.
+
+Need to add method to RedactViewer to
+	changeData(String key, String word)
+
+get the word from the SwingMouseHandler
+
+applecare case # 90496972
+
+Need to install Mantis on areteq site
+Need to put together price proposal for WIN
+	$40K/year/client, 25% to WIN as VAR
+	that covers license, maint, new versions, etc.
+	Includes	80 hours of initial prep on kb.
+	Additional work on KB is $100/hr.
+
+Office address is:
+
+	8000 Towers Crescent Drive
+	Suite 1350
+
+	Vienna VA 2218
+
+TODO:  Install maven plugin into eclipse
+plugin directory is:
+
+http://m2eclipse.codehaus.org/update/
+
+Do a build and then try to use the exe builder.
+
+
+
+Add license.rtf to package
+adjust prefs window size and set def to windooze
+
+
+How to contour plot from gnuplot to AquaTerm
+Done!  See the run.sh in model
+
+fscanf failing in testavl
+
+
+
