@@ -1,6 +1,0 @@
----19920407 14:03:15
-worked on menu program for new users
-
----19920408 10:36:12
-added the menu stuff to /usr/local/bin and asked it be moved to /usr/local
-
