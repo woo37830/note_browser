@@ -1,5 +1,5 @@
 <?php
-   $DIR = "/Users/woo/Dropbox/Personal/Documents/Notes/";
+   $DIR = "/Library/WebServer/Documents/Notes/";
    if( ! isset( $_REQUEST['year'] ) ) {
       $YYYY = date('Y');
    } else {
